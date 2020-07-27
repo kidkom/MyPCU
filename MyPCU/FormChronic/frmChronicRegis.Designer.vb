@@ -23,42 +23,42 @@ Partial Class frmChronicRegis
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.FluentDesignFormContainer1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer()
-        Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
-        Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement3 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
-        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cmdSearch2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.txtAGE = New System.Windows.Forms.TextBox()
         Me.txtLName = New System.Windows.Forms.TextBox()
+        Me.txtBIRTH = New System.Windows.Forms.TextBox()
+        Me.txtSex = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.txtName = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCID = New System.Windows.Forms.MaskedTextBox()
         Me.txtHN = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtPID = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.txtAGE = New System.Windows.Forms.TextBox()
-        Me.txtBIRTH = New System.Windows.Forms.TextBox()
-        Me.txtSex = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.cmdSearch2 = New System.Windows.Forms.Button()
+        Me.PictureEdit1 = New DevExpress.XtraEditors.PictureEdit()
+        Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
+        Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement3 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement4 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
         Me.FluentDesignFormContainer1.SuspendLayout()
-        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FluentDesignFormContainer1
@@ -78,6 +78,270 @@ Partial Class frmChronicRegis
         Me.FluentDesignFormContainer1.Name = "FluentDesignFormContainer1"
         Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(977, 698)
         Me.FluentDesignFormContainer1.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Button1.Image = Global.MyPCU.My.Resources.Resources.a_edit4
+        Me.Button1.Location = New System.Drawing.Point(922, 205)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(38, 26)
+        Me.Button1.TabIndex = 1109
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'cmdSearch2
+        '
+        Me.cmdSearch2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdSearch2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.cmdSearch2.Image = Global.MyPCU.My.Resources.Resources.a_add
+        Me.cmdSearch2.Location = New System.Drawing.Point(878, 205)
+        Me.cmdSearch2.Name = "cmdSearch2"
+        Me.cmdSearch2.Size = New System.Drawing.Size(38, 26)
+        Me.cmdSearch2.TabIndex = 1108
+        Me.cmdSearch2.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 656)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 17)
+        Me.Label2.TabIndex = 1107
+        Me.Label2.Text = "จำนวน"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label16.Location = New System.Drawing.Point(12, 217)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(150, 17)
+        Me.Label16.TabIndex = 1106
+        Me.Label16.Text = "รายการโรคเรื้อรังที่ขึ้นทะเบียน"
+        '
+        'BetterListView1
+        '
+        Me.BetterListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
+        Me.BetterListView1.Location = New System.Drawing.Point(12, 237)
+        Me.BetterListView1.Name = "BetterListView1"
+        Me.BetterListView1.Size = New System.Drawing.Size(948, 416)
+        Me.BetterListView1.TabIndex = 1105
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupControl1.Controls.Add(Me.txtAGE)
+        Me.GroupControl1.Controls.Add(Me.txtLName)
+        Me.GroupControl1.Controls.Add(Me.txtBIRTH)
+        Me.GroupControl1.Controls.Add(Me.txtSex)
+        Me.GroupControl1.Controls.Add(Me.Label6)
+        Me.GroupControl1.Controls.Add(Me.Label1)
+        Me.GroupControl1.Controls.Add(Me.Label5)
+        Me.GroupControl1.Controls.Add(Me.Label11)
+        Me.GroupControl1.Controls.Add(Me.txtName)
+        Me.GroupControl1.Controls.Add(Me.Label12)
+        Me.GroupControl1.Controls.Add(Me.Label3)
+        Me.GroupControl1.Controls.Add(Me.txtCID)
+        Me.GroupControl1.Controls.Add(Me.txtHN)
+        Me.GroupControl1.Controls.Add(Me.Label10)
+        Me.GroupControl1.Controls.Add(Me.txtPID)
+        Me.GroupControl1.Controls.Add(Me.Label25)
+        Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
+        Me.GroupControl1.Location = New System.Drawing.Point(152, 18)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(808, 169)
+        Me.GroupControl1.TabIndex = 2
+        Me.GroupControl1.Text = "ข้อมูลบุคคล"
+        '
+        'txtAGE
+        '
+        Me.txtAGE.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtAGE.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtAGE.BackColor = System.Drawing.Color.Beige
+        Me.txtAGE.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtAGE.Location = New System.Drawing.Point(538, 103)
+        Me.txtAGE.Name = "txtAGE"
+        Me.txtAGE.Size = New System.Drawing.Size(170, 25)
+        Me.txtAGE.TabIndex = 670
+        Me.txtAGE.Text = "   "
+        Me.txtAGE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtLName
+        '
+        Me.txtLName.BackColor = System.Drawing.Color.Beige
+        Me.txtLName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtLName.Location = New System.Drawing.Point(539, 69)
+        Me.txtLName.Name = "txtLName"
+        Me.txtLName.Size = New System.Drawing.Size(169, 25)
+        Me.txtLName.TabIndex = 1132
+        Me.txtLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtBIRTH
+        '
+        Me.txtBIRTH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtBIRTH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtBIRTH.BackColor = System.Drawing.Color.Beige
+        Me.txtBIRTH.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtBIRTH.Location = New System.Drawing.Point(281, 102)
+        Me.txtBIRTH.Name = "txtBIRTH"
+        Me.txtBIRTH.Size = New System.Drawing.Size(165, 25)
+        Me.txtBIRTH.TabIndex = 669
+        Me.txtBIRTH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtSex
+        '
+        Me.txtSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtSex.BackColor = System.Drawing.Color.Beige
+        Me.txtSex.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtSex.Location = New System.Drawing.Point(69, 102)
+        Me.txtSex.Name = "txtSex"
+        Me.txtSex.Size = New System.Drawing.Size(45, 25)
+        Me.txtSex.TabIndex = 668
+        Me.txtSex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label6.Location = New System.Drawing.Point(485, 73)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(50, 17)
+        Me.Label6.TabIndex = 1133
+        Me.Label6.Text = "นามสกุล"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label1.Location = New System.Drawing.Point(505, 107)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(28, 17)
+        Me.Label1.TabIndex = 667
+        Me.Label1.Text = "อายุ"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label5.Location = New System.Drawing.Point(255, 72)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(23, 17)
+        Me.Label5.TabIndex = 1134
+        Me.Label5.Text = "ชื่อ"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label11.Location = New System.Drawing.Point(203, 106)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 17)
+        Me.Label11.TabIndex = 666
+        Me.Label11.Text = "วันเดือนปีเกิด"
+        '
+        'txtName
+        '
+        Me.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtName.BackColor = System.Drawing.Color.Beige
+        Me.txtName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtName.Location = New System.Drawing.Point(281, 68)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(165, 25)
+        Me.txtName.TabIndex = 1131
+        Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label12.Location = New System.Drawing.Point(38, 106)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(27, 17)
+        Me.Label12.TabIndex = 665
+        Me.Label12.Text = "เพศ"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label3.Location = New System.Drawing.Point(33, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(30, 17)
+        Me.Label3.TabIndex = 1122
+        Me.Label3.Text = "PID"
+        '
+        'txtCID
+        '
+        Me.txtCID.BackColor = System.Drawing.Color.Beige
+        Me.txtCID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtCID.Location = New System.Drawing.Point(69, 68)
+        Me.txtCID.Mask = "0000000000000"
+        Me.txtCID.Name = "txtCID"
+        Me.txtCID.Size = New System.Drawing.Size(170, 25)
+        Me.txtCID.TabIndex = 1120
+        Me.txtCID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtHN
+        '
+        Me.txtHN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtHN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtHN.BackColor = System.Drawing.Color.Beige
+        Me.txtHN.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtHN.Location = New System.Drawing.Point(538, 37)
+        Me.txtHN.Name = "txtHN"
+        Me.txtHN.Size = New System.Drawing.Size(170, 25)
+        Me.txtHN.TabIndex = 1127
+        Me.txtHN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label10.Location = New System.Drawing.Point(33, 71)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(30, 17)
+        Me.Label10.TabIndex = 1123
+        Me.Label10.Text = "CID"
+        '
+        'txtPID
+        '
+        Me.txtPID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtPID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtPID.BackColor = System.Drawing.Color.Beige
+        Me.txtPID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtPID.Location = New System.Drawing.Point(69, 36)
+        Me.txtPID.Name = "txtPID"
+        Me.txtPID.Size = New System.Drawing.Size(170, 25)
+        Me.txtPID.TabIndex = 1126
+        Me.txtPID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label25.Location = New System.Drawing.Point(507, 41)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(28, 17)
+        Me.Label25.TabIndex = 1125
+        Me.Label25.Text = "HN"
+        '
+        'PictureEdit1
+        '
+        Me.PictureEdit1.Location = New System.Drawing.Point(12, 18)
+        Me.PictureEdit1.Name = "PictureEdit1"
+        Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
+        Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch
+        Me.PictureEdit1.Size = New System.Drawing.Size(134, 169)
+        Me.PictureEdit1.TabIndex = 1
         '
         'AccordionControl1
         '
@@ -113,6 +377,12 @@ Partial Class frmChronicRegis
         Me.AccordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement3.Text = "ค้นหาจากที่อยู่"
         '
+        'AccordionControlElement4
+        '
+        Me.AccordionControlElement4.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_opd2
+        Me.AccordionControlElement4.Name = "AccordionControlElement4"
+        Me.AccordionControlElement4.Text = "การดูแล-ติดตาม"
+        '
         'FluentDesignFormControl1
         '
         Me.FluentDesignFormControl1.Dock = System.Windows.Forms.DockStyle.Top
@@ -124,271 +394,6 @@ Partial Class frmChronicRegis
         Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1179, 31)
         Me.FluentDesignFormControl1.TabIndex = 2
         Me.FluentDesignFormControl1.TabStop = False
-        '
-        'PictureEdit1
-        '
-        Me.PictureEdit1.Location = New System.Drawing.Point(12, 18)
-        Me.PictureEdit1.Name = "PictureEdit1"
-        Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
-        Me.PictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch
-        Me.PictureEdit1.Size = New System.Drawing.Size(134, 169)
-        Me.PictureEdit1.TabIndex = 1
-        '
-        'GroupControl1
-        '
-        Me.GroupControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupControl1.Controls.Add(Me.txtAGE)
-        Me.GroupControl1.Controls.Add(Me.txtLName)
-        Me.GroupControl1.Controls.Add(Me.txtBIRTH)
-        Me.GroupControl1.Controls.Add(Me.txtSex)
-        Me.GroupControl1.Controls.Add(Me.Label6)
-        Me.GroupControl1.Controls.Add(Me.Label1)
-        Me.GroupControl1.Controls.Add(Me.Label5)
-        Me.GroupControl1.Controls.Add(Me.Label11)
-        Me.GroupControl1.Controls.Add(Me.txtName)
-        Me.GroupControl1.Controls.Add(Me.Label12)
-        Me.GroupControl1.Controls.Add(Me.Label3)
-        Me.GroupControl1.Controls.Add(Me.txtCID)
-        Me.GroupControl1.Controls.Add(Me.txtHN)
-        Me.GroupControl1.Controls.Add(Me.Label10)
-        Me.GroupControl1.Controls.Add(Me.txtPID)
-        Me.GroupControl1.Controls.Add(Me.Label25)
-        Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
-        Me.GroupControl1.Location = New System.Drawing.Point(152, 18)
-        Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(808, 169)
-        Me.GroupControl1.TabIndex = 2
-        Me.GroupControl1.Text = "ข้อมูลบุคคล"
-        '
-        'txtLName
-        '
-        Me.txtLName.BackColor = System.Drawing.Color.White
-        Me.txtLName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtLName.Location = New System.Drawing.Point(545, 65)
-        Me.txtLName.Name = "txtLName"
-        Me.txtLName.Size = New System.Drawing.Size(169, 25)
-        Me.txtLName.TabIndex = 1132
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label6.Location = New System.Drawing.Point(491, 69)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 17)
-        Me.Label6.TabIndex = 1133
-        Me.Label6.Text = "นามสกุล"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(261, 68)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(23, 17)
-        Me.Label5.TabIndex = 1134
-        Me.Label5.Text = "ชื่อ"
-        '
-        'txtName
-        '
-        Me.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtName.BackColor = System.Drawing.Color.White
-        Me.txtName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtName.Location = New System.Drawing.Point(287, 64)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(165, 25)
-        Me.txtName.TabIndex = 1131
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label3.Location = New System.Drawing.Point(39, 36)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 17)
-        Me.Label3.TabIndex = 1122
-        Me.Label3.Text = "PID"
-        '
-        'txtCID
-        '
-        Me.txtCID.BackColor = System.Drawing.Color.White
-        Me.txtCID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtCID.Location = New System.Drawing.Point(75, 64)
-        Me.txtCID.Mask = "0000000000000"
-        Me.txtCID.Name = "txtCID"
-        Me.txtCID.Size = New System.Drawing.Size(170, 25)
-        Me.txtCID.TabIndex = 1120
-        Me.txtCID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtHN
-        '
-        Me.txtHN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtHN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtHN.BackColor = System.Drawing.Color.Beige
-        Me.txtHN.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtHN.Location = New System.Drawing.Point(544, 33)
-        Me.txtHN.Name = "txtHN"
-        Me.txtHN.Size = New System.Drawing.Size(170, 25)
-        Me.txtHN.TabIndex = 1127
-        Me.txtHN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label10.Location = New System.Drawing.Point(39, 67)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(30, 17)
-        Me.Label10.TabIndex = 1123
-        Me.Label10.Text = "CID"
-        '
-        'txtPID
-        '
-        Me.txtPID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtPID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtPID.BackColor = System.Drawing.Color.White
-        Me.txtPID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPID.Location = New System.Drawing.Point(75, 32)
-        Me.txtPID.Name = "txtPID"
-        Me.txtPID.Size = New System.Drawing.Size(170, 25)
-        Me.txtPID.TabIndex = 1126
-        Me.txtPID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label25.Location = New System.Drawing.Point(513, 37)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(28, 17)
-        Me.Label25.TabIndex = 1125
-        Me.Label25.Text = "HN"
-        '
-        'txtAGE
-        '
-        Me.txtAGE.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtAGE.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtAGE.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtAGE.Location = New System.Drawing.Point(544, 99)
-        Me.txtAGE.Name = "txtAGE"
-        Me.txtAGE.Size = New System.Drawing.Size(170, 25)
-        Me.txtAGE.TabIndex = 670
-        Me.txtAGE.Text = "   "
-        Me.txtAGE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtBIRTH
-        '
-        Me.txtBIRTH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtBIRTH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtBIRTH.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtBIRTH.Location = New System.Drawing.Point(287, 98)
-        Me.txtBIRTH.Name = "txtBIRTH"
-        Me.txtBIRTH.Size = New System.Drawing.Size(165, 25)
-        Me.txtBIRTH.TabIndex = 669
-        Me.txtBIRTH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtSex
-        '
-        Me.txtSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtSex.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtSex.Location = New System.Drawing.Point(75, 98)
-        Me.txtSex.Name = "txtSex"
-        Me.txtSex.Size = New System.Drawing.Size(45, 25)
-        Me.txtSex.TabIndex = 668
-        Me.txtSex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label1.Location = New System.Drawing.Point(511, 103)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(28, 17)
-        Me.Label1.TabIndex = 667
-        Me.Label1.Text = "อายุ"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label11.Location = New System.Drawing.Point(209, 102)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(71, 17)
-        Me.Label11.TabIndex = 666
-        Me.Label11.Text = "วันเดือนปีเกิด"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label12.Location = New System.Drawing.Point(44, 102)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(27, 17)
-        Me.Label12.TabIndex = 665
-        Me.Label12.Text = "เพศ"
-        '
-        'BetterListView1
-        '
-        Me.BetterListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
-        Me.BetterListView1.Location = New System.Drawing.Point(12, 237)
-        Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(948, 416)
-        Me.BetterListView1.TabIndex = 1105
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label16.Location = New System.Drawing.Point(12, 217)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(150, 17)
-        Me.Label16.TabIndex = 1106
-        Me.Label16.Text = "รายการโรคเรื้อรังที่ขึ้นทะเบียน"
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 656)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 17)
-        Me.Label2.TabIndex = 1107
-        Me.Label2.Text = "จำนวน"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button1.Image = Global.MyPCU.My.Resources.Resources.a_edit4
-        Me.Button1.Location = New System.Drawing.Point(922, 205)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(38, 26)
-        Me.Button1.TabIndex = 1109
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'cmdSearch2
-        '
-        Me.cmdSearch2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdSearch2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.cmdSearch2.Image = Global.MyPCU.My.Resources.Resources.a_add
-        Me.cmdSearch2.Location = New System.Drawing.Point(878, 205)
-        Me.cmdSearch2.Name = "cmdSearch2"
-        Me.cmdSearch2.Size = New System.Drawing.Size(38, 26)
-        Me.cmdSearch2.TabIndex = 1108
-        Me.cmdSearch2.UseVisualStyleBackColor = True
-        '
-        'AccordionControlElement4
-        '
-        Me.AccordionControlElement4.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_opd2
-        Me.AccordionControlElement4.Name = "AccordionControlElement4"
-        Me.AccordionControlElement4.Text = "การดูแล-ติดตาม"
         '
         'frmChronicRegis
         '
@@ -407,13 +412,13 @@ Partial Class frmChronicRegis
         Me.Text = "การลงทะเบียนผู้ป่วยโรคเรื้อรัง"
         Me.FluentDesignFormContainer1.ResumeLayout(False)
         Me.FluentDesignFormContainer1.PerformLayout()
-        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
