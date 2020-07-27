@@ -1053,20 +1053,6 @@ Public Class frmMain
         f.ShowDialog()
     End Sub
 
-    Private Sub BarButtonItem137_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem137.ItemClick
-        Dim CurrentForm As Form
-        For Each CurrentForm In Me.MdiChildren
-            If TypeOf CurrentForm Is frmPopPypamid Then
-                CurrentForm.MdiParent = Me
-                Exit Sub
-            End If
-        Next
-
-        Dim f As New frmPopPypamid
-        f.MdiParent = Me
-        f.Dock = DockStyle.Fill
-        f.Show()
-    End Sub
 
     Private Sub BarButtonItem138_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem138.ItemClick
         Dim f As New frmLookupMstatus
@@ -1076,21 +1062,6 @@ Public Class frmMain
     Private Sub BarButtonItem139_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem139.ItemClick
         Dim f As New frmAdjMstatus
         f.ShowDialog()
-    End Sub
-
-    Private Sub BarButtonItem154_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem154.ItemClick
-        Dim CurrentForm As Form
-        For Each CurrentForm In Me.MdiChildren
-            If TypeOf CurrentForm Is frmSearchPersonBirth Then
-                CurrentForm.MdiParent = Me
-                Exit Sub
-            End If
-        Next
-        Dim f As New frmSearchPersonBirth
-        f.MdiParent = Me
-        f.Dock = DockStyle.Fill
-        f.Show()
-        pPID = ""
     End Sub
 
     Private Sub BarButtonItem155_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem155.ItemClick
@@ -1107,4 +1078,5 @@ Public Class frmMain
         Dim f As New frmLookupPersonContact
         f.ShowDialog()
     End Sub
+
 End Class
