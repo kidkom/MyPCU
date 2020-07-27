@@ -165,6 +165,7 @@ Partial Class frmUser
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BetterListView1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmUser"
         Me.Text = "รายชื่อผู้ใช้งานระบบ"
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()

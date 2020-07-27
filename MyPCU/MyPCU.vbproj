@@ -356,6 +356,12 @@
     <Compile Include="FormAssets\FormSystem\frmPDFviewer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormChronic\frmChronicRegis.Designer.vb">
+      <DependentUpon>frmChronicRegis.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormChronic\frmChronicRegis.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormData\frmBkupData.Designer.vb">
       <DependentUpon>frmBkupData.vb</DependentUpon>
     </Compile>
@@ -864,6 +870,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAssets\FormSystem\frmPDFviewer.resx">
       <DependentUpon>frmPDFviewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChronic\frmChronicRegis.resx">
+      <DependentUpon>frmChronicRegis.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormData\frmBkupData.resx">
       <DependentUpon>frmBkupData.vb</DependentUpon>

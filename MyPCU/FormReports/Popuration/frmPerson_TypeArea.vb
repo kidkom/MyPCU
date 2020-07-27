@@ -88,7 +88,16 @@ Public Class frmPerson_TypeArea
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Timer1.Interval = 100
+        Timer1.Enabled = False
+        SplashScreenManager1.ShowWaitForm()
+        ProcessTyparea()
+        TypeAreaCbo()
+        SexAction()
+        DischargeAction()
+        DischargeAction()
 
+        SplashScreenManager1.CloseWaitForm()
     End Sub
     Private Sub TypeAreaCbo()
         Dim ds As DataSet

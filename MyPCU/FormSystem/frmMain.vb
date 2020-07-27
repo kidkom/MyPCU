@@ -1055,8 +1055,17 @@ Public Class frmMain
 
 
     Private Sub BarButtonItem138_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem138.ItemClick
-        Dim f As New frmLookupMstatus
-        f.ShowDialog()
+        Dim CurrentForm As Form
+        For Each CurrentForm In Me.MdiChildren
+            If TypeOf CurrentForm Is frmChronicRegis Then
+                CurrentForm.MdiParent = Me
+                Exit Sub
+            End If
+        Next
+        Dim f As New frmChronicRegis
+        f.MdiParent = Me
+        f.Dock = DockStyle.Fill
+        f.Show()
     End Sub
 
     Private Sub BarButtonItem139_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem139.ItemClick

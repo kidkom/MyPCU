@@ -265,6 +265,7 @@ Partial Class frmProvider
         Me.Controls.Add(Me.cmdSearch2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BetterListView1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmProvider"
         Me.Text = "รายชื่อเจ้าหน้าที่"
