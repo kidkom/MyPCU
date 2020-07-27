@@ -221,6 +221,12 @@ Partial Class frmMain
         Me.BarButtonItem160 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem161 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem162 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem163 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem164 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem165 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem166 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem167 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem168 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -283,12 +289,6 @@ Partial Class frmMain
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.RibbonPage23 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPage22 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.BarButtonItem163 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem164 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem165 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem166 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem167 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem168 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -1632,6 +1632,42 @@ Partial Class frmMain
         Me.BarButtonItem162.Id = 203
         Me.BarButtonItem162.Name = "BarButtonItem162"
         '
+        'BarButtonItem163
+        '
+        Me.BarButtonItem163.Caption = "BarButtonItem163"
+        Me.BarButtonItem163.Id = 204
+        Me.BarButtonItem163.Name = "BarButtonItem163"
+        '
+        'BarButtonItem164
+        '
+        Me.BarButtonItem164.Caption = "BarButtonItem164"
+        Me.BarButtonItem164.Id = 205
+        Me.BarButtonItem164.Name = "BarButtonItem164"
+        '
+        'BarButtonItem165
+        '
+        Me.BarButtonItem165.Caption = "BarButtonItem165"
+        Me.BarButtonItem165.Id = 206
+        Me.BarButtonItem165.Name = "BarButtonItem165"
+        '
+        'BarButtonItem166
+        '
+        Me.BarButtonItem166.Caption = "BarButtonItem166"
+        Me.BarButtonItem166.Id = 207
+        Me.BarButtonItem166.Name = "BarButtonItem166"
+        '
+        'BarButtonItem167
+        '
+        Me.BarButtonItem167.Caption = "BarButtonItem167"
+        Me.BarButtonItem167.Id = 208
+        Me.BarButtonItem167.Name = "BarButtonItem167"
+        '
+        'BarButtonItem168
+        '
+        Me.BarButtonItem168.Caption = "BarButtonItem168"
+        Me.BarButtonItem168.Id = 210
+        Me.BarButtonItem168.Name = "BarButtonItem168"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup10, Me.RibbonPageGroup11, Me.RibbonPageGroup12, Me.RibbonPageGroup24})
@@ -2161,42 +2197,6 @@ Partial Class frmMain
         '
         Me.RibbonPage22.Name = "RibbonPage22"
         Me.RibbonPage22.Text = "RibbonPage22"
-        '
-        'BarButtonItem163
-        '
-        Me.BarButtonItem163.Caption = "BarButtonItem163"
-        Me.BarButtonItem163.Id = 204
-        Me.BarButtonItem163.Name = "BarButtonItem163"
-        '
-        'BarButtonItem164
-        '
-        Me.BarButtonItem164.Caption = "BarButtonItem164"
-        Me.BarButtonItem164.Id = 205
-        Me.BarButtonItem164.Name = "BarButtonItem164"
-        '
-        'BarButtonItem165
-        '
-        Me.BarButtonItem165.Caption = "BarButtonItem165"
-        Me.BarButtonItem165.Id = 206
-        Me.BarButtonItem165.Name = "BarButtonItem165"
-        '
-        'BarButtonItem166
-        '
-        Me.BarButtonItem166.Caption = "BarButtonItem166"
-        Me.BarButtonItem166.Id = 207
-        Me.BarButtonItem166.Name = "BarButtonItem166"
-        '
-        'BarButtonItem167
-        '
-        Me.BarButtonItem167.Caption = "BarButtonItem167"
-        Me.BarButtonItem167.Id = 208
-        Me.BarButtonItem167.Name = "BarButtonItem167"
-        '
-        'BarButtonItem168
-        '
-        Me.BarButtonItem168.Caption = "BarButtonItem168"
-        Me.BarButtonItem168.Id = 210
-        Me.BarButtonItem168.Name = "BarButtonItem168"
         '
         'frmMain
         '

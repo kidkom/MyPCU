@@ -590,10 +590,22 @@
     <Compile Include="FormProviderUser\frmUserEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReports\Popuration\frmPerson_TypeArea.Designer.vb">
+      <DependentUpon>frmPerson_TypeArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Popuration\frmPerson_TypeArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReports\Popuration\frmPopPypamid.Designer.vb">
       <DependentUpon>frmPopPypamid.vb</DependentUpon>
     </Compile>
     <Compile Include="FormReports\Popuration\frmPopPypamid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Popuration\frmReportPopMain.Designer.vb">
+      <DependentUpon>frmReportPopMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Popuration\frmReportPopMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormReports\Popuration\frmSearchPersonBirth.Designer.vb">
@@ -964,8 +976,14 @@
     <EmbeddedResource Include="FormProviderUser\frmUserEdit.resx">
       <DependentUpon>frmUserEdit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Popuration\frmPerson_TypeArea.resx">
+      <DependentUpon>frmPerson_TypeArea.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Popuration\frmPopPypamid.resx">
       <DependentUpon>frmPopPypamid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Popuration\frmReportPopMain.resx">
+      <DependentUpon>frmReportPopMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Popuration\frmSearchPersonBirth.resx">
       <DependentUpon>frmSearchPersonBirth.vb</DependentUpon>
@@ -1079,6 +1097,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
+    <None Include="Resources\a_smoking2.png" />
+    <None Include="Resources\a_alcohol.png" />
+    <None Include="Resources\a_question2.png" />
     <None Include="Resources\a_contact.png" />
     <None Include="Resources\a_pressure21.png" />
     <None Include="Resources\a_pingpong1.png" />

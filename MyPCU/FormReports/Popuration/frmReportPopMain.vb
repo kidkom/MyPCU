@@ -1,12 +1,6 @@
 ﻿Imports DevExpress.XtraBars.Docking
 Public Class frmReportPopMain
-
-    Private Sub frmReportPopMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub AccordionControlElement1_Click(sender As Object, e As EventArgs) Handles AccordionControlElement1.Click
-
         Dim panel1 As DockPanel = DockManager1.AddPanel(DockingStyle.Right)
         panel1.DockedAsTabbedDocument = True
         panel1.Text = "รายงานจำนวนประชากรแยกตามกลุ่มอายุและเพศ"
@@ -17,8 +11,6 @@ Public Class frmReportPopMain
         f.Dock = DockStyle.Fill
         panel1.Controls.Add(f)
         f.Show()
-
-
 
     End Sub
 
@@ -35,7 +27,7 @@ Public Class frmReportPopMain
         f.Show()
     End Sub
 
-    Private Sub AccordionControlElement3_Click(sender As Object, e As EventArgs) Handles AccordionControlElement3.Click
+    Private Sub AccordionControlElement4_Click(sender As Object, e As EventArgs) Handles AccordionControlElement4.Click
         Dim panel1 As DockPanel = DockManager1.AddPanel(DockingStyle.Right)
         panel1.DockedAsTabbedDocument = True
         panel1.Text = "รายงานจำนวนประชากรแยกตามสถานะการอยู่อาศัย"
@@ -46,9 +38,5 @@ Public Class frmReportPopMain
         f.Dock = DockStyle.Fill
         panel1.Controls.Add(f)
         f.Show()
-    End Sub
-
-    Private Sub AccordionControlElement5_Click(sender As Object, e As EventArgs) Handles AccordionControlElement5.Click
-
     End Sub
 End Class
