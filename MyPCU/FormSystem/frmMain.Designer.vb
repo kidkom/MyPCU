@@ -1943,9 +1943,6 @@ Partial Class frmMain
         Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem159)
         Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem160)
         Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem161)
-        Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem163)
-        Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem164)
-        Me.RibbonPageGroup14.ItemLinks.Add(Me.BarButtonItem165)
         Me.RibbonPageGroup14.Name = "RibbonPageGroup14"
         Me.RibbonPageGroup14.ShowCaptionButton = False
         Me.RibbonPageGroup14.Text = "ประชากร"
