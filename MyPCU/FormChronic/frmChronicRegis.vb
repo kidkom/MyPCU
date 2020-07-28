@@ -8,18 +8,19 @@ Imports DevExpress.XtraEditors
 Public Class frmChronicRegis
     Dim tmpCID As String = ""
     Private Sub frmChronicRegis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PictureEdit1.Image = Image.FromFile(Application.StartupPath & "\images\person.png")
+        ClearData()
+
 
         If vPSEARCH = "1" Then
-            txtPID.Select()
+            chkPID.Checked = True
         ElseIf vPSEARCH = "2" Then
-            txtHN.Select()
+            'txtHN.Select()
         ElseIf vPSEARCH = "3" Then
-            txtCID.Select()
+            chkCID.Checked = True
         ElseIf vPSEARCH = "4" Then
-            txtName.Select()
+            chkName.Checked = True
         Else
-            txtPID.Select()
+            chkPID.Checked = True
         End If
 
         With BetterListView1
@@ -48,6 +49,8 @@ Public Class frmChronicRegis
             .Columns(7).Width = 120
             .Columns(7).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
+
+        txtPID.Select()
     End Sub
     Private Sub SearchData()
         ClearData()
@@ -65,27 +68,27 @@ Public Class frmChronicRegis
 
         If ds.Tables(0).Rows.Count > 0 Then
 
-            txtPID.Text = ds.Tables(0).Rows(0).Item("PID").ToString
+            lblPID.Text = ds.Tables(0).Rows(0).Item("PID").ToString
 
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("HN")) Then
                 If ds.Tables(0).Rows(0).Item("HN") <> "" Then
-                    txtHN.Text = ds.Tables(0).Rows(0).Item("HN").ToString
+                    lblHN.Text = ds.Tables(0).Rows(0).Item("HN").ToString
                 Else
-                    txtHN.Text = ""
+                    lblHN.Text = ""
                 End If
             Else
-                txtHN.Text = ""
+                lblHN.Text = ""
             End If
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("CID")) Then
                 Try
-                    txtCID.Text = (ds.Tables(0).Rows(0).Item("CID")).ToString
+                    lblCID.Text = (ds.Tables(0).Rows(0).Item("CID")).ToString
                 Catch ex As Exception
 
                 End Try
 
-                tmpCID = txtCID.Text
+                tmpCID = lblCID.Text
             Else
-                txtCID.Text = Nothing
+                lblCID.Text = ""
             End If
 
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("PRENAME_DESC")) Then
@@ -93,23 +96,24 @@ Public Class frmChronicRegis
 
             End If
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("NAME")) Then
-                txtName.Text = tmpPrename & (ds.Tables(0).Rows(0).Item("NAME")).ToString
+                lblName.Text = tmpPrename & (ds.Tables(0).Rows(0).Item("NAME")).ToString
             Else
-                txtName.Text = ""
+                lblName.Text = ""
             End If
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("LNAME")) Then
-                txtLName.Text = (ds.Tables(0).Rows(0).Item("LNAME")).ToString
+                lblLNAME.Text = (ds.Tables(0).Rows(0).Item("LNAME")).ToString
             Else
-                txtLName.Text = ""
+                lblLNAME.Text = ""
             End If
 
-            txtSex.Text = ds.Tables(0).Rows(0).Item("SEX")
+            lblSex.Text = ds.Tables(0).Rows(0).Item("SEX")
+
             If ds.Tables(0).Rows(0).Item("BIRTH") <> "" Then
-                txtBIRTH.Text = DateTime.ParseExact(ds.Tables(0).Rows(0).Item("BIRTH"), "yyyyMMdd", CultureInfo.InvariantCulture).ToString("d MMM yyyy")
+                lblBirth.Text = DateTime.ParseExact(ds.Tables(0).Rows(0).Item("BIRTH"), "yyyyMMdd", CultureInfo.InvariantCulture).ToString("d MMM yyyy")
                 Dim Years As String = ds.Tables(0).Rows(0).Item("AGE_YEAR")
                 Dim Month As String = ds.Tables(0).Rows(0).Item("AGE_MONTH")
                 Dim Days As String = ds.Tables(0).Rows(0).Item("AGE_DAY")
-                txtAGE.Text = ((Years.ToString() & " ปี ") + Month.ToString() & " เดือน ") + Days.ToString() & " วัน "
+                lblAge.Text = ((Years.ToString() & " ปี ") + Month.ToString() & " เดือน ") + Days.ToString() & " วัน "
             End If
 
 
@@ -121,10 +125,10 @@ Public Class frmChronicRegis
                     PictureEdit1.Image = Image.FromFile(PicPer & txtPID.Text & ".png")
                 ElseIf File.Exists(PicPer & txtPID.Text & ".jpg") = True Then
                     PictureEdit1.Image = Image.FromFile(PicPer & txtPID.Text & ".jpg")
-                ElseIf File.Exists(PicPer & txtCID.Text & ".png") = True Then
-                    PictureEdit1.Image = Image.FromFile(PicPer & txtCID.Text & ".png")
-                ElseIf File.Exists(PicPer & txtCID.Text.Replace(" ", "") & ".jpg") = True Then
-                    PictureEdit1.Image = Image.FromFile(PicPer & txtCID.Text & ".jpg")
+                ElseIf File.Exists(PicPer & lblCID.Text & ".png") = True Then
+                    PictureEdit1.Image = Image.FromFile(PicPer & lblCID.Text & ".png")
+                ElseIf File.Exists(PicPer & lblCID.Text.Replace(" ", "") & ".jpg") = True Then
+                    PictureEdit1.Image = Image.FromFile(PicPer & lblCID.Text & ".jpg")
                 Else
                     PictureEdit1.Image = Image.FromFile(Application.StartupPath & "\images\person.png")
                 End If
@@ -136,7 +140,7 @@ Public Class frmChronicRegis
     End Sub
     Private Sub ShowImage()
         Dim ds2 As DataSet
-        ds2 = clsdataBus.Lc_Business.SELECT_TABLE("IMG", " m_image_person ", " WHERE CID  = '" & txtCID.Text & "'")
+        ds2 = clsdataBus.Lc_Business.SELECT_TABLE("IMG", " m_image_person ", " WHERE CID  = '" & lblCID.Text & "'")
         If ds2.Tables(0).Rows.Count > 0 Then
             Try
                 Dim lb() As Byte = ds2.Tables(0).Rows(0).Item("IMG")
@@ -153,39 +157,92 @@ Public Class frmChronicRegis
     End Sub
     Private Sub ClearData()
 
-        txtPID.Text = ""
-        txtHN.Text = ""
-        txtCID.Text = Nothing
-        txtName.Text = ""
-        txtLName.Text = ""
-        txtBIRTH.Text = ""
-        txtAGE.Text = ""
-        txtSex.Text = ""
+        lblPID.Text = ""
+        lblHN.Text = ""
+        lblCID.Text = Nothing
+        lblName.Text = ""
+        lblLNAME.Text = ""
+        lblBirth.Text = ""
+        lblAge.Text = ""
+        lblSex.Text = ""
+        PictureEdit1.Image = Image.FromFile(Application.StartupPath & "\images\person.png")
     End Sub
     Private Sub txtPID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPID.KeyDown
         Try
             If e.KeyCode = Keys.Enter Then
-                If txtPID.Text <> "" Then
-                    Dim ds As DataSet
-                    ds = clsdataBus.Lc_Business.SELECT_TABLE(" CID ", " m_person ", " WHERE PID = '" & txtPID.Text & "'  AND STATUS_AF <> '8' ")
-                    If ds.Tables(0).Rows.Count = 1 Then
-                        tmpCID = ds.Tables(0).Rows(0).Item("CID").ToString
-                        SearchData()
-                    ElseIf ds.Tables(0).Rows.Count > 1 Then
-                        XtraMessageBox.Show("มีข้อมูลมากกว่า 1 รายการ!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Else
-                        XtraMessageBox.Show("ไม่มีข้อมูล ลองค้นหาจากเงื่อนไขอื่นๆ!!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                        ClearData()
-                        Exit Sub
-                    End If
-                Else
-                    txtHN.Select()
-                End If
+                SearchPerson()
 
             End If
         Catch ex As Exception
             MessageBox.Show(ex, "")
         End Try
+    End Sub
+    Private Sub SearchPerson()
+        If txtPID.Text <> "" Then
+
+            If IsNumeric(txtPID.Text) = False Then
+                chkName.Checked = True
+                chkPID.Checked = False
+                chkCID.Checked = False
+            End If
+
+            Dim ds As DataSet
+            If chkPID.Checked = True Then
+                ds = clsdataBus.Lc_Business.SELECT_TABLE(" CID ", " m_person ", " WHERE PID = '" & txtPID.Text & "'  AND STATUS_AF <> '8' ")
+            ElseIf chkCID.Checked = True Then
+                ds = clsdataBus.Lc_Business.SELECT_TABLE(" CID ", " m_person ", " WHERE CID LIKE '%" & txtPID.Text & "%'  AND STATUS_AF <> '8' ")
+            ElseIf chkName.Checked = True Then
+                ds = clsdataBus.Lc_Business.SELECT_TABLE(" CID ", " m_person ", " WHERE (NAME LIKE '%" & txtPID.Text & "%' OR LNAME LIKE '%" & txtPID.Text & "%')  AND STATUS_AF <> '8' ")
+            End If
+
+            If ds.Tables(0).Rows.Count = 1 Then
+                tmpCID = ds.Tables(0).Rows(0).Item("CID").ToString
+                SearchData()
+            ElseIf ds.Tables(0).Rows.Count > 1 Then
+                If chkPID.Checked = True Then
+                    vSearchPID = txtPID.Text
+                    vSearchCID = ""
+                    vSearchName = ""
+                ElseIf chkCID.Checked = True Then
+                    vSearchCID = txtPID.Text
+                    vSearchPID = ""
+                    vSearchName = ""
+                ElseIf chkName.Checked = True Then
+                    vSearchName = txtPID.Text
+                    vSearchPID = ""
+                    vSearchCID = ""
+                End If
+
+                Dim f As New frmNameSearch
+                f.ShowDialog()
+            Else
+                XtraMessageBox.Show("ไม่มีข้อมูล ลองค้นหาจากเงื่อนไขอื่นๆ!!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ClearData()
+                Exit Sub
+            End If
+        Else
+        End If
+    End Sub
+    Private Sub chkPID_Click(sender As Object, e As EventArgs) Handles chkPID.Click
+        chkPID.Checked = True
+        chkCID.Checked = False
+        chkName.Checked = False
+        txtPID.Text = ""
+        txtPID.Select()
+    End Sub
+    Private Sub chkCID_Click(sender As Object, e As EventArgs) Handles chkCID.Click
+        chkPID.Checked = False
+        chkCID.Checked = True
+        chkName.Checked = False
+        txtPID.Text = ""
+        txtPID.Select()
+    End Sub
+    Private Sub chkName_Click(sender As Object, e As EventArgs) Handles chkName.Click
+        chkPID.Checked = False
+        chkCID.Checked = False
+        chkName.Checked = True
+        txtPID.Text = ""
+        txtPID.Select()
     End Sub
 
     Private Sub FluentDesignFormControl1_Click(sender As Object, e As EventArgs) Handles FluentDesignFormControl1.Click

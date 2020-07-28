@@ -171,4 +171,10 @@
     Public vProcedAdd As String = ""
     Public vProcedCode As String = ""
 
+
+    '*******PERSON SEARCH
+    Public vSearchPID As String = ""
+    Public vSearchCID As String = ""
+    Public vSearchName As String = ""
+
 End Module

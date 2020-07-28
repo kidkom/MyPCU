@@ -638,6 +638,12 @@
     <Compile Include="FormSearch\frmIcd9Search.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormSearch\frmNameSearch.Designer.vb">
+      <DependentUpon>frmNameSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearch\frmNameSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormSearch\WaitForm1.Designer.vb">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </Compile>
@@ -1005,6 +1011,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch\frmIcd9Search.resx">
       <DependentUpon>frmIcd9Search.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearch\frmNameSearch.resx">
+      <DependentUpon>frmNameSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch\WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>
