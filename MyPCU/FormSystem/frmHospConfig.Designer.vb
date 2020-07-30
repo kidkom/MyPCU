@@ -50,6 +50,9 @@ Partial Class frmHospConfig
         Me.cmdSearch2 = New System.Windows.Forms.Button()
         Me.cmdSave = New System.Windows.Forms.Button()
         Me.cmdSearch = New System.Windows.Forms.Button()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblAddress
@@ -59,7 +62,7 @@ Partial Class frmHospConfig
         Me.lblAddress.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblAddress.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lblAddress.ForeColor = System.Drawing.Color.Black
-        Me.lblAddress.Location = New System.Drawing.Point(146, 105)
+        Me.lblAddress.Location = New System.Drawing.Point(123, 104)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblAddress.Size = New System.Drawing.Size(29, 15)
@@ -69,7 +72,7 @@ Partial Class frmHospConfig
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(181, 103)
+        Me.TextBox1.Location = New System.Drawing.Point(158, 102)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(421, 23)
         Me.TextBox1.TabIndex = 561
@@ -78,7 +81,7 @@ Partial Class frmHospConfig
         '
         Me.txt506.BackColor = System.Drawing.Color.Beige
         Me.txt506.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txt506.Location = New System.Drawing.Point(486, 39)
+        Me.txt506.Location = New System.Drawing.Point(463, 38)
         Me.txt506.Name = "txt506"
         Me.txt506.Size = New System.Drawing.Size(116, 23)
         Me.txt506.TabIndex = 560
@@ -91,7 +94,7 @@ Partial Class frmHospConfig
         Me.Label10.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label10.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(307, 42)
+        Me.Label10.Location = New System.Drawing.Point(284, 41)
         Me.Label10.Name = "Label10"
         Me.Label10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label10.Size = New System.Drawing.Size(173, 15)
@@ -105,7 +108,7 @@ Partial Class frmHospConfig
         Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label9.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(102, 305)
+        Me.Label9.Location = New System.Drawing.Point(79, 304)
         Me.Label9.Name = "Label9"
         Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label9.Size = New System.Drawing.Size(73, 15)
@@ -115,7 +118,7 @@ Partial Class frmHospConfig
         'txtTEL
         '
         Me.txtTEL.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtTEL.Location = New System.Drawing.Point(181, 302)
+        Me.txtTEL.Location = New System.Drawing.Point(158, 301)
         Me.txtTEL.Name = "txtTEL"
         Me.txtTEL.Size = New System.Drawing.Size(380, 23)
         Me.txtTEL.TabIndex = 557
@@ -124,7 +127,7 @@ Partial Class frmHospConfig
         '
         Me.txtLONGITUDE.BackColor = System.Drawing.Color.Beige
         Me.txtLONGITUDE.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtLONGITUDE.Location = New System.Drawing.Point(342, 232)
+        Me.txtLONGITUDE.Location = New System.Drawing.Point(319, 231)
         Me.txtLONGITUDE.Mask = "000.000000"
         Me.txtLONGITUDE.Name = "txtLONGITUDE"
         Me.txtLONGITUDE.Size = New System.Drawing.Size(88, 23)
@@ -135,7 +138,7 @@ Partial Class frmHospConfig
         '
         Me.txtLATITUDE.BackColor = System.Drawing.Color.Beige
         Me.txtLATITUDE.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtLATITUDE.Location = New System.Drawing.Point(181, 232)
+        Me.txtLATITUDE.Location = New System.Drawing.Point(158, 231)
         Me.txtLATITUDE.Mask = "000.000000"
         Me.txtLATITUDE.Name = "txtLATITUDE"
         Me.txtLATITUDE.Size = New System.Drawing.Size(88, 23)
@@ -146,7 +149,7 @@ Partial Class frmHospConfig
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label19.Location = New System.Drawing.Point(284, 235)
+        Me.Label19.Location = New System.Drawing.Point(261, 234)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(54, 15)
         Me.Label19.TabIndex = 554
@@ -156,7 +159,7 @@ Partial Class frmHospConfig
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label18.Location = New System.Drawing.Point(136, 235)
+        Me.Label18.Location = New System.Drawing.Point(113, 234)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(39, 15)
         Me.Label18.TabIndex = 553
@@ -167,7 +170,7 @@ Partial Class frmHospConfig
         Me.lblHmain.BackColor = System.Drawing.Color.White
         Me.lblHmain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblHmain.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblHmain.Location = New System.Drawing.Point(249, 267)
+        Me.lblHmain.Location = New System.Drawing.Point(226, 266)
         Me.lblHmain.Name = "lblHmain"
         Me.lblHmain.Size = New System.Drawing.Size(430, 24)
         Me.lblHmain.TabIndex = 552
@@ -177,7 +180,7 @@ Partial Class frmHospConfig
         '
         Me.txtHmain.BackColor = System.Drawing.Color.Beige
         Me.txtHmain.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtHmain.Location = New System.Drawing.Point(181, 267)
+        Me.txtHmain.Location = New System.Drawing.Point(158, 266)
         Me.txtHmain.Mask = "00000"
         Me.txtHmain.Name = "txtHmain"
         Me.txtHmain.Size = New System.Drawing.Size(64, 23)
@@ -192,7 +195,7 @@ Partial Class frmHospConfig
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(85, 269)
+        Me.Label4.Location = New System.Drawing.Point(62, 268)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label4.Size = New System.Drawing.Size(90, 15)
@@ -204,7 +207,7 @@ Partial Class frmHospConfig
         Me.lblAmphurName.BackColor = System.Drawing.Color.White
         Me.lblAmphurName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblAmphurName.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblAmphurName.Location = New System.Drawing.Point(342, 200)
+        Me.lblAmphurName.Location = New System.Drawing.Point(319, 199)
         Me.lblAmphurName.Name = "lblAmphurName"
         Me.lblAmphurName.Size = New System.Drawing.Size(144, 24)
         Me.lblAmphurName.TabIndex = 548
@@ -215,7 +218,7 @@ Partial Class frmHospConfig
         Me.lblProvinceName.BackColor = System.Drawing.Color.White
         Me.lblProvinceName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblProvinceName.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblProvinceName.Location = New System.Drawing.Point(342, 165)
+        Me.lblProvinceName.Location = New System.Drawing.Point(319, 164)
         Me.lblProvinceName.Name = "lblProvinceName"
         Me.lblProvinceName.Size = New System.Drawing.Size(144, 24)
         Me.lblProvinceName.TabIndex = 547
@@ -226,7 +229,7 @@ Partial Class frmHospConfig
         Me.lblAmphurID.BackColor = System.Drawing.Color.Beige
         Me.lblAmphurID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblAmphurID.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblAmphurID.Location = New System.Drawing.Point(181, 200)
+        Me.lblAmphurID.Location = New System.Drawing.Point(158, 199)
         Me.lblAmphurID.Name = "lblAmphurID"
         Me.lblAmphurID.Size = New System.Drawing.Size(64, 24)
         Me.lblAmphurID.TabIndex = 546
@@ -237,7 +240,7 @@ Partial Class frmHospConfig
         Me.lblProvinceID.BackColor = System.Drawing.Color.Beige
         Me.lblProvinceID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblProvinceID.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblProvinceID.Location = New System.Drawing.Point(181, 165)
+        Me.lblProvinceID.Location = New System.Drawing.Point(158, 164)
         Me.lblProvinceID.Name = "lblProvinceID"
         Me.lblProvinceID.Size = New System.Drawing.Size(64, 24)
         Me.lblProvinceID.TabIndex = 545
@@ -248,7 +251,7 @@ Partial Class frmHospConfig
         Me.lblHospName.BackColor = System.Drawing.Color.White
         Me.lblHospName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblHospName.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblHospName.Location = New System.Drawing.Point(181, 71)
+        Me.lblHospName.Location = New System.Drawing.Point(158, 70)
         Me.lblHospName.Name = "lblHospName"
         Me.lblHospName.Size = New System.Drawing.Size(421, 24)
         Me.lblHospName.TabIndex = 544
@@ -261,7 +264,7 @@ Partial Class frmHospConfig
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(116, 204)
+        Me.Label1.Location = New System.Drawing.Point(93, 203)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label1.Size = New System.Drawing.Size(59, 15)
@@ -275,7 +278,7 @@ Partial Class frmHospConfig
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(278, 204)
+        Me.Label2.Location = New System.Drawing.Point(255, 203)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label2.Size = New System.Drawing.Size(60, 15)
@@ -286,7 +289,7 @@ Partial Class frmHospConfig
         '
         Me.txtHospCode.BackColor = System.Drawing.Color.Beige
         Me.txtHospCode.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtHospCode.Location = New System.Drawing.Point(181, 39)
+        Me.txtHospCode.Location = New System.Drawing.Point(158, 38)
         Me.txtHospCode.Mask = "00000"
         Me.txtHospCode.Name = "txtHospCode"
         Me.txtHospCode.Size = New System.Drawing.Size(64, 23)
@@ -301,7 +304,7 @@ Partial Class frmHospConfig
         Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label14.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Black
-        Me.Label14.Location = New System.Drawing.Point(114, 169)
+        Me.Label14.Location = New System.Drawing.Point(91, 168)
         Me.Label14.Name = "Label14"
         Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label14.Size = New System.Drawing.Size(61, 15)
@@ -315,7 +318,7 @@ Partial Class frmHospConfig
         Me.Label15.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label15.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(276, 169)
+        Me.Label15.Location = New System.Drawing.Point(253, 168)
         Me.Label15.Name = "Label15"
         Me.Label15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label15.Size = New System.Drawing.Size(62, 15)
@@ -329,7 +332,7 @@ Partial Class frmHospConfig
         Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label16.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(105, 73)
+        Me.Label16.Location = New System.Drawing.Point(82, 72)
         Me.Label16.Name = "Label16"
         Me.Label16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label16.Size = New System.Drawing.Size(70, 15)
@@ -343,7 +346,7 @@ Partial Class frmHospConfig
         Me.Label17.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label17.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(99, 43)
+        Me.Label17.Location = New System.Drawing.Point(76, 42)
         Me.Label17.Name = "Label17"
         Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label17.Size = New System.Drawing.Size(76, 15)
@@ -353,7 +356,7 @@ Partial Class frmHospConfig
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(181, 132)
+        Me.TextBox2.Location = New System.Drawing.Point(158, 131)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(421, 23)
         Me.TextBox2.TabIndex = 563
@@ -365,7 +368,7 @@ Partial Class frmHospConfig
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(142, 135)
+        Me.Label3.Location = New System.Drawing.Point(119, 134)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label3.Size = New System.Drawing.Size(33, 15)
@@ -376,7 +379,7 @@ Partial Class frmHospConfig
         '
         Me.cmdSearch2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSearch2.Image = CType(resources.GetObject("cmdSearch2.Image"), System.Drawing.Image)
-        Me.cmdSearch2.Location = New System.Drawing.Point(685, 265)
+        Me.cmdSearch2.Location = New System.Drawing.Point(662, 264)
         Me.cmdSearch2.Name = "cmdSearch2"
         Me.cmdSearch2.Size = New System.Drawing.Size(30, 26)
         Me.cmdSearch2.TabIndex = 551
@@ -386,7 +389,7 @@ Partial Class frmHospConfig
         '
         Me.cmdSave.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSave.Image = Global.MyPCU.My.Resources.Resources.a_save
-        Me.cmdSave.Location = New System.Drawing.Point(181, 335)
+        Me.cmdSave.Location = New System.Drawing.Point(641, 380)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(103, 33)
         Me.cmdSave.TabIndex = 543
@@ -399,11 +402,49 @@ Partial Class frmHospConfig
         '
         Me.cmdSearch.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSearch.Image = CType(resources.GetObject("cmdSearch.Image"), System.Drawing.Image)
-        Me.cmdSearch.Location = New System.Drawing.Point(250, 37)
+        Me.cmdSearch.Location = New System.Drawing.Point(227, 36)
         Me.cmdSearch.Name = "cmdSearch"
         Me.cmdSearch.Size = New System.Drawing.Size(30, 26)
         Me.cmdSearch.TabIndex = 540
         Me.cmdSearch.UseVisualStyleBackColor = True
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.txtHospCode)
+        Me.GroupControl1.Controls.Add(Me.Label3)
+        Me.GroupControl1.Controls.Add(Me.Label17)
+        Me.GroupControl1.Controls.Add(Me.TextBox2)
+        Me.GroupControl1.Controls.Add(Me.Label16)
+        Me.GroupControl1.Controls.Add(Me.lblAddress)
+        Me.GroupControl1.Controls.Add(Me.Label15)
+        Me.GroupControl1.Controls.Add(Me.TextBox1)
+        Me.GroupControl1.Controls.Add(Me.Label14)
+        Me.GroupControl1.Controls.Add(Me.txt506)
+        Me.GroupControl1.Controls.Add(Me.cmdSearch)
+        Me.GroupControl1.Controls.Add(Me.Label10)
+        Me.GroupControl1.Controls.Add(Me.Label2)
+        Me.GroupControl1.Controls.Add(Me.Label9)
+        Me.GroupControl1.Controls.Add(Me.Label1)
+        Me.GroupControl1.Controls.Add(Me.txtTEL)
+        Me.GroupControl1.Controls.Add(Me.lblHospName)
+        Me.GroupControl1.Controls.Add(Me.txtLONGITUDE)
+        Me.GroupControl1.Controls.Add(Me.lblProvinceID)
+        Me.GroupControl1.Controls.Add(Me.txtLATITUDE)
+        Me.GroupControl1.Controls.Add(Me.lblAmphurID)
+        Me.GroupControl1.Controls.Add(Me.Label19)
+        Me.GroupControl1.Controls.Add(Me.lblProvinceName)
+        Me.GroupControl1.Controls.Add(Me.Label18)
+        Me.GroupControl1.Controls.Add(Me.lblAmphurName)
+        Me.GroupControl1.Controls.Add(Me.lblHmain)
+        Me.GroupControl1.Controls.Add(Me.Label4)
+        Me.GroupControl1.Controls.Add(Me.cmdSearch2)
+        Me.GroupControl1.Controls.Add(Me.txtHmain)
+        Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(732, 350)
+        Me.GroupControl1.TabIndex = 565
+        Me.GroupControl1.Text = "รายละเอียดหน่วยงาน"
         '
         'frmHospConfig
         '
@@ -411,45 +452,19 @@ Partial Class frmHospConfig
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 406)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.lblAddress)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.txt506)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.txtTEL)
-        Me.Controls.Add(Me.txtLONGITUDE)
-        Me.Controls.Add(Me.txtLATITUDE)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.lblHmain)
-        Me.Controls.Add(Me.cmdSearch2)
-        Me.Controls.Add(Me.txtHmain)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.lblAmphurName)
-        Me.Controls.Add(Me.lblProvinceName)
-        Me.Controls.Add(Me.lblAmphurID)
-        Me.Controls.Add(Me.lblProvinceID)
-        Me.Controls.Add(Me.lblHospName)
+        Me.ClientSize = New System.Drawing.Size(758, 434)
+        Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cmdSave)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.cmdSearch)
-        Me.Controls.Add(Me.txtHospCode)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.Label17)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmHospConfig"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ตั้งค่าหน่วยงาน"
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Public WithEvents lblAddress As System.Windows.Forms.Label
@@ -482,4 +497,5 @@ Partial Class frmHospConfig
     Public WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Public WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
 End Class

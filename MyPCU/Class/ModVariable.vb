@@ -177,4 +177,9 @@
     Public vSearchCID As String = ""
     Public vSearchName As String = ""
 
+    '*******CHRONIC 
+
+    Public vChonicPID As String = ""
+    Public vChronicCode As String = ""
+    Public vChronicRowID As String = ""
 End Module

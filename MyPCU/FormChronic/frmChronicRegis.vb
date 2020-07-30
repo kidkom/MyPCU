@@ -9,7 +9,8 @@ Public Class frmChronicRegis
     Dim tmpCID As String = ""
     Private Sub frmChronicRegis_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ClearData()
-
+        cmdAdd.Enabled = False
+        cmdEdit.Enabled = False
 
         If vPSEARCH = "1" Then
             chkPID.Checked = True
@@ -24,30 +25,36 @@ Public Class frmChronicRegis
         End If
 
         With BetterListView1
-            .Columns.Add(0).Text = "ROWID"
-            .Columns(0).Width = 0
+            .Columns.Add(0).Text = ""
+            .Columns(0).Width = 30
             .Columns(0).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(1).Text = "วันที่วินิจฉัย/พบ"
-            .Columns(1).Width = 150
+            .Columns.Add(1).Text = "ROWID"
+            .Columns(1).Width = 0
             .Columns(1).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(2).Text = "โรงเรื้อรัง"
-            .Columns(2).Width = 120
+            .Columns.Add(2).Text = "วันที่วินิจฉัย/พบ"
+            .Columns(2).Width = 150
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(3).Text = "หน่วยบริการที่วินิฉัย"
+            .Columns.Add(3).Text = "รหัส"
             .Columns(3).Width = 120
             .Columns(3).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(4).Text = "หน่วยบริการที่รักษาประจำ"
+            .Columns.Add(4).Text = "โรคเรื้อรัง"
             .Columns(4).Width = 120
             .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(5).Text = "สถานะ"
+            .Columns.Add(5).Text = "หน่วยบริการที่วินิฉัย"
             .Columns(5).Width = 120
             .Columns(5).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(6).Text = "วันที่จำหน่าย"
-            .Columns(6).Width = 200
+            .Columns.Add(6).Text = "หน่วยบริการที่รักษาประจำ"
+            .Columns(6).Width = 120
             .Columns(6).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(7).Text = "วันที่บันทึก/ปรับปรุง"
+            .Columns.Add(7).Text = "สถานะ"
             .Columns(7).Width = 120
             .Columns(7).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(8).Text = "วันที่จำหน่าย"
+            .Columns(8).Width = 200
+            .Columns(8).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(9).Text = "วันที่บันทึก/ปรับปรุง"
+            .Columns(9).Width = 120
+            .Columns(9).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
         txtPID.Select()
@@ -135,7 +142,7 @@ Public Class frmChronicRegis
             Else
                 ShowImage()
             End If
-
+            ShowDataChronic()
         End If
     End Sub
     Private Sub ShowImage()
@@ -166,6 +173,8 @@ Public Class frmChronicRegis
         lblAge.Text = ""
         lblSex.Text = ""
         PictureEdit1.Image = Image.FromFile(Application.StartupPath & "\images\person.png")
+        cmdAdd.Enabled = False
+        BetterListView1.Items.Clear()
     End Sub
     Private Sub txtPID_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPID.KeyDown
         Try
@@ -174,7 +183,7 @@ Public Class frmChronicRegis
 
             End If
         Catch ex As Exception
-            MessageBox.Show(ex, "")
+            XtraMessageBox.Show(ex, "")
         End Try
     End Sub
     Private Sub SearchPerson()
@@ -198,6 +207,7 @@ Public Class frmChronicRegis
             If ds.Tables(0).Rows.Count = 1 Then
                 tmpCID = ds.Tables(0).Rows(0).Item("CID").ToString
                 SearchData()
+                cmdAdd.Enabled = True
             ElseIf ds.Tables(0).Rows.Count > 1 Then
                 If chkPID.Checked = True Then
                     vSearchPID = txtPID.Text
@@ -244,8 +254,120 @@ Public Class frmChronicRegis
         txtPID.Text = ""
         txtPID.Select()
     End Sub
+    Private Sub ShowDataChronic()
+        SplashScreenManager1.ShowWaitForm()
+        Dim ds As DataSet
+        Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("a.PID,a.ROWID,DATE_DIAG,a.CHRONIC,HOSP_DX,HOSP_RX,DATE_DISCH,a.TYPEDISCH,a.D_UPDATE,a.STATUS_AF,DESC_E,DESC_T", "m_chronic a LEFT JOIN l_chronic d ON(a.CHRONIC = d.CODE)", "WHERE a.PID = '" & lblPID.Text & "' AND a.STATUS_AF <> '8'  ORDER BY DATE_DIAG DESC ")
 
-    Private Sub FluentDesignFormControl1_Click(sender As Object, e As EventArgs) Handles FluentDesignFormControl1.Click
+        If ds.Tables(0).Rows.Count > 0 Then
+            DisplayData(ds)
+            Label2.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0").ToString & " รายการ"
+        Else
+            BetterListView1.Items.Clear()
+            Label2.Text = "จำนวน 0 รายการ"
+        End If
+        SplashScreenManager1.CloseWaitForm()
+    End Sub
+    Private Sub DisplayData(ByVal ds As DataSet)
 
+        Dim dr As DataRow
+        Dim tmpPrename As String = ""
+        Try
+            BetterListView1.Items.Clear()
+            BetterListView1.BeginUpdate()
+            BetterListView1.SuspendSort()
+            For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
+                dr = ds.Tables(0).Rows(i)
+
+                If dr("TYPEDISCH") = "03" Then
+                    BetterListView1.Items.Add(ImageList1.Images.Item(0)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                Else
+                    BetterListView1.Items.Add(ImageList1.Images.Item(1)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                End If
+                BetterListView1.Items(i).SubItems.Add((dr("ROWID")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add(Thaidate(dr("DATE_DIAG")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add((dr("CHRONIC")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add((dr("DESC_T")).ToString).AlignHorizontal = TextAlignmentHorizontal.Left
+                BetterListView1.Items(i).SubItems.Add(clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(dr("HOSP_DX")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add(clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(dr("HOSP_RX")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add((dr("TYPEDISCH")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                If dr("DATE_DISCH") <> "" Then
+                    BetterListView1.Items(i).SubItems.Add(Thaidate(dr("DATE_DISCH")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                Else
+                    BetterListView1.Items(i).SubItems.Add("").AlignHorizontal = TextAlignmentHorizontal.Center
+                End If
+                BetterListView1.Items(i).SubItems.Add(Thaidate_D_UPDATE(dr("D_UPDATE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+
+
+
+                If (i Mod 2) = 0 Then
+                    BetterListView1.Items(i).BackColor = Color.WhiteSmoke
+                End If
+
+                If dr("STATUS_AF").ToString = "0" Then
+                    BetterListView1.Items(i).BackColor = Color.LightPink
+                End If
+
+            Next
+
+
+
+            BetterListView1.AutoResizeColumn(2, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(4, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(5, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(6, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(8, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(9, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.ResumeSort(True)
+            BetterListView1.EndUpdate()
+
+
+        Catch ex As Exception
+            XtraMessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End Try
+
+    End Sub
+
+    Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
+        vChonicPID = lblPID.Text
+
+        Dim f As New frmChronicEdit
+        f.ShowDialog()
+
+        vChonicPID = ""
+        ShowDataChronic()
+
+    End Sub
+
+    Private Sub BetterListView1_SelectedItemsChanged(sender As Object, eventArgs As BetterListViewSelectedItemsChangedEventArgs) Handles BetterListView1.SelectedItemsChanged
+        For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
+            Dim lvi As BetterListViewItem
+            lvi = BetterListView1.SelectedItems(i)
+            vChronicRowID = lvi.SubItems.Item(1).Text
+        Next
+        cmdEdit.Enabled = True
+    End Sub
+
+    Private Sub BetterListView1_DoubleClick(sender As Object, e As EventArgs) Handles BetterListView1.DoubleClick
+        For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
+            Dim lvi As BetterListViewItem
+            lvi = BetterListView1.SelectedItems(i)
+            vChronicRowID = lvi.SubItems.Item(1).Text
+        Next
+        Dim f As New frmChronicEdit
+        f.ShowDialog()
+        cmdEdit.Enabled = False
+        vChronicRowID = ""
+        ShowDataChronic()
+    End Sub
+
+    Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click
+        Dim f As New frmChronicEdit
+        f.ShowDialog()
+        cmdEdit.Enabled = False
+        vChronicRowID = ""
+        ShowDataChronic()
     End Sub
 End Class

@@ -90,11 +90,8 @@ Public Class frmIcd10Search
     End Sub
     Private Sub DisplayData(ByVal ds As DataSet)
 
-        Dim anyData() As String = Nothing
         Dim dr As DataRow
         Dim itm As ListViewItem
-        Dim tmpProvinceName As String = ""
-        Dim tmpAmphurName As String = ""
 
         Try
             BetterListView1.Items.Clear()
@@ -189,5 +186,7 @@ Public Class frmIcd10Search
         SearchData()
     End Sub
 
+    Private Sub BetterListView1_SelectedItemsChanged(sender As Object, eventArgs As BetterListViewSelectedItemsChangedEventArgs) Handles BetterListView1.SelectedItemsChanged
 
+    End Sub
 End Class

@@ -18,7 +18,7 @@ Public Class frmPerson
     Dim ChkData As Boolean = False
     Dim tmpEnter As Boolean = False
     Dim tmpAdd As Boolean = False
-    Dim tmpUpdate As Boolean = True
+    Dim tmpUpdate As Boolean = False
     Dim chkDataDrug As Boolean = False
     Dim chkDataCard As Boolean = False
     Dim chkDataDeath As Boolean = False
@@ -277,7 +277,7 @@ Public Class frmPerson
         ds = clsdataBus.Lc_Business.SELECT_DATA(" m_person ", " WHERE CID = '" & tmpCID & "' AND STATUS_AF <> '8' ")
 
         If ds.Tables(0).Rows.Count > 0 Then
-
+            tmpUpdate = True
             txtPID.Text = ds.Tables(0).Rows(0).Item("PID").ToString
             pPID = txtPID.Text
             hHID = ds.Tables(0).Rows(0).Item("HID").ToString
@@ -488,22 +488,23 @@ Public Class frmPerson
             End If
 
             If vImage = "0" Then
-                    If File.Exists(PicPer & txtPID.Text & ".png") = True Then
-                        PictureEdit1.Image = Image.FromFile(PicPer & txtPID.Text & ".png")
-                    ElseIf File.Exists(PicPer & txtPID.Text & ".jpg") = True Then
-                        PictureEdit1.Image = Image.FromFile(PicPer & txtPID.Text & ".jpg")
-                    ElseIf File.Exists(PicPer & txtCID.Text & ".png") = True Then
-                        PictureEdit1.Image = Image.FromFile(PicPer & txtCID.Text & ".png")
-                    ElseIf File.Exists(PicPer & txtCID.Text.Replace(" ", "") & ".jpg") = True Then
-                        PictureEdit1.Image = Image.FromFile(PicPer & txtCID.Text & ".jpg")
-                    Else
-                        PictureEdit1.Image = Image.FromFile(Application.StartupPath & "\images\person.png")
-                    End If
+                If File.Exists(PicPer & txtPID.Text & ".png") = True Then
+                    PictureEdit1.Image = Image.FromFile(PicPer & txtPID.Text & ".png")
+                ElseIf File.Exists(PicPer & txtPID.Text & ".jpg") = True Then
+                    PictureEdit1.Image = Image.FromFile(PicPer & txtPID.Text & ".jpg")
+                ElseIf File.Exists(PicPer & txtCID.Text & ".png") = True Then
+                    PictureEdit1.Image = Image.FromFile(PicPer & txtCID.Text & ".png")
+                ElseIf File.Exists(PicPer & txtCID.Text.Replace(" ", "") & ".jpg") = True Then
+                    PictureEdit1.Image = Image.FromFile(PicPer & txtCID.Text & ".jpg")
                 Else
-                    ShowImage()
+                    PictureEdit1.Image = Image.FromFile(Application.StartupPath & "\images\person.png")
                 End If
-
+            Else
+                ShowImage()
             End If
+        Else
+            tmpUpdate = False
+        End If
     End Sub
     Private Sub ShowImage()
         Dim ds2 As DataSet
@@ -872,5 +873,57 @@ Public Class frmPerson
             txtTypearea.Select()
             txtTypearea.SelectAll()
         End If
+    End Sub
+
+    Private Sub AccordionControlElement8_Click(sender As Object, e As EventArgs) Handles AccordionControlElement8.Click
+
+        Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate_En()
+
+        If chkDelete.Checked = True Then
+            If XtraMessageBox.Show("ต้องการยกเลิกข้อมูลบุคคลรายนี้?" & vbCrLf & "ยืนยันการยกเลิกกด OK หากไม่ต้องการยกเลิก กด Cancel", vProgram, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) = System.Windows.Forms.DialogResult.Cancel Then
+                chkDelete.Checked = False
+                Exit Sub
+            End If
+            SplashScreenManager1.ShowWaitForm()
+            Dim ds As DataSet
+            ds = clsdataBus.Lc_Business.SELECT_TABLE("M_TABLE", "l_table43", " WHERE M_TABLE NOT IN('PERSON','CARD','ADDRESS') ORDER BY m_TABLE")
+            If ds.Tables(0).Rows.Count > 0 Then
+                For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
+                    Dim ds3 As DataSet
+                    ds3 = clsdataBus.Lc_Business.SHOW_TABLE_COLUMN("m_" & ds.Tables(0).Rows(i).Item("M_TABLE").ToString.ToLower & " WHERE FIELD = 'PID' ")
+                    If ds3.Tables(0).Rows.Count = 1 Then
+                        For h As Integer = 0 To ds3.Tables(0).Rows.Count - 1
+                            Dim ds4 As DataSet
+                            ds4 = clsdataBus.Lc_Business.SELECT_TABLE("PID", "m_" & ds.Tables(0).Rows(i).Item("M_TABLE").ToString.ToLower & "", " WHERE PID = '" & pPID & "'")
+                            If ds4.Tables(0).Rows.Count > 0 Then
+                                MessageBox.Show("ไม่สามารถยกเลิกได้เนื่องจากมีข้อมูลการรับบริการของประชากรรายนี้ในแฟ้ม " & ds.Tables(0).Rows(i).Item("M_TABLE").ToString, vProgram, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                chkDelete.Checked = False
+                                Exit Sub
+                            End If
+                        Next
+                    End If
+                Next
+            End If
+
+            clsbusent.Lc_BusinessEntity.Updatem_table("m_person", " STATUS_AF = '8', D_UPDATE = '" & tmpNow & "',USER_REC = '" & vUSERID & "' ", "PID = '" & txtPID.Text & "'")
+            clsbusent.Lc_BusinessEntity.Updatem_table("m_address", " STATUS_AF = '8', D_UPDATE = '" & tmpNow & "',USER_REC = '" & vUSERID & "' ", "PID = '" & txtPID.Text & "'")
+            clsbusent.Lc_BusinessEntity.Updatem_table("m_card", " STATUS_AF = '8', D_UPDATE = '" & tmpNow & "',USER_REC = '" & vUSERID & "' ", "PID = '" & txtPID.Text & "'")
+
+            SplashScreenManager1.CloseWaitForm()
+            Exit Sub
+        End If
+
+
+        If tmpUpdate = True Then
+
+
+        Else
+
+
+        End If
+    End Sub
+
+    Private Sub FluentDesignFormControl1_Click(sender As Object, e As EventArgs) Handles FluentDesignFormControl1.Click
+
     End Sub
 End Class

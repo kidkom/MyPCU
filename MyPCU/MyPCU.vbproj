@@ -356,6 +356,12 @@
     <Compile Include="FormAssets\FormSystem\frmPDFviewer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormChronic\frmChronicEdit.Designer.vb">
+      <DependentUpon>frmChronicEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormChronic\frmChronicEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormChronic\frmChronicRegis.Designer.vb">
       <DependentUpon>frmChronicRegis.vb</DependentUpon>
     </Compile>
@@ -644,6 +650,12 @@
     <Compile Include="FormSearch\frmNameSearch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormSearch\frmSearchChronic.Designer.vb">
+      <DependentUpon>frmSearchChronic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearch\frmSearchChronic.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormSearch\WaitForm1.Designer.vb">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </Compile>
@@ -877,6 +889,9 @@
     <EmbeddedResource Include="FormAssets\FormSystem\frmPDFviewer.resx">
       <DependentUpon>frmPDFviewer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormChronic\frmChronicEdit.resx">
+      <DependentUpon>frmChronicEdit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChronic\frmChronicRegis.resx">
       <DependentUpon>frmChronicRegis.vb</DependentUpon>
     </EmbeddedResource>
@@ -1014,6 +1029,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch\frmNameSearch.resx">
       <DependentUpon>frmNameSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearch\frmSearchChronic.resx">
+      <DependentUpon>frmSearchChronic.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch\WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>

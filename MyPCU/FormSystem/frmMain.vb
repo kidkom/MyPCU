@@ -1102,4 +1102,9 @@ Public Class frmMain
         f.Show()
 
     End Sub
+
+    Private Sub BarButtonItem98_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem98.ItemClick
+        Dim f As New frmSearchChronic
+        f.ShowDialog()
+    End Sub
 End Class

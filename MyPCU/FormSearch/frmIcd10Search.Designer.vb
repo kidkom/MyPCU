@@ -100,13 +100,13 @@ Partial Class frmIcd10Search
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label17.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label17.Location = New System.Drawing.Point(13, 58)
         Me.Label17.Name = "Label17"
         Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label17.Size = New System.Drawing.Size(178, 17)
         Me.Label17.TabIndex = 1143
-        Me.Label17.Text = "ใส่รหัสหรือหัตถการที่ต้องการค้นหา"
+        Me.Label17.Text = "ใส่รหัสหรือข้อความที่ต้องการค้นหา"
         '
         'chk10TMD
         '
@@ -191,7 +191,7 @@ Partial Class frmIcd10Search
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(657, 558)
+        Me.Label1.Location = New System.Drawing.Point(677, 558)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label1.Size = New System.Drawing.Size(61, 17)
@@ -202,7 +202,7 @@ Partial Class frmIcd10Search
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = Global.MyPCU.My.Resources.Resources.a_check6
-        Me.PictureBox1.Location = New System.Drawing.Point(629, 555)
+        Me.PictureBox1.Location = New System.Drawing.Point(649, 555)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox1.TabIndex = 1149
@@ -216,7 +216,7 @@ Partial Class frmIcd10Search
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(767, 558)
+        Me.Label3.Location = New System.Drawing.Point(779, 558)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label3.Size = New System.Drawing.Size(50, 17)
@@ -227,7 +227,7 @@ Partial Class frmIcd10Search
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.MyPCU.My.Resources.Resources.a_warning2
-        Me.PictureBox2.Location = New System.Drawing.Point(739, 555)
+        Me.PictureBox2.Location = New System.Drawing.Point(751, 555)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox2.TabIndex = 1151

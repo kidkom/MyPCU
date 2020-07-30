@@ -47,6 +47,7 @@ Partial Class frmPerson
         Me.Label20 = New System.Windows.Forms.Label()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
+        Me.chkDelete = New System.Windows.Forms.CheckBox()
         Me.chkFmlStatus2 = New System.Windows.Forms.CheckBox()
         Me.chkFstatus2 = New System.Windows.Forms.CheckBox()
         Me.chkFmlStatus1 = New System.Windows.Forms.CheckBox()
@@ -133,7 +134,10 @@ Partial Class frmPerson
         Me.AccordionControlElement4 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement5 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement6 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement7 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement8 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
+        Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -449,12 +453,13 @@ Partial Class frmPerson
         Me.XtraTabControl1.Location = New System.Drawing.Point(12, 215)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
-        Me.XtraTabControl1.Size = New System.Drawing.Size(896, 385)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(896, 415)
         Me.XtraTabControl1.TabIndex = 2
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage6, Me.XtraTabPage3, Me.XtraTabPage4, Me.XtraTabPage7, Me.XtraTabPage2, Me.XtraTabPage5})
         '
         'XtraTabPage1
         '
+        Me.XtraTabPage1.Controls.Add(Me.chkDelete)
         Me.XtraTabPage1.Controls.Add(Me.chkFmlStatus2)
         Me.XtraTabPage1.Controls.Add(Me.chkFstatus2)
         Me.XtraTabPage1.Controls.Add(Me.chkFmlStatus1)
@@ -520,8 +525,20 @@ Partial Class frmPerson
         Me.XtraTabPage1.Controls.Add(Me.Label12)
         Me.XtraTabPage1.Controls.Add(Me.txtSEX)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage1.Text = "ข้อมูลทั่วไป"
+        '
+        'chkDelete
+        '
+        Me.chkDelete.AutoSize = True
+        Me.chkDelete.Font = New System.Drawing.Font("Leelawadee UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.chkDelete.ForeColor = System.Drawing.Color.Crimson
+        Me.chkDelete.Location = New System.Drawing.Point(128, 352)
+        Me.chkDelete.Name = "chkDelete"
+        Me.chkDelete.Size = New System.Drawing.Size(89, 19)
+        Me.chkDelete.TabIndex = 675
+        Me.chkDelete.Text = "ยกเลิกข้อมูล"
+        Me.chkDelete.UseVisualStyleBackColor = True
         '
         'chkFmlStatus2
         '
@@ -1175,13 +1192,13 @@ Partial Class frmPerson
         'XtraTabPage6
         '
         Me.XtraTabPage6.Name = "XtraTabPage6"
-        Me.XtraTabPage6.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage6.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage6.Text = "ที่อยู่"
         '
         'XtraTabPage3
         '
         Me.XtraTabPage3.Name = "XtraTabPage3"
-        Me.XtraTabPage3.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage3.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage3.Text = "ข้อมูลสิทธิ"
         '
         'XtraTabPage4
@@ -1189,7 +1206,7 @@ Partial Class frmPerson
         Me.XtraTabPage4.Controls.Add(Me.Label24)
         Me.XtraTabPage4.Controls.Add(Me.BetterListView2)
         Me.XtraTabPage4.Name = "XtraTabPage4"
-        Me.XtraTabPage4.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage4.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage4.Text = "บุคคลในครอบครัว"
         '
         'Label24
@@ -1216,7 +1233,7 @@ Partial Class frmPerson
         'XtraTabPage7
         '
         Me.XtraTabPage7.Name = "XtraTabPage7"
-        Me.XtraTabPage7.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage7.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage7.Text = "ข้อมูลบุตร"
         '
         'XtraTabPage2
@@ -1226,7 +1243,7 @@ Partial Class frmPerson
         Me.XtraTabPage2.Controls.Add(Me.btnLookup)
         Me.XtraTabPage2.Controls.Add(Me.BetterListView1)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage2.Text = "บุคคลที่ติดต่อได้"
         '
         'Label23
@@ -1275,7 +1292,7 @@ Partial Class frmPerson
         'XtraTabPage5
         '
         Me.XtraTabPage5.Name = "XtraTabPage5"
-        Me.XtraTabPage5.Size = New System.Drawing.Size(894, 356)
+        Me.XtraTabPage5.Size = New System.Drawing.Size(894, 386)
         Me.XtraTabPage5.Text = "การจำหน่าย"
         '
         'ImageList1
@@ -1300,17 +1317,17 @@ Partial Class frmPerson
         Me.FluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(0, 31)
         Me.FluentDesignFormContainer1.Name = "FluentDesignFormContainer1"
-        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(915, 581)
+        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(915, 611)
         Me.FluentDesignFormContainer1.TabIndex = 3
         '
         'AccordionControl1
         '
         Me.AccordionControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement4})
+        Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement4, Me.AccordionControlElement7})
         Me.AccordionControl1.Location = New System.Drawing.Point(915, 31)
         Me.AccordionControl1.Name = "AccordionControl1"
         Me.AccordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch
-        Me.AccordionControl1.Size = New System.Drawing.Size(209, 581)
+        Me.AccordionControl1.Size = New System.Drawing.Size(209, 611)
         Me.AccordionControl1.TabIndex = 4
         Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -1358,6 +1375,20 @@ Partial Class frmPerson
         Me.AccordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement6.Text = "สถานสมรส"
         '
+        'AccordionControlElement7
+        '
+        Me.AccordionControlElement7.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement8})
+        Me.AccordionControlElement7.Expanded = True
+        Me.AccordionControlElement7.Name = "AccordionControlElement7"
+        Me.AccordionControlElement7.Text = "บันทึกและพิมพ์"
+        '
+        'AccordionControlElement8
+        '
+        Me.AccordionControlElement8.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_save
+        Me.AccordionControlElement8.Name = "AccordionControlElement8"
+        Me.AccordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement8.Text = "บันทึก"
+        '
         'FluentDesignFormControl1
         '
         Me.FluentDesignFormControl1.Dock = System.Windows.Forms.DockStyle.Top
@@ -1369,13 +1400,17 @@ Partial Class frmPerson
         Me.FluentDesignFormControl1.TabIndex = 5
         Me.FluentDesignFormControl1.TabStop = False
         '
+        'SplashScreenManager1
+        '
+        Me.SplashScreenManager1.ClosingDelay = 500
+        '
         'frmPerson
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1124, 612)
+        Me.ClientSize = New System.Drawing.Size(1124, 642)
         Me.ControlContainer = Me.FluentDesignFormContainer1
         Me.Controls.Add(Me.XtraTabControl1)
         Me.Controls.Add(Me.FluentDesignFormContainer1)
@@ -1536,4 +1571,8 @@ Partial Class frmPerson
     Friend WithEvents Label24 As Label
     Friend WithEvents BetterListView2 As ComponentOwl.BetterListView.BetterListView
     Friend WithEvents XtraTabPage7 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents AccordionControlElement7 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement8 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents chkDelete As CheckBox
+    Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
 End Class
