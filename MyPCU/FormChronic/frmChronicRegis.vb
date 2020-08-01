@@ -361,6 +361,7 @@ Public Class frmChronicRegis
         cmdEdit.Enabled = False
         vChronicRowID = ""
         ShowDataChronic()
+
     End Sub
 
     Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click

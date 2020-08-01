@@ -6,8 +6,5 @@
 
     End Sub
 
-    Private Sub AccordionControlElement4_Click(sender As Object, e As EventArgs) Handles AccordionControlElement4.Click
-        Dim f As New frmVaccineCode
-        f.ShowDialog()
-    End Sub
+
 End Class
