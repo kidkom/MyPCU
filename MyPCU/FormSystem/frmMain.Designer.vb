@@ -1127,7 +1127,9 @@ Partial Class frmMain
         '
         'BarButtonItem93
         '
+        Me.BarButtonItem93.Caption = "งานแม่และเด็ก"
         Me.BarButtonItem93.Id = 124
+        Me.BarButtonItem93.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_mother
         Me.BarButtonItem93.Name = "BarButtonItem93"
         '
         'BarButtonItem94
@@ -1791,12 +1793,12 @@ Partial Class frmMain
         '
         'RibbonPageGroup27
         '
+        Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem93)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem88)
-        Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem89)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem90)
+        Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem89)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem91)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem92)
-        Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem93)
         Me.RibbonPageGroup27.Name = "RibbonPageGroup27"
         Me.RibbonPageGroup27.ShowCaptionButton = False
         Me.RibbonPageGroup27.Text = "งานสร้างเสริมสุขภาพ"

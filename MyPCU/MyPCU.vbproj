@@ -1133,6 +1133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
+    <None Include="Resources\a_mother.png" />
     <None Include="Resources\a_smoking2.png" />
     <None Include="Resources\a_alcohol.png" />
     <None Include="Resources\a_question2.png" />
