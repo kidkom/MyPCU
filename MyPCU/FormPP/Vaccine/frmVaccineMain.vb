@@ -354,11 +354,21 @@ Public Class frmVaccineMain
             lvi = BetterListView1.SelectedItems(i)
             vVaccineRowID = lvi.SubItems.Item(1).Text
         Next
+        vEpiPID = lblPID.Text
+
         Dim f As New frmPersonEpi
         f.ShowDialog()
         cmdEdit.Enabled = False
         vVaccineRowID = ""
         ShowDataVaccine()
 
+    End Sub
+
+    Private Sub BetterListView1_ItemSelectionChanged(sender As Object, eventArgs As BetterListViewItemSelectionChangedEventArgs) Handles BetterListView1.ItemSelectionChanged
+        For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
+            Dim lvi As BetterListViewItem
+            lvi = BetterListView1.SelectedItems(i)
+            vVaccineRowID = lvi.SubItems.Item(1).Text
+        Next
     End Sub
 End Class

@@ -227,6 +227,12 @@ Partial Class frmMain
         Me.BarButtonItem166 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem167 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem168 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem169 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem170 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem171 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem172 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem173 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem174 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup10 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -241,6 +247,7 @@ Partial Class frmMain
         Me.RibbonPage12 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup7 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup27 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup33 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage6 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup30 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -289,6 +296,7 @@ Partial Class frmMain
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.RibbonPage23 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPage22 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup34 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -297,9 +305,9 @@ Partial Class frmMain
         '
         Me.RibbonControl.ColorScheme = DevExpress.XtraBars.Ribbon.RibbonControlColorScheme.DarkBlue
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.mnuConnectDB, Me.mnuHosConfig, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BarButtonItem16, Me.mnuUpdateMyPCU, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22, Me.mnuAreaSetting, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem26, Me.BarButtonItem27, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36, Me.BarButtonItem37, Me.BarStaticItem1, Me.BarButtonItem1, Me.BarButtonItem17, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarButtonItem41, Me.BarButtonItem42, Me.BarButtonItem43, Me.BarButtonItem44, Me.BarButtonItem45, Me.mnuDbConfigAssets, Me.BarButtonItem47, Me.BarButtonItem48, Me.mnuAssetsManage, Me.BarButtonItem50, Me.BarButtonItem51, Me.BarButtonItem52, Me.BarButtonItem53, Me.BarButtonItem54, Me.BarButtonItem55, Me.BarSubItem1, Me.BarSubItem2, Me.BarSubItem3, Me.BarSubItem4, Me.BarSubItem5, Me.BarSubItem6, Me.BarButtonItem56, Me.BarButtonItem57, Me.BarButtonItem58, Me.BarButtonItem59, Me.BarStaticItem2, Me.BarStaticItem3, Me.BarStaticItem4, Me.BarStaticItem5, Me.BarButtonItem2, Me.BarButtonItem23, Me.BarButtonItem46, Me.BarButtonItem49, Me.BarButtonItem60, Me.BarButtonItem61, Me.BarButtonItem62, Me.BarButtonItem63, Me.BarButtonItem64, Me.BarButtonItem65, Me.BarButtonItem66, Me.BarButtonItem67, Me.BarButtonItem68, Me.BarSubItem7, Me.BarLinkContainerItem1, Me.chkRed, Me.chkBlue, Me.chkDarkBlue, Me.chkGreen, Me.chkOrange, Me.chkPurple, Me.chkTeal, Me.BarCheckItem8, Me.BarCheckItem9, Me.BarStaticItem6, Me.BarStaticItem7, Me.BarButtonItem69, Me.BarButtonItem70, Me.BarButtonItem71, Me.BarButtonItem72, Me.BarButtonItem73, Me.BarButtonItem74, Me.BarButtonItem75, Me.BarButtonItem76, Me.BarButtonItem77, Me.BarButtonItem78, Me.BarButtonItem79, Me.BarButtonItem80, Me.BarButtonItem81, Me.BarButtonItem82, Me.BarButtonItem83, Me.BarButtonItem84, Me.BarButtonItem85, Me.BarButtonItem86, Me.BarButtonItem87, Me.BarButtonItem88, Me.BarButtonItem89, Me.BarButtonItem90, Me.BarButtonItem91, Me.BarButtonItem92, Me.BarButtonItem93, Me.BarButtonItem94, Me.BarButtonItem95, Me.BarButtonItem96, Me.BarButtonItem97, Me.BarButtonItem98, Me.BarButtonItem99, Me.BarButtonItem100, Me.BarButtonItem101, Me.BarButtonItem102, Me.BarButtonItem103, Me.BarButtonItem104, Me.BarButtonItem105, Me.BarButtonItem106, Me.BarButtonItem107, Me.BarButtonItem108, Me.BarButtonItem109, Me.BarButtonItem110, Me.BarButtonItem111, Me.BarButtonItem112, Me.BarButtonItem113, Me.BarButtonItem114, Me.BarButtonItem115, Me.BarSubItem8, Me.BarSubItem9, Me.BarButtonItem116, Me.BarButtonItem117, Me.BarButtonItem118, Me.BarButtonItem119, Me.BarButtonItem120, Me.BarSubItem10, Me.BarButtonItem121, Me.BarButtonItem122, Me.BarButtonItem123, Me.BarButtonItem124, Me.BarButtonItem125, Me.BarButtonItem126, Me.BarButtonItem127, Me.BarButtonItem128, Me.BarButtonItem129, Me.BarButtonItem130, Me.BarButtonItem131, Me.BarButtonItem132, Me.BarButtonItem133, Me.BarButtonItem134, Me.BarDockingMenuItem1, Me.BarSubItem11, Me.BarButtonItem135, Me.BarButtonItem136, Me.BarSubItem12, Me.BarSubItem13, Me.BarButtonItem137, Me.BarButtonItem138, Me.BarButtonItem139, Me.BarButtonItem140, Me.BarButtonItem141, Me.BarButtonItem142, Me.BarButtonItem143, Me.BarButtonItem144, Me.BarButtonItem145, Me.BarButtonItem146, Me.BarButtonItem147, Me.BarButtonItem148, Me.BarButtonItem149, Me.BarButtonItem150, Me.BarButtonItem151, Me.BarButtonItem152, Me.BarButtonItem153, Me.BarButtonItem154, Me.BarButtonItem155, Me.BarButtonItem156, Me.BarButtonItem157, Me.BarButtonItem158, Me.BarButtonItem159, Me.BarButtonItem160, Me.BarButtonItem161, Me.BarButtonItem162, Me.BarButtonItem163, Me.BarButtonItem164, Me.BarButtonItem165, Me.BarButtonItem166, Me.BarButtonItem167, Me.BarButtonItem168})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.mnuConnectDB, Me.mnuHosConfig, Me.BarButtonItem3, Me.BarButtonItem4, Me.BarButtonItem5, Me.BarButtonItem6, Me.BarButtonItem7, Me.BarButtonItem8, Me.BarButtonItem9, Me.BarButtonItem10, Me.BarButtonItem11, Me.BarButtonItem12, Me.BarButtonItem13, Me.BarButtonItem14, Me.BarButtonItem15, Me.BarButtonItem16, Me.mnuUpdateMyPCU, Me.BarButtonItem18, Me.BarButtonItem19, Me.BarButtonItem20, Me.BarButtonItem21, Me.BarButtonItem22, Me.mnuAreaSetting, Me.BarButtonItem24, Me.BarButtonItem25, Me.BarButtonItem26, Me.BarButtonItem27, Me.BarButtonItem28, Me.BarButtonItem29, Me.BarButtonItem30, Me.BarButtonItem31, Me.BarButtonItem32, Me.BarButtonItem33, Me.BarButtonItem34, Me.BarButtonItem35, Me.BarButtonItem36, Me.BarButtonItem37, Me.BarStaticItem1, Me.BarButtonItem1, Me.BarButtonItem17, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarButtonItem41, Me.BarButtonItem42, Me.BarButtonItem43, Me.BarButtonItem44, Me.BarButtonItem45, Me.mnuDbConfigAssets, Me.BarButtonItem47, Me.BarButtonItem48, Me.mnuAssetsManage, Me.BarButtonItem50, Me.BarButtonItem51, Me.BarButtonItem52, Me.BarButtonItem53, Me.BarButtonItem54, Me.BarButtonItem55, Me.BarSubItem1, Me.BarSubItem2, Me.BarSubItem3, Me.BarSubItem4, Me.BarSubItem5, Me.BarSubItem6, Me.BarButtonItem56, Me.BarButtonItem57, Me.BarButtonItem58, Me.BarButtonItem59, Me.BarStaticItem2, Me.BarStaticItem3, Me.BarStaticItem4, Me.BarStaticItem5, Me.BarButtonItem2, Me.BarButtonItem23, Me.BarButtonItem46, Me.BarButtonItem49, Me.BarButtonItem60, Me.BarButtonItem61, Me.BarButtonItem62, Me.BarButtonItem63, Me.BarButtonItem64, Me.BarButtonItem65, Me.BarButtonItem66, Me.BarButtonItem67, Me.BarButtonItem68, Me.BarSubItem7, Me.BarLinkContainerItem1, Me.chkRed, Me.chkBlue, Me.chkDarkBlue, Me.chkGreen, Me.chkOrange, Me.chkPurple, Me.chkTeal, Me.BarCheckItem8, Me.BarCheckItem9, Me.BarStaticItem6, Me.BarStaticItem7, Me.BarButtonItem69, Me.BarButtonItem70, Me.BarButtonItem71, Me.BarButtonItem72, Me.BarButtonItem73, Me.BarButtonItem74, Me.BarButtonItem75, Me.BarButtonItem76, Me.BarButtonItem77, Me.BarButtonItem78, Me.BarButtonItem79, Me.BarButtonItem80, Me.BarButtonItem81, Me.BarButtonItem82, Me.BarButtonItem83, Me.BarButtonItem84, Me.BarButtonItem85, Me.BarButtonItem86, Me.BarButtonItem87, Me.BarButtonItem88, Me.BarButtonItem89, Me.BarButtonItem90, Me.BarButtonItem91, Me.BarButtonItem92, Me.BarButtonItem93, Me.BarButtonItem94, Me.BarButtonItem95, Me.BarButtonItem96, Me.BarButtonItem97, Me.BarButtonItem98, Me.BarButtonItem99, Me.BarButtonItem100, Me.BarButtonItem101, Me.BarButtonItem102, Me.BarButtonItem103, Me.BarButtonItem104, Me.BarButtonItem105, Me.BarButtonItem106, Me.BarButtonItem107, Me.BarButtonItem108, Me.BarButtonItem109, Me.BarButtonItem110, Me.BarButtonItem111, Me.BarButtonItem112, Me.BarButtonItem113, Me.BarButtonItem114, Me.BarButtonItem115, Me.BarSubItem8, Me.BarSubItem9, Me.BarButtonItem116, Me.BarButtonItem117, Me.BarButtonItem118, Me.BarButtonItem119, Me.BarButtonItem120, Me.BarSubItem10, Me.BarButtonItem121, Me.BarButtonItem122, Me.BarButtonItem123, Me.BarButtonItem124, Me.BarButtonItem125, Me.BarButtonItem126, Me.BarButtonItem127, Me.BarButtonItem128, Me.BarButtonItem129, Me.BarButtonItem130, Me.BarButtonItem131, Me.BarButtonItem132, Me.BarButtonItem133, Me.BarButtonItem134, Me.BarDockingMenuItem1, Me.BarSubItem11, Me.BarButtonItem135, Me.BarButtonItem136, Me.BarSubItem12, Me.BarSubItem13, Me.BarButtonItem137, Me.BarButtonItem138, Me.BarButtonItem139, Me.BarButtonItem140, Me.BarButtonItem141, Me.BarButtonItem142, Me.BarButtonItem143, Me.BarButtonItem144, Me.BarButtonItem145, Me.BarButtonItem146, Me.BarButtonItem147, Me.BarButtonItem148, Me.BarButtonItem149, Me.BarButtonItem150, Me.BarButtonItem151, Me.BarButtonItem152, Me.BarButtonItem153, Me.BarButtonItem154, Me.BarButtonItem155, Me.BarButtonItem156, Me.BarButtonItem157, Me.BarButtonItem158, Me.BarButtonItem159, Me.BarButtonItem160, Me.BarButtonItem161, Me.BarButtonItem162, Me.BarButtonItem163, Me.BarButtonItem164, Me.BarButtonItem165, Me.BarButtonItem166, Me.BarButtonItem167, Me.BarButtonItem168, Me.BarButtonItem169, Me.BarButtonItem170, Me.BarButtonItem171, Me.BarButtonItem172, Me.BarButtonItem173, Me.BarButtonItem174})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 212
+        Me.RibbonControl.MaxItemId = 218
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1, Me.RibbonPage2, Me.RibbonPage12, Me.RibbonPage6, Me.RibbonPage8, Me.RibbonPage14, Me.RibbonPage10, Me.RibbonPage18, Me.RibbonPage16, Me.RibbonPage20})
         Me.RibbonControl.Size = New System.Drawing.Size(1366, 162)
@@ -1127,9 +1135,9 @@ Partial Class frmMain
         '
         'BarButtonItem93
         '
-        Me.BarButtonItem93.Caption = "งานแม่และเด็ก"
+        Me.BarButtonItem93.Caption = "คัดกรองซึมเศร้า"
         Me.BarButtonItem93.Id = 124
-        Me.BarButtonItem93.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_mother
+        Me.BarButtonItem93.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_mental2
         Me.BarButtonItem93.Name = "BarButtonItem93"
         '
         'BarButtonItem94
@@ -1672,6 +1680,48 @@ Partial Class frmMain
         Me.BarButtonItem168.Id = 210
         Me.BarButtonItem168.Name = "BarButtonItem168"
         '
+        'BarButtonItem169
+        '
+        Me.BarButtonItem169.Caption = "ข้อมูลการตั้งครรภ์"
+        Me.BarButtonItem169.Id = 212
+        Me.BarButtonItem169.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_mother
+        Me.BarButtonItem169.Name = "BarButtonItem169"
+        '
+        'BarButtonItem170
+        '
+        Me.BarButtonItem170.Caption = "ข้อมูลการฝากครรภ์"
+        Me.BarButtonItem170.Id = 213
+        Me.BarButtonItem170.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_pregnant
+        Me.BarButtonItem170.Name = "BarButtonItem170"
+        '
+        'BarButtonItem171
+        '
+        Me.BarButtonItem171.Caption = "ข้อมูลการคลอด"
+        Me.BarButtonItem171.Id = 214
+        Me.BarButtonItem171.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_baby1
+        Me.BarButtonItem171.Name = "BarButtonItem171"
+        '
+        'BarButtonItem172
+        '
+        Me.BarButtonItem172.Caption = "ข้อมูลทารกแรกคลอด"
+        Me.BarButtonItem172.Id = 215
+        Me.BarButtonItem172.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_baby21
+        Me.BarButtonItem172.Name = "BarButtonItem172"
+        '
+        'BarButtonItem173
+        '
+        Me.BarButtonItem173.Caption = "ข้อมูลการเยี่ยมมารดาหลังคลอด"
+        Me.BarButtonItem173.Id = 216
+        Me.BarButtonItem173.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_mother2
+        Me.BarButtonItem173.Name = "BarButtonItem173"
+        '
+        'BarButtonItem174
+        '
+        Me.BarButtonItem174.Caption = "ข้อมูลการเยี่ยมทารกหลังคลอด"
+        Me.BarButtonItem174.Id = 217
+        Me.BarButtonItem174.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_baby2
+        Me.BarButtonItem174.Name = "BarButtonItem174"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup10, Me.RibbonPageGroup11, Me.RibbonPageGroup12, Me.RibbonPageGroup24})
@@ -1775,7 +1825,7 @@ Partial Class frmMain
         '
         'RibbonPage12
         '
-        Me.RibbonPage12.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup7, Me.RibbonPageGroup27})
+        Me.RibbonPage12.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup7, Me.RibbonPageGroup27, Me.RibbonPageGroup33})
         Me.RibbonPage12.Name = "RibbonPage12"
         Me.RibbonPage12.Text = "งานรักษา/ส่งเสริมฯ"
         '
@@ -1793,19 +1843,31 @@ Partial Class frmMain
         '
         'RibbonPageGroup27
         '
-        Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem93)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem88)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem90)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem89)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem91)
         Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem92)
+        Me.RibbonPageGroup27.ItemLinks.Add(Me.BarButtonItem93)
         Me.RibbonPageGroup27.Name = "RibbonPageGroup27"
         Me.RibbonPageGroup27.ShowCaptionButton = False
         Me.RibbonPageGroup27.Text = "งานสร้างเสริมสุขภาพ"
         '
+        'RibbonPageGroup33
+        '
+        Me.RibbonPageGroup33.ItemLinks.Add(Me.BarButtonItem169)
+        Me.RibbonPageGroup33.ItemLinks.Add(Me.BarButtonItem170)
+        Me.RibbonPageGroup33.ItemLinks.Add(Me.BarButtonItem171)
+        Me.RibbonPageGroup33.ItemLinks.Add(Me.BarButtonItem172)
+        Me.RibbonPageGroup33.ItemLinks.Add(Me.BarButtonItem173)
+        Me.RibbonPageGroup33.ItemLinks.Add(Me.BarButtonItem174)
+        Me.RibbonPageGroup33.Name = "RibbonPageGroup33"
+        Me.RibbonPageGroup33.ShowCaptionButton = False
+        Me.RibbonPageGroup33.Text = "งานแม่และเด็ก"
+        '
         'RibbonPage6
         '
-        Me.RibbonPage6.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4, Me.RibbonPageGroup30})
+        Me.RibbonPage6.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup4, Me.RibbonPageGroup30, Me.RibbonPageGroup34})
         Me.RibbonPage6.Name = "RibbonPage6"
         Me.RibbonPage6.Text = "งานโรคเรื้อรัง/ผู้พิการ"
         '
@@ -2202,6 +2264,12 @@ Partial Class frmMain
         Me.RibbonPage22.Name = "RibbonPage22"
         Me.RibbonPage22.Text = "RibbonPage22"
         '
+        'RibbonPageGroup34
+        '
+        Me.RibbonPageGroup34.Name = "RibbonPageGroup34"
+        Me.RibbonPageGroup34.ShowCaptionButton = False
+        Me.RibbonPageGroup34.Text = "รายงานโรคเรื้อรัง"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -2495,4 +2563,12 @@ Partial Class frmMain
     Friend WithEvents BarButtonItem166 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem167 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem168 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem169 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem170 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem171 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup33 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarButtonItem172 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem173 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem174 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup34 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

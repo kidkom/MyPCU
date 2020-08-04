@@ -662,6 +662,18 @@
     <Compile Include="FormSearch\WaitForm1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormService\frmServiceQueue.Designer.vb">
+      <DependentUpon>frmServiceQueue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\frmServiceQueue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormService\frmServiceQueueEdit.Designer.vb">
+      <DependentUpon>frmServiceQueueEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\frmServiceQueueEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormSystem\frmAddDepartment.Designer.vb">
       <DependentUpon>frmAddDepartment.vb</DependentUpon>
     </Compile>
@@ -1036,6 +1048,12 @@
     <EmbeddedResource Include="FormSearch\WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormService\frmServiceQueue.resx">
+      <DependentUpon>frmServiceQueue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService\frmServiceQueueEdit.resx">
+      <DependentUpon>frmServiceQueueEdit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSystem\frmAddDepartment.resx">
       <DependentUpon>frmAddDepartment.vb</DependentUpon>
     </EmbeddedResource>
@@ -1133,6 +1151,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
+    <None Include="Resources\a_baby21.png" />
+    <None Include="Resources\a_baby2.png" />
+    <None Include="Resources\a_mother2.png" />
+    <None Include="Resources\a_baby1.png" />
+    <None Include="Resources\a_pregnant.png" />
+    <None Include="Resources\a_mental2.png" />
     <None Include="Resources\a_mother.png" />
     <None Include="Resources\a_smoking2.png" />
     <None Include="Resources\a_alcohol.png" />
@@ -1287,7 +1311,9 @@
     <None Include="Resources\a_connect.png" />
     <None Include="Resources\myhosp_blue.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="FormMCH\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
