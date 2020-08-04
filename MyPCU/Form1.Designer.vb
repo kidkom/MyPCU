@@ -158,7 +158,7 @@
         Me.LabelControl1.Appearance.Options.UseBackColor = True
         Me.LabelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
-        Me.LabelControl1.Location = New System.Drawing.Point(346, 225)
+        Me.LabelControl1.Location = New System.Drawing.Point(362, 233)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(318, 24)
         Me.LabelControl1.TabIndex = 1269
@@ -166,7 +166,7 @@
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(266, 233)
+        Me.Label4.Location = New System.Drawing.Point(292, 236)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(64, 17)
         Me.Label4.TabIndex = 1270
@@ -180,7 +180,7 @@
         Me.LabelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.LabelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
-        Me.LabelControl2.Location = New System.Drawing.Point(356, 259)
+        Me.LabelControl2.Location = New System.Drawing.Point(362, 281)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(318, 24)
         Me.LabelControl2.TabIndex = 1271
@@ -188,7 +188,7 @@
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(265, 263)
+        Me.Label5.Location = New System.Drawing.Point(271, 288)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(85, 17)
         Me.Label5.TabIndex = 1272

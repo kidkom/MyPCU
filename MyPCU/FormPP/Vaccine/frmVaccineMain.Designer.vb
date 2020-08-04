@@ -22,14 +22,20 @@ Partial Class frmVaccineMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmVaccineMain))
         Me.FluentDesignFormContainer1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer()
-        Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
-        Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement3 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement4 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement5 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
+        Me.cmdEdit = New System.Windows.Forms.Button()
+        Me.cmdAdd = New System.Windows.Forms.Button()
+        Me.chkName = New System.Windows.Forms.CheckBox()
+        Me.chkCID = New System.Windows.Forms.CheckBox()
+        Me.chkPID = New System.Windows.Forms.CheckBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtPID = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblAge = New DevExpress.XtraEditors.TextEdit()
         Me.lblBirth = New DevExpress.XtraEditors.TextEdit()
@@ -48,20 +54,19 @@ Partial Class frmVaccineMain
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
-        Me.chkName = New System.Windows.Forms.CheckBox()
-        Me.chkCID = New System.Windows.Forms.CheckBox()
-        Me.chkPID = New System.Windows.Forms.CheckBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtPID = New System.Windows.Forms.TextBox()
-        Me.cmdEdit = New System.Windows.Forms.Button()
-        Me.cmdAdd = New System.Windows.Forms.Button()
+        Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
+        Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement3 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement4 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement5 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
+        Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.FluentDesignFormContainer1.SuspendLayout()
-        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.lblAge.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblBirth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,13 +77,17 @@ Partial Class frmVaccineMain
         CType(Me.lblCID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblPID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FluentDesignFormContainer1
         '
         Me.FluentDesignFormContainer1.Appearance.BackColor = System.Drawing.Color.Gainsboro
         Me.FluentDesignFormContainer1.Appearance.Options.UseBackColor = True
+        Me.FluentDesignFormContainer1.Controls.Add(Me.Label8)
+        Me.FluentDesignFormContainer1.Controls.Add(Me.PictureBox1)
         Me.FluentDesignFormContainer1.Controls.Add(Me.cmdEdit)
         Me.FluentDesignFormContainer1.Controls.Add(Me.cmdAdd)
         Me.FluentDesignFormContainer1.Controls.Add(Me.chkName)
@@ -98,67 +107,121 @@ Partial Class frmVaccineMain
         Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(834, 606)
         Me.FluentDesignFormContainer1.TabIndex = 0
         '
-        'AccordionControl1
+        'cmdEdit
         '
-        Me.AccordionControl1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement3})
-        Me.AccordionControl1.Location = New System.Drawing.Point(834, 31)
-        Me.AccordionControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.AccordionControl1.Name = "AccordionControl1"
-        Me.AccordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch
-        Me.AccordionControl1.Size = New System.Drawing.Size(205, 606)
-        Me.AccordionControl1.TabIndex = 1
-        Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
+        Me.cmdEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdEdit.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.cmdEdit.Image = Global.MyPCU.My.Resources.Resources.a_edit4
+        Me.cmdEdit.Location = New System.Drawing.Point(782, 35)
+        Me.cmdEdit.Name = "cmdEdit"
+        Me.cmdEdit.Size = New System.Drawing.Size(38, 26)
+        Me.cmdEdit.TabIndex = 1139
+        Me.cmdEdit.UseVisualStyleBackColor = True
         '
-        'AccordionControlElement1
+        'cmdAdd
         '
-        Me.AccordionControlElement1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement2})
-        Me.AccordionControlElement1.Expanded = True
-        Me.AccordionControlElement1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_syring
-        Me.AccordionControlElement1.Name = "AccordionControlElement1"
-        Me.AccordionControlElement1.Text = "บันทึกข้อมูล"
+        Me.cmdAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdAdd.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.cmdAdd.Image = Global.MyPCU.My.Resources.Resources.a_add
+        Me.cmdAdd.Location = New System.Drawing.Point(738, 35)
+        Me.cmdAdd.Name = "cmdAdd"
+        Me.cmdAdd.Size = New System.Drawing.Size(38, 26)
+        Me.cmdAdd.TabIndex = 1138
+        Me.cmdAdd.UseVisualStyleBackColor = True
         '
-        'AccordionControlElement2
+        'chkName
         '
-        Me.AccordionControlElement2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_person2
-        Me.AccordionControlElement2.Name = "AccordionControlElement2"
-        Me.AccordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement2.Text = "การรับวัคซีน"
+        Me.chkName.AutoSize = True
+        Me.chkName.Location = New System.Drawing.Point(386, 14)
+        Me.chkName.Name = "chkName"
+        Me.chkName.Size = New System.Drawing.Size(89, 21)
+        Me.chkName.TabIndex = 1137
+        Me.chkName.Text = "ชื่อ-นามสกุล"
+        Me.chkName.UseVisualStyleBackColor = True
         '
-        'AccordionControlElement3
+        'chkCID
         '
-        Me.AccordionControlElement3.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement4, Me.AccordionControlElement5})
-        Me.AccordionControlElement3.Expanded = True
-        Me.AccordionControlElement3.HeaderTemplate.AddRange(New DevExpress.XtraBars.Navigation.HeaderElementInfo() {New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text), New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image), New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl), New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)})
-        Me.AccordionControlElement3.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_config3
-        Me.AccordionControlElement3.Name = "AccordionControlElement3"
-        Me.AccordionControlElement3.Text = "กำหนดค่า"
+        Me.chkCID.AutoSize = True
+        Me.chkCID.Location = New System.Drawing.Point(333, 14)
+        Me.chkCID.Name = "chkCID"
+        Me.chkCID.Size = New System.Drawing.Size(47, 21)
+        Me.chkCID.TabIndex = 1136
+        Me.chkCID.Text = "CID"
+        Me.chkCID.UseVisualStyleBackColor = True
         '
-        'AccordionControlElement4
+        'chkPID
         '
-        Me.AccordionControlElement4.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_code
-        Me.AccordionControlElement4.Name = "AccordionControlElement4"
-        Me.AccordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement4.Text = "รหัสวัคซีน"
+        Me.chkPID.AutoSize = True
+        Me.chkPID.Location = New System.Drawing.Point(281, 14)
+        Me.chkPID.Name = "chkPID"
+        Me.chkPID.Size = New System.Drawing.Size(46, 21)
+        Me.chkPID.TabIndex = 1135
+        Me.chkPID.Text = "PID"
+        Me.chkPID.UseVisualStyleBackColor = True
         '
-        'AccordionControlElement5
+        'Button2
         '
-        Me.AccordionControlElement5.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_baby
-        Me.AccordionControlElement5.Name = "AccordionControlElement5"
-        Me.AccordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement5.Text = "วัคซีนกับช่วงอายุ"
+        Me.Button2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Button2.Image = Global.MyPCU.My.Resources.Resources.a_search
+        Me.Button2.Location = New System.Drawing.Point(680, 12)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(38, 26)
+        Me.Button2.TabIndex = 1134
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'FluentDesignFormControl1
+        'Label4
         '
-        Me.FluentDesignFormControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FluentDesignFormControl1.FluentDesignForm = Me
-        Me.FluentDesignFormControl1.Location = New System.Drawing.Point(0, 0)
-        Me.FluentDesignFormControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.FluentDesignFormControl1.Name = "FluentDesignFormControl1"
-        Me.FluentDesignFormControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1039, 31)
-        Me.FluentDesignFormControl1.TabIndex = 2
-        Me.FluentDesignFormControl1.TabStop = False
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label4.Location = New System.Drawing.Point(238, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 17)
+        Me.Label4.TabIndex = 1133
+        Me.Label4.Text = "ค้นหา"
+        '
+        'txtPID
+        '
+        Me.txtPID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.txtPID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txtPID.BackColor = System.Drawing.Color.White
+        Me.txtPID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtPID.Location = New System.Drawing.Point(481, 12)
+        Me.txtPID.Name = "txtPID"
+        Me.txtPID.Size = New System.Drawing.Size(193, 25)
+        Me.txtPID.TabIndex = 1132
+        Me.txtPID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(237, 571)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 17)
+        Me.Label2.TabIndex = 1114
+        Me.Label2.Text = "จำนวน"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label16.Location = New System.Drawing.Point(237, 47)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(108, 17)
+        Me.Label16.TabIndex = 1113
+        Me.Label16.Text = "รายการวัคซีนที่ได้รับ"
+        '
+        'BetterListView1
+        '
+        Me.BetterListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
+        Me.BetterListView1.Location = New System.Drawing.Point(240, 67)
+        Me.BetterListView1.Name = "BetterListView1"
+        Me.BetterListView1.Size = New System.Drawing.Size(581, 497)
+        Me.BetterListView1.TabIndex = 1112
         '
         'Panel1
         '
@@ -342,121 +405,102 @@ Partial Class frmVaccineMain
         Me.Label12.TabIndex = 665
         Me.Label12.Text = "เพศ"
         '
-        'Label2
+        'AccordionControl1
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(237, 571)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 17)
-        Me.Label2.TabIndex = 1114
-        Me.Label2.Text = "จำนวน"
+        Me.AccordionControl1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement3})
+        Me.AccordionControl1.Location = New System.Drawing.Point(834, 31)
+        Me.AccordionControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.AccordionControl1.Name = "AccordionControl1"
+        Me.AccordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch
+        Me.AccordionControl1.Size = New System.Drawing.Size(205, 606)
+        Me.AccordionControl1.TabIndex = 1
+        Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
-        'Label16
+        'AccordionControlElement1
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label16.Location = New System.Drawing.Point(237, 47)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(150, 17)
-        Me.Label16.TabIndex = 1113
-        Me.Label16.Text = "รายการโรคเรื้อรังที่ขึ้นทะเบียน"
+        Me.AccordionControlElement1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement2})
+        Me.AccordionControlElement1.Expanded = True
+        Me.AccordionControlElement1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_syring
+        Me.AccordionControlElement1.Name = "AccordionControlElement1"
+        Me.AccordionControlElement1.Text = "บันทึกข้อมูล"
         '
-        'BetterListView1
+        'AccordionControlElement2
         '
-        Me.BetterListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
-        Me.BetterListView1.Location = New System.Drawing.Point(240, 67)
-        Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(581, 497)
-        Me.BetterListView1.TabIndex = 1112
+        Me.AccordionControlElement2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_person2
+        Me.AccordionControlElement2.Name = "AccordionControlElement2"
+        Me.AccordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement2.Text = "การรับวัคซีน"
         '
-        'chkName
+        'AccordionControlElement3
         '
-        Me.chkName.AutoSize = True
-        Me.chkName.Location = New System.Drawing.Point(386, 14)
-        Me.chkName.Name = "chkName"
-        Me.chkName.Size = New System.Drawing.Size(89, 21)
-        Me.chkName.TabIndex = 1137
-        Me.chkName.Text = "ชื่อ-นามสกุล"
-        Me.chkName.UseVisualStyleBackColor = True
+        Me.AccordionControlElement3.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement4, Me.AccordionControlElement5})
+        Me.AccordionControlElement3.Expanded = True
+        Me.AccordionControlElement3.HeaderTemplate.AddRange(New DevExpress.XtraBars.Navigation.HeaderElementInfo() {New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text), New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Image), New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.HeaderControl), New DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.ContextButtons)})
+        Me.AccordionControlElement3.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_config3
+        Me.AccordionControlElement3.Name = "AccordionControlElement3"
+        Me.AccordionControlElement3.Text = "กำหนดค่า"
         '
-        'chkCID
+        'AccordionControlElement4
         '
-        Me.chkCID.AutoSize = True
-        Me.chkCID.Location = New System.Drawing.Point(333, 14)
-        Me.chkCID.Name = "chkCID"
-        Me.chkCID.Size = New System.Drawing.Size(47, 21)
-        Me.chkCID.TabIndex = 1136
-        Me.chkCID.Text = "CID"
-        Me.chkCID.UseVisualStyleBackColor = True
+        Me.AccordionControlElement4.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_code
+        Me.AccordionControlElement4.Name = "AccordionControlElement4"
+        Me.AccordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement4.Text = "รหัสวัคซีน"
         '
-        'chkPID
+        'AccordionControlElement5
         '
-        Me.chkPID.AutoSize = True
-        Me.chkPID.Location = New System.Drawing.Point(281, 14)
-        Me.chkPID.Name = "chkPID"
-        Me.chkPID.Size = New System.Drawing.Size(46, 21)
-        Me.chkPID.TabIndex = 1135
-        Me.chkPID.Text = "PID"
-        Me.chkPID.UseVisualStyleBackColor = True
+        Me.AccordionControlElement5.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_baby
+        Me.AccordionControlElement5.Name = "AccordionControlElement5"
+        Me.AccordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement5.Text = "วัคซีนกับช่วงอายุ"
         '
-        'Button2
+        'FluentDesignFormControl1
         '
-        Me.Button2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button2.Image = Global.MyPCU.My.Resources.Resources.a_search
-        Me.Button2.Location = New System.Drawing.Point(680, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(38, 26)
-        Me.Button2.TabIndex = 1134
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.FluentDesignFormControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FluentDesignFormControl1.FluentDesignForm = Me
+        Me.FluentDesignFormControl1.Location = New System.Drawing.Point(0, 0)
+        Me.FluentDesignFormControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.FluentDesignFormControl1.Name = "FluentDesignFormControl1"
+        Me.FluentDesignFormControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1039, 31)
+        Me.FluentDesignFormControl1.TabIndex = 2
+        Me.FluentDesignFormControl1.TabStop = False
         '
-        'Label4
+        'SplashScreenManager1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label4.Location = New System.Drawing.Point(238, 16)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 17)
-        Me.Label4.TabIndex = 1133
-        Me.Label4.Text = "ค้นหา"
+        Me.SplashScreenManager1.ClosingDelay = 500
         '
-        'txtPID
+        'ImageList1
         '
-        Me.txtPID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.txtPID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txtPID.BackColor = System.Drawing.Color.White
-        Me.txtPID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPID.Location = New System.Drawing.Point(481, 12)
-        Me.txtPID.Name = "txtPID"
-        Me.txtPID.Size = New System.Drawing.Size(193, 25)
-        Me.txtPID.TabIndex = 1132
-        Me.txtPID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "syring.ico")
         '
-        'cmdEdit
+        'Label8
         '
-        Me.cmdEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdEdit.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.cmdEdit.Image = Global.MyPCU.My.Resources.Resources.a_edit4
-        Me.cmdEdit.Location = New System.Drawing.Point(782, 35)
-        Me.cmdEdit.Name = "cmdEdit"
-        Me.cmdEdit.Size = New System.Drawing.Size(38, 26)
-        Me.cmdEdit.TabIndex = 1139
-        Me.cmdEdit.UseVisualStyleBackColor = True
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label8.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(748, 571)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(68, 17)
+        Me.Label8.TabIndex = 1280
+        Me.Label8.Text = "ให้บริการเอง"
         '
-        'cmdAdd
+        'PictureBox1
         '
-        Me.cmdAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdAdd.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.cmdAdd.Image = Global.MyPCU.My.Resources.Resources.a_add
-        Me.cmdAdd.Location = New System.Drawing.Point(738, 35)
-        Me.cmdAdd.Name = "cmdAdd"
-        Me.cmdAdd.Size = New System.Drawing.Size(38, 26)
-        Me.cmdAdd.TabIndex = 1138
-        Me.cmdAdd.UseVisualStyleBackColor = True
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.MyPCU.My.Resources.Resources.a_syring
+        Me.PictureBox1.Location = New System.Drawing.Point(720, 568)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(22, 23)
+        Me.PictureBox1.TabIndex = 1279
+        Me.PictureBox1.TabStop = False
         '
         'frmVaccineMain
         '
@@ -474,8 +518,7 @@ Partial Class frmVaccineMain
         Me.Text = "วัคซีน"
         Me.FluentDesignFormContainer1.ResumeLayout(False)
         Me.FluentDesignFormContainer1.PerformLayout()
-        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.lblAge.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -487,7 +530,9 @@ Partial Class frmVaccineMain
         CType(Me.lblCID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lblPID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -528,4 +573,8 @@ Partial Class frmVaccineMain
     Friend WithEvents txtPID As TextBox
     Friend WithEvents cmdEdit As Button
     Friend WithEvents cmdAdd As Button
+    Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents ImageList1 As ImageList
+    Public WithEvents Label8 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

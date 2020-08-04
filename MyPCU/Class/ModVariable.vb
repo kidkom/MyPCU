@@ -182,4 +182,8 @@
     Public vChonicPID As String = ""
     Public vChronicCode As String = ""
     Public vChronicRowID As String = ""
+
+    '********VACCINE*****
+    Public vEpiPID As String = ""
+    Public vVaccineRowID As String = ""
 End Module
