@@ -1111,12 +1111,12 @@ Public Class frmMain
     Private Sub BarButtonItem81_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem81.ItemClick
         Dim CurrentForm As Form
         For Each CurrentForm In Me.MdiChildren
-            If TypeOf CurrentForm Is frmServiceQueue Then
+            If TypeOf CurrentForm Is frmQueueService Then
                 CurrentForm.MdiParent = Me
                 Exit Sub
             End If
         Next
-        Dim f As New frmServiceQueue
+        Dim f As New frmQueueService
         f.MdiParent = Me
         f.Dock = DockStyle.Fill
         f.Show()

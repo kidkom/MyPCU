@@ -22,6 +22,16 @@ Partial Class frmProviderEdit
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProviderEdit))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.txtLine = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txtTelephone = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.chkPorvider2 = New System.Windows.Forms.CheckBox()
+        Me.chkPorvider1 = New System.Windows.Forms.CheckBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cmdPrename = New System.Windows.Forms.Button()
         Me.lblErrorCode = New System.Windows.Forms.Label()
         Me.txtProviderType = New System.Windows.Forms.MaskedTextBox()
         Me.txtBirth = New DevExpress.XtraEditors.DateEdit()
@@ -76,7 +86,6 @@ Partial Class frmProviderEdit
         Me.XtraOpenFileDialog1 = New DevExpress.XtraEditors.XtraOpenFileDialog(Me.components)
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         Me.cmdUser = New System.Windows.Forms.Button()
-        Me.cmdPrename = New System.Windows.Forms.Button()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.txtBirth.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +103,15 @@ Partial Class frmProviderEdit
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.txtLine)
+        Me.GroupControl1.Controls.Add(Me.Label18)
+        Me.GroupControl1.Controls.Add(Me.txtEmail)
+        Me.GroupControl1.Controls.Add(Me.Label16)
+        Me.GroupControl1.Controls.Add(Me.txtTelephone)
+        Me.GroupControl1.Controls.Add(Me.Label15)
+        Me.GroupControl1.Controls.Add(Me.chkPorvider2)
+        Me.GroupControl1.Controls.Add(Me.chkPorvider1)
+        Me.GroupControl1.Controls.Add(Me.Label13)
         Me.GroupControl1.Controls.Add(Me.cmdPrename)
         Me.GroupControl1.Controls.Add(Me.lblErrorCode)
         Me.GroupControl1.Controls.Add(Me.txtProviderType)
@@ -141,16 +159,110 @@ Partial Class frmProviderEdit
         Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(789, 485)
+        Me.GroupControl1.Size = New System.Drawing.Size(789, 548)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "บันทึกข้อมูลเจ้าหน้าที่"
+        '
+        'txtLine
+        '
+        Me.txtLine.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtLine.Location = New System.Drawing.Point(149, 471)
+        Me.txtLine.Name = "txtLine"
+        Me.txtLine.Size = New System.Drawing.Size(442, 25)
+        Me.txtLine.TabIndex = 1261
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label18.Location = New System.Drawing.Point(55, 474)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(89, 17)
+        Me.Label18.TabIndex = 1260
+        Me.Label18.Text = "LINE Token ID"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(149, 440)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(303, 25)
+        Me.txtEmail.TabIndex = 1259
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label16.Location = New System.Drawing.Point(100, 443)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(44, 17)
+        Me.Label16.TabIndex = 1258
+        Me.Label16.Text = "E-mail"
+        '
+        'txtTelephone
+        '
+        Me.txtTelephone.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.txtTelephone.Location = New System.Drawing.Point(149, 409)
+        Me.txtTelephone.Name = "txtTelephone"
+        Me.txtTelephone.Size = New System.Drawing.Size(303, 25)
+        Me.txtTelephone.TabIndex = 1257
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label15.Location = New System.Drawing.Point(93, 412)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(51, 17)
+        Me.Label15.TabIndex = 1256
+        Me.Label15.Text = "โทรศัพท์"
+        '
+        'chkPorvider2
+        '
+        Me.chkPorvider2.AutoSize = True
+        Me.chkPorvider2.Location = New System.Drawing.Point(196, 382)
+        Me.chkPorvider2.Name = "chkPorvider2"
+        Me.chkPorvider2.Size = New System.Drawing.Size(52, 21)
+        Me.chkPorvider2.TabIndex = 1255
+        Me.chkPorvider2.Text = "ไม่ใช่"
+        Me.chkPorvider2.UseVisualStyleBackColor = True
+        '
+        'chkPorvider1
+        '
+        Me.chkPorvider1.AutoSize = True
+        Me.chkPorvider1.Location = New System.Drawing.Point(149, 382)
+        Me.chkPorvider1.Name = "chkPorvider1"
+        Me.chkPorvider1.Size = New System.Drawing.Size(40, 21)
+        Me.chkPorvider1.TabIndex = 1254
+        Me.chkPorvider1.Text = "ใช่"
+        Me.chkPorvider1.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label13.Location = New System.Drawing.Point(44, 384)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(100, 17)
+        Me.Label13.TabIndex = 1253
+        Me.Label13.Text = "สามารถให้บริการได้"
+        '
+        'cmdPrename
+        '
+        Me.cmdPrename.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.cmdPrename.Image = Global.MyPCU.My.Resources.Resources.a_edit4
+        Me.cmdPrename.Location = New System.Drawing.Point(353, 160)
+        Me.cmdPrename.Name = "cmdPrename"
+        Me.cmdPrename.Size = New System.Drawing.Size(33, 27)
+        Me.cmdPrename.TabIndex = 1252
+        Me.cmdPrename.UseVisualStyleBackColor = True
         '
         'lblErrorCode
         '
         Me.lblErrorCode.AutoSize = True
         Me.lblErrorCode.BackColor = System.Drawing.Color.Transparent
         Me.lblErrorCode.ForeColor = System.Drawing.Color.Crimson
-        Me.lblErrorCode.Location = New System.Drawing.Point(5, 461)
+        Me.lblErrorCode.Location = New System.Drawing.Point(19, 520)
         Me.lblErrorCode.Name = "lblErrorCode"
         Me.lblErrorCode.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblErrorCode.Size = New System.Drawing.Size(67, 17)
@@ -162,7 +274,7 @@ Partial Class frmProviderEdit
         '
         Me.txtProviderType.BackColor = System.Drawing.Color.Beige
         Me.txtProviderType.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtProviderType.Location = New System.Drawing.Point(553, 236)
+        Me.txtProviderType.Location = New System.Drawing.Point(553, 224)
         Me.txtProviderType.Name = "txtProviderType"
         Me.txtProviderType.Size = New System.Drawing.Size(104, 25)
         Me.txtProviderType.TabIndex = 1251
@@ -173,7 +285,7 @@ Partial Class frmProviderEdit
         'txtBirth
         '
         Me.txtBirth.EditValue = Nothing
-        Me.txtBirth.Location = New System.Drawing.Point(428, 204)
+        Me.txtBirth.Location = New System.Drawing.Point(428, 192)
         Me.txtBirth.Name = "txtBirth"
         Me.txtBirth.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtBirth.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -189,7 +301,7 @@ Partial Class frmProviderEdit
         '
         Me.cboProviderEdit.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cboProviderEdit.Image = Global.MyPCU.My.Resources.Resources.a_edit4
-        Me.cboProviderEdit.Location = New System.Drawing.Point(514, 235)
+        Me.cboProviderEdit.Location = New System.Drawing.Point(514, 223)
         Me.cboProviderEdit.Name = "cboProviderEdit"
         Me.cboProviderEdit.Size = New System.Drawing.Size(33, 27)
         Me.cboProviderEdit.TabIndex = 1122
@@ -198,7 +310,7 @@ Partial Class frmProviderEdit
         'txtOutDate
         '
         Me.txtOutDate.EditValue = Nothing
-        Me.txtOutDate.Location = New System.Drawing.Point(464, 268)
+        Me.txtOutDate.Location = New System.Drawing.Point(464, 256)
         Me.txtOutDate.Name = "txtOutDate"
         Me.txtOutDate.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.txtOutDate.Properties.Appearance.Options.UseBackColor = True
@@ -214,7 +326,7 @@ Partial Class frmProviderEdit
         'txtStartDate
         '
         Me.txtStartDate.EditValue = Nothing
-        Me.txtStartDate.Location = New System.Drawing.Point(149, 268)
+        Me.txtStartDate.Location = New System.Drawing.Point(149, 256)
         Me.txtStartDate.Name = "txtStartDate"
         Me.txtStartDate.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.txtStartDate.Properties.Appearance.Options.UseBackColor = True
@@ -225,7 +337,7 @@ Partial Class frmProviderEdit
         '
         'cboPROVIDERTYPE
         '
-        Me.cboPROVIDERTYPE.Location = New System.Drawing.Point(195, 237)
+        Me.cboPROVIDERTYPE.Location = New System.Drawing.Point(195, 225)
         Me.cboPROVIDERTYPE.Name = "cboPROVIDERTYPE"
         Me.cboPROVIDERTYPE.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboPROVIDERTYPE.Size = New System.Drawing.Size(313, 24)
@@ -233,7 +345,7 @@ Partial Class frmProviderEdit
         '
         'cboSEX
         '
-        Me.cboSEX.Location = New System.Drawing.Point(196, 205)
+        Me.cboSEX.Location = New System.Drawing.Point(196, 193)
         Me.cboSEX.Name = "cboSEX"
         Me.cboSEX.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboSEX.Size = New System.Drawing.Size(81, 24)
@@ -241,7 +353,7 @@ Partial Class frmProviderEdit
         '
         'cboPrename
         '
-        Me.cboPrename.Location = New System.Drawing.Point(196, 173)
+        Me.cboPrename.Location = New System.Drawing.Point(196, 161)
         Me.cboPrename.Name = "cboPrename"
         Me.cboPrename.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboPrename.Size = New System.Drawing.Size(151, 24)
@@ -249,7 +361,7 @@ Partial Class frmProviderEdit
         '
         'cboCouncil
         '
-        Me.cboCouncil.Location = New System.Drawing.Point(220, 111)
+        Me.cboCouncil.Location = New System.Drawing.Point(220, 99)
         Me.cboCouncil.Name = "cboCouncil"
         Me.cboCouncil.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboCouncil.Size = New System.Drawing.Size(489, 24)
@@ -258,16 +370,16 @@ Partial Class frmProviderEdit
         'txtPOSITION
         '
         Me.txtPOSITION.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPOSITION.Location = New System.Drawing.Point(149, 363)
+        Me.txtPOSITION.Location = New System.Drawing.Point(149, 351)
         Me.txtPOSITION.Name = "txtPOSITION"
-        Me.txtPOSITION.Size = New System.Drawing.Size(303, 25)
+        Me.txtPOSITION.Size = New System.Drawing.Size(442, 25)
         Me.txtPOSITION.TabIndex = 652
         '
         'Label19
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label19.Location = New System.Drawing.Point(57, 366)
+        Me.Label19.Location = New System.Drawing.Point(60, 354)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(84, 17)
         Me.Label19.TabIndex = 651
@@ -275,10 +387,11 @@ Partial Class frmProviderEdit
         '
         'chkCancle
         '
+        Me.chkCancle.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chkCancle.AutoSize = True
         Me.chkCancle.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.chkCancle.ForeColor = System.Drawing.Color.Crimson
-        Me.chkCancle.Location = New System.Drawing.Point(150, 397)
+        Me.chkCancle.Location = New System.Drawing.Point(582, 516)
         Me.chkCancle.Name = "chkCancle"
         Me.chkCancle.Size = New System.Drawing.Size(202, 21)
         Me.chkCancle.TabIndex = 650
@@ -289,7 +402,7 @@ Partial Class frmProviderEdit
         '
         Me.lblPROVIDER_ID.BackColor = System.Drawing.Color.Beige
         Me.lblPROVIDER_ID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblPROVIDER_ID.Location = New System.Drawing.Point(149, 46)
+        Me.lblPROVIDER_ID.Location = New System.Drawing.Point(149, 34)
         Me.lblPROVIDER_ID.Name = "lblPROVIDER_ID"
         Me.lblPROVIDER_ID.Size = New System.Drawing.Size(270, 25)
         Me.lblPROVIDER_ID.TabIndex = 649
@@ -300,7 +413,7 @@ Partial Class frmProviderEdit
         Me.lblCIDError.AutoSize = True
         Me.lblCIDError.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lblCIDError.ForeColor = System.Drawing.Color.Crimson
-        Me.lblCIDError.Location = New System.Drawing.Point(283, 144)
+        Me.lblCIDError.Location = New System.Drawing.Point(283, 132)
         Me.lblCIDError.Name = "lblCIDError"
         Me.lblCIDError.Size = New System.Drawing.Size(136, 17)
         Me.lblCIDError.TabIndex = 648
@@ -310,7 +423,7 @@ Partial Class frmProviderEdit
         '
         Me.cmdSearch2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSearch2.Image = CType(resources.GetObject("cmdSearch2.Image"), System.Drawing.Image)
-        Me.cmdSearch2.Location = New System.Drawing.Point(597, 330)
+        Me.cmdSearch2.Location = New System.Drawing.Point(597, 318)
         Me.cmdSearch2.Name = "cmdSearch2"
         Me.cmdSearch2.Size = New System.Drawing.Size(33, 27)
         Me.cmdSearch2.TabIndex = 647
@@ -320,7 +433,7 @@ Partial Class frmProviderEdit
         '
         Me.cmdSearch1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSearch1.Image = CType(resources.GetObject("cmdSearch1.Image"), System.Drawing.Image)
-        Me.cmdSearch1.Location = New System.Drawing.Point(597, 298)
+        Me.cmdSearch1.Location = New System.Drawing.Point(597, 286)
         Me.cmdSearch1.Name = "cmdSearch1"
         Me.cmdSearch1.Size = New System.Drawing.Size(33, 27)
         Me.cmdSearch1.TabIndex = 646
@@ -331,7 +444,7 @@ Partial Class frmProviderEdit
         Me.lblHospName2.BackColor = System.Drawing.Color.White
         Me.lblHospName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblHospName2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblHospName2.Location = New System.Drawing.Point(220, 331)
+        Me.lblHospName2.Location = New System.Drawing.Point(220, 319)
         Me.lblHospName2.Name = "lblHospName2"
         Me.lblHospName2.Size = New System.Drawing.Size(371, 24)
         Me.lblHospName2.TabIndex = 645
@@ -342,7 +455,7 @@ Partial Class frmProviderEdit
         Me.txtMoveTo.BackColor = System.Drawing.Color.Beige
         Me.txtMoveTo.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtMoveTo.HidePromptOnLeave = True
-        Me.txtMoveTo.Location = New System.Drawing.Point(150, 331)
+        Me.txtMoveTo.Location = New System.Drawing.Point(149, 319)
         Me.txtMoveTo.Mask = "00000"
         Me.txtMoveTo.Name = "txtMoveTo"
         Me.txtMoveTo.Size = New System.Drawing.Size(64, 25)
@@ -357,7 +470,7 @@ Partial Class frmProviderEdit
         Me.Label14.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label14.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(25, 335)
+        Me.Label14.Location = New System.Drawing.Point(28, 323)
         Me.Label14.Name = "Label14"
         Me.Label14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label14.Size = New System.Drawing.Size(116, 17)
@@ -369,7 +482,7 @@ Partial Class frmProviderEdit
         Me.lblHospName.BackColor = System.Drawing.Color.White
         Me.lblHospName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblHospName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblHospName.Location = New System.Drawing.Point(220, 299)
+        Me.lblHospName.Location = New System.Drawing.Point(220, 287)
         Me.lblHospName.Name = "lblHospName"
         Me.lblHospName.Size = New System.Drawing.Size(371, 24)
         Me.lblHospName.TabIndex = 643
@@ -381,7 +494,7 @@ Partial Class frmProviderEdit
         Me.txtMoveForm.BackColor = System.Drawing.Color.Beige
         Me.txtMoveForm.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtMoveForm.HidePromptOnLeave = True
-        Me.txtMoveForm.Location = New System.Drawing.Point(150, 300)
+        Me.txtMoveForm.Location = New System.Drawing.Point(149, 288)
         Me.txtMoveForm.Mask = "00000"
         Me.txtMoveForm.Name = "txtMoveForm"
         Me.txtMoveForm.Size = New System.Drawing.Size(64, 25)
@@ -396,7 +509,7 @@ Partial Class frmProviderEdit
         Me.Label17.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label17.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(22, 304)
+        Me.Label17.Location = New System.Drawing.Point(25, 292)
         Me.Label17.Name = "Label17"
         Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label17.Size = New System.Drawing.Size(119, 17)
@@ -407,7 +520,7 @@ Partial Class frmProviderEdit
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label12.Location = New System.Drawing.Point(332, 272)
+        Me.Label12.Location = New System.Drawing.Point(332, 260)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(126, 17)
         Me.Label12.TabIndex = 640
@@ -417,7 +530,7 @@ Partial Class frmProviderEdit
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label11.Location = New System.Drawing.Point(47, 272)
+        Me.Label11.Location = New System.Drawing.Point(50, 260)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(94, 17)
         Me.Label11.TabIndex = 638
@@ -427,7 +540,7 @@ Partial Class frmProviderEdit
         '
         Me.txtProviderTypeHosp.BackColor = System.Drawing.Color.Beige
         Me.txtProviderTypeHosp.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtProviderTypeHosp.Location = New System.Drawing.Point(149, 236)
+        Me.txtProviderTypeHosp.Location = New System.Drawing.Point(149, 224)
         Me.txtProviderTypeHosp.Name = "txtProviderTypeHosp"
         Me.txtProviderTypeHosp.Size = New System.Drawing.Size(40, 25)
         Me.txtProviderTypeHosp.TabIndex = 617
@@ -438,7 +551,7 @@ Partial Class frmProviderEdit
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label9.Location = New System.Drawing.Point(57, 239)
+        Me.Label9.Location = New System.Drawing.Point(60, 227)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(84, 17)
         Me.Label9.TabIndex = 636
@@ -448,7 +561,7 @@ Partial Class frmProviderEdit
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label8.Location = New System.Drawing.Point(352, 208)
+        Me.Label8.Location = New System.Drawing.Point(352, 196)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(71, 17)
         Me.Label8.TabIndex = 634
@@ -459,7 +572,7 @@ Partial Class frmProviderEdit
         Me.txtSex.BackColor = System.Drawing.Color.Beige
         Me.txtSex.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtSex.HidePromptOnLeave = True
-        Me.txtSex.Location = New System.Drawing.Point(149, 205)
+        Me.txtSex.Location = New System.Drawing.Point(149, 193)
         Me.txtSex.Mask = "0"
         Me.txtSex.Name = "txtSex"
         Me.txtSex.Size = New System.Drawing.Size(40, 25)
@@ -471,7 +584,7 @@ Partial Class frmProviderEdit
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label7.Location = New System.Drawing.Point(114, 209)
+        Me.Label7.Location = New System.Drawing.Point(117, 197)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(27, 17)
         Me.Label7.TabIndex = 632
@@ -481,7 +594,7 @@ Partial Class frmProviderEdit
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(400, 177)
+        Me.Label5.Location = New System.Drawing.Point(400, 165)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(23, 17)
         Me.Label5.TabIndex = 631
@@ -492,7 +605,7 @@ Partial Class frmProviderEdit
         Me.txtPrename.BackColor = System.Drawing.Color.Beige
         Me.txtPrename.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtPrename.HidePromptOnLeave = True
-        Me.txtPrename.Location = New System.Drawing.Point(149, 173)
+        Me.txtPrename.Location = New System.Drawing.Point(149, 161)
         Me.txtPrename.Mask = "0000"
         Me.txtPrename.Name = "txtPrename"
         Me.txtPrename.Size = New System.Drawing.Size(41, 25)
@@ -504,7 +617,7 @@ Partial Class frmProviderEdit
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label3.Location = New System.Drawing.Point(84, 177)
+        Me.Label3.Location = New System.Drawing.Point(87, 165)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 17)
         Me.Label3.TabIndex = 630
@@ -514,7 +627,7 @@ Partial Class frmProviderEdit
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label4.Location = New System.Drawing.Point(562, 177)
+        Me.Label4.Location = New System.Drawing.Point(562, 165)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 17)
         Me.Label4.TabIndex = 629
@@ -524,7 +637,7 @@ Partial Class frmProviderEdit
         '
         Me.txtLName.BackColor = System.Drawing.Color.Beige
         Me.txtLName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtLName.Location = New System.Drawing.Point(616, 173)
+        Me.txtLName.Location = New System.Drawing.Point(616, 161)
         Me.txtLName.Name = "txtLName"
         Me.txtLName.Size = New System.Drawing.Size(141, 25)
         Me.txtLName.TabIndex = 614
@@ -533,7 +646,7 @@ Partial Class frmProviderEdit
         '
         Me.txtName.BackColor = System.Drawing.Color.Beige
         Me.txtName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtName.Location = New System.Drawing.Point(428, 173)
+        Me.txtName.Location = New System.Drawing.Point(428, 161)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(128, 25)
         Me.txtName.TabIndex = 613
@@ -542,7 +655,7 @@ Partial Class frmProviderEdit
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label10.Location = New System.Drawing.Point(40, 144)
+        Me.Label10.Location = New System.Drawing.Point(43, 132)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(101, 17)
         Me.Label10.TabIndex = 627
@@ -552,7 +665,7 @@ Partial Class frmProviderEdit
         '
         Me.txtCID.BackColor = System.Drawing.Color.Beige
         Me.txtCID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtCID.Location = New System.Drawing.Point(149, 141)
+        Me.txtCID.Location = New System.Drawing.Point(149, 129)
         Me.txtCID.Mask = "0000000000000"
         Me.txtCID.Name = "txtCID"
         Me.txtCID.Size = New System.Drawing.Size(128, 25)
@@ -564,7 +677,7 @@ Partial Class frmProviderEdit
         Me.txtCouncil.BackColor = System.Drawing.Color.Beige
         Me.txtCouncil.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtCouncil.HidePromptOnLeave = True
-        Me.txtCouncil.Location = New System.Drawing.Point(149, 110)
+        Me.txtCouncil.Location = New System.Drawing.Point(149, 98)
         Me.txtCouncil.Mask = "00"
         Me.txtCouncil.Name = "txtCouncil"
         Me.txtCouncil.Size = New System.Drawing.Size(65, 25)
@@ -576,7 +689,7 @@ Partial Class frmProviderEdit
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label6.Location = New System.Drawing.Point(75, 113)
+        Me.Label6.Location = New System.Drawing.Point(78, 101)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 17)
         Me.Label6.TabIndex = 626
@@ -586,7 +699,7 @@ Partial Class frmProviderEdit
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label2.Location = New System.Drawing.Point(13, 80)
+        Me.Label2.Location = New System.Drawing.Point(16, 68)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(128, 17)
         Me.Label2.TabIndex = 624
@@ -595,7 +708,7 @@ Partial Class frmProviderEdit
         'txtRegisterno
         '
         Me.txtRegisterno.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtRegisterno.Location = New System.Drawing.Point(149, 77)
+        Me.txtRegisterno.Location = New System.Drawing.Point(149, 65)
         Me.txtRegisterno.Name = "txtRegisterno"
         Me.txtRegisterno.Size = New System.Drawing.Size(128, 25)
         Me.txtRegisterno.TabIndex = 609
@@ -605,7 +718,7 @@ Partial Class frmProviderEdit
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label1.Location = New System.Drawing.Point(54, 49)
+        Me.Label1.Location = New System.Drawing.Point(57, 37)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 17)
         Me.Label1.TabIndex = 623
@@ -617,7 +730,7 @@ Partial Class frmProviderEdit
         Me.cmdSave.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSave.Image = Global.MyPCU.My.Resources.Resources.a_save
         Me.cmdSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSave.Location = New System.Drawing.Point(807, 465)
+        Me.cmdSave.Location = New System.Drawing.Point(810, 528)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(121, 32)
         Me.cmdSave.TabIndex = 894
@@ -722,23 +835,13 @@ Partial Class frmProviderEdit
         Me.cmdUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmdUser.UseVisualStyleBackColor = True
         '
-        'cmdPrename
-        '
-        Me.cmdPrename.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.cmdPrename.Image = Global.MyPCU.My.Resources.Resources.a_edit4
-        Me.cmdPrename.Location = New System.Drawing.Point(353, 172)
-        Me.cmdPrename.Name = "cmdPrename"
-        Me.cmdPrename.Size = New System.Drawing.Size(33, 27)
-        Me.cmdPrename.TabIndex = 1252
-        Me.cmdPrename.UseVisualStyleBackColor = True
-        '
         'frmProviderEdit
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(943, 512)
+        Me.ClientSize = New System.Drawing.Size(943, 572)
         Me.Controls.Add(Me.cmdUser)
         Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.cmdFingerPrint)
@@ -826,4 +929,13 @@ Partial Class frmProviderEdit
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
     Friend WithEvents cmdUser As System.Windows.Forms.Button
     Friend WithEvents cmdPrename As Button
+    Friend WithEvents txtLine As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtTelephone As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents chkPorvider2 As CheckBox
+    Friend WithEvents chkPorvider1 As CheckBox
+    Friend WithEvents Label13 As Label
 End Class

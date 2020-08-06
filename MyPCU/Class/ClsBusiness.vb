@@ -417,7 +417,7 @@ Public Class ClsBusiness
         Lc_sb = New StringBuilder
         Try
             Lc_sb.Remove(0, Lc_sb.Length())
-            Lc_sb.Append("SELECT SEX FROM l_prename WHERE PRENAME_CODE = '" & strString & "'")
+            Lc_sb.Append("SELECT SEX FROM l_mypcu_prename WHERE PRENAME_CODE = '" & strString & "'")
             Lc_SQL = Lc_sb.ToString
             ds = GetDataAdp(Lc_SQL, "Table1", ds)
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("SEX")) Then

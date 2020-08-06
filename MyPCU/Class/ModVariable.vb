@@ -186,4 +186,8 @@
     '********VACCINE*****
     Public vEpiPID As String = ""
     Public vVaccineRowID As String = ""
+
+
+    '********SERVICE********
+    Public vQueueSEQ As String = ""
 End Module

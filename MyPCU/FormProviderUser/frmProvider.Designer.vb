@@ -41,6 +41,7 @@ Partial Class frmProvider
         Me.chk1 = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chk0 = New System.Windows.Forms.CheckBox()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPROVIDERTYPE.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -240,6 +241,12 @@ Partial Class frmProvider
         Me.chk0.Text = "Inactive"
         Me.chk0.UseVisualStyleBackColor = True
         '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "a_opd2.png")
+        '
         'frmProvider
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -295,4 +302,5 @@ Partial Class frmProvider
     Friend WithEvents chk1 As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents chk0 As System.Windows.Forms.CheckBox
+    Friend WithEvents ImageList1 As ImageList
 End Class

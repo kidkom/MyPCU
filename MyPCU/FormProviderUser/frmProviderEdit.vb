@@ -88,7 +88,7 @@ Public Class frmProviderEdit
                 End If
                 If ds.Tables(0).Rows(0).Item("MOVETO") <> "" Then
                     txtMoveTo.Text = ds.Tables(0).Rows(0).Item("MOVETO").ToString
-                    lblHospName2.Text = clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(txtMoveForm.Text)
+                    lblHospName2.Text = clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(txtMoveTo.Text)
                 End If
 
                 If Not IsDBNull(ds.Tables(0).Rows(0).Item("CODE_ID")) Then
@@ -99,6 +99,30 @@ Public Class frmProviderEdit
 
                 If Not IsDBNull(ds.Tables(0).Rows(0).Item("POSITION")) Then
                     txtPOSITION.Text = ds.Tables(0).Rows(0).Item("POSITION")
+                End If
+
+                If Not IsDBNull(ds.Tables(0).Rows(0).Item("SERVICE")) Then
+                    If ds.Tables(0).Rows(0).Item("SERVICE") = "1" Then
+                        chkPorvider1.Checked = True
+                        chkPorvider2.Checked = False
+                    Else
+                        chkPorvider2.Checked = True
+                        chkPorvider1.Checked = False
+                    End If
+                Else
+                    chkPorvider2.Checked = True
+                End If
+
+                If Not IsDBNull(ds.Tables(0).Rows(0).Item("TELEPHONE")) Then
+                    txtTelephone.Text = ds.Tables(0).Rows(0).Item("TELEPHONE")
+                End If
+
+                If Not IsDBNull(ds.Tables(0).Rows(0).Item("EMAIL")) Then
+                    txtEmail.Text = ds.Tables(0).Rows(0).Item("EMAIL")
+                End If
+
+                If Not IsDBNull(ds.Tables(0).Rows(0).Item("LINE")) Then
+                    txtLine.Text = ds.Tables(0).Rows(0).Item("LINE")
                 End If
 
                 If vImage = "0" Then
@@ -431,7 +455,12 @@ Public Class frmProviderEdit
             POSITION = ""
         End If
 
-
+        Dim tmpService As String = ""
+        If chkPorvider1.Checked = True Then
+            tmpService = "1"
+        Else
+            tmpService = "0"
+        End If
 
         If tmpUpdate = True Then
             If tmpPROVIDER_ID <> lblPROVIDER_ID.Text Then
@@ -453,7 +482,8 @@ Public Class frmProviderEdit
             clsbusent.Lc_BusinessEntity.Updatem_table("m_provider", "PROVIDER = '" & lblPROVIDER_ID.Text & "', REGISTERNO = '" & txtRegisterno.Text & "',COUNCIL = '" & tmpCouncil & "', CID = '" _
                                                       & tmpCID & "', PRENAME = '" & tmpPrename & "', PRENAME_HOS = '" & tmpPrenameHos & "',NAME = '" & tmpName & "',LNAME = '" & tmpLname & "',SEX = '" & tmpSex & "',BIRTH = '" _
                                                       & tmpBirth & "',PROVIDERTYPE = '" & txtProviderType.Text & "',PROVIDER_TYPE_HOSP = '" & tmpProType & "',STARTDATE = '" & tmpStartDate & "',POSITION = '" & POSITION & "',OUTDATE = '" _
-                                                      & tmpOutDate & "',MOVEFROM = '" & tmpMoveFrom & "',MOVETO = '" & tmpMoveTo & "',USER_REC = '" & vUSERID & "',D_UPDATE = '" & tmpNow & "',STATUS = '" & tmpStatus & "',STATUS_AF = '2'",
+                                                      & tmpOutDate & "',MOVEFROM = '" & tmpMoveFrom & "',MOVETO = '" & tmpMoveTo & "',USER_REC = '" & vUSERID & "',D_UPDATE = '" & tmpNow & "',STATUS = '" & tmpStatus & "',STATUS_AF = '2'," _
+                                                      & "SERVICE = '" & tmpService & "',TELEPHONE  = '" & txtTelephone.Text & "',EMAIL = '" & txtEmail.Text & "',LINE = '" & txtLine.Text & "' ",
                                       "ROWID = '" & vPvdROWID & "'")
 
 
@@ -471,8 +501,14 @@ Public Class frmProviderEdit
                 tmpProviderId = lblPROVIDER_ID.Text
             End If
 
-            clsbusent.Lc_BusinessEntity.Insertm_table("m_provider (HOSPCODE,PROVIDER,REGISTERNO,COUNCIL,CID,PRENAME,PRENAME_HOS,NAME,LNAME,SEX,BIRTH,PROVIDER_TYPE_HOSP,PROVIDERTYPE,STARTDATE,OUTDATE,MOVEFROM,MOVETO,D_UPDATE,USER_REC,STATUS,STATUS_AF,USER_STATUS,POSITION,MYDATA)",
-                    "'" & vHcode & "','" & tmpProviderId & "','" & txtRegisterno.Text & "','" & tmpCouncil & "','" & tmpCID & "','" & tmpPrename & "','" & tmpPrenameHos & "','" & tmpName & "','" & tmpLname & "','" & tmpSex & "','" & tmpBirth & "','" & tmpProType & "','" & txtProviderType.Text & "','" & tmpStartDate & "','" & tmpOutDate & "','" & tmpMoveFrom & "','" & tmpMoveTo & "','" & tmpNow & "','" & vUSERID & "','1','" & tmpStatusAF & "','1','" & POSITION & "','0'")
+            clsbusent.Lc_BusinessEntity.Insertm_table("m_provider (HOSPCODE,PROVIDER,REGISTERNO,COUNCIL,CID,PRENAME,PRENAME_HOS,NAME," _
+                                                      & "LNAME,SEX,BIRTH,PROVIDER_TYPE_HOSP,PROVIDERTYPE,STARTDATE,OUTDATE,MOVEFROM,MOVETO," _
+                                                      & "D_UPDATE,USER_REC,STATUS,STATUS_AF,USER_STATUS,POSITION,MYDATA,SERVICE,TELEPHONE,EMAIL,LINE)",
+                                            "'" & vHcode & "','" & tmpProviderId & "','" & txtRegisterno.Text & "','" & tmpCouncil & "'," _
+                                            & "'" & tmpCID & "','" & tmpPrename & "','" & tmpPrenameHos & "','" & tmpName & "','" & tmpLname & "'," _
+                                            & "'" & tmpSex & "','" & tmpBirth & "','" & tmpProType & "','" & txtProviderType.Text & "','" & tmpStartDate & "'," _
+                                            & "'" & tmpOutDate & "','" & tmpMoveFrom & "','" & tmpMoveTo & "','" & tmpNow & "','" & vUSERID & "','1'," _
+                                            & "'" & tmpStatusAF & "','1','" & POSITION & "','0','" & tmpService & "','" & txtTelephone.Text & "','" & txtEmail.Text & "','" & txtLine.Text & "'")
 
         End If
         SplashScreenManager1.CloseWaitForm()
@@ -920,5 +956,15 @@ Public Class frmProviderEdit
         Dim f As New frmLookupPrename
         f.ShowDialog()
         Prename()
+    End Sub
+
+    Private Sub chkPorvider1_Click(sender As Object, e As EventArgs) Handles chkPorvider1.Click
+        chkPorvider1.Checked = True
+        chkPorvider2.Checked = False
+    End Sub
+
+    Private Sub chkPorvider2_Click(sender As Object, e As EventArgs) Handles chkPorvider2.Click
+        chkPorvider1.Checked = False
+        chkPorvider2.Checked = True
     End Sub
 End Class

@@ -662,16 +662,16 @@
     <Compile Include="FormSearch\WaitForm1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmServiceQueue.Designer.vb">
-      <DependentUpon>frmServiceQueue.vb</DependentUpon>
+    <Compile Include="FormService\frmQueueEdit.Designer.vb">
+      <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmServiceQueue.vb">
+    <Compile Include="FormService\frmQueueEdit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmServiceQueueEdit.Designer.vb">
-      <DependentUpon>frmServiceQueueEdit.vb</DependentUpon>
+    <Compile Include="FormService\frmQueueService.Designer.vb">
+      <DependentUpon>frmQueueService.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmServiceQueueEdit.vb">
+    <Compile Include="FormService\frmQueueService.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSystem\frmAddDepartment.Designer.vb">
@@ -1048,11 +1048,11 @@
     <EmbeddedResource Include="FormSearch\WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmServiceQueue.resx">
-      <DependentUpon>frmServiceQueue.vb</DependentUpon>
+    <EmbeddedResource Include="FormService\frmQueueEdit.resx">
+      <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmServiceQueueEdit.resx">
-      <DependentUpon>frmServiceQueueEdit.vb</DependentUpon>
+    <EmbeddedResource Include="FormService\frmQueueService.resx">
+      <DependentUpon>frmQueueService.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSystem\frmAddDepartment.resx">
       <DependentUpon>frmAddDepartment.vb</DependentUpon>
@@ -1151,6 +1151,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
+    <Content Include="Resources\1_material2.png" />
+    <None Include="Resources\a_clock6.png" />
     <None Include="Resources\a_baby21.png" />
     <None Include="Resources\a_baby2.png" />
     <None Include="Resources\a_mother2.png" />

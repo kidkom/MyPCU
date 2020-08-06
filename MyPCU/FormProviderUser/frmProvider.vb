@@ -8,8 +8,8 @@ Public Class frmProvider
     Private Sub frmProvider_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         With BetterListView1
-            .Columns.Add(0).Text = "ROWID"
-            .Columns(0).Width = 0
+            .Columns.Add(0).Text = ""
+            .Columns(0).Width = 30
             .Columns(0).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(1).Text = "เลขที่ผู้ให้บริการ"
             .Columns(1).Width = 100
@@ -41,7 +41,9 @@ Public Class frmProvider
             .Columns.Add(10).Text = "ปรับปรุงเมื่อ"
             .Columns(10).Width = 100
             .Columns(10).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-
+            .Columns.Add(11).Text = "ROWID"
+            .Columns(11).Width = 100
+            .Columns(11).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
         CboProvider()
@@ -83,11 +85,11 @@ Public Class frmProvider
     Private Sub ShowData()
         Dim ds As DataSet
         If chkAll.Checked = True Then
-            ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8' ORDER BY PROVIDER+0 DESC")
+            ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS,IFNULL(SERVICE,'0') AS SERVICE", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8' ORDER BY PROVIDER+0 DESC")
         ElseIf chk1.Checked = True Then
-            ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8'  AND IFNULL(A.STATUS,'1') = '1' ORDER BY PROVIDER+0 DESC")
+            ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS,IFNULL(SERVICE,'0') AS SERVICE", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8'  AND IFNULL(A.STATUS,'1') = '1' ORDER BY PROVIDER+0 DESC")
         ElseIf chk0.Checked = True Then
-            ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8' AND A.STATUS = '0' ORDER BY PROVIDER+0 DESC")
+            ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS,IFNULL(SERVICE,'0') AS SERVICE", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8' AND A.STATUS = '0' ORDER BY PROVIDER+0 DESC")
         End If
         If ds.Tables(0).Rows.Count > 0 Then
             DisplayData(ds)
@@ -116,7 +118,12 @@ Public Class frmProvider
                 dr = ds.Tables(0).Rows(i)
                 NAMEUSER = clsdataBus.Lc_Business.SELECT_NAME_USERID(dr("USER_REC").ToString)
 
-                BetterListView1.Items.Add(dr("ROWID"))
+                If dr("SERVICE") = "1" Then
+                    BetterListView1.Items.Add(ImageList1.Images.Item(0)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                Else
+                    BetterListView1.Items.Add("")
+                End If
+
                 BetterListView1.Items(i).SubItems.Add(dr("PROVIDER").ToString).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(dr("REGISTERNO").ToString).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(dr("CID").ToString).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
@@ -147,6 +154,10 @@ Public Class frmProvider
                 Else
                     BetterListView1.Items(i).SubItems.Add("")
                 End If
+
+                BetterListView1.Items(i).SubItems.Add(dr("ROWID").ToString).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+
+
                 If (i Mod 2) = 0 Then
                     BetterListView1.Items(i).BackColor = Color.WhiteSmoke
                 End If
@@ -196,7 +207,7 @@ Public Class frmProvider
             tmpSQL = " AND IFNULL(A.STATUS,'1') = '0' "
         End If
         Dim ds As DataSet
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8' AND (A.NAME LIKE '%" & txtSearch.Text & "%' OR A.LNAME LIKE '%" & txtSearch.Text & "%') " & tmpSQL & " ORDER BY PROVIDER+0 DESC")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("A.ROWID,A.PROVIDER,A.REGISTERNO,A.CID,B.PRENAME_DESC,A.NAME,A.LNAME,C.PROVIDER_DESC,A.POSITION,IFNULL(A.STARTDATE,'') AS STARTDATE,IFNULL(A.OUTDATE,'') AS OUTDATE,A.STATUS_AF,A.USER_REC,A.D_UPDATE,A.STATUS,IFNULL(SERVICE,'') AS SERVICE", "m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) LEFT JOIN l_providertype_hosp C ON(PROVIDER_TYPE_HOSP = C.PROVIDER_CODE)", " WHERE A.STATUS_AF <> '8' AND (A.NAME LIKE '%" & txtSearch.Text & "%' OR A.LNAME LIKE '%" & txtSearch.Text & "%') " & tmpSQL & " ORDER BY PROVIDER+0 DESC")
         If ds.Tables(0).Rows.Count > 0 Then
             DisplayData(ds)
             Label1.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0") & " รายการ"
@@ -264,7 +275,7 @@ Public Class frmProvider
         For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
             Dim lvi As BetterListViewItem
             lvi = BetterListView1.SelectedItems(i)
-            vPvdROWID = lvi.SubItems.Item(0).Text
+            vPvdROWID = lvi.SubItems.Item(11).Text
         Next
     End Sub
 
