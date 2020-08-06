@@ -22,6 +22,20 @@ Partial Class frmPersonEpi
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPersonEpi))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.LookUpEdit3 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.LookUpEdit2 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TimeEdit1 = New DevExpress.XtraEditors.TimeEdit()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtVaccinePlaceName = New DevExpress.XtraEditors.LabelControl()
         Me.txtVaccineTypeCode = New DevExpress.XtraEditors.TextEdit()
         Me.txtVaccinePlaceCode = New DevExpress.XtraEditors.TextEdit()
@@ -42,22 +56,14 @@ Partial Class frmPersonEpi
         Me.lblErrorCode = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.ToolTipController1 = New DevExpress.Utils.ToolTipController(Me.components)
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TimeEdit1 = New DevExpress.XtraEditors.TimeEdit()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LookUpEdit2 = New DevExpress.XtraEditors.LookUpEdit()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.LookUpEdit3 = New DevExpress.XtraEditors.LookUpEdit()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.LookUpEdit4 = New DevExpress.XtraEditors.LookUpEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtVaccineTypeCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtVaccinePlaceCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numBottle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,11 +72,7 @@ Partial Class frmPersonEpi
         CType(Me.txtDateServ.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboVaccineType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -84,6 +86,7 @@ Partial Class frmPersonEpi
         Me.GroupControl1.Controls.Add(Me.Label12)
         Me.GroupControl1.Controls.Add(Me.NumericUpDown1)
         Me.GroupControl1.Controls.Add(Me.Label11)
+        Me.GroupControl1.Controls.Add(Me.LookUpEdit4)
         Me.GroupControl1.Controls.Add(Me.LookUpEdit2)
         Me.GroupControl1.Controls.Add(Me.Label10)
         Me.GroupControl1.Controls.Add(Me.LookUpEdit1)
@@ -114,6 +117,138 @@ Partial Class frmPersonEpi
         Me.GroupControl1.Size = New System.Drawing.Size(791, 307)
         Me.GroupControl1.TabIndex = 1154
         Me.GroupControl1.Text = "บันทึกข้อมูลการได้รับวัคซีน (กรณีไม่ได้ให้บริการเอง)"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(232, 231)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(117, 21)
+        Me.CheckBox2.TabIndex = 1284
+        Me.CheckBox2.Text = "ข้อมูลจากแหล่่งอื่น"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(130, 231)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(95, 21)
+        Me.CheckBox1.TabIndex = 1283
+        Me.CheckBox1.Text = "ผู้รับบริการเอง"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(253, 200)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(96, 17)
+        Me.Label13.TabIndex = 1282
+        Me.Label13.Text = "หน่วยการให้วัคซีน"
+        '
+        'LookUpEdit3
+        '
+        Me.LookUpEdit3.Location = New System.Drawing.Point(355, 229)
+        Me.LookUpEdit3.Name = "LookUpEdit3"
+        Me.LookUpEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LookUpEdit3.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.LookUpEdit3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.LookUpEdit3.Size = New System.Drawing.Size(178, 24)
+        Me.LookUpEdit3.TabIndex = 1281
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(57, 233)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(63, 17)
+        Me.Label12.TabIndex = 1280
+        Me.Label12.Text = "แหล่งข้อมูล"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.NumericUpDown1.Location = New System.Drawing.Point(130, 198)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(49, 25)
+        Me.NumericUpDown1.TabIndex = 1279
+        Me.NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(52, 200)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(68, 17)
+        Me.Label11.TabIndex = 1278
+        Me.Label11.Text = "ปริมาณที่ให้"
+        '
+        'LookUpEdit2
+        '
+        Me.LookUpEdit2.Location = New System.Drawing.Point(434, 167)
+        Me.LookUpEdit2.Name = "LookUpEdit2"
+        Me.LookUpEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LookUpEdit2.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.LookUpEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.LookUpEdit2.Size = New System.Drawing.Size(154, 24)
+        Me.LookUpEdit2.TabIndex = 1277
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(359, 170)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(69, 17)
+        Me.Label10.TabIndex = 1276
+        Me.Label10.Text = "ตำแหน่งที่ให้"
+        '
+        'LookUpEdit1
+        '
+        Me.LookUpEdit1.Location = New System.Drawing.Point(130, 167)
+        Me.LookUpEdit1.Name = "LookUpEdit1"
+        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.LookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.LookUpEdit1.Size = New System.Drawing.Size(178, 24)
+        Me.LookUpEdit1.TabIndex = 1275
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(40, 170)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 17)
+        Me.Label9.TabIndex = 1274
+        Me.Label9.Text = "วิธีการให้วัคซีน"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(405, 47)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 17)
+        Me.Label8.TabIndex = 1273
+        Me.Label8.Text = "น."
+        '
+        'TimeEdit1
+        '
+        Me.TimeEdit1.EditValue = New Date(2020, 8, 4, 0, 0, 0, 0)
+        Me.TimeEdit1.Location = New System.Drawing.Point(299, 44)
+        Me.TimeEdit1.Name = "TimeEdit1"
+        Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.TimeEdit1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.TimeEdit1.Size = New System.Drawing.Size(100, 24)
+        Me.TimeEdit1.TabIndex = 1272
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(263, 47)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(30, 17)
+        Me.Label7.TabIndex = 1271
+        Me.Label7.Text = "เวลา"
         '
         'txtVaccinePlaceName
         '
@@ -313,137 +448,15 @@ Partial Class frmPersonEpi
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'Label7
+        'LookUpEdit4
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(263, 47)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(30, 17)
-        Me.Label7.TabIndex = 1271
-        Me.Label7.Text = "เวลา"
-        '
-        'TimeEdit1
-        '
-        Me.TimeEdit1.EditValue = New Date(2020, 8, 4, 0, 0, 0, 0)
-        Me.TimeEdit1.Location = New System.Drawing.Point(299, 44)
-        Me.TimeEdit1.Name = "TimeEdit1"
-        Me.TimeEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.TimeEdit1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TimeEdit1.Size = New System.Drawing.Size(100, 24)
-        Me.TimeEdit1.TabIndex = 1272
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(405, 47)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 17)
-        Me.Label8.TabIndex = 1273
-        Me.Label8.Text = "น."
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(40, 170)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 17)
-        Me.Label9.TabIndex = 1274
-        Me.Label9.Text = "วิธีการให้วัคซีน"
-        '
-        'LookUpEdit1
-        '
-        Me.LookUpEdit1.Location = New System.Drawing.Point(130, 167)
-        Me.LookUpEdit1.Name = "LookUpEdit1"
-        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
-        Me.LookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LookUpEdit1.Size = New System.Drawing.Size(178, 24)
-        Me.LookUpEdit1.TabIndex = 1275
-        '
-        'LookUpEdit2
-        '
-        Me.LookUpEdit2.Location = New System.Drawing.Point(434, 167)
-        Me.LookUpEdit2.Name = "LookUpEdit2"
-        Me.LookUpEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit2.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
-        Me.LookUpEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LookUpEdit2.Size = New System.Drawing.Size(154, 24)
-        Me.LookUpEdit2.TabIndex = 1277
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(359, 170)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(69, 17)
-        Me.Label10.TabIndex = 1276
-        Me.Label10.Text = "ตำแหน่งที่ให้"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(130, 198)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(49, 25)
-        Me.NumericUpDown1.TabIndex = 1279
-        Me.NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(52, 200)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(68, 17)
-        Me.Label11.TabIndex = 1278
-        Me.Label11.Text = "ปริมาณที่ให้"
-        '
-        'LookUpEdit3
-        '
-        Me.LookUpEdit3.Location = New System.Drawing.Point(355, 229)
-        Me.LookUpEdit3.Name = "LookUpEdit3"
-        Me.LookUpEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit3.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
-        Me.LookUpEdit3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LookUpEdit3.Size = New System.Drawing.Size(178, 24)
-        Me.LookUpEdit3.TabIndex = 1281
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(57, 233)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(63, 17)
-        Me.Label12.TabIndex = 1280
-        Me.Label12.Text = "แหล่งข้อมูล"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(196, 200)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(24, 17)
-        Me.Label13.TabIndex = 1282
-        Me.Label13.Text = "ซีซี"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(130, 231)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(95, 21)
-        Me.CheckBox1.TabIndex = 1283
-        Me.CheckBox1.Text = "ผู้รับบริการเอง"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(232, 231)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(117, 21)
-        Me.CheckBox2.TabIndex = 1284
-        Me.CheckBox2.Text = "ข้อมูลจากแหล่่งอื่น"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.LookUpEdit4.Location = New System.Drawing.Point(355, 199)
+        Me.LookUpEdit4.Name = "LookUpEdit4"
+        Me.LookUpEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LookUpEdit4.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.LookUpEdit4.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.LookUpEdit4.Size = New System.Drawing.Size(178, 24)
+        Me.LookUpEdit4.TabIndex = 1277
         '
         'frmPersonEpi
         '
@@ -464,6 +477,11 @@ Partial Class frmPersonEpi
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtVaccineTypeCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtVaccinePlaceCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numBottle, System.ComponentModel.ISupportInitialize).EndInit()
@@ -472,11 +490,7 @@ Partial Class frmPersonEpi
         CType(Me.txtDateServ.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboVaccineType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -516,4 +530,5 @@ Partial Class frmPersonEpi
     Friend WithEvents Label7 As Label
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents LookUpEdit4 As DevExpress.XtraEditors.LookUpEdit
 End Class

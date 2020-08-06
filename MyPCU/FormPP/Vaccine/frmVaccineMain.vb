@@ -57,9 +57,12 @@ Public Class frmVaccineMain
             .Columns.Add(9).Text = "ขวดที่"
             .Columns(9).Width = 50
             .Columns(9).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(10).Text = "วันที่บันทึก/ปรับปรุง"
-            .Columns(10).Width = 180
+            .Columns.Add(150).Text = "วันหมดอายุ"
+            .Columns(10).Width = 150
             .Columns(10).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(11).Text = "วันที่บันทึก/ปรับปรุง"
+            .Columns(11).Width = 180
+            .Columns(11).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
         txtPID.Select()
@@ -263,7 +266,7 @@ Public Class frmVaccineMain
         SplashScreenManager1.ShowWaitForm()
         Dim ds As DataSet
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("a.PID,a.ROWID,a.HOSPCODE,a.SEQ,a.DATE_SERV,a.VACCINETYPE,a.VACCINEPLACE,d.VACCINE_DESC_E," _
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("a.PID,a.ROWID,a.HOSPCODE,a.SEQ,a.DATE_SERV,a.VACCINETYPE,a.VACCINEPLACE,d.VACCINE_DESC_E,IFNULL(a.DATE_EXPIRE,'') AS DATE_EXPIRE," _
                                                  & "a.PROVIDER,a.D_UPDATE,a.STATUS_AF,IFNULL(a.LOT_NO,'') AS LOT_NO,IFNULL(a.BOTTLE,'') AS BOTTLE," _
                                                    & "TIMESTAMPDIFF(YEAR, BIRTH, DATE_SERV) AS AGE_YEAR,TIMESTAMPDIFF( MONTH, BIRTH, DATE_SERV ) % 12 AS AGE_MONTH," _
                                                     & "FLOOR( TIMESTAMPDIFF( DAY, BIRTH, DATE_SERV ) % 30.4375 ) AS AGE_DAY" _
@@ -305,7 +308,7 @@ Public Class frmVaccineMain
                 BetterListView1.Items(i).SubItems.Add(clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(dr("VACCINEPLACE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Left
                 BetterListView1.Items(i).SubItems.Add((dr("LOT_NO")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("BOTTLE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
-
+                BetterListView1.Items(i).SubItems.Add(Thaidate(dr("DATE_EXPIRE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(Thaidate_D_UPDATE(dr("D_UPDATE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
 
 
@@ -354,6 +357,7 @@ Public Class frmVaccineMain
             lvi = BetterListView1.SelectedItems(i)
             vVaccineRowID = lvi.SubItems.Item(1).Text
         Next
+
         vEpiPID = lblPID.Text
 
         Dim f As New frmPersonEpi

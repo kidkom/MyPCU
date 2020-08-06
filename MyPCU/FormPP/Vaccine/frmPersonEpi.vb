@@ -19,7 +19,7 @@ Public Class frmPersonEpi
 
         If vVaccineRowID <> "" Then
             Dim ds As New DataSet
-            ds = clsdataBus.Lc_Business.SELECT_TABLE("DATE_SERV,VACCINETYPE,VACCINEPLACE,PROVIDER,LOT_NO,BOTTLE,CODE_ID", "m_epi", "WHERE ROWID = '" & vVaccineRowID & "'")
+            ds = clsdataBus.Lc_Business.SELECT_TABLE("DATE_SERV,VACCINETYPE,VACCINEPLACE,PROVIDER,LOT_NO,IFNULL(BOTTLE,'') AS BOTTLE,CODE_ID", "m_epi", "WHERE ROWID = '" & vVaccineRowID & "'")
             If ds.Tables(0).Rows.Count > 0 Then
                 tmpUpdate = True
 
@@ -30,9 +30,9 @@ Public Class frmPersonEpi
                 End If
                 If Not IsDBNull(ds.Tables(0).Rows(0).Item("VACCINETYPE")) Then
                     txtVaccineTypeCode.Text = ds.Tables(0).Rows(0).Item("VACCINETYPE")
+                    cboVaccineType.EditValue = txtVaccineTypeCode.Text
                     tmpVaccine = txtVaccineTypeCode.Text
-                    'cboVaccineType.EditValue = ClsBusiness.Lc_Business.SELECT_NAME_VACCINETYPE(txtVaccineTypeCode.Text)
-                    'ToolTipController1.SetToolTip(cboVaccineType, clsdataBus.Lc_Business.SELECT_NAME_VACCINETYPE(txtVaccineTypeCode.Text, "0"))
+
                 End If
 
                 If Not IsDBNull(ds.Tables(0).Rows(0).Item("VACCINEPLACE")) Then
@@ -44,11 +44,13 @@ Public Class frmPersonEpi
                     txtLotNo.Text = ds.Tables(0).Rows(0).Item("LOT_NO")
                     'txtLotNo.Text = ClsBusiness.Lc_Business.SELECT_NAME_HOSPITAL(txtHOSP_RX.Text)
                 End If
-                If Not IsDBNull(ds.Tables(0).Rows(0).Item("BOTTLE")) Then
-                    txtLotNo.Text = ds.Tables(0).Rows(0).Item("BOTTLE")
-                    'If ds.Tables(0).Rows(0).Item("BOTTLE") <> "" Then
-                    '    txtDATE_DISCH.Text = DateTime.ParseExact(ds.Tables(0).Rows(0).Item("DATE_DISCH"), "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
+
+                If ds.Tables(0).Rows(0).Item("BOTTLE") <> "" Then
+                    If IsNumeric(ds.Tables(0).Rows(0).Item("BOTTLE")) = True Then
+                        numBottle.Value = ds.Tables(0).Rows(0).Item("BOTTLE")
+                    End If
                 End If
+
                 If Not IsDBNull(ds.Tables(0).Rows(0).Item("PROVIDER")) Then
                     txtProviderCode.Text = ds.Tables(0).Rows(0).Item("PROVIDER")
                     cboProvider.EditValue = txtProviderCode.Text
@@ -230,7 +232,7 @@ Public Class frmPersonEpi
 
             clsbusent.Lc_BusinessEntity.Insertm_table("m_epi (HOSPCODE,PID,SEQ,DATE_SERV,VACCINETYPE,VACCINEPLACE,LOT_NO,BOTTLE,PROVIDER,D_UPDATE,USER_REC,STATUS_AF)",
               "'" & vHcode & "','" & vEpiPID & "','','" & DATE_SERV & "','" & VACCINETYPE & "','" & VACCINEPLACE & "','" & LOT_NO & "','" & BOTTLE & "','" & PROVIDER & "','" & tmpNow & "','" & vUSERID & "','2'")
-            MessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            XtraMessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
             tmpUpdate = True
         Else
@@ -243,13 +245,14 @@ Public Class frmPersonEpi
                     XtraMessageBox.Show("ไม่สามารถบันทึกได้ เนื่องจากมีการบันทึกข้อมูลไว้แล้ว!!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Exit Sub
                 End If
-                clsbusent.Lc_BusinessEntity.Updatem_table("m_epi", "VACCINETYPE = '" & VACCINETYPE & "',VACCINEPLACE = '" _
+            End If
+            clsbusent.Lc_BusinessEntity.Updatem_table("m_epi", "VACCINETYPE = '" & VACCINETYPE & "',VACCINEPLACE = '" _
                                           & VACCINEPLACE & "', DATE_SERV = '" & DATE_SERV & "',PROVIDER = '" & PROVIDER & "',D_UPDATE = '" & tmpNow & "',STATUS_AF = '2',LOT_NO = '" & txtLotNo.Text & "' ,BOTTLE = '" & BOTTLE & "'",
                           "ROWID = '" & vVaccineRowID & "'")
-                MessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Close()
+            XtraMessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+
             End If
-        End If
     End Sub
     Private Sub CheckData()
         chkData = True
