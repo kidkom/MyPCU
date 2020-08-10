@@ -22,6 +22,7 @@ Partial Class frmProviderEdit
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProviderEdit))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.lblHospName = New DevExpress.XtraEditors.ButtonEdit()
         Me.txtLine = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
@@ -49,10 +50,8 @@ Partial Class frmProviderEdit
         Me.lblCIDError = New System.Windows.Forms.Label()
         Me.cmdSearch2 = New System.Windows.Forms.Button()
         Me.cmdSearch1 = New System.Windows.Forms.Button()
-        Me.lblHospName2 = New System.Windows.Forms.Label()
         Me.txtMoveTo = New System.Windows.Forms.MaskedTextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.lblHospName = New System.Windows.Forms.Label()
         Me.txtMoveForm = New System.Windows.Forms.MaskedTextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -86,8 +85,10 @@ Partial Class frmProviderEdit
         Me.XtraOpenFileDialog1 = New DevExpress.XtraEditors.XtraOpenFileDialog(Me.components)
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         Me.cmdUser = New System.Windows.Forms.Button()
+        Me.lblHospName2 = New DevExpress.XtraEditors.ButtonEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.lblHospName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBirth.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBirth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOutDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,10 +100,13 @@ Partial Class frmProviderEdit
         CType(Me.cboPrename.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboCouncil.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lblHospName2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
         '
+        Me.GroupControl1.Controls.Add(Me.lblHospName2)
+        Me.GroupControl1.Controls.Add(Me.lblHospName)
         Me.GroupControl1.Controls.Add(Me.txtLine)
         Me.GroupControl1.Controls.Add(Me.Label18)
         Me.GroupControl1.Controls.Add(Me.txtEmail)
@@ -130,10 +134,8 @@ Partial Class frmProviderEdit
         Me.GroupControl1.Controls.Add(Me.lblCIDError)
         Me.GroupControl1.Controls.Add(Me.cmdSearch2)
         Me.GroupControl1.Controls.Add(Me.cmdSearch1)
-        Me.GroupControl1.Controls.Add(Me.lblHospName2)
         Me.GroupControl1.Controls.Add(Me.txtMoveTo)
         Me.GroupControl1.Controls.Add(Me.Label14)
-        Me.GroupControl1.Controls.Add(Me.lblHospName)
         Me.GroupControl1.Controls.Add(Me.txtMoveForm)
         Me.GroupControl1.Controls.Add(Me.Label17)
         Me.GroupControl1.Controls.Add(Me.Label12)
@@ -162,6 +164,16 @@ Partial Class frmProviderEdit
         Me.GroupControl1.Size = New System.Drawing.Size(789, 548)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "บันทึกข้อมูลเจ้าหน้าที่"
+        '
+        'lblHospName
+        '
+        Me.lblHospName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHospName.Location = New System.Drawing.Point(220, 288)
+        Me.lblHospName.Name = "lblHospName"
+        Me.lblHospName.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.lblHospName.Size = New System.Drawing.Size(371, 24)
+        Me.lblHospName.TabIndex = 1262
         '
         'txtLine
         '
@@ -428,6 +440,7 @@ Partial Class frmProviderEdit
         Me.cmdSearch2.Size = New System.Drawing.Size(33, 27)
         Me.cmdSearch2.TabIndex = 647
         Me.cmdSearch2.UseVisualStyleBackColor = True
+        Me.cmdSearch2.Visible = False
         '
         'cmdSearch1
         '
@@ -438,17 +451,7 @@ Partial Class frmProviderEdit
         Me.cmdSearch1.Size = New System.Drawing.Size(33, 27)
         Me.cmdSearch1.TabIndex = 646
         Me.cmdSearch1.UseVisualStyleBackColor = True
-        '
-        'lblHospName2
-        '
-        Me.lblHospName2.BackColor = System.Drawing.Color.White
-        Me.lblHospName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblHospName2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblHospName2.Location = New System.Drawing.Point(220, 319)
-        Me.lblHospName2.Name = "lblHospName2"
-        Me.lblHospName2.Size = New System.Drawing.Size(371, 24)
-        Me.lblHospName2.TabIndex = 645
-        Me.lblHospName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdSearch1.Visible = False
         '
         'txtMoveTo
         '
@@ -476,17 +479,6 @@ Partial Class frmProviderEdit
         Me.Label14.Size = New System.Drawing.Size(116, 17)
         Me.Label14.TabIndex = 644
         Me.Label14.Text = "สถานพยาบาลที่ย้ายไป"
-        '
-        'lblHospName
-        '
-        Me.lblHospName.BackColor = System.Drawing.Color.White
-        Me.lblHospName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblHospName.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblHospName.Location = New System.Drawing.Point(220, 287)
-        Me.lblHospName.Name = "lblHospName"
-        Me.lblHospName.Size = New System.Drawing.Size(371, 24)
-        Me.lblHospName.TabIndex = 643
-        Me.lblHospName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtMoveForm
         '
@@ -835,6 +827,16 @@ Partial Class frmProviderEdit
         Me.cmdUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmdUser.UseVisualStyleBackColor = True
         '
+        'lblHospName2
+        '
+        Me.lblHospName2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblHospName2.Location = New System.Drawing.Point(220, 319)
+        Me.lblHospName2.Name = "lblHospName2"
+        Me.lblHospName2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.lblHospName2.Size = New System.Drawing.Size(371, 24)
+        Me.lblHospName2.TabIndex = 1263
+        '
         'frmProviderEdit
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -859,6 +861,7 @@ Partial Class frmProviderEdit
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.lblHospName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBirth.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBirth.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOutDate.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -870,6 +873,7 @@ Partial Class frmProviderEdit
         CType(Me.cboPrename.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboCouncil.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lblHospName2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -887,10 +891,8 @@ Partial Class frmProviderEdit
     Friend WithEvents lblCIDError As System.Windows.Forms.Label
     Friend WithEvents cmdSearch2 As System.Windows.Forms.Button
     Friend WithEvents cmdSearch1 As System.Windows.Forms.Button
-    Friend WithEvents lblHospName2 As System.Windows.Forms.Label
     Friend WithEvents txtMoveTo As System.Windows.Forms.MaskedTextBox
     Public WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents lblHospName As System.Windows.Forms.Label
     Friend WithEvents txtMoveForm As System.Windows.Forms.MaskedTextBox
     Public WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
@@ -938,4 +940,6 @@ Partial Class frmProviderEdit
     Friend WithEvents chkPorvider2 As CheckBox
     Friend WithEvents chkPorvider1 As CheckBox
     Friend WithEvents Label13 As Label
+    Friend WithEvents lblHospName As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents lblHospName2 As DevExpress.XtraEditors.ButtonEdit
 End Class

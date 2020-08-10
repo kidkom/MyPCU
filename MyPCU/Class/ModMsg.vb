@@ -4,4 +4,5 @@
     Public msConnectDb As String = "ทำการเชื่อมต่อ database ได้"
     Public msSave As String = "บันทึกข้อมูลเรียบร้อยแล้ว"
     Public msNumber As String = "กรุณาระบุเป็นตัวเลขเท่านั้น!!!"
+    Public mDataMiss As String = "บันทึกข้อมูลไม่ถูกต้อง!!!"
 End Module

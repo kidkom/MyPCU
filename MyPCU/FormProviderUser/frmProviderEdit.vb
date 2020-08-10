@@ -967,4 +967,20 @@ Public Class frmProviderEdit
         chkPorvider1.Checked = False
         chkPorvider2.Checked = True
     End Sub
+
+    Private Sub lblHospName_Click(sender As Object, e As EventArgs) Handles lblHospName.Click
+        Dim fHospSearch As New frmHospSearch
+        fHospSearch.ShowDialog()
+        txtMoveForm.Text = vTmpHcode
+        lblHospName.Text = clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(txtMoveForm.Text)
+        vTmpHcode = ""
+    End Sub
+
+    Private Sub lblHospName2_Click(sender As Object, e As EventArgs) Handles lblHospName2.Click
+        Dim fHospSearch As New frmHospSearch
+        fHospSearch.ShowDialog()
+        txtMoveTo.Text = vTmpHcode
+        lblHospName2.Text = clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(txtMoveTo.Text)
+        vTmpHcode = ""
+    End Sub
 End Class

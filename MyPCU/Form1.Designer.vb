@@ -48,6 +48,8 @@
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblPID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,7 +184,7 @@
         Me.LabelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
         Me.LabelControl2.Location = New System.Drawing.Point(362, 281)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(318, 24)
+        Me.LabelControl2.Size = New System.Drawing.Size(68, 24)
         Me.LabelControl2.TabIndex = 1271
         '
         'Label5
@@ -316,11 +318,35 @@
         Me.PictureBox4.TabIndex = 1281
         Me.PictureBox4.TabStop = False
         '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.BackColor = System.Drawing.Color.Beige
+        Me.LabelControl3.Appearance.Options.UseBackColor = True
+        Me.LabelControl3.Appearance.Options.UseTextOptions = True
+        Me.LabelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.LabelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
+        Me.LabelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
+        Me.LabelControl3.Location = New System.Drawing.Point(436, 281)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(84, 24)
+        Me.LabelControl3.TabIndex = 1286
+        '
+        'cmdSave
+        '
+        Me.cmdSave.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_save
+        Me.cmdSave.Location = New System.Drawing.Point(127, 331)
+        Me.cmdSave.Name = "cmdSave"
+        Me.cmdSave.Size = New System.Drawing.Size(103, 31)
+        Me.cmdSave.TabIndex = 1288
+        Me.cmdSave.Text = "บันทึก"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 471)
+        Me.Controls.Add(Me.cmdSave)
+        Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label9)
@@ -388,4 +414,6 @@
     Friend WithEvents PictureBox3 As PictureBox
     Public WithEvents Label9 As Label
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents cmdSave As DevExpress.XtraEditors.SimpleButton
 End Class

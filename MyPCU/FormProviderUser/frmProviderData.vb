@@ -45,8 +45,8 @@ Public Class frmProviderData
         If ds.Tables(0).Rows.Count > 0 Then
             For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
                 Dim ds3 As DataSet
-                ds3 = clsdataBus.Lc_Business.SHOW_TABLE_COLUMN("m_" & ds.Tables(0).Rows(i).Item("M_TABLE").ToString & " WHERE FIELD = 'PROVIDER' ")
-                Dim tmpMTable = ds.Tables(0).Rows(i).Item("M_TABLE")
+                ds3 = clsdataBus.Lc_Business.SHOW_TABLE_COLUMN("m_" & ds.Tables(0).Rows(i).Item("M_TABLE").ToString.ToLower & " WHERE FIELD = 'PROVIDER' ")
+                Dim tmpMTable = ds.Tables(0).Rows(i).Item("M_TABLE").ToString.ToLower
                 If ds3.Tables(0).Rows.Count = 1 Then
                     ds2 = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,COUNT(*) AS C_COUNT", "m_" & tmpMTable, " WHERE IFNULL(PROVIDER,'') <> '' GROUP BY PROVIDER")
                     If ds2.Tables(0).Rows.Count > 0 Then
@@ -111,7 +111,7 @@ Public Class frmProviderData
             BetterListView1.EndUpdate()
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            XtraMessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
 

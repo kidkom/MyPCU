@@ -36,14 +36,21 @@ Partial Class frmProvider
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chk1 = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chk0 = New System.Windows.Forms.CheckBox()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPROVIDERTYPE.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BetterListView1
@@ -93,7 +100,7 @@ Partial Class frmProvider
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 15)
+        Me.Label2.Location = New System.Drawing.Point(12, 17)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 17)
         Me.Label2.TabIndex = 1108
@@ -132,7 +139,7 @@ Partial Class frmProvider
         'chkAll
         '
         Me.chkAll.AutoSize = True
-        Me.chkAll.Location = New System.Drawing.Point(252, 16)
+        Me.chkAll.Location = New System.Drawing.Point(252, 15)
         Me.chkAll.Name = "chkAll"
         Me.chkAll.Size = New System.Drawing.Size(62, 21)
         Me.chkAll.TabIndex = 1113
@@ -170,7 +177,7 @@ Partial Class frmProvider
         Me.Label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label16.Location = New System.Drawing.Point(812, 562)
+        Me.Label16.Location = New System.Drawing.Point(929, 563)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(86, 17)
         Me.Label16.TabIndex = 1119
@@ -182,32 +189,10 @@ Partial Class frmProvider
         Me.Panel2.BackColor = System.Drawing.Color.LightSalmon
         Me.Panel2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Panel2.ForeColor = System.Drawing.Color.Crimson
-        Me.Panel2.Location = New System.Drawing.Point(790, 563)
+        Me.Panel2.Location = New System.Drawing.Point(907, 564)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(16, 15)
         Me.Panel2.TabIndex = 1118
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label13.Location = New System.Drawing.Point(929, 562)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(88, 17)
-        Me.Label13.TabIndex = 1117
-        Me.Label13.Text = "ยกเลิกการใช้งาน"
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.LightPink
-        Me.Panel1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Panel1.ForeColor = System.Drawing.Color.Crimson
-        Me.Panel1.Location = New System.Drawing.Point(907, 563)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(16, 15)
-        Me.Panel1.TabIndex = 1116
         '
         'chk1
         '
@@ -245,7 +230,84 @@ Partial Class frmProvider
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "a_opd2.png")
+        Me.ImageList1.Images.SetKeyName(0, "a_check3.png")
+        Me.ImageList1.Images.SetKeyName(1, "a_cancle.png")
+        Me.ImageList1.Images.SetKeyName(2, "a_doctor.png")
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label8.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(723, 563)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(51, 17)
+        Me.Label8.TabIndex = 1290
+        Me.Label8.Text = "Inactive"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.Image = Global.MyPCU.My.Resources.Resources.a_cancle
+        Me.PictureBox3.Location = New System.Drawing.Point(695, 560)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(22, 23)
+        Me.PictureBox3.TabIndex = 1289
+        Me.PictureBox3.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label9.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(642, 563)
+        Me.Label9.Name = "Label9"
+        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label9.Size = New System.Drawing.Size(42, 17)
+        Me.Label9.TabIndex = 1288
+        Me.Label9.Text = "Active"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox4.Image = Global.MyPCU.My.Resources.Resources.a_check3
+        Me.PictureBox4.Location = New System.Drawing.Point(614, 560)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(22, 23)
+        Me.PictureBox4.TabIndex = 1287
+        Me.PictureBox4.TabStop = False
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label7.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(808, 563)
+        Me.Label7.Name = "Label7"
+        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label7.Size = New System.Drawing.Size(92, 17)
+        Me.Label7.TabIndex = 1286
+        Me.Label7.Text = "ให้บริการรักษาได้"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.MyPCU.My.Resources.Resources.a_doctor
+        Me.PictureBox1.Location = New System.Drawing.Point(780, 560)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(22, 23)
+        Me.PictureBox1.TabIndex = 1285
+        Me.PictureBox1.TabStop = False
         '
         'frmProvider
         '
@@ -254,13 +316,17 @@ Partial Class frmProvider
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1030, 588)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.chk0)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.chk1)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.chkAll)
@@ -278,6 +344,9 @@ Partial Class frmProvider
         Me.Text = "รายชื่อเจ้าหน้าที่"
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPROVIDERTYPE.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,10 +366,14 @@ Partial Class frmProvider
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents chk1 As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents chk0 As System.Windows.Forms.CheckBox
     Friend WithEvents ImageList1 As ImageList
+    Public WithEvents Label8 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Public WithEvents Label9 As Label
+    Friend WithEvents PictureBox4 As PictureBox
+    Public WithEvents Label7 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

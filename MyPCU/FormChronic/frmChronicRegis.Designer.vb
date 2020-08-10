@@ -22,7 +22,6 @@ Partial Class frmChronicRegis
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmChronicRegis))
         Me.FluentDesignFormContainer1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -64,7 +63,7 @@ Partial Class frmChronicRegis
         Me.AccordionControlElement3 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement4 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList1 = New System.Windows.Forms.ImageList()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         Me.FluentDesignFormContainer1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -248,7 +247,7 @@ Partial Class frmChronicRegis
         '
         'lblBirth
         '
-        Me.lblBirth.Location = New System.Drawing.Point(80, 386)
+        Me.lblBirth.Location = New System.Drawing.Point(80, 389)
         Me.lblBirth.Name = "lblBirth"
         Me.lblBirth.Size = New System.Drawing.Size(123, 24)
         Me.lblBirth.TabIndex = 1149
@@ -365,7 +364,7 @@ Partial Class frmChronicRegis
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(8, 393)
+        Me.Label11.Location = New System.Drawing.Point(6, 392)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(71, 17)
         Me.Label11.TabIndex = 666

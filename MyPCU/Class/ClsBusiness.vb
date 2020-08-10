@@ -454,7 +454,7 @@ Public Class ClsBusiness
         Lc_sb = New StringBuilder
         Try
             Lc_sb.Remove(0, Lc_sb.Length())
-            Lc_sb.Append("SELECT PROVIDER,CONCAT(IFNULL(B.PRENAME,''),NAME,' ',LNAME) AS PROVIDER_NAME FROM m_provider A LEFT JOIN l_prename B ON(A.PRENAME = B.PRENAME_CODE) WHERE PROVIDER= '" & strString & "' AND STATUS_AF <> '8' ")
+            Lc_sb.Append("SELECT PROVIDER,CONCAT(IFNULL(B.PRENAME_DESC,''),NAME,' ',LNAME) AS PROVIDER_NAME FROM m_provider A LEFT JOIN l_mypcu_prename B ON(A.PRENAME_HOS = B.PRENAME_CODE) WHERE PROVIDER= '" & strString & "' AND A.STATUS_AF <> '8' ")
             Lc_SQL = Lc_sb.ToString
             ds = GetDataAdp(Lc_SQL, "Table1", ds)
             If ds.Tables(0).Rows.Count > 0 Then
@@ -489,7 +489,7 @@ Public Class ClsBusiness
         Lc_sb = New StringBuilder
         Try
             Lc_sb.Remove(0, Lc_sb.Length())
-            Lc_sb.Append("SELECT REGISTERNO,CONCAT(IFNULL(C.PRENAME,''),NAME,' ',LNAME) AS PROVIDER_NAME FROM m_provider A JOIN m_diagnosis_opd B ON(A.PROVIDER = B.PROVIDER) LEFT JOIN l_prename C ON(A.PRENAME = C.PRENAME_CODE) WHERE SEQ = '" & strString & "' AND A.STATUS_AF <> '8' GROUP BY SEQ")
+            Lc_sb.Append("SELECT REGISTERNO,CONCAT(IFNULL(C.PRENAME_DESC,''),NAME,' ',LNAME) AS PROVIDER_NAME FROM m_provider A JOIN m_diagnosis_opd B ON(A.PROVIDER = B.PROVIDER) LEFT JOIN l_mypcu_prename C ON(A.PRENAME_HOS = C.PRENAME_CODE) WHERE SEQ = '" & strString & "' AND A.STATUS_AF <> '8' GROUP BY SEQ")
             Lc_SQL = Lc_sb.ToString
             ds = GetDataAdp(Lc_SQL, "Table1", ds)
             strNAME = ds.Tables(0).Rows(0).Item("PROVIDER_NAME").ToString

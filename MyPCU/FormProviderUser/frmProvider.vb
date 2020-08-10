@@ -11,39 +11,42 @@ Public Class frmProvider
             .Columns.Add(0).Text = ""
             .Columns(0).Width = 30
             .Columns(0).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(1).Text = "เลขที่ผู้ให้บริการ"
-            .Columns(1).Width = 100
+            .Columns.Add(1).Text = ""
+            .Columns(1).Width = 30
             .Columns(1).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(2).Text = "เลขทะเบียนวิชาชีพ"
-            .Columns(2).Width = 120
+            .Columns.Add(2).Text = "เลขที่ผู้ให้บริการ"
+            .Columns(2).Width = 100
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(3).Text = "เลขประชาชน"
+            .Columns.Add(3).Text = "เลขทะเบียนวิชาชีพ"
             .Columns(3).Width = 120
             .Columns(3).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(4).Text = "ชื่อ-นามสกุล"
-            .Columns(4).Width = 200
+            .Columns.Add(4).Text = "เลขประชาชน"
+            .Columns(4).Width = 120
             .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(5).Text = "ประเภทเจ้าหน้าที่"
-            .Columns(5).Width = 120
+            .Columns.Add(5).Text = "ชื่อ-นามสกุล"
+            .Columns(5).Width = 200
             .Columns(5).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(6).Text = "ตำแหน่ง"
+            .Columns.Add(6).Text = "ประเภทเจ้าหน้าที่"
             .Columns(6).Width = 120
             .Columns(6).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(7).Text = "เริ่มปฏิบัติงาน"
-            .Columns(7).Width = 100
+            .Columns.Add(7).Text = "ตำแหน่ง"
+            .Columns(7).Width = 120
             .Columns(7).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(8).Text = "สิ้นสุดปฏิบัติงาน"
+            .Columns.Add(8).Text = "เริ่มปฏิบัติงาน"
             .Columns(8).Width = 100
             .Columns(8).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(9).Text = "ผู้บันทึก"
+            .Columns.Add(9).Text = "สิ้นสุดปฏิบัติงาน"
             .Columns(9).Width = 100
             .Columns(9).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(10).Text = "ปรับปรุงเมื่อ"
+            .Columns.Add(10).Text = "ผู้บันทึก"
             .Columns(10).Width = 100
             .Columns(10).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(11).Text = "ROWID"
+            .Columns.Add(11).Text = "ปรับปรุงเมื่อ"
             .Columns(11).Width = 100
             .Columns(11).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(12).Text = "ROWID"
+            .Columns(12).Width = 0
+            .Columns(12).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
         CboProvider()
@@ -118,10 +121,16 @@ Public Class frmProvider
                 dr = ds.Tables(0).Rows(i)
                 NAMEUSER = clsdataBus.Lc_Business.SELECT_NAME_USERID(dr("USER_REC").ToString)
 
-                If dr("SERVICE") = "1" Then
+                If dr("STATUS") = "1" Then
                     BetterListView1.Items.Add(ImageList1.Images.Item(0)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
                 Else
-                    BetterListView1.Items.Add("")
+                    BetterListView1.Items.Add(ImageList1.Images.Item(1)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                End If
+
+                If dr("SERVICE") = "1" Then
+                    BetterListView1.Items(i).SubItems.Add(ImageList1.Images.Item(2)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                Else
+                    BetterListView1.Items(i).SubItems.Add("")
                 End If
 
                 BetterListView1.Items(i).SubItems.Add(dr("PROVIDER").ToString).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
@@ -167,11 +176,7 @@ Public Class frmProvider
                         BetterListView1.Items(i).BackColor = Color.LightSalmon
                     End If
                 End If
-                If Not IsDBNull(dr("STATUS")) Then
-                    If dr("STATUS").ToString = "0" Then
-                        BetterListView1.Items(i).BackColor = Color.LightPink
-                    End If
-                End If
+
             Next
             BetterListView1.AutoResizeColumn(4, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(5, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
@@ -275,7 +280,7 @@ Public Class frmProvider
         For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
             Dim lvi As BetterListViewItem
             lvi = BetterListView1.SelectedItems(i)
-            vPvdROWID = lvi.SubItems.Item(11).Text
+            vPvdROWID = lvi.SubItems.Item(12).Text
         Next
     End Sub
 

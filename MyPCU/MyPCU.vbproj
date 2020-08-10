@@ -662,6 +662,12 @@
     <Compile Include="FormSearch\WaitForm1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormService\frmPtStatus.Designer.vb">
+      <DependentUpon>frmPtStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\frmPtStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormService\frmQueueEdit.Designer.vb">
       <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </Compile>
@@ -672,6 +678,18 @@
       <DependentUpon>frmQueueService.vb</DependentUpon>
     </Compile>
     <Compile Include="FormService\frmQueueService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormService\frmReasonToService.Designer.vb">
+      <DependentUpon>frmReasonToService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\frmReasonToService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormService\frmReferInEdit.Designer.vb">
+      <DependentUpon>frmReferInEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\frmReferInEdit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSystem\frmAddDepartment.Designer.vb">
@@ -1048,11 +1066,20 @@
     <EmbeddedResource Include="FormSearch\WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormService\frmPtStatus.resx">
+      <DependentUpon>frmPtStatus.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormService\frmQueueEdit.resx">
       <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormService\frmQueueService.resx">
       <DependentUpon>frmQueueService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService\frmReasonToService.resx">
+      <DependentUpon>frmReasonToService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService\frmReferInEdit.resx">
+      <DependentUpon>frmReferInEdit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSystem\frmAddDepartment.resx">
       <DependentUpon>frmAddDepartment.vb</DependentUpon>
@@ -1152,6 +1179,9 @@
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
     <Content Include="Resources\1_material2.png" />
+    <None Include="Resources\a_ekg2.png" />
+    <None Include="Resources\a_charge.png" />
+    <None Include="Resources\a_search_person.png" />
     <None Include="Resources\a_clock6.png" />
     <None Include="Resources\a_baby21.png" />
     <None Include="Resources\a_baby2.png" />

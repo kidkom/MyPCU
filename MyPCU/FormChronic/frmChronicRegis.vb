@@ -188,11 +188,16 @@ Public Class frmChronicRegis
     End Sub
     Private Sub SearchPerson()
         If txtPID.Text <> "" Then
-
             If IsNumeric(txtPID.Text) = False Then
                 chkName.Checked = True
                 chkPID.Checked = False
                 chkCID.Checked = False
+            Else
+                If txtPID.Text.Length = 13 Then
+                    chkName.Checked = False
+                    chkPID.Checked = True
+                    chkCID.Checked = False
+                End If
             End If
 
             Dim ds As DataSet
@@ -370,5 +375,9 @@ Public Class frmChronicRegis
         cmdEdit.Enabled = False
         vChronicRowID = ""
         ShowDataChronic()
+    End Sub
+
+    Private Sub FluentDesignFormControl1_Click(sender As Object, e As EventArgs) Handles FluentDesignFormControl1.Click
+
     End Sub
 End Class

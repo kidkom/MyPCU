@@ -190,4 +190,12 @@
 
     '********SERVICE********
     Public vQueueSEQ As String = ""
+
+    '********REFERIN********
+    Public vReferinType As String = ""
+    Public vReferinHosp As String = ""
+    Public vReferinCause As String = ""
+    Public vReferinNo As String = ""
+    Public vReferinDateExpire As String = ""
+
 End Module

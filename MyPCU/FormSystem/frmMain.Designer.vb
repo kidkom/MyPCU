@@ -251,6 +251,7 @@ Partial Class frmMain
         Me.RibbonPage6 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup30 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup34 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPage8 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup31 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -296,7 +297,6 @@ Partial Class frmMain
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.RibbonPage23 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPage22 = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.RibbonPageGroup34 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -1560,7 +1560,7 @@ Partial Class frmMain
         '
         'BarButtonItem148
         '
-        Me.BarButtonItem148.Caption = "รับของเข้าตลัง"
+        Me.BarButtonItem148.Caption = "รับของเข้าคลัง"
         Me.BarButtonItem148.Id = 189
         Me.BarButtonItem148.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_stock
         Me.BarButtonItem148.Name = "BarButtonItem148"
@@ -1891,6 +1891,12 @@ Partial Class frmMain
         Me.RibbonPageGroup30.Name = "RibbonPageGroup30"
         Me.RibbonPageGroup30.ShowCaptionButton = False
         Me.RibbonPageGroup30.Text = "ผู้พิการ"
+        '
+        'RibbonPageGroup34
+        '
+        Me.RibbonPageGroup34.Name = "RibbonPageGroup34"
+        Me.RibbonPageGroup34.ShowCaptionButton = False
+        Me.RibbonPageGroup34.Text = "รายงานโรคเรื้อรัง"
         '
         'RibbonPage8
         '
@@ -2263,12 +2269,6 @@ Partial Class frmMain
         '
         Me.RibbonPage22.Name = "RibbonPage22"
         Me.RibbonPage22.Text = "RibbonPage22"
-        '
-        'RibbonPageGroup34
-        '
-        Me.RibbonPageGroup34.Name = "RibbonPageGroup34"
-        Me.RibbonPageGroup34.ShowCaptionButton = False
-        Me.RibbonPageGroup34.Text = "รายงานโรคเรื้อรัง"
         '
         'frmMain
         '

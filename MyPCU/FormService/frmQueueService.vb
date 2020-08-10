@@ -9,6 +9,7 @@ Public Class frmQueueService
     Private Sub frmQueueService_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ShowClinic()
         cboProviderAction()
+        dtpDate1.EditValue = Now.ToString("dd/MM/yyyy")
 
         With BetterListView1
             .Columns.Add(0).Text = ""
@@ -87,6 +88,7 @@ Public Class frmQueueService
     End Sub
 
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
-
+        Dim f As New frmQueueEdit
+        f.ShowDialog()
     End Sub
 End Class
