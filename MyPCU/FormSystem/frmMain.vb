@@ -1121,4 +1121,18 @@ Public Class frmMain
         f.Dock = DockStyle.Fill
         f.Show()
     End Sub
+
+    Private Sub BarButtonItem175_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem175.ItemClick
+        Dim CurrentForm As Form
+        For Each CurrentForm In Me.MdiChildren
+            If TypeOf CurrentForm Is frmRptProviderSum Then
+                CurrentForm.MdiParent = Me
+                Exit Sub
+            End If
+        Next
+        Dim f As New frmRptProviderSum
+        f.MdiParent = Me
+        f.Dock = DockStyle.Fill
+        f.Show()
+    End Sub
 End Class
