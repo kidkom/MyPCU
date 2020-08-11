@@ -36,7 +36,7 @@ Partial Class frmQueueEdit
         Me.chkRefer0 = New System.Windows.Forms.CheckBox()
         Me.cboINSTYPE_NEW = New DevExpress.XtraEditors.ButtonEdit()
         Me.cboProvider = New DevExpress.XtraEditors.LookUpEdit()
-        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit()
+        Me.txtProvider = New DevExpress.XtraEditors.TextEdit()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.cboRoom = New DevExpress.XtraEditors.LookUpEdit()
@@ -142,7 +142,7 @@ Partial Class frmQueueEdit
         CType(Me.txtCauseIn.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboRoom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboClinic.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtClinic.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -214,7 +214,7 @@ Partial Class frmQueueEdit
         Me.GroupControl3.Controls.Add(Me.chkRefer0)
         Me.GroupControl3.Controls.Add(Me.cboINSTYPE_NEW)
         Me.GroupControl3.Controls.Add(Me.cboProvider)
-        Me.GroupControl3.Controls.Add(Me.TextEdit3)
+        Me.GroupControl3.Controls.Add(Me.txtProvider)
         Me.GroupControl3.Controls.Add(Me.Label26)
         Me.GroupControl3.Controls.Add(Me.Label25)
         Me.GroupControl3.Controls.Add(Me.cboRoom)
@@ -349,16 +349,16 @@ Partial Class frmQueueEdit
         Me.cboProvider.Size = New System.Drawing.Size(395, 24)
         Me.cboProvider.TabIndex = 1302
         '
-        'TextEdit3
+        'txtProvider
         '
-        Me.TextEdit3.Location = New System.Drawing.Point(147, 153)
-        Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Beige
-        Me.TextEdit3.Properties.Appearance.Options.UseBackColor = True
-        Me.TextEdit3.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.TextEdit3.Size = New System.Drawing.Size(62, 24)
-        Me.TextEdit3.TabIndex = 1301
+        Me.txtProvider.Location = New System.Drawing.Point(147, 153)
+        Me.txtProvider.Name = "txtProvider"
+        Me.txtProvider.Properties.Appearance.BackColor = System.Drawing.Color.Beige
+        Me.txtProvider.Properties.Appearance.Options.UseBackColor = True
+        Me.txtProvider.Properties.Appearance.Options.UseTextOptions = True
+        Me.txtProvider.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.txtProvider.Size = New System.Drawing.Size(62, 24)
+        Me.txtProvider.TabIndex = 1301
         '
         'Label26
         '
@@ -1190,7 +1190,7 @@ Partial Class frmQueueEdit
         '
         'AccordionControlElement15
         '
-        Me.AccordionControlElement15.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_ekg2
+        Me.AccordionControlElement15.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_vitalsign
         Me.AccordionControlElement15.Name = "AccordionControlElement15"
         Me.AccordionControlElement15.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement15.Text = "บันทึกสัญญาณชีพ"
@@ -1290,7 +1290,7 @@ Partial Class frmQueueEdit
         CType(Me.txtCauseIn.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboRoom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboClinic.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtClinic.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1430,7 +1430,7 @@ Partial Class frmQueueEdit
     Friend WithEvents txtClinic As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label24 As Label
     Friend WithEvents cboProvider As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtProvider As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label26 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents cboRoom As DevExpress.XtraEditors.LookUpEdit

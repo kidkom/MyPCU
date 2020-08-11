@@ -21,6 +21,9 @@ Partial Class frmReferInEdit
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReferInEdit))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.chkReferInType4 = New System.Windows.Forms.CheckBox()
+        Me.chkReferInType3 = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,11 +37,8 @@ Partial Class frmReferInEdit
         Me.bntHospName = New DevExpress.XtraEditors.ButtonEdit()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
         Me.chkCancel = New System.Windows.Forms.CheckBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.chkReferInType4 = New System.Windows.Forms.CheckBox()
-        Me.chkReferInType3 = New System.Windows.Forms.CheckBox()
+        Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +74,42 @@ Partial Class frmReferInEdit
         Me.GroupControl1.Size = New System.Drawing.Size(736, 229)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "รายละเอียดการส่งต่อ"
+        '
+        'chkReferInType4
+        '
+        Me.chkReferInType4.AutoSize = True
+        Me.chkReferInType4.Location = New System.Drawing.Point(262, 37)
+        Me.chkReferInType4.Name = "chkReferInType4"
+        Me.chkReferInType4.Size = New System.Drawing.Size(53, 21)
+        Me.chkReferInType4.TabIndex = 1278
+        Me.chkReferInType4.Text = "EMS"
+        Me.chkReferInType4.UseVisualStyleBackColor = True
+        '
+        'chkReferInType3
+        '
+        Me.chkReferInType3.AutoSize = True
+        Me.chkReferInType3.Checked = True
+        Me.chkReferInType3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkReferInType3.Location = New System.Drawing.Point(139, 37)
+        Me.chkReferInType3.Name = "chkReferInType3"
+        Me.chkReferInType3.Size = New System.Drawing.Size(117, 21)
+        Me.chkReferInType3.TabIndex = 1277
+        Me.chkReferInType3.Text = "จากสถานพยาบาล"
+        Me.chkReferInType3.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(93, 38)
+        Me.Label2.Name = "Label2"
+        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label2.Size = New System.Drawing.Size(44, 17)
+        Me.Label2.TabIndex = 1276
+        Me.Label2.Text = "ประเภท"
         '
         'CheckBox4
         '
@@ -215,15 +251,6 @@ Partial Class frmReferInEdit
         Me.Label19.TabIndex = 1118
         Me.Label19.Text = "สถานพยาบาลที่ส่งตัวมา"
         '
-        'cmdSave
-        '
-        Me.cmdSave.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_save
-        Me.cmdSave.Location = New System.Drawing.Point(645, 247)
-        Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(103, 31)
-        Me.cmdSave.TabIndex = 1289
-        Me.cmdSave.Text = "บันทึก"
-        '
         'chkCancel
         '
         Me.chkCancel.AutoSize = True
@@ -235,41 +262,14 @@ Partial Class frmReferInEdit
         Me.chkCancel.Text = "ยกเลิกข้อมูล"
         Me.chkCancel.UseVisualStyleBackColor = True
         '
-        'Label2
+        'cmdSave
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(93, 38)
-        Me.Label2.Name = "Label2"
-        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(44, 17)
-        Me.Label2.TabIndex = 1276
-        Me.Label2.Text = "ประเภท"
-        '
-        'chkReferInType4
-        '
-        Me.chkReferInType4.AutoSize = True
-        Me.chkReferInType4.Location = New System.Drawing.Point(262, 37)
-        Me.chkReferInType4.Name = "chkReferInType4"
-        Me.chkReferInType4.Size = New System.Drawing.Size(53, 21)
-        Me.chkReferInType4.TabIndex = 1278
-        Me.chkReferInType4.Text = "EMS"
-        Me.chkReferInType4.UseVisualStyleBackColor = True
-        '
-        'chkReferInType3
-        '
-        Me.chkReferInType3.AutoSize = True
-        Me.chkReferInType3.Checked = True
-        Me.chkReferInType3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkReferInType3.Location = New System.Drawing.Point(139, 37)
-        Me.chkReferInType3.Name = "chkReferInType3"
-        Me.chkReferInType3.Size = New System.Drawing.Size(117, 21)
-        Me.chkReferInType3.TabIndex = 1277
-        Me.chkReferInType3.Text = "จากสถานพยาบาล"
-        Me.chkReferInType3.UseVisualStyleBackColor = True
+        Me.cmdSave.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_save
+        Me.cmdSave.Location = New System.Drawing.Point(645, 247)
+        Me.cmdSave.Name = "cmdSave"
+        Me.cmdSave.Size = New System.Drawing.Size(103, 31)
+        Me.cmdSave.TabIndex = 1289
+        Me.cmdSave.Text = "บันทึก"
         '
         'frmReferInEdit
         '

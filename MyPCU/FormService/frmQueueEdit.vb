@@ -50,7 +50,7 @@ Public Class frmQueueEdit
     End Sub
     Private Sub cboProviderAction()
         Dim ds As DataSet
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,CONCAT(b.PRENAME_DESC,' ',a.NAME,' ',a.LNAME) AS PROVIDER_NAME,SERVICE", " m_provider a JOIN l_mypcu_prename b ON(a.PRENAME_HOS = b.PRENAME_CODE)  ", " WHERE a.STATUS_AF <> '8' AND IFNULL(SERVICE,'') = '1'  ORDER BY PROVIDER ")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,CONCAT(b.PRENAME_DESC,' ',a.NAME,' ',a.LNAME) AS PROVIDER_NAME", " m_provider a JOIN l_mypcu_prename b ON(a.PRENAME_HOS = b.PRENAME_CODE)  ", " WHERE a.STATUS_AF <> '8' AND IFNULL(SERVICE,'') = '1'  ORDER BY PROVIDER ")
         If ds.Tables(0).Rows.Count > 0 Then
             With cboProvider
                 .Properties.DataSource = ds.Tables(0)
@@ -449,7 +449,18 @@ Public Class frmQueueEdit
         txtPtStatus.Text = cboPtReason.EditValue
     End Sub
 
-    Private Sub FluentDesignFormControl1_Click(sender As Object, e As EventArgs) Handles FluentDesignFormControl1.Click
+    Private Sub cboProvider_EditValueChanged(sender As Object, e As EventArgs) Handles cboProvider.EditValueChanged
+        txtProvider.Text = cboProvider.EditValue
+    End Sub
 
+    Private Sub txtProvider_KeyDown(sender As Object, e As KeyEventArgs) Handles txtProvider.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            cboProvider.EditValue = txtProvider
+            If cboProvider.Text = "" Then
+                XtraMessageBox.Show(mDataMiss, vProgram, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                txtProvider.Select()
+                txtProvider.SelectAll()
+            End If
+        End If
     End Sub
 End Class
