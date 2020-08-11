@@ -229,6 +229,9 @@
   <data name="a_opd2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_opd2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="a_money3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_money3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="a_mother2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_mother2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -313,11 +316,17 @@
   <data name="a_check3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_check3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_refer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_refer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="a_register" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_eng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a_tooth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_tooth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a_database2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_database2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -357,6 +366,9 @@
   </data>
   <data name="a_alcohol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_alcohol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a_toorh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_toorh2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_nhso" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_nhso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -403,8 +415,8 @@
   <data name="a_shf2t1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_shf2t1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_database2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_database2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="a_vitalsign" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_vitalsign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_connect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_connect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -417,6 +429,9 @@
   </data>
   <data name="a_mosquito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_mosquito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a_patient" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_patient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_smart_card2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_smart_card2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -538,11 +553,11 @@
   <data name="a_money1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_money1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_register" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="a_student1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_student1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a_refer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_refer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_couple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_couple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -565,8 +580,8 @@
   <data name="a_women" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_women.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_money3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_money3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="a_massage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_massage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="a_facebook1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_facebook1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -601,7 +616,7 @@
   <data name="a_key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a_vitalsign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_vitalsign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="a_health_case" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_health_case.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

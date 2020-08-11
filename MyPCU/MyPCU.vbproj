@@ -1198,6 +1198,11 @@
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
     <Content Include="Resources\1_material2.png" />
+    <None Include="Resources\a_health_case.png" />
+    <None Include="Resources\a_tooth.png" />
+    <None Include="Resources\a_toorh2.png" />
+    <None Include="Resources\a_massage.png" />
+    <None Include="Resources\a_patient.png" />
     <None Include="Resources\a_vitalsign.png" />
     <None Include="Resources\a_ekg2.png" />
     <None Include="Resources\a_charge.png" />
