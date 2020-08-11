@@ -50,6 +50,7 @@
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         CType(Me.ribbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblPID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,6 +61,7 @@
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ribbonControl1
@@ -160,7 +162,7 @@
         Me.LabelControl1.Appearance.Options.UseBackColor = True
         Me.LabelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
-        Me.LabelControl1.Location = New System.Drawing.Point(362, 233)
+        Me.LabelControl1.Location = New System.Drawing.Point(362, 217)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(318, 24)
         Me.LabelControl1.TabIndex = 1269
@@ -168,7 +170,7 @@
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(292, 236)
+        Me.Label4.Location = New System.Drawing.Point(298, 221)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(64, 17)
         Me.Label4.TabIndex = 1270
@@ -204,7 +206,7 @@
         Me.Label6.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label6.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(811, 425)
+        Me.Label6.Location = New System.Drawing.Point(811, 484)
         Me.Label6.Name = "Label6"
         Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label6.Size = New System.Drawing.Size(50, 17)
@@ -215,7 +217,7 @@
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.MyPCU.My.Resources.Resources.a_warning2
-        Me.PictureBox2.Location = New System.Drawing.Point(783, 422)
+        Me.PictureBox2.Location = New System.Drawing.Point(783, 481)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox2.TabIndex = 1275
@@ -229,7 +231,7 @@
         Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label7.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(701, 425)
+        Me.Label7.Location = New System.Drawing.Point(701, 484)
         Me.Label7.Name = "Label7"
         Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label7.Size = New System.Drawing.Size(61, 17)
@@ -240,7 +242,7 @@
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = Global.MyPCU.My.Resources.Resources.a_check6
-        Me.PictureBox1.Location = New System.Drawing.Point(673, 422)
+        Me.PictureBox1.Location = New System.Drawing.Point(673, 481)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox1.TabIndex = 1273
@@ -251,7 +253,7 @@
         Me.Label25.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label25.Location = New System.Drawing.Point(805, 388)
+        Me.Label25.Location = New System.Drawing.Point(805, 447)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(39, 17)
         Me.Label25.TabIndex = 1279
@@ -263,7 +265,7 @@
         Me.Panel4.BackColor = System.Drawing.Color.LightPink
         Me.Panel4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Panel4.ForeColor = System.Drawing.Color.Crimson
-        Me.Panel4.Location = New System.Drawing.Point(783, 389)
+        Me.Panel4.Location = New System.Drawing.Point(783, 448)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(16, 15)
         Me.Panel4.TabIndex = 1278
@@ -276,7 +278,7 @@
         Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label8.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(580, 428)
+        Me.Label8.Location = New System.Drawing.Point(580, 487)
         Me.Label8.Name = "Label8"
         Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label8.Size = New System.Drawing.Size(69, 17)
@@ -287,7 +289,7 @@
         '
         Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox3.Image = Global.MyPCU.My.Resources.Resources.a_cancle
-        Me.PictureBox3.Location = New System.Drawing.Point(552, 425)
+        Me.PictureBox3.Location = New System.Drawing.Point(552, 484)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox3.TabIndex = 1283
@@ -301,7 +303,7 @@
         Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label9.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(470, 428)
+        Me.Label9.Location = New System.Drawing.Point(470, 487)
         Me.Label9.Name = "Label9"
         Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label9.Size = New System.Drawing.Size(72, 17)
@@ -312,7 +314,7 @@
         '
         Me.PictureBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox4.Image = Global.MyPCU.My.Resources.Resources.a_check3
-        Me.PictureBox4.Location = New System.Drawing.Point(442, 425)
+        Me.PictureBox4.Location = New System.Drawing.Point(442, 484)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox4.TabIndex = 1281
@@ -340,11 +342,21 @@
         Me.cmdSave.TabIndex = 1288
         Me.cmdSave.Text = "บันทึก"
         '
+        'BetterListView1
+        '
+        Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
+        Me.BetterListView1.Location = New System.Drawing.Point(127, 368)
+        Me.BetterListView1.Name = "BetterListView1"
+        Me.BetterListView1.Size = New System.Drawing.Size(220, 138)
+        Me.BetterListView1.TabIndex = 1290
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(884, 471)
+        Me.ClientSize = New System.Drawing.Size(884, 530)
+        Me.Controls.Add(Me.BetterListView1)
         Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.Label8)
@@ -383,6 +395,7 @@
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -416,4 +429,5 @@
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmdSave As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents BetterListView1 As ComponentOwl.BetterListView.BetterListView
 End Class

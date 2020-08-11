@@ -841,6 +841,7 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Windows\Forms.vb" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -1053,6 +1054,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Popuration\frmSearchPersonBirth.resx">
       <DependentUpon>frmSearchPersonBirth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Provider\frmRptProviderSum.resx">
+      <DependentUpon>frmRptProviderSum.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch\frmHospSearch.resx">
       <DependentUpon>frmHospSearch.vb</DependentUpon>
