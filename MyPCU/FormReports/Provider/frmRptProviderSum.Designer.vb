@@ -21,6 +21,7 @@ Partial Class frmRptProviderSum
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRptProviderSum))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.cmdPrintReport1 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
@@ -29,13 +30,12 @@ Partial Class frmRptProviderSum
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.dtpStart = New DevExpress.XtraEditors.DateEdit()
+        Me.cmdPrintReport2 = New DevExpress.XtraEditors.SimpleButton()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BetterListView2 = New ComponentOwl.BetterListView.BetterListView()
-        Me.cmdPrintReport1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.cmdPrintReport2 = New DevExpress.XtraEditors.SimpleButton()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
@@ -73,6 +73,16 @@ Partial Class frmRptProviderSum
         Me.SplitContainerControl1.Size = New System.Drawing.Size(752, 482)
         Me.SplitContainerControl1.SplitterPosition = 244
         Me.SplitContainerControl1.TabIndex = 0
+        '
+        'cmdPrintReport1
+        '
+        Me.cmdPrintReport1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdPrintReport1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
+        Me.cmdPrintReport1.Location = New System.Drawing.Point(639, 12)
+        Me.cmdPrintReport1.Name = "cmdPrintReport1"
+        Me.cmdPrintReport1.Size = New System.Drawing.Size(103, 31)
+        Me.cmdPrintReport1.TabIndex = 1297
+        Me.cmdPrintReport1.Text = "พิมพ์"
         '
         'Label4
         '
@@ -170,6 +180,16 @@ Partial Class frmRptProviderSum
         Me.dtpStart.Size = New System.Drawing.Size(132, 24)
         Me.dtpStart.TabIndex = 1289
         '
+        'cmdPrintReport2
+        '
+        Me.cmdPrintReport2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdPrintReport2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
+        Me.cmdPrintReport2.Location = New System.Drawing.Point(637, 181)
+        Me.cmdPrintReport2.Name = "cmdPrintReport2"
+        Me.cmdPrintReport2.Size = New System.Drawing.Size(103, 31)
+        Me.cmdPrintReport2.TabIndex = 1298
+        Me.cmdPrintReport2.Text = "พิมพ์"
+        '
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
@@ -214,7 +234,7 @@ Partial Class frmRptProviderSum
         '
         'BetterListView2
         '
-        Me.BetterListView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BetterListView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BetterListView2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.BetterListView2.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
@@ -222,26 +242,6 @@ Partial Class frmRptProviderSum
         Me.BetterListView2.Name = "BetterListView2"
         Me.BetterListView2.Size = New System.Drawing.Size(732, 134)
         Me.BetterListView2.TabIndex = 1288
-        '
-        'cmdPrintReport1
-        '
-        Me.cmdPrintReport1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdPrintReport1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrintReport1.Location = New System.Drawing.Point(639, 12)
-        Me.cmdPrintReport1.Name = "cmdPrintReport1"
-        Me.cmdPrintReport1.Size = New System.Drawing.Size(103, 31)
-        Me.cmdPrintReport1.TabIndex = 1297
-        Me.cmdPrintReport1.Text = "พิมพ์"
-        '
-        'cmdPrintReport2
-        '
-        Me.cmdPrintReport2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdPrintReport2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrintReport2.Location = New System.Drawing.Point(637, 181)
-        Me.cmdPrintReport2.Name = "cmdPrintReport2"
-        Me.cmdPrintReport2.Size = New System.Drawing.Size(103, 31)
-        Me.cmdPrintReport2.TabIndex = 1298
-        Me.cmdPrintReport2.Text = "พิมพ์"
         '
         'SplashScreenManager1
         '

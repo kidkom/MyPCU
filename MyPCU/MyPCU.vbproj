@@ -626,6 +626,12 @@
     <Compile Include="FormReports\Popuration\frmSearchPersonBirth.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReports\Provider\frmRptProviderOppp.Designer.vb">
+      <DependentUpon>frmRptProviderOppp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Provider\frmRptProviderOppp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReports\Provider\frmRptProviderSum.Designer.vb">
       <DependentUpon>frmRptProviderSum.vb</DependentUpon>
     </Compile>
@@ -1071,6 +1077,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Popuration\frmSearchPersonBirth.resx">
       <DependentUpon>frmSearchPersonBirth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Provider\frmRptProviderOppp.resx">
+      <DependentUpon>frmRptProviderOppp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Provider\frmRptProviderSum.resx">
       <DependentUpon>frmRptProviderSum.vb</DependentUpon>

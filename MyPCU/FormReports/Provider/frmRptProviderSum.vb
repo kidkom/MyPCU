@@ -31,7 +31,7 @@ Public Class frmRptProviderSum
             .Columns(3).Width = 100
             .Columns(3).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(4).Text = "เลขที่ใบประกอบวิชาชีพ"
-            .Columns(4).Width = 100
+            .Columns(4).Width = 150
             .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(5).Text = "จำนวนคน(OP)"
             .Columns(5).Width = 100
@@ -53,8 +53,6 @@ Public Class frmRptProviderSum
             .Columns(10).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
 
         End With
-        BetterListView1.View = View.Details
-        'BetterListView.GridLines = True
 
         With BetterListView2
             .Columns.Add(0).Text = "ลำดับ"
@@ -86,8 +84,10 @@ Public Class frmRptProviderSum
             .Columns(8).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
 
         End With
-        BetterListView2.View = View.Details
-        BetterListView2.GridLines = True
+
+        dtpStart.Select()
+
+
     End Sub
 
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
@@ -164,6 +164,7 @@ Public Class frmRptProviderSum
         Dim sumType4 As Integer = 0
         Dim sumType5 As Integer = 0
         Dim sumType6 As Integer = 0
+        Dim k As Integer = 0
         Try
             BetterListView1.Items.Clear()
             BetterListView1.BeginUpdate()
@@ -211,6 +212,9 @@ Public Class frmRptProviderSum
                 sumType4 = sumType4 + CInt(dr("COUNT2") - dr("OP_COUNT2"))
                 sumType5 = sumType5 + CInt(dr("COUNT1"))
                 sumType6 = sumType6 + CInt(dr("COUNT2"))
+                k = k + 1
+
+
 
                 'dsRpt.Tables.Clear()
                 'drRpt = dt.NewRow()
@@ -234,9 +238,24 @@ Public Class frmRptProviderSum
             Next
             BetterListView1.AutoResizeColumn(2, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(3, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
-            ' BetterListView1.AutoResizeColumn(4, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(4, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.EndUpdate()
             BetterListView1.ResumeSort(True)
+
+
+            BetterListView1.Items.Add("")
+            BetterListView1.Items(k).SubItems.Add("")
+            BetterListView1.Items(k).SubItems.Add("")
+            BetterListView1.Items(k).SubItems.Add("")
+            BetterListView1.Items(k).SubItems.Add("รวม").AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(sumType1.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(sumType2.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(sumType3.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(sumType4.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(sumType5.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(sumType6.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).BackColor = Color.Azure
+
         Catch ex As Exception
             XtraMessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
