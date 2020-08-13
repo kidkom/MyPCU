@@ -31,9 +31,9 @@ Partial Class frmRptProviderSum
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.dtpStart = New DevExpress.XtraEditors.DateEdit()
         Me.cmdPrintReport2 = New DevExpress.XtraEditors.SimpleButton()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chkPP = New System.Windows.Forms.CheckBox()
+        Me.chkOP = New System.Windows.Forms.CheckBox()
+        Me.chkAll = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BetterListView2 = New ComponentOwl.BetterListView.BetterListView()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
@@ -64,9 +64,9 @@ Partial Class frmRptProviderSum
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtpStart)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.cmdPrintReport2)
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.CheckBox3)
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.CheckBox2)
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.CheckBox1)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.chkPP)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.chkOP)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.chkAll)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.Label5)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.BetterListView2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
@@ -190,37 +190,37 @@ Partial Class frmRptProviderSum
         Me.cmdPrintReport2.TabIndex = 1298
         Me.cmdPrintReport2.Text = "พิมพ์"
         '
-        'CheckBox3
+        'chkPP
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(200, 11)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(138, 21)
-        Me.CheckBox3.TabIndex = 1299
-        Me.CheckBox3.Text = "สร้างเสริมสุขภาพ (PP)"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkPP.AutoSize = True
+        Me.chkPP.Location = New System.Drawing.Point(200, 11)
+        Me.chkPP.Name = "chkPP"
+        Me.chkPP.Size = New System.Drawing.Size(138, 21)
+        Me.chkPP.TabIndex = 1299
+        Me.chkPP.Text = "สร้างเสริมสุขภาพ (PP)"
+        Me.chkPP.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chkOP
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(82, 11)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(106, 21)
-        Me.CheckBox2.TabIndex = 1298
-        Me.CheckBox2.Text = "ผู้ป่วยนอก (OP)"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkOP.AutoSize = True
+        Me.chkOP.Location = New System.Drawing.Point(82, 11)
+        Me.chkOP.Name = "chkOP"
+        Me.chkOP.Size = New System.Drawing.Size(106, 21)
+        Me.chkOP.TabIndex = 1298
+        Me.chkOP.Text = "ผู้ป่วยนอก (OP)"
+        Me.chkOP.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkAll
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(11, 11)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(62, 21)
-        Me.CheckBox1.TabIndex = 1297
-        Me.CheckBox1.Text = "ทั้งหมด"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkAll.AutoSize = True
+        Me.chkAll.Checked = True
+        Me.chkAll.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkAll.Location = New System.Drawing.Point(11, 11)
+        Me.chkAll.Name = "chkAll"
+        Me.chkAll.Size = New System.Drawing.Size(62, 21)
+        Me.chkAll.TabIndex = 1297
+        Me.chkAll.Text = "ทั้งหมด"
+        Me.chkAll.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -282,9 +282,9 @@ Partial Class frmRptProviderSum
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents chkPP As CheckBox
+    Friend WithEvents chkOP As CheckBox
+    Friend WithEvents chkAll As CheckBox
     Friend WithEvents cmdPrintReport1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmdPrintReport2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager

@@ -11,7 +11,7 @@ Public Class frmRptProviderSum
     Dim dsRpt As New DataSet
     Dim dsRpt2 As New DataSet
     Dim CurrentReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-    Dim tmpProvier As String = ""
+    Dim tmpProvider As String = ""
     Dim tmpProvierName As String = ""
     Dim tmpProvierNameType As String = ""
     Private Sub frmRptProviderSum_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -62,7 +62,7 @@ Public Class frmRptProviderSum
             .Columns(1).Width = 0
             .Columns(1).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(2).Text = "HN"
-            .Columns(2).Width = 150
+            .Columns(2).Width = 0
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(3).Text = "CID"
             .Columns(3).Width = 100
@@ -275,6 +275,53 @@ Public Class frmRptProviderSum
         CurrentReportDataSource.value = dsRpt.Tables(0)
         fReport.ReportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource)
         fReport.ShowDialog()
+
+    End Sub
+
+    Private Sub BetterListView1_ItemSelectionChanged(sender As Object, eventArgs As BetterListViewItemSelectionChangedEventArgs) Handles BetterListView1.ItemSelectionChanged
+        For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
+            Dim lvi As BetterListViewItem
+            lvi = BetterListView1.SelectedItems(i)
+            tmpProvider = lvi.SubItems(1).Text
+            tmpProvierName = lvi.SubItems.Item(2).Text
+            tmpProvierNameType = lvi.SubItems.Item(3).Text
+        Next
+    End Sub
+
+    Private Sub BetterListView1_Click(sender As Object, e As EventArgs) Handles BetterListView1.Click
+        ShowData()
+    End Sub
+    Private Sub ShowData()
+        SplashScreenManager1.ShowWaitForm()
+        clsbusent.Lc_BusinessEntity.Updatem_table("m_service A JOIN m_diagnosis_opd B ON(A.HOSPCODE = B.HOSPCODE AND A.PID = B.PID AND A.SEQ = B.SEQ AND A.DATE_SERV = B.DATE_SERV)", " A.PDX = B.DIAGCODE ", " B.DIAGTYPE = '1' AND IFNULL(A.PDX,'') = '' ")
+        Dim tmpSQL As String = ""
+        If chkAll.Checked = True Then
+            tmpSQL = ""
+        ElseIf chkOP.Checked = True Then
+            tmpSQL = " AND " & vICD10OP & " "
+        ElseIf chkPP.Checked = True Then
+            tmpSQL = " AND " & vICD10PP & ""
+        End If
+
+        Dim DateStart As String = CDate(dtpStart.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
+        Dim DateEnd As String = CDate(dtpEnd.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
+
+
+        Dim ds2 As DataSet
+        ds2 = clsdataBus.Lc_Business.SELECT_TABLE("A.SEQ,A.DATE_SERV,A.PDX,C.DESC_ENG,C.DESC_THAI,B.CID,B.BIRTH,B.SEX,A.STATUS_AF,PRENAME,NAME,LNAME,B.HN,INSTYPE_DESC,A.INSID", "m_service A LEFT JOIN m_person B ON(A.PID = B.PID) LEFT JOIN l_icd10 C ON(A.PDX = C.CODE) JOIN m_diagnosis_opd D ON(A.PID = D.PID AND A.SEQ = D.SEQ) LEFT JOIN l_instype_new E ON(A.INSTYPE = E.INSTYPE_CODE)  ", " WHERE (A.DATE_SERV >= '" & DateStart & "' AND A.DATE_SERV <= '" & DateEnd & "') AND A.STATUS_AF <> '8' AND D.PROVIDER = '" & tmpProvider & "' " & tmpSQL & " GROUP BY A.SEQ,A.DATE_SERV,A.PDX,C.DESC_ENG,C.DESC_THAI,B.CID,B.BIRTH,B.SEX ORDER BY A.DATE_SERV,A.SEQ+0 ")
+
+        If ds2.Tables(0).Rows.Count > 0 Then
+            DisplayData2(ds2)
+            Label5.Text = "จำนวน " & ds2.Tables(0).Rows.Count.ToString("#,##0") & " รายการ"
+            cmdPrintReport2.Enabled = True
+        Else
+            BetterListView2.Items.Clear()
+            Label5.Text = "จำนวน 0 รายการ"
+            cmdPrintReport2.Enabled = False
+        End If
+        SplashScreenManager1.CloseWaitForm()
+    End Sub
+    Private Sub DisplayData2(ByVal ds As DataSet)
 
     End Sub
 End Class
