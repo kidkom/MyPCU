@@ -175,6 +175,7 @@ Public Class frmPopPypamid
         dt.Columns.Add(Coulumn9)
         dt.Columns.Add(Coulumn10)
         dt.Columns.Add(Coulumn11)
+
         Try
             BetterListView1.Items.Clear()
             BetterListView1.BeginUpdate()
@@ -226,7 +227,9 @@ Public Class frmPopPypamid
 
                 k = i
             Next
+
             dsRpt.Tables.Add(dt)
+
             BetterListView1.ResumeSort(True)
             BetterListView1.EndUpdate()
             k = k + 1
@@ -305,6 +308,7 @@ Public Class frmPopPypamid
     End Sub
 
     Private Sub cmdPrint2_Click(sender As Object, e As EventArgs) Handles cmdPrint2.Click
+
         Dim fReport As New frmReportView
 
         fReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\Reports\rptPopAge.rdlc"

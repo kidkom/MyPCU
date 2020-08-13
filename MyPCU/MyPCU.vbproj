@@ -847,6 +847,17 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="ReportPrint\DataSet20F.designer.vb">
+      <DependentUpon>DataSet20F.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\DataSet20F.vb">
+      <DependentUpon>DataSet20F.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPrint\DataSet20F1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet20F.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Forms.vb" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -1198,6 +1209,17 @@
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
     <Content Include="Resources\1_material2.png" />
+    <None Include="ReportPrint\DataSet20F.xsc">
+      <DependentUpon>DataSet20F.xsd</DependentUpon>
+    </None>
+    <None Include="ReportPrint\DataSet20F.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet20F1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportPrint\DataSet20F.xss">
+      <DependentUpon>DataSet20F.xsd</DependentUpon>
+    </None>
     <None Include="Resources\a_health_case.png" />
     <None Include="Resources\a_tooth.png" />
     <None Include="Resources\a_toorh2.png" />
