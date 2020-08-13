@@ -853,13 +853,7 @@
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="ReportPrint\DataSet20F.designer.vb">
-      <DependentUpon>DataSet20F.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ReportPrint\DataSet20F.vb">
-      <DependentUpon>DataSet20F.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ReportPrint\DataSet20F1.Designer.vb">
+    <Compile Include="ReportPrint\DataSet20F.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet20F.xsd</DependentUpon>
@@ -1198,6 +1192,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportPrint\ReportProvider\rptProviderSum.rdlc" />
     <None Include="App.config" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1223,7 +1218,7 @@
     </None>
     <None Include="ReportPrint\DataSet20F.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet20F1.Designer.vb</LastGenOutput>
+      <LastGenOutput>DataSet20F.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="ReportPrint\DataSet20F.xss">

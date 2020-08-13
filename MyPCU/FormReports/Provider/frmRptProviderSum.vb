@@ -123,9 +123,10 @@ Public Class frmRptProviderSum
     Private Sub DisplayData(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As ListViewItem
+
         Dim tmpOrder As String = ""
         Dim tmpPrename As String = ""
+        Dim tmpProviderType As String = ""
         Dim drRpt As DataRow
         Dim dt As DataTable
         dt = New DataTable()
@@ -216,26 +217,28 @@ Public Class frmRptProviderSum
 
 
 
-                'dsRpt.Tables.Clear()
-                'drRpt = dt.NewRow()
-                'drRpt("FIELD1") = "หน่วยบริการ : " & ClsBusiness.Lc_Business.SELECT_NAME_HCODE(vHcode).Replace("รพ.สต.", "โรงพยาบาลส่งเสริมสุขภาพตำบล")
-                'drRpt("FIELD2") = "รายงานจำนวนการให้บริการจำแนกตามผู้ให้บริการ"
+                dsRpt.Tables.Clear()
+                drRpt = dt.NewRow()
+                drRpt("FIELD1") = "หน่วยบริการ : " & ClsBusiness.Lc_Business.SELECT_NAME_HCODE(vHcode).Replace("รพ.สต.", "โรงพยาบาลส่งเสริมสุขภาพตำบล")
+                drRpt("FIELD2") = "รายงานจำนวนการให้บริการจำแนกตามผู้ให้บริการ"
 
-                'drRpt("FIELD3") = tmpOrder
-                'drRpt("FIELD4") = tmpPrename & (dr("NAME")) & " " & (dr("LNAME"))
-                'drRpt("FIELD5") = tmpProviderType
-                'drRpt("FIELD6") = dr("REGISTERNO")
+                drRpt("FIELD3") = tmpOrder
+                drRpt("FIELD4") = tmpPrename & (dr("NAME")) & " " & (dr("LNAME"))
+                drRpt("FIELD5") = dr("PROVIDER_DESC")
+                drRpt("FIELD6") = dr("REGISTERNO")
 
-                'drRpt("FIELD7") = dr("OP_COUNT1")
-                'drRpt("FIELD8") = dr("OP_COUNT2")
-                'drRpt("FIELD9") = CInt(dr("COUNT1") - dr("OP_COUNT1"))
-                'drRpt("FIELD10") = CInt(dr("COUNT2") - dr("OP_COUNT2"))
-                'drRpt("FIELD11") = dr("COUNT1")
-                'drRpt("FIELD12") = dr("COUNT2")
-                ''drRpt("FIELD13") = "ข้อมูลการให้บริการ ตั้งแต่วันที่ " & DateTimePicker1.Value.ToString("d MMMM yyyy") & " ถึงวันที่ " & DateTimePicker2.Value.ToString("d MMMM yyyy")
-                'dt.Rows.Add(drRpt)
+                drRpt("FIELD7") = dr("OP_COUNT1")
+                drRpt("FIELD8") = dr("OP_COUNT2")
+                drRpt("FIELD9") = CInt(dr("COUNT1") - dr("OP_COUNT1"))
+                drRpt("FIELD10") = CInt(dr("COUNT2") - dr("OP_COUNT2"))
+                drRpt("FIELD11") = dr("COUNT1")
+                drRpt("FIELD12") = dr("COUNT2")
+                drRpt("FIELD13") = "ข้อมูลการให้บริการ ตั้งแต่วันที่ " & CDate(dtpStart.EditValue).ToString("d MMMM yyyy") & " ถึงวันที่ " & CDate(dtpEnd.EditValue).ToString("d MMMM yyyy")
+                dt.Rows.Add(drRpt)
 
             Next
+            dsRpt.Tables.Add(dt)
+
             BetterListView1.AutoResizeColumn(2, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(3, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(4, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
@@ -254,15 +257,24 @@ Public Class frmRptProviderSum
             BetterListView1.Items(k).SubItems.Add(sumType4.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
             BetterListView1.Items(k).SubItems.Add(sumType5.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
             BetterListView1.Items(k).SubItems.Add(sumType6.ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
-            BetterListView1.Items(k).BackColor = Color.Azure
+            BetterListView1.Items(k).BackColor = Color.LightBlue
 
         Catch ex As Exception
             XtraMessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
     End Sub
+    Private Sub cmdPrintReport1_Click(sender As Object, e As EventArgs) Handles cmdPrintReport1.Click
+        Dim fReport As New frmReportView
+        Dim params As ReportParameter
 
-    Private Sub BetterListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles BetterListView1.SelectedIndexChanged
+        params = New ReportParameter("RateId")
+        fReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\Reports\rptProviderSum.rdlc"
+        fReport.ReportViewer1.LocalReport.DataSources.Clear()
+        CurrentReportDataSource.Name = "DataSet20F"
+        CurrentReportDataSource.value = dsRpt.Tables(0)
+        fReport.ReportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource)
+        fReport.ShowDialog()
 
     End Sub
 End Class
