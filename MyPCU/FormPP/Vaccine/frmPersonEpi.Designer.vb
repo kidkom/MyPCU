@@ -29,6 +29,7 @@ Partial Class frmPersonEpi
         Me.Label12 = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.LookUpEdit4 = New DevExpress.XtraEditors.LookUpEdit()
         Me.LookUpEdit2 = New DevExpress.XtraEditors.LookUpEdit()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
@@ -56,11 +57,11 @@ Partial Class frmPersonEpi
         Me.lblErrorCode = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.ToolTipController1 = New DevExpress.Utils.ToolTipController(Me.components)
-        Me.LookUpEdit4 = New DevExpress.XtraEditors.LookUpEdit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +73,6 @@ Partial Class frmPersonEpi
         CType(Me.txtDateServ.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboVaccineType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -184,6 +184,16 @@ Partial Class frmPersonEpi
         Me.Label11.TabIndex = 1278
         Me.Label11.Text = "ปริมาณที่ให้"
         '
+        'LookUpEdit4
+        '
+        Me.LookUpEdit4.Location = New System.Drawing.Point(355, 199)
+        Me.LookUpEdit4.Name = "LookUpEdit4"
+        Me.LookUpEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.LookUpEdit4.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.LookUpEdit4.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.LookUpEdit4.Size = New System.Drawing.Size(178, 24)
+        Me.LookUpEdit4.TabIndex = 1277
+        '
         'LookUpEdit2
         '
         Me.LookUpEdit2.Location = New System.Drawing.Point(434, 167)
@@ -265,6 +275,8 @@ Partial Class frmPersonEpi
         '
         Me.txtVaccineTypeCode.Location = New System.Drawing.Point(130, 75)
         Me.txtVaccineTypeCode.Name = "txtVaccineTypeCode"
+        Me.txtVaccineTypeCode.Properties.Appearance.BackColor = System.Drawing.Color.Beige
+        Me.txtVaccineTypeCode.Properties.Appearance.Options.UseBackColor = True
         Me.txtVaccineTypeCode.Properties.Appearance.Options.UseTextOptions = True
         Me.txtVaccineTypeCode.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.txtVaccineTypeCode.Size = New System.Drawing.Size(63, 24)
@@ -274,6 +286,8 @@ Partial Class frmPersonEpi
         '
         Me.txtVaccinePlaceCode.Location = New System.Drawing.Point(130, 105)
         Me.txtVaccinePlaceCode.Name = "txtVaccinePlaceCode"
+        Me.txtVaccinePlaceCode.Properties.Appearance.BackColor = System.Drawing.Color.Beige
+        Me.txtVaccinePlaceCode.Properties.Appearance.Options.UseBackColor = True
         Me.txtVaccinePlaceCode.Properties.Appearance.Options.UseTextOptions = True
         Me.txtVaccinePlaceCode.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.txtVaccinePlaceCode.Size = New System.Drawing.Size(63, 24)
@@ -448,16 +462,6 @@ Partial Class frmPersonEpi
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'LookUpEdit4
-        '
-        Me.LookUpEdit4.Location = New System.Drawing.Point(355, 199)
-        Me.LookUpEdit4.Name = "LookUpEdit4"
-        Me.LookUpEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit4.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
-        Me.LookUpEdit4.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LookUpEdit4.Size = New System.Drawing.Size(178, 24)
-        Me.LookUpEdit4.TabIndex = 1277
-        '
         'frmPersonEpi
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -479,6 +483,7 @@ Partial Class frmPersonEpi
         Me.GroupControl1.PerformLayout()
         CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -490,7 +495,6 @@ Partial Class frmPersonEpi
         CType(Me.txtDateServ.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboVaccineType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

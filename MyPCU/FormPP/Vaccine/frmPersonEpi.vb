@@ -83,7 +83,8 @@ Public Class frmPersonEpi
     End Sub
     Private Sub cboProviderAction()
         Dim ds As DataSet
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,CONCAT(b.PRENAME,' ',a.NAME,' ',a.LNAME) AS PROVIDER_NAME", "m_provider a JOIN l_prename b ON(a.PRENAME = b.PRENAME_CODE) ", " WHERE STATUS_AF = '1' ORDER BY PROVIDER")
+
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,CONCAT(b.PRENAME_DESC,' ',a.NAME,' ',a.LNAME) AS PROVIDER_NAME,SERVICE", " m_provider a JOIN l_mypcu_prename b ON(a.PRENAME_HOS = b.PRENAME_CODE)  ", " WHERE a.STATUS_AF <> '8' AND IFNULL(SERVICE,'') = '1'  ORDER BY PROVIDER ")
         If ds.Tables(0).Rows.Count > 0 Then
             With cboProvider
                 .Properties.DataSource = ds.Tables(0)
