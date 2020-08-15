@@ -616,6 +616,18 @@
     <Compile Include="FormProviderUser\frmUserEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReports\OPD\frmDiseaseOrder.Designer.vb">
+      <DependentUpon>frmDiseaseOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\OPD\frmDiseaseOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\OPD\frmRptOPDmain.Designer.vb">
+      <DependentUpon>frmRptOPDmain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\OPD\frmRptOPDmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReports\Popuration\frmPerson_TypeArea.Designer.vb">
       <DependentUpon>frmPerson_TypeArea.vb</DependentUpon>
     </Compile>
@@ -1088,6 +1100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProviderUser\frmUserEdit.resx">
       <DependentUpon>frmUserEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\OPD\frmDiseaseOrder.resx">
+      <DependentUpon>frmDiseaseOrder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\OPD\frmRptOPDmain.resx">
+      <DependentUpon>frmRptOPDmain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Popuration\frmPerson_TypeArea.resx">
       <DependentUpon>frmPerson_TypeArea.vb</DependentUpon>

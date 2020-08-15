@@ -20,17 +20,20 @@ Partial Class frmProviderRx
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmProviderRx))
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.cboProvider = New DevExpress.XtraEditors.LookUpEdit()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmdPrintReport1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
+        Me.cmdSearch = New DevExpress.XtraEditors.SimpleButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtpEnd = New DevExpress.XtraEditors.DateEdit()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpStart = New DevExpress.XtraEditors.DateEdit()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cmdToday = New DevExpress.XtraEditors.SimpleButton()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpEnd.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,6 +48,7 @@ Partial Class frmProviderRx
         '
         'BetterListView1
         '
+        Me.BetterListView1.AccessibleName = "BetterListView1"
         Me.BetterListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -52,7 +56,7 @@ Partial Class frmProviderRx
         Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
         Me.BetterListView1.Location = New System.Drawing.Point(12, 89)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(772, 291)
+        Me.BetterListView1.Size = New System.Drawing.Size(772, 279)
         Me.BetterListView1.TabIndex = 1288
         '
         'cboProvider
@@ -78,26 +82,25 @@ Partial Class frmProviderRx
         '
         Me.cmdPrintReport1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdPrintReport1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrintReport1.Location = New System.Drawing.Point(681, 52)
+        Me.cmdPrintReport1.Location = New System.Drawing.Point(705, 58)
         Me.cmdPrintReport1.Name = "cmdPrintReport1"
-        Me.cmdPrintReport1.Size = New System.Drawing.Size(103, 31)
+        Me.cmdPrintReport1.Size = New System.Drawing.Size(79, 24)
         Me.cmdPrintReport1.TabIndex = 1303
         Me.cmdPrintReport1.Text = "พิมพ์"
         '
-        'cmdSave
+        'cmdSearch
         '
-        Me.cmdSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdSave.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_play
-        Me.cmdSave.Location = New System.Drawing.Point(572, 51)
-        Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(103, 31)
-        Me.cmdSave.TabIndex = 1302
-        Me.cmdSave.Text = "ประมวลผล"
+        Me.cmdSearch.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_search
+        Me.cmdSearch.Location = New System.Drawing.Point(465, 54)
+        Me.cmdSearch.Name = "cmdSearch"
+        Me.cmdSearch.Size = New System.Drawing.Size(79, 24)
+        Me.cmdSearch.TabIndex = 1302
+        Me.cmdSearch.Text = "ค้นหา"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(309, 58)
+        Me.Label1.Location = New System.Drawing.Point(282, 58)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(42, 17)
         Me.Label1.TabIndex = 1301
@@ -106,7 +109,7 @@ Partial Class frmProviderRx
         'dtpEnd
         '
         Me.dtpEnd.EditValue = Nothing
-        Me.dtpEnd.Location = New System.Drawing.Point(368, 55)
+        Me.dtpEnd.Location = New System.Drawing.Point(327, 55)
         Me.dtpEnd.Name = "dtpEnd"
         Me.dtpEnd.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.dtpEnd.Properties.Appearance.Options.UseBackColor = True
@@ -132,7 +135,7 @@ Partial Class frmProviderRx
         'dtpStart
         '
         Me.dtpStart.EditValue = Nothing
-        Me.dtpStart.Location = New System.Drawing.Point(159, 55)
+        Me.dtpStart.Location = New System.Drawing.Point(140, 55)
         Me.dtpStart.Name = "dtpStart"
         Me.dtpStart.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.dtpStart.Properties.Appearance.Options.UseBackColor = True
@@ -146,10 +149,31 @@ Partial Class frmProviderRx
         Me.dtpStart.Size = New System.Drawing.Size(132, 24)
         Me.dtpStart.TabIndex = 1298
         '
-        'ContextMenuStrip1
+        'Label5
         '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 371)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(43, 17)
+        Me.Label5.TabIndex = 1304
+        Me.Label5.Text = "จำนวน"
+        '
+        'cmdToday
+        '
+        Me.cmdToday.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_calendar
+        Me.cmdToday.Location = New System.Drawing.Point(411, 12)
+        Me.cmdToday.Name = "cmdToday"
+        Me.cmdToday.Size = New System.Drawing.Size(79, 24)
+        Me.cmdToday.TabIndex = 1305
+        Me.cmdToday.Text = "วันนี้"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "a_person2.png")
+        Me.ImageList1.Images.SetKeyName(1, "women.ico")
         '
         'frmProviderRx
         '
@@ -158,8 +182,10 @@ Partial Class frmProviderRx
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 404)
+        Me.Controls.Add(Me.cmdToday)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cmdPrintReport1)
-        Me.Controls.Add(Me.cmdSave)
+        Me.Controls.Add(Me.cmdSearch)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dtpEnd)
         Me.Controls.Add(Me.Label3)
@@ -168,7 +194,7 @@ Partial Class frmProviderRx
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.BetterListView1)
         Me.Name = "frmProviderRx"
-        Me.Text = "frmProviderRx"
+        Me.Text = "รายงานผู้รับบริการจำแนกตามรายผู้ให้บริการ (รักษา)"
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtpEnd.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -184,11 +210,13 @@ Partial Class frmProviderRx
     Friend WithEvents cboProvider As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents Label6 As Label
     Friend WithEvents cmdPrintReport1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents cmdSave As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmdSearch As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label1 As Label
     Friend WithEvents dtpEnd As DevExpress.XtraEditors.DateEdit
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpStart As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cmdToday As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents ImageList1 As ImageList
 End Class
