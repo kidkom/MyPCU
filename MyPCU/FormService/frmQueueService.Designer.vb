@@ -44,6 +44,7 @@ Partial Class frmQueueService
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.cmdRoomSetting = New System.Windows.Forms.Button()
         CType(Me.cboClinic.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpDate1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpDate1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -336,6 +337,16 @@ Partial Class frmQueueService
         Me.PictureBox2.TabIndex = 1287
         Me.PictureBox2.TabStop = False
         '
+        'cmdRoomSetting
+        '
+        Me.cmdRoomSetting.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.cmdRoomSetting.Image = Global.MyPCU.My.Resources.Resources.a_edit4
+        Me.cmdRoomSetting.Location = New System.Drawing.Point(994, 17)
+        Me.cmdRoomSetting.Name = "cmdRoomSetting"
+        Me.cmdRoomSetting.Size = New System.Drawing.Size(38, 26)
+        Me.cmdRoomSetting.TabIndex = 1289
+        Me.cmdRoomSetting.UseVisualStyleBackColor = True
+        '
         'frmQueueService
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -343,6 +354,7 @@ Partial Class frmQueueService
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1113, 652)
+        Me.Controls.Add(Me.cmdRoomSetting)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)
@@ -409,4 +421,5 @@ Partial Class frmQueueService
     Friend WithEvents PictureBox1 As PictureBox
     Public WithEvents Label4 As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents cmdRoomSetting As Button
 End Class

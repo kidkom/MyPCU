@@ -22,6 +22,12 @@ Public Class frmPtStatus
             .Columns.Add(2).Text = "รายการ"
             .Columns(2).Width = 120
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(3).Text = "ระดับความเร่งด่วน"
+            .Columns(3).Width = 200
+            .Columns(3).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(4).Text = "URGENT"
+            .Columns(4).Width = 0
+            .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
         ShowData()
     End Sub
@@ -36,7 +42,7 @@ Public Class frmPtStatus
         ElseIf CheckBox3.Checked = True Then
             tmpSQL = " WHERE STATUS_AF = '0' "
         End If
-        ds = ClsBusiness.Lc_Business.SELECT_TABLE(" * ", " l_pt_status ", " " & tmpSQL & " ")
+        ds = ClsBusiness.Lc_Business.SELECT_TABLE(" * ", " l_pt_status a JOIN l_urgent b ON(a.URGENT = b.URGENT_CODE) ", " " & tmpSQL & " ")
         If ds.Tables(0).Rows.Count > 0 Then
             Betterdisplay(ds)
             Label5.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0") & " รายการ"
@@ -59,11 +65,24 @@ Public Class frmPtStatus
                 BetterListView1.Items.Add(dr("ROWID").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(dr("PT_STATUS_CODE").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(dr("PT_STATUS").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
-
+                If dr("URGENT") = "1" Then
+                    BetterListView1.Items(i).SubItems.Add(ImageList1.Images.Item(0), dr("URGENT_TH")).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.BeforeTextLeft
+                ElseIf dr("URGENT") = "2" Then
+                    BetterListView1.Items(i).SubItems.Add(ImageList1.Images.Item(1), dr("URGENT_TH")).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.BeforeTextLeft
+                ElseIf dr("URGENT") = "3" Then
+                    BetterListView1.Items(i).SubItems.Add(ImageList1.Images.Item(2), dr("URGENT_TH")).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.BeforeTextLeft
+                ElseIf dr("URGENT") = "4" Then
+                    BetterListView1.Items(i).SubItems.Add(ImageList1.Images.Item(3), dr("URGENT_TH")).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.BeforeTextLeft
+                ElseIf dr("URGENT") = "5" Then
+                    BetterListView1.Items(i).SubItems.Add(ImageList1.Images.Item(4), dr("URGENT_TH")).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.BeforeTextLeft
+                End If
                 If (i Mod 2) = 0 Then
                     BetterListView1.Items(i).BackColor = Color.WhiteSmoke
                 End If
+
+                BetterListView1.Items(i).SubItems.Add(dr("URGENT").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
             Next
+
             BetterListView1.AutoResizeColumn(2, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.EndUpdate()
 
@@ -110,8 +129,8 @@ Public Class frmPtStatus
         End If
         GenCode()
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 10)
-        clsbusent.Lc_BusinessEntity.Insertm_table("l_pt_status (PT_STATUS_CODE,PT_STATUS,USER_REC,D_UPDATE,STATUS_AF)",
-         "'" & tmpCode & "','" & tmpPRENAME & "','" & vUSERID & "','" & tmpNow & "','1'")
+        clsbusent.Lc_BusinessEntity.Insertm_table("l_pt_status (PT_STATUS_CODE,PT_STATUS,USER_REC,D_UPDATE,STATUS_AF,URGENT)",
+         "'" & tmpCode & "','" & tmpPRENAME & "','" & vUSERID & "','" & tmpNow & "','1','" & ImageComboBoxEdit1.EditValue & "'")
 
 
         ShowData()
@@ -140,6 +159,7 @@ Public Class frmPtStatus
             Dim lvi As BetterListViewItem
             lvi = BetterListView1.SelectedItems(i)
             tmpROWID = lvi.SubItems.Item(0).Text
+            ImageComboBoxEdit1.EditValue = lvi.SubItems.Item(4).Text
         Next
 
         Dim ds As DataSet
@@ -184,7 +204,7 @@ Public Class frmPtStatus
         End If
 
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 10)
-        clsbusent.Lc_BusinessEntity.Updatem_table(" l_pt_status ", "STATUS_AF = '" & tmpStatus & "', PT_STATUS  = '" & tmpPRENAME & "',USER_REC = '" & vUSERID & "',D_UPDATE = '" & tmpNow & "'", " ROWID = '" & tmpROWID & "'")
+        clsbusent.Lc_BusinessEntity.Updatem_table(" l_pt_status ", "STATUS_AF = '" & tmpStatus & "', PT_STATUS  = '" & tmpPRENAME & "',USER_REC = '" & vUSERID & "',D_UPDATE = '" & tmpNow & "',URGENT = '" & ImageComboBoxEdit1.EditValue & "'", " ROWID = '" & tmpROWID & "'")
 
         ShowData()
         ClearData()

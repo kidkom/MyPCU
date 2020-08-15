@@ -8,8 +8,12 @@ Imports DevExpress.XtraEditors
 Public Class frmQueueService
     Private Sub frmQueueService_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ShowClinic()
+
         cboProviderAction()
         dtpDate1.EditValue = Now.ToString("dd/MM/yyyy")
+
+        cboClinic.Enabled = False
+        cboRoom.Enabled = False
 
         With BetterListView1
             .Columns.Add(0).Text = ""
@@ -86,9 +90,63 @@ Public Class frmQueueService
             End With
         End If
     End Sub
+    Private Sub ShowRoom()
+        Dim ds As DataSet
+        ds = ClsBusiness.Lc_Business.SELECT_TABLE("ROOM,DOCTOR", "m_doctor_room", " WHERE CLINIC = '" & cboClinic.EditValue & "' AND IFNULL(DOCTOR,'') <> '' AND IFNULL(DEPARTMENT,'') = '' ")
 
+        If ds.Tables(0).Rows.Count > 0 Then
+            chkRoom.Checked = True
+            With cboRoom
+                .Properties.DataSource = ds.Tables(0)
+                .Properties.DisplayMember = "ROOM"
+                .Properties.ValueMember = "DOCTOR"
+                .Properties.ForceInitialize()
+                .Properties.PopulateColumns()
+                .Properties.Columns(1).Visible = False
+                .Properties.ShowHeader = False
+                .Properties.NullText = ""
+            End With
+        Else
+            chkRoom.Checked = False
+        End If
+    End Sub
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
         Dim f As New frmQueueEdit
         f.ShowDialog()
+    End Sub
+
+    Private Sub cmdRoomSetting_Click(sender As Object, e As EventArgs) Handles cmdRoomSetting.Click
+        Dim f As New frmDoctorRoom
+        f.ShowDialog()
+        cboRoom.Properties.DataSource = Nothing
+        ShowRoom()
+
+    End Sub
+
+    Private Sub cboClinic_EditValueChanged(sender As Object, e As EventArgs) Handles cboClinic.EditValueChanged
+        cboRoom.Properties.DataSource = Nothing
+        ShowRoom()
+
+    End Sub
+
+    Private Sub chkClinicAll_Click(sender As Object, e As EventArgs) Handles chkClinicAll.Click
+        chkClinicAll.Checked = True
+        chkClinic.Checked = False
+        chkRoom.Checked = False
+        chkProvider.Checked = False
+    End Sub
+
+    Private Sub chkClinic_Click(sender As Object, e As EventArgs) Handles chkClinic.Click
+        chkClinicAll.Checked = False
+        chkClinic.Checked = True
+        chkRoom.Checked = False
+        chkProvider.Checked = False
+    End Sub
+
+    Private Sub chkProvider_Click(sender As Object, e As EventArgs) Handles chkProvider.Click
+        chkClinicAll.Checked = False
+        chkClinic.Checked = False
+        chkRoom.Checked = False
+        chkProvider.Checked = True
     End Sub
 End Class

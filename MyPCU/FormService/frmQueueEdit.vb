@@ -12,8 +12,6 @@ Public Class frmQueueEdit
         Label16.Visible = False
         txtHospInRefer.Visible = False
         GroupControl3.Enabled = False
-        cboRoom.Enabled = False
-
         If vPSEARCH = "1" Then
             chkPID.Checked = True
         ElseIf vPSEARCH = "2" Then
@@ -29,6 +27,8 @@ Public Class frmQueueEdit
         cboProviderAction()
         PatienStatus()
         ShowClinic()
+        cboClinic.EditValue = vClinic
+        ShowRoom()
     End Sub
     Private Sub PateinReson()
         Dim ds3 As DataSet
@@ -296,7 +296,6 @@ Public Class frmQueueEdit
                 If Not IsDBNull(ds.Tables(0).Rows(0).Item("INSTYPE_NEW")) Then
                     lblINTYPE_NEW.Text = ClsBusiness.Lc_Business.SELECT_NAME_INSTYPE_NEW(ds.Tables(0).Rows(0).Item("INSTYPE_NEW"))
                     txtINTYPE_NEW.Text = ds.Tables(0).Rows(0).Item("INSTYPE_NEW")
-                    cboINSTYPE_NEW.EditValue = txtINTYPE_NEW.Text
                 Else
                     lblINTYPE_NEW.Text = ""
                 End If
@@ -462,5 +461,34 @@ Public Class frmQueueEdit
                 txtProvider.SelectAll()
             End If
         End If
+    End Sub
+    Private Sub ShowRoom()
+        Dim ds As DataSet
+        ds = ClsBusiness.Lc_Business.SELECT_TABLE("ROOM,DOCTOR", "m_doctor_room", " WHERE CLINIC = '" & cboClinic.EditValue & "' AND IFNULL(DOCTOR,'') <> '' AND IFNULL(DEPARTMENT,'') = '' ")
+
+        If ds.Tables(0).Rows.Count > 0 Then
+            cboRoom.Enabled = True
+            With cboRoom
+                .Properties.DataSource = ds.Tables(0)
+                .Properties.DisplayMember = "ROOM"
+                .Properties.ValueMember = "DOCTOR"
+                .Properties.ForceInitialize()
+                .Properties.PopulateColumns()
+                .Properties.Columns(1).Visible = False
+                .Properties.ShowHeader = False
+                .Properties.NullText = ""
+            End With
+        Else
+            cboRoom.Enabled = False
+        End If
+    End Sub
+    Private Sub cboClinic_EditValueChanged(sender As Object, e As EventArgs) Handles cboClinic.EditValueChanged
+        cboRoom.Properties.DataSource = Nothing
+        ShowRoom()
+    End Sub
+
+    Private Sub cboRoom_EditValueChanged(sender As Object, e As EventArgs) Handles cboRoom.EditValueChanged
+        txtProvider.Text = cboRoom.EditValue
+        cboProvider.EditValue = txtProvider.Text
     End Sub
 End Class

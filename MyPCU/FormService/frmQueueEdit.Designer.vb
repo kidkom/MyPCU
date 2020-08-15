@@ -26,6 +26,7 @@ Partial Class frmQueueEdit
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmQueueEdit))
         Me.FluentDesignFormContainer1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.CheckEdit5 = New DevExpress.XtraEditors.CheckEdit()
         Me.txtPtStatus = New DevExpress.XtraEditors.TextEdit()
         Me.ImageComboBoxEdit1 = New DevExpress.XtraEditors.ImageComboBoxEdit()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
@@ -124,11 +125,11 @@ Partial Class frmQueueEdit
         Me.AccordionControlSeparator12 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
         Me.AccordionControlElement15 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator7 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
-        Me.AccordionControlElement10 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement12 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator8 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
         Me.AccordionControlElement11 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator9 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
-        Me.AccordionControlElement12 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement10 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator10 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
         Me.AccordionControlElement13 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator11 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
@@ -137,6 +138,7 @@ Partial Class frmQueueEdit
         Me.FluentDesignFormContainer1.SuspendLayout()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.CheckEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPtStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ImageComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCauseIn.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,6 +207,7 @@ Partial Class frmQueueEdit
         '
         'GroupControl3
         '
+        Me.GroupControl3.Controls.Add(Me.CheckEdit5)
         Me.GroupControl3.Controls.Add(Me.txtPtStatus)
         Me.GroupControl3.Controls.Add(Me.ImageComboBoxEdit1)
         Me.GroupControl3.Controls.Add(Me.btnPtStatus)
@@ -242,6 +245,14 @@ Partial Class frmQueueEdit
         Me.GroupControl3.Size = New System.Drawing.Size(776, 249)
         Me.GroupControl3.TabIndex = 1187
         Me.GroupControl3.Text = "บันทึกการเข้ารับบริการ"
+        '
+        'CheckEdit5
+        '
+        Me.CheckEdit5.Location = New System.Drawing.Point(388, 214)
+        Me.CheckEdit5.Name = "CheckEdit5"
+        Me.CheckEdit5.Properties.Caption = "Lab"
+        Me.CheckEdit5.Size = New System.Drawing.Size(95, 21)
+        Me.CheckEdit5.TabIndex = 1309
         '
         'txtPtStatus
         '
@@ -332,7 +343,7 @@ Partial Class frmQueueEdit
         '
         Me.cboINSTYPE_NEW.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboINSTYPE_NEW.Location = New System.Drawing.Point(215, 206)
+        Me.cboINSTYPE_NEW.Location = New System.Drawing.Point(218, 183)
         Me.cboINSTYPE_NEW.Name = "cboINSTYPE_NEW"
         Me.cboINSTYPE_NEW.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.cboINSTYPE_NEW.Size = New System.Drawing.Size(460, 24)
@@ -340,7 +351,7 @@ Partial Class frmQueueEdit
         '
         'cboProvider
         '
-        Me.cboProvider.Location = New System.Drawing.Point(215, 153)
+        Me.cboProvider.Location = New System.Drawing.Point(261, 153)
         Me.cboProvider.Name = "cboProvider"
         Me.cboProvider.Properties.Appearance.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cboProvider.Properties.Appearance.Options.UseFont = True
@@ -357,7 +368,7 @@ Partial Class frmQueueEdit
         Me.txtProvider.Properties.Appearance.Options.UseBackColor = True
         Me.txtProvider.Properties.Appearance.Options.UseTextOptions = True
         Me.txtProvider.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.txtProvider.Size = New System.Drawing.Size(62, 24)
+        Me.txtProvider.Size = New System.Drawing.Size(108, 24)
         Me.txtProvider.TabIndex = 1301
         '
         'Label26
@@ -427,7 +438,7 @@ Partial Class frmQueueEdit
         '
         'CheckEdit9
         '
-        Me.CheckEdit9.Location = New System.Drawing.Point(681, 208)
+        Me.CheckEdit9.Location = New System.Drawing.Point(684, 185)
         Me.CheckEdit9.Name = "CheckEdit9"
         Me.CheckEdit9.Properties.Caption = "ตามสิทธิที่มี"
         Me.CheckEdit9.Size = New System.Drawing.Size(88, 21)
@@ -435,7 +446,7 @@ Partial Class frmQueueEdit
         '
         'txtINSTYPE_NEW
         '
-        Me.txtINSTYPE_NEW.Location = New System.Drawing.Point(145, 206)
+        Me.txtINSTYPE_NEW.Location = New System.Drawing.Point(148, 183)
         Me.txtINSTYPE_NEW.Name = "txtINSTYPE_NEW"
         Me.txtINSTYPE_NEW.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.txtINSTYPE_NEW.Properties.Appearance.Options.UseBackColor = True
@@ -449,7 +460,7 @@ Partial Class frmQueueEdit
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(74, 210)
+        Me.Label21.Location = New System.Drawing.Point(77, 187)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(65, 17)
         Me.Label21.TabIndex = 1190
@@ -457,10 +468,10 @@ Partial Class frmQueueEdit
         '
         'CheckEdit7
         '
-        Me.CheckEdit7.Location = New System.Drawing.Point(211, 179)
+        Me.CheckEdit7.Location = New System.Drawing.Point(287, 214)
         Me.CheckEdit7.Name = "CheckEdit7"
-        Me.CheckEdit7.Properties.Caption = "ไม่บันทึก"
-        Me.CheckEdit7.Size = New System.Drawing.Size(75, 21)
+        Me.CheckEdit7.Properties.Caption = "สัญญาณชีพ"
+        Me.CheckEdit7.Size = New System.Drawing.Size(95, 21)
         Me.CheckEdit7.TabIndex = 1189
         '
         'Label22
@@ -468,18 +479,18 @@ Partial Class frmQueueEdit
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(18, 181)
+        Me.Label22.Location = New System.Drawing.Point(46, 216)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(121, 17)
+        Me.Label22.Size = New System.Drawing.Size(93, 17)
         Me.Label22.TabIndex = 1188
-        Me.Label22.Text = "การบันทึกสัญญาณชีพ"
+        Me.Label22.Text = "การบันทึกเพิ่มเติม"
         '
         'CheckEdit6
         '
-        Me.CheckEdit6.Location = New System.Drawing.Point(147, 179)
+        Me.CheckEdit6.Location = New System.Drawing.Point(147, 214)
         Me.CheckEdit6.Name = "CheckEdit6"
-        Me.CheckEdit6.Properties.Caption = "บันทึก"
-        Me.CheckEdit6.Size = New System.Drawing.Size(75, 21)
+        Me.CheckEdit6.Properties.Caption = "ซักประวัติ/ตรวจร่างกาย"
+        Me.CheckEdit6.Size = New System.Drawing.Size(143, 21)
         Me.CheckEdit6.TabIndex = 1187
         '
         'Label20
@@ -1160,7 +1171,7 @@ Partial Class frmQueueEdit
         '
         'AccordionControlElement7
         '
-        Me.AccordionControlElement7.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement9, Me.AccordionControlSeparator6, Me.AccordionControlElement8, Me.AccordionControlSeparator12, Me.AccordionControlElement15, Me.AccordionControlSeparator7, Me.AccordionControlElement10, Me.AccordionControlSeparator8, Me.AccordionControlElement11, Me.AccordionControlSeparator9, Me.AccordionControlElement12, Me.AccordionControlSeparator10, Me.AccordionControlElement13, Me.AccordionControlSeparator11})
+        Me.AccordionControlElement7.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement9, Me.AccordionControlSeparator6, Me.AccordionControlElement8, Me.AccordionControlSeparator12, Me.AccordionControlElement15, Me.AccordionControlSeparator7, Me.AccordionControlElement12, Me.AccordionControlSeparator8, Me.AccordionControlElement11, Me.AccordionControlSeparator9, Me.AccordionControlElement10, Me.AccordionControlSeparator10, Me.AccordionControlElement13, Me.AccordionControlSeparator11})
         Me.AccordionControlElement7.Expanded = True
         Me.AccordionControlElement7.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_edit4
         Me.AccordionControlElement7.Name = "AccordionControlElement7"
@@ -1193,18 +1204,18 @@ Partial Class frmQueueEdit
         Me.AccordionControlElement15.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_vitalsign
         Me.AccordionControlElement15.Name = "AccordionControlElement15"
         Me.AccordionControlElement15.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement15.Text = "บันทึกสัญญาณชีพ"
+        Me.AccordionControlElement15.Text = "ซักประวัติ/ตรวจร่างกาย"
         '
         'AccordionControlSeparator7
         '
         Me.AccordionControlSeparator7.Name = "AccordionControlSeparator7"
         '
-        'AccordionControlElement10
+        'AccordionControlElement12
         '
-        Me.AccordionControlElement10.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_opd2
-        Me.AccordionControlElement10.Name = "AccordionControlElement10"
-        Me.AccordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement10.Text = "ประวัติการรับบริการ"
+        Me.AccordionControlElement12.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_lab1
+        Me.AccordionControlElement12.Name = "AccordionControlElement12"
+        Me.AccordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement12.Text = "บันทึกการตรวจ Lab"
         '
         'AccordionControlSeparator8
         '
@@ -1221,12 +1232,12 @@ Partial Class frmQueueEdit
         '
         Me.AccordionControlSeparator9.Name = "AccordionControlSeparator9"
         '
-        'AccordionControlElement12
+        'AccordionControlElement10
         '
-        Me.AccordionControlElement12.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_lab1
-        Me.AccordionControlElement12.Name = "AccordionControlElement12"
-        Me.AccordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement12.Text = "บันทึกการตรวจ Lab"
+        Me.AccordionControlElement10.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_opd2
+        Me.AccordionControlElement10.Name = "AccordionControlElement10"
+        Me.AccordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement10.Text = "ประวัติการรับบริการ"
         '
         'AccordionControlSeparator10
         '
@@ -1285,6 +1296,7 @@ Partial Class frmQueueEdit
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
+        CType(Me.CheckEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPtStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ImageComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCauseIn.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1443,4 +1455,5 @@ Partial Class frmQueueEdit
     Friend WithEvents txtPtStatus As DevExpress.XtraEditors.TextEdit
     Friend WithEvents ImageComboBoxEdit1 As DevExpress.XtraEditors.ImageComboBoxEdit
     Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents CheckEdit5 As DevExpress.XtraEditors.CheckEdit
 End Class
