@@ -20,7 +20,7 @@ Partial Class frmProviderRx
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, Nothing, True, True)
+        Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.cboProvider = New DevExpress.XtraEditors.LookUpEdit()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -37,7 +37,11 @@ Partial Class frmProviderRx
         CType(Me.dtpEnd.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpStart.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpStart.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout
+        Me.SuspendLayout()
+        '
+        'SplashScreenManager1
+        '
+        Me.SplashScreenManager1.ClosingDelay = 500
         '
         'BetterListView1
         '
@@ -142,14 +146,10 @@ Partial Class frmProviderRx
         Me.dtpStart.Size = New System.Drawing.Size(132, 24)
         Me.dtpStart.TabIndex = 1298
         '
-        'SplashScreenManager1
-        '
-        SplashScreenManager1.ClosingDelay = 500
-        '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'frmProviderRx
         '
@@ -176,7 +176,7 @@ Partial Class frmProviderRx
         CType(Me.dtpStart.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtpStart.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
 
@@ -190,4 +190,5 @@ Partial Class frmProviderRx
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpStart As DevExpress.XtraEditors.DateEdit
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
 End Class

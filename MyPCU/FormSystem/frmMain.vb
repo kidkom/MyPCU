@@ -1137,17 +1137,7 @@ Public Class frmMain
     End Sub
 
     Private Sub BarButtonItem176_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem176.ItemClick
-        Dim CurrentForm As Form
-        For Each CurrentForm In Me.MdiChildren
-            If TypeOf CurrentForm Is frmProviderRx Then
-                CurrentForm.MdiParent = Me
-                Exit Sub
-            End If
-        Next
-        Dim f As New frmProviderRx
-        f.MdiParent = Me
-        f.Dock = DockStyle.Fill
-        f.Show()
+
     End Sub
 
     Private Sub BarButtonItem90_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem90.ItemClick
