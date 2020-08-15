@@ -19,6 +19,7 @@ Partial Class frmRptProviderSum
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRptProviderSum))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.cmdPrintReport1 = New DevExpress.XtraEditors.SimpleButton()
@@ -37,6 +38,8 @@ Partial Class frmRptProviderSum
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BetterListView2 = New ComponentOwl.BetterListView.BetterListView()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.dtpEnd.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,6 +66,7 @@ Partial Class frmRptProviderSum
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.BetterListView1)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtpStart)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.Label6)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.cmdPrintReport2)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.chkPP)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.chkOP)
@@ -184,7 +188,7 @@ Partial Class frmRptProviderSum
         '
         Me.cmdPrintReport2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdPrintReport2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrintReport2.Location = New System.Drawing.Point(637, 181)
+        Me.cmdPrintReport2.Location = New System.Drawing.Point(637, 184)
         Me.cmdPrintReport2.Name = "cmdPrintReport2"
         Me.cmdPrintReport2.Size = New System.Drawing.Size(103, 31)
         Me.cmdPrintReport2.TabIndex = 1298
@@ -248,6 +252,23 @@ Partial Class frmRptProviderSum
         '
         Me.SplashScreenManager1.ClosingDelay = 500
         '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "a_person2.png")
+        Me.ImageList1.Images.SetKeyName(1, "women.ico")
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(354, 12)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(54, 17)
+        Me.Label6.TabIndex = 1298
+        Me.Label6.Text = "เจ้าหน้าที่"
+        '
         'frmRptProviderSum
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -288,4 +309,6 @@ Partial Class frmRptProviderSum
     Friend WithEvents cmdPrintReport1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmdPrintReport2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents Label6 As Label
 End Class

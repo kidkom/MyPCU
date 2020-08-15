@@ -57,7 +57,9 @@
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v18.2" />
     <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v18.2" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -69,7 +71,10 @@
       <HintPath>..\..\..\MyAssets\MyAssets\MyAssets\bin\Debug\DevExpress.Pdf.v18.2.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Printing.v18.2.Core" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.2" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v18.2" />
     <Reference Include="DevExpress.Sparkline.v18.2.Core" />
     <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -78,6 +83,7 @@
     <Reference Include="DevExpress.XtraDiagram.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.2" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -114,7 +120,9 @@
       <HintPath>..\..\..\MyAssets\MyAssets\MyAssets\bin\Debug\Saraff.Twain.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -170,17 +178,13 @@
     <Compile Include="Class\ClsUnzip.vb" />
     <Compile Include="Class\ClsVariableShare.vb" />
     <Compile Include="Class\ClsDataAccess8.vb" />
-    <Compile Include="Class\GraphicsEdit.vb">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Class\GraphicsEdit.vb" />
     <Compile Include="Class\GraphicsEditViewInfo.vb" />
     <Compile Include="Class\ModAssetVariable.vb" />
     <Compile Include="Class\ModEnCrypt.vb" />
     <Compile Include="Class\ModMsg.vb" />
     <Compile Include="Class\ModVariable.vb" />
-    <Compile Include="Class\RepositoryItemGraphicsEdit.vb">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Class\RepositoryItemGraphicsEdit.vb" />
     <Compile Include="Class\Resizer.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -191,63 +195,43 @@
     <Compile Include="FormAbout\frmMypPCU_News.Designer.vb">
       <DependentUpon>frmMypPCU_News.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAbout\frmMypPCU_News.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAbout\frmMypPCU_News.vb" />
     <Compile Include="FormAbout\XtraForm1.Designer.vb">
       <DependentUpon>XtraForm1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAbout\XtraForm1.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAbout\XtraForm1.vb" />
     <Compile Include="FormAppoint\frmAppointShow.Designer.vb">
       <DependentUpon>frmAppointShow.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAppoint\frmAppointShow.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAppoint\frmAppointShow.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetDecline.designer.vb">
       <DependentUpon>frmAssetDecline.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetDecline.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetDecline.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetDocument.designer.vb">
       <DependentUpon>frmAssetDocument.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetDocument.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetDocument.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetEdit.designer.vb">
       <DependentUpon>frmAssetEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetEdit.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetFix.designer.vb">
       <DependentUpon>frmAssetFix.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetFix.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetFix.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetFixDetail.designer.vb">
       <DependentUpon>frmAssetFixDetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetFixDetail.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetFixDetail.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetMatFix.designer.vb">
       <DependentUpon>frmAssetMatFix.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetMatFix.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetMatFix.vb" />
     <Compile Include="FormAssets\FormAssets\frmAssetPicture.designer.vb">
       <DependentUpon>frmAssetPicture.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmAssetPicture.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmAssetPicture.vb" />
     <Compile Include="FormAssets\FormAssets\frmDelAssets.designer.vb">
       <DependentUpon>frmDelAssets.vb</DependentUpon>
     </Compile>
@@ -257,111 +241,75 @@
     <Compile Include="FormAssets\FormAssets\frmProvideCode.designer.vb">
       <DependentUpon>frmProvideCode.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmProvideCode.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmProvideCode.vb" />
     <Compile Include="FormAssets\FormAssets\frmSearchAssetCode.designer.vb">
       <DependentUpon>frmSearchAssetCode.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmSearchAssetCode.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmSearchAssetCode.vb" />
     <Compile Include="FormAssets\FormAssets\frmSearchTemp.designer.vb">
       <DependentUpon>frmSearchTemp.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmSearchTemp.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmSearchTemp.vb" />
     <Compile Include="FormAssets\FormAssets\frmTableLocate.designer.vb">
       <DependentUpon>frmTableLocate.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmTableLocate.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmTableLocate.vb" />
     <Compile Include="FormAssets\FormLookup\frmCompanySearch.designer.vb">
       <DependentUpon>frmCompanySearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmCompanySearch.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmCompanySearch.vb" />
     <Compile Include="FormAssets\FormSystem\frmDbConfigAssets.Designer.vb">
       <DependentUpon>frmDbConfigAssets.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormSystem\frmDbConfigAssets.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormSystem\frmDbConfigAssets.vb" />
     <Compile Include="FormAssets\FormAssets\frmManageAsset.designer.vb">
       <DependentUpon>frmManageAsset.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormAssets\frmManageAsset.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormAssets\frmManageAsset.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableAssets.designer.vb">
       <DependentUpon>frmTableAssets.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableAssets.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableAssets.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableAssetsGroup.designer.vb">
       <DependentUpon>frmTableAssetsGroup.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableAssetsGroup.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableAssetsGroup.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableAssetType.Designer.vb">
       <DependentUpon>frmTableAssetType.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableAssetType.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableAssetType.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableBtype.designer.vb">
       <DependentUpon>frmTableBtype.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableBtype.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableBtype.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableBudget.designer.vb">
       <DependentUpon>frmTableBudget.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableBudget.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableBudget.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableGroupType.designer.vb">
       <DependentUpon>frmTableGroupType.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableGroupType.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableGroupType.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableLocationOffice.designer.vb">
       <DependentUpon>frmTableLocationOffice.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableLocationOffice.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableLocationOffice.vb" />
     <Compile Include="FormAssets\FormLookup\frmTableStatus.designer.vb">
       <DependentUpon>frmTableStatus.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormLookup\frmTableStatus.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormLookup\frmTableStatus.vb" />
     <Compile Include="FormAssets\FormSystem\frmDocumentScan.designer.vb">
       <DependentUpon>frmDocumentScan.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormSystem\frmDocumentScan.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormSystem\frmDocumentScan.vb" />
     <Compile Include="FormAssets\FormSystem\frmPDFviewer.designer.vb">
       <DependentUpon>frmPDFviewer.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAssets\FormSystem\frmPDFviewer.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormAssets\FormSystem\frmPDFviewer.vb" />
     <Compile Include="FormChronic\frmChronicEdit.Designer.vb">
       <DependentUpon>frmChronicEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormChronic\frmChronicEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormChronic\frmChronicEdit.vb" />
     <Compile Include="FormChronic\frmChronicRegis.Designer.vb">
       <DependentUpon>frmChronicRegis.vb</DependentUpon>
     </Compile>
@@ -371,165 +319,111 @@
     <Compile Include="FormData\frmBkupData.Designer.vb">
       <DependentUpon>frmBkupData.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormData\frmBkupData.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormData\frmBkupData.vb" />
     <Compile Include="FormData\frmRestore.Designer.vb">
       <DependentUpon>frmRestore.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormData\frmRestore.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormData\frmRestore.vb" />
     <Compile Include="FormData\frmSend506.Designer.vb">
       <DependentUpon>frmSend506.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormData\frmSend506.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormData\frmSend506.vb" />
     <Compile Include="FormDrugStore\frmDrugAmountWarning.Designer.vb">
       <DependentUpon>frmDrugAmountWarning.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormDrugStore\frmDrugAmountWarning.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormDrugStore\frmDrugAmountWarning.vb" />
     <Compile Include="FormInventory\frmImportTMT.Designer.vb">
       <DependentUpon>frmImportTMT.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormInventory\frmImportTMT.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormInventory\frmImportTMT.vb" />
     <Compile Include="FormInventory\frmMedicineList.Designer.vb">
       <DependentUpon>frmMedicineList.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormInventory\frmMedicineList.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormInventory\frmMedicineList.vb" />
     <Compile Include="FormLookup\frmAdjEducation.Designer.vb">
       <DependentUpon>frmAdjEducation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjEducation.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjEducation.vb" />
     <Compile Include="FormLookup\frmAdjLabor.Designer.vb">
       <DependentUpon>frmAdjLabor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjLabor.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjLabor.vb" />
     <Compile Include="FormLookup\frmAdjMstatus.Designer.vb">
       <DependentUpon>frmAdjMstatus.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjMstatus.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjMstatus.vb" />
     <Compile Include="FormLookup\frmAdjNation.Designer.vb">
       <DependentUpon>frmAdjNation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjNation.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjNation.vb" />
     <Compile Include="FormLookup\frmAdjRace.Designer.vb">
       <DependentUpon>frmAdjRace.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjRace.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjRace.vb" />
     <Compile Include="FormLookup\frmAdjPrename.Designer.vb">
       <DependentUpon>frmAdjPrename.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjPrename.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjPrename.vb" />
     <Compile Include="FormLookup\frmAdjReligion.Designer.vb">
       <DependentUpon>frmAdjReligion.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjReligion.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjReligion.vb" />
     <Compile Include="FormLookup\frmAdjustOccupation.Designer.vb">
       <DependentUpon>frmAdjustOccupation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmAdjustOccupation.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmAdjustOccupation.vb" />
     <Compile Include="FormLookup\frmLookupEducation.Designer.vb">
       <DependentUpon>frmLookupEducation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupEducation.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupEducation.vb" />
     <Compile Include="FormLookup\frmLookupLabor.Designer.vb">
       <DependentUpon>frmLookupLabor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupLabor.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupLabor.vb" />
     <Compile Include="FormLookup\frmLookupMstatus.Designer.vb">
       <DependentUpon>frmLookupMstatus.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupMstatus.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupMstatus.vb" />
     <Compile Include="FormLookup\frmLookupNation.Designer.vb">
       <DependentUpon>frmLookupNation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupNation.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupNation.vb" />
     <Compile Include="FormLookup\frmLookupOccupation.Designer.vb">
       <DependentUpon>frmLookupOccupation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupOccupation.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupOccupation.vb" />
     <Compile Include="FormLookup\frmLookupPersonContact.Designer.vb">
       <DependentUpon>frmLookupPersonContact.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupPersonContact.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupPersonContact.vb" />
     <Compile Include="FormLookup\frmLookupPrename.Designer.vb">
       <DependentUpon>frmLookupPrename.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupPrename.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupPrename.vb" />
     <Compile Include="FormLookup\frmLookupReligion.Designer.vb">
       <DependentUpon>frmLookupReligion.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLookup\frmLookupReligion.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLookup\frmLookupReligion.vb" />
     <Compile Include="FormPerson\frmAreaSetting.Designer.vb">
       <DependentUpon>frmAreaSetting.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPerson\frmAreaSetting.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPerson\frmAreaSetting.vb" />
     <Compile Include="FormPerson\frmGoogleMaps.Designer.vb">
       <DependentUpon>frmGoogleMaps.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPerson\frmGoogleMaps.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPerson\frmGoogleMaps.vb" />
     <Compile Include="FormPerson\frmHome.Designer.vb">
       <DependentUpon>frmHome.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPerson\frmHome.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPerson\frmHome.vb" />
     <Compile Include="FormData\frmCheckData.Designer.vb">
       <DependentUpon>frmCheckData.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormData\frmCheckData.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormData\frmCheckData.vb" />
     <Compile Include="FormPerson\frmHomeEdit.Designer.vb">
       <DependentUpon>frmHomeEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPerson\frmHomeEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPerson\frmHomeEdit.vb" />
     <Compile Include="FormPerson\frmPerson.Designer.vb">
       <DependentUpon>frmPerson.vb</DependentUpon>
     </Compile>
@@ -539,21 +433,15 @@
     <Compile Include="FormPP\Nutrition\frmNutritionMain.Designer.vb">
       <DependentUpon>frmNutritionMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPP\Nutrition\frmNutritionMain.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPP\Nutrition\frmNutritionMain.vb" />
     <Compile Include="FormPP\Vaccine\frmPersonEpi.Designer.vb">
       <DependentUpon>frmPersonEpi.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPP\Vaccine\frmPersonEpi.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPP\Vaccine\frmPersonEpi.vb" />
     <Compile Include="FormPP\Vaccine\frmVaccineCode.Designer.vb">
       <DependentUpon>frmVaccineCode.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPP\Vaccine\frmVaccineCode.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPP\Vaccine\frmVaccineCode.vb" />
     <Compile Include="FormPP\Vaccine\frmVaccineMain.Designer.vb">
       <DependentUpon>frmVaccineMain.vb</DependentUpon>
     </Compile>
@@ -563,63 +451,43 @@
     <Compile Include="FormPriceSetting\frmProcedEdit.Designer.vb">
       <DependentUpon>frmProcedEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPriceSetting\frmProcedEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPriceSetting\frmProcedEdit.vb" />
     <Compile Include="FormPriceSetting\frmProcedPrice.Designer.vb">
       <DependentUpon>frmProcedPrice.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPriceSetting\frmProcedPrice.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormPriceSetting\frmProcedPrice.vb" />
     <Compile Include="FormProviderUser\frmProvider.Designer.vb">
       <DependentUpon>frmProvider.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProviderUser\frmProvider.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormProviderUser\frmProvider.vb" />
     <Compile Include="FormProviderUser\frmProviderData.Designer.vb">
       <DependentUpon>frmProviderData.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProviderUser\frmProviderData.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormProviderUser\frmProviderData.vb" />
     <Compile Include="FormProviderUser\frmProviderEdit.Designer.vb">
       <DependentUpon>frmProviderEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProviderUser\frmProviderEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormProviderUser\frmProviderEdit.vb" />
     <Compile Include="FormProviderUser\frmProviderType.Designer.vb">
       <DependentUpon>frmProviderType.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProviderUser\frmProviderType.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormProviderUser\frmProviderType.vb" />
     <Compile Include="FormProviderUser\frmUser.Designer.vb">
       <DependentUpon>frmUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProviderUser\frmUser.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormProviderUser\frmUser.vb" />
     <Compile Include="FormProviderUser\frmUserEdit.Designer.vb">
       <DependentUpon>frmUserEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormProviderUser\frmUserEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormProviderUser\frmUserEdit.vb" />
     <Compile Include="FormReports\Popuration\frmPerson_TypeArea.Designer.vb">
       <DependentUpon>frmPerson_TypeArea.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormReports\Popuration\frmPerson_TypeArea.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormReports\Popuration\frmPerson_TypeArea.vb" />
     <Compile Include="FormReports\Popuration\frmPopPypamid.Designer.vb">
       <DependentUpon>frmPopPypamid.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormReports\Popuration\frmPopPypamid.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormReports\Popuration\frmPopPypamid.vb" />
     <Compile Include="FormReports\Popuration\frmReportPopMain.Designer.vb">
       <DependentUpon>frmReportPopMain.vb</DependentUpon>
     </Compile>
@@ -629,63 +497,47 @@
     <Compile Include="FormReports\Popuration\frmSearchPersonBirth.Designer.vb">
       <DependentUpon>frmSearchPersonBirth.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormReports\Popuration\frmSearchPersonBirth.vb">
-      <SubType>Form</SubType>
+    <Compile Include="FormReports\Popuration\frmSearchPersonBirth.vb" />
+    <Compile Include="FormReports\Provider\frmProviderRx.Designer.vb">
+      <DependentUpon>frmProviderRx.vb</DependentUpon>
     </Compile>
+    <Compile Include="FormReports\Provider\frmProviderRx.vb" />
     <Compile Include="FormReports\Provider\frmRptProviderOppp.Designer.vb">
       <DependentUpon>frmRptProviderOppp.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormReports\Provider\frmRptProviderOppp.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormReports\Provider\frmRptProviderOppp.vb" />
     <Compile Include="FormReports\Provider\frmRptProviderSum.Designer.vb">
       <DependentUpon>frmRptProviderSum.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormReports\Provider\frmRptProviderSum.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormReports\Provider\frmRptProviderSum.vb" />
     <Compile Include="FormSearch\frmHospSearch.Designer.vb">
       <DependentUpon>frmHospSearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch\frmHospSearch.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSearch\frmHospSearch.vb" />
     <Compile Include="FormSearch\frmIcd10Search.Designer.vb">
       <DependentUpon>frmIcd10Search.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch\frmIcd10Search.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSearch\frmIcd10Search.vb" />
     <Compile Include="FormSearch\frmIcd9Search.Designer.vb">
       <DependentUpon>frmIcd9Search.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch\frmIcd9Search.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSearch\frmIcd9Search.vb" />
     <Compile Include="FormSearch\frmNameSearch.Designer.vb">
       <DependentUpon>frmNameSearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch\frmNameSearch.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSearch\frmNameSearch.vb" />
     <Compile Include="FormSearch\frmSearchChronic.Designer.vb">
       <DependentUpon>frmSearchChronic.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch\frmSearchChronic.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSearch\frmSearchChronic.vb" />
     <Compile Include="FormSearch\WaitForm1.Designer.vb">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch\WaitForm1.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSearch\WaitForm1.vb" />
     <Compile Include="FormService\frmPtStatus.Designer.vb">
       <DependentUpon>frmPtStatus.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmPtStatus.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormService\frmPtStatus.vb" />
     <Compile Include="FormService\frmQueueEdit.Designer.vb">
       <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </Compile>
@@ -695,111 +547,75 @@
     <Compile Include="FormService\frmQueueService.Designer.vb">
       <DependentUpon>frmQueueService.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmQueueService.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormService\frmQueueService.vb" />
     <Compile Include="FormService\frmReasonToService.Designer.vb">
       <DependentUpon>frmReasonToService.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmReasonToService.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormService\frmReasonToService.vb" />
     <Compile Include="FormService\frmReferInEdit.Designer.vb">
       <DependentUpon>frmReferInEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmReferInEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormService\frmReferInEdit.vb" />
     <Compile Include="FormService\frmVitalSignData.Designer.vb">
       <DependentUpon>frmVitalSignData.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmVitalSignData.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormService\frmVitalSignData.vb" />
     <Compile Include="FormSystem\frmAddDepartment.Designer.vb">
       <DependentUpon>frmAddDepartment.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmAddDepartment.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmAddDepartment.vb" />
     <Compile Include="FormSystem\frmChangeUser.Designer.vb">
       <DependentUpon>frmChangeUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmChangeUser.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmChangeUser.vb" />
     <Compile Include="FormSystem\frmChangPassword.Designer.vb">
       <DependentUpon>frmChangPassword.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmChangPassword.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmChangPassword.vb" />
     <Compile Include="FormSystem\frmCheckDSPM.Designer.vb">
       <DependentUpon>frmCheckDSPM.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmCheckDSPM.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmCheckDSPM.vb" />
     <Compile Include="FormSystem\frmComfigSystem.Designer.vb">
       <DependentUpon>frmComfigSystem.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmComfigSystem.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmComfigSystem.vb" />
     <Compile Include="FormSystem\frmConfigPicture.Designer.vb">
       <DependentUpon>frmConfigPicture.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmConfigPicture.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmConfigPicture.vb" />
     <Compile Include="FormSystem\frmDBSetting.Designer.vb">
       <DependentUpon>frmDBSetting.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmDBSetting.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmDBSetting.vb" />
     <Compile Include="FormSystem\frmDepartmentEdit.Designer.vb">
       <DependentUpon>frmDepartmentEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmDepartmentEdit.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmDepartmentEdit.vb" />
     <Compile Include="FormSystem\frmFingerPrint.Designer.vb">
       <DependentUpon>frmFingerPrint.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmFingerPrint.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmFingerPrint.vb" />
     <Compile Include="FormSystem\frmFingerPrintDatabase.Designer.vb">
       <DependentUpon>frmFingerPrintDatabase.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmFingerPrintDatabase.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmFingerPrintDatabase.vb" />
     <Compile Include="FormSystem\frmFirstUser.Designer.vb">
       <DependentUpon>frmFirstUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmFirstUser.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmFirstUser.vb" />
     <Compile Include="FormSystem\frmHolidays.Designer.vb">
       <DependentUpon>frmHolidays.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmHolidays.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmHolidays.vb" />
     <Compile Include="FormSystem\frmHospConfig.Designer.vb">
       <DependentUpon>frmHospConfig.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmHospConfig.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmHospConfig.vb" />
     <Compile Include="FormSystem\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmLogin.vb" />
     <Compile Include="FormSystem\frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
@@ -809,51 +625,35 @@
     <Compile Include="FormSystem\frmMyPCUupdate.Designer.vb">
       <DependentUpon>frmMyPCUupdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmMyPCUupdate.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmMyPCUupdate.vb" />
     <Compile Include="FormSystem\frmNHSOlogin.Designer.vb">
       <DependentUpon>frmNHSOlogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmNHSOlogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmNHSOlogin.vb" />
     <Compile Include="FormSystem\frmReportView.Designer.vb">
       <DependentUpon>frmReportView.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmReportView.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmReportView.vb" />
     <Compile Include="FormSystem\frmSelectDepartment.Designer.vb">
       <DependentUpon>frmSelectDepartment.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmSelectDepartment.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmSelectDepartment.vb" />
     <Compile Include="FormSystem\frmSendMyPCUConfig.Designer.vb">
       <DependentUpon>frmSendMyPCUConfig.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmSendMyPCUConfig.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmSendMyPCUConfig.vb" />
     <Compile Include="FormSystem\frmSetup.Designer.vb">
       <DependentUpon>frmSetup.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmSetup.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmSetup.vb" />
     <Compile Include="FormSystem\frmSystemCheck.Designer.vb">
       <DependentUpon>frmSystemCheck.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmSystemCheck.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmSystemCheck.vb" />
     <Compile Include="FormSystem\frmWebCam.Designer.vb">
       <DependentUpon>frmWebCam.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSystem\frmWebCam.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormSystem\frmWebCam.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -1080,6 +880,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Popuration\frmSearchPersonBirth.resx">
       <DependentUpon>frmSearchPersonBirth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Provider\frmProviderRx.resx">
+      <DependentUpon>frmProviderRx.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports\Provider\frmRptProviderOppp.resx">
       <DependentUpon>frmRptProviderOppp.vb</DependentUpon>
