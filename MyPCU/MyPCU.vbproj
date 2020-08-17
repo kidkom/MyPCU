@@ -903,6 +903,7 @@
       <DependentUpon>DataSet20F.xsd</DependentUpon>
     </Compile>
     <Compile Include="Windows\Forms.vb" />
+    <EmbeddedResource Include="bin\Debug\Reports\rptProviderRx.rdlc" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>

@@ -336,7 +336,6 @@ Public Class frmRptProviderSum
     Private Sub DisplayData2(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As BetterListViewItem
         Dim tmpPrename As String = ""
         Dim tmpOrder As String = ""
         Dim tmpCID As String = ""
@@ -417,7 +416,7 @@ Public Class frmRptProviderSum
                         BetterListView2.Items(i).SubItems.Add("มีข้อผิดพลาด!!!")
                     End Try
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
 
                 If dr("PRENAME_HOS") <> "" Then

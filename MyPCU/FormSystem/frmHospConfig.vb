@@ -74,7 +74,7 @@ Public Class frmHospConfig
     End Sub
     Private Sub SearchData(ByVal strString As String)
         Dim ds As DataSet
-        Dim ds2 As DataSet
+       'Dim ds2 As DataSet
         ds = clsdataBus.Lc_Business.SELECT_DATA("l_hospitals", "WHERE HOSPCODE = '" & strString & "'")
         If ds.Tables(0).Rows.Count > 0 Then
             lblHospName.Text = ds.Tables(0).Rows(0).Item("HOSPNAME").ToString

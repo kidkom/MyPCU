@@ -331,7 +331,7 @@ Public Class frmPerson_TypeArea
     Private Sub DisplayData2(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As ListViewItem
+        ' Dim itm As ListViewItem
         Dim NAMEUSER As String = ""
         Dim tmpPrename As String = ""
         Dim tmpProvider As String = ""

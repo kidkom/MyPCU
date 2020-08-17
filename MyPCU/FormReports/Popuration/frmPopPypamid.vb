@@ -39,7 +39,7 @@ Public Class frmPopPypamid
             .Columns(6).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
-        cboVillge()
+        cboVillgeAction()
         Timer1.Enabled = True
 
     End Sub
@@ -55,7 +55,7 @@ Public Class frmPopPypamid
 
         SplashScreenManager1.CloseWaitForm()
     End Sub
-    Private Sub cboVillge()
+    Private Sub cboVillgeAction()
         Dim ds As DataSet
         ds = clsdataBus.Lc_Business.SELECT_SQL("(SELECT CONCAT(A.PROVINCE_ID,A.AMPHUR_ID,A.TAMBOL_ID,VILLAGE,VILLANAME) AS TV,CONCAT('หมู่ ',VILLAGE+0,' ต.',TAMBOL_NAME) AS VILLNAME,A.TAMBOL_ID,VILLAGE,VILLANAME FROM l_area A JOIN l_cat B ON(A.PROVINCE_ID = B.PROVINCE_ID AND A.AMPHUR_ID = B.AMPHUR_ID AND A.TAMBOL_ID = B.TAMBOL_ID) WHERE VILLAGE <> '00') " _
                                                 & "UNION (SELECT CONCAT(A.PROVINCE_ID,A.AMPHUR_ID,A.TAMBOL_ID,VILLAGE,VILLANAME) AS TV,CONCAT(VILLANAME,' ต.',TAMBOL_NAME) AS VILLNAME,A.TAMBOL_ID,VILLAGE,VILLANAME FROM l_area A JOIN l_cat B ON(A.PROVINCE_ID = B.PROVINCE_ID AND A.AMPHUR_ID = B.AMPHUR_ID AND A.TAMBOL_ID = B.TAMBOL_ID) WHERE VILLAGE = '00') " _

@@ -97,7 +97,7 @@ Public Class frmProviderRx
     Private Sub DisplayData(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As BetterListViewItem
+        'Dim itm As BetterListViewItem
         Dim tmpPrename As String = ""
         Dim tmpOrder As String = ""
         Dim tmpCID As String = ""
@@ -168,12 +168,12 @@ Public Class frmProviderRx
                     BetterListView1.Items(i).SubItems.Add(dr("PID"))
                     tmpPID = dr("PID")
                 Else
-                    BetterListView1.Items(i).SubItems.Add("")
+                    BetterListView1.Items(i).SubItems.Add("").AlignHorizontal = TextAlignmentHorizontal.Center
                 End If
                 If dr("CID") <> "" Then
                     Try
                         tmpCID = dr("CID")
-                        BetterListView1.Items(i).SubItems.Add(tmpCID)
+                        BetterListView1.Items(i).SubItems.Add(tmpCID).AlignHorizontal = TextAlignmentHorizontal.Center
                     Catch ex As Exception
                         tmpCID = ""
                         BetterListView1.Items(i).SubItems.Add("มีข้อผิดพลาด!!!")
@@ -194,14 +194,14 @@ Public Class frmProviderRx
                 End Try
                 If dr("INSID") <> "" Then
                     tmpInsclID = dr("INSID")
-                    BetterListView1.Items(i).SubItems.Add(tmpInsclID)
+                    BetterListView1.Items(i).SubItems.Add(tmpInsclID).AlignHorizontal = TextAlignmentHorizontal.Center
                 Else
                     tmpInsclID = ""
                     BetterListView1.Items(i).SubItems.Add("")
                 End If
                 If dr("INSTYPE_DESC") <> "" Then
                     tmpInscl = dr("INSTYPE_DESC")
-                    BetterListView1.Items(i).SubItems.Add(tmpInscl)
+                    BetterListView1.Items(i).SubItems.Add(tmpInscl).AlignHorizontal = TextAlignmentHorizontal.Center
                 Else
                     tmpInscl = ""
                     BetterListView1.Items(i).SubItems.Add("")
@@ -226,7 +226,7 @@ Public Class frmProviderRx
                         StrAge = "วันเดือนปีเกิดไม่ถูกต้อง"
                     End If
 
-                    BetterListView1.Items(i).SubItems.Add(StrAge)
+                    BetterListView1.Items(i).SubItems.Add(StrAge).AlignHorizontal = TextAlignmentHorizontal.Center
                     tmpAge = StrAge
                 End If
 
