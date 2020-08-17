@@ -706,40 +706,46 @@
     <Compile Include="FormSearch\WaitForm1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmDoctorRoom.Designer.vb">
+    <Compile Include="FormService\Screen\frmDoctorRoom.Designer.vb">
       <DependentUpon>frmDoctorRoom.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmDoctorRoom.vb">
+    <Compile Include="FormService\Screen\frmDoctorRoom.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmPtStatus.Designer.vb">
+    <Compile Include="FormService\Screen\frmLookupINSCL.Designer.vb">
+      <DependentUpon>frmLookupINSCL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\Screen\frmLookupINSCL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormService\Screen\frmPtStatus.Designer.vb">
       <DependentUpon>frmPtStatus.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmPtStatus.vb">
+    <Compile Include="FormService\Screen\frmPtStatus.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmQueueEdit.Designer.vb">
+    <Compile Include="FormService\Screen\frmQueueEdit.Designer.vb">
       <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmQueueEdit.vb">
+    <Compile Include="FormService\Screen\frmQueueEdit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmQueueService.Designer.vb">
+    <Compile Include="FormService\Screen\frmQueueService.Designer.vb">
       <DependentUpon>frmQueueService.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmQueueService.vb">
+    <Compile Include="FormService\Screen\frmQueueService.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmReasonToService.Designer.vb">
+    <Compile Include="FormService\Screen\frmReasonToService.Designer.vb">
       <DependentUpon>frmReasonToService.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmReasonToService.vb">
+    <Compile Include="FormService\Screen\frmReasonToService.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormService\frmReferInEdit.Designer.vb">
+    <Compile Include="FormService\Screen\frmReferInEdit.Designer.vb">
       <DependentUpon>frmReferInEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormService\frmReferInEdit.vb">
+    <Compile Include="FormService\Screen\frmReferInEdit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormService\frmVitalSignData.Designer.vb">
@@ -1146,22 +1152,25 @@
     <EmbeddedResource Include="FormSearch\WaitForm1.resx">
       <DependentUpon>WaitForm1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmDoctorRoom.resx">
+    <EmbeddedResource Include="FormService\Screen\frmDoctorRoom.resx">
       <DependentUpon>frmDoctorRoom.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmPtStatus.resx">
+    <EmbeddedResource Include="FormService\Screen\frmLookupINSCL.resx">
+      <DependentUpon>frmLookupINSCL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService\Screen\frmPtStatus.resx">
       <DependentUpon>frmPtStatus.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmQueueEdit.resx">
+    <EmbeddedResource Include="FormService\Screen\frmQueueEdit.resx">
       <DependentUpon>frmQueueEdit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmQueueService.resx">
+    <EmbeddedResource Include="FormService\Screen\frmQueueService.resx">
       <DependentUpon>frmQueueService.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmReasonToService.resx">
+    <EmbeddedResource Include="FormService\Screen\frmReasonToService.resx">
       <DependentUpon>frmReasonToService.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormService\frmReferInEdit.resx">
+    <EmbeddedResource Include="FormService\Screen\frmReferInEdit.resx">
       <DependentUpon>frmReferInEdit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormService\frmVitalSignData.resx">
@@ -1266,6 +1275,14 @@
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
     <Content Include="Resources\1_material2.png" />
+    <None Include="Resources\a_exoired.png" />
+    <None Include="Resources\a_withdraw.png" />
+    <None Include="Resources\a_add3.png" />
+    <None Include="Resources\a_bed1.png" />
+    <None Include="Resources\a_bed4.png" />
+    <None Include="Resources\a_bed51.png" />
+    <None Include="Resources\a_eldery.png" />
+    <None Include="Resources\a_infect2.png" />
     <None Include="ReportPrint\DataSet20F.xsc">
       <DependentUpon>DataSet20F.xsd</DependentUpon>
     </None>

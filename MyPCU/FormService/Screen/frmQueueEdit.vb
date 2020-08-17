@@ -339,6 +339,8 @@ Public Class frmQueueEdit
                 End If
             Else
                 ClearCard()
+                txtINSTYPE_NEW.Text = "9100"
+                bntINSTYPE_NEW.Text = ClsBusiness.Lc_Business.SELECT_NAME_INSTYPE_NEW(txtINSTYPE_NEW.Text)
             End If
         Catch ex As Exception
         End Try
@@ -355,7 +357,7 @@ Public Class frmQueueEdit
         lblINSID.Text = ""
         lblEXPIREDATE.Text = ""
         txtINSTYPE_NEW.Text = "9100"
-        cboINSTYPE_NEW.EditValue = txtINSTYPE_NEW.Text
+        bntINSTYPE_NEW.EditValue = txtINSTYPE_NEW.Text
         txtStatusNhso.Text = ""
         lblType.Text = ""
     End Sub
@@ -437,7 +439,7 @@ Public Class frmQueueEdit
                 txtPtStatus.Select()
                 txtPtStatus.SelectAll()
             Else
-                ImageComboBoxEdit1.Select()
+                cboUrgent.Select()
             End If
         End If
     End Sub
@@ -445,7 +447,13 @@ Public Class frmQueueEdit
         txtCauseIn.Text = cboPtReason.EditValue
     End Sub
     Private Sub cboPtStatus_EditValueChanged(sender As Object, e As EventArgs) Handles cboPtStatus.EditValueChanged
-        txtPtStatus.Text = cboPtReason.EditValue
+        txtPtStatus.Text = cboPtStatus.EditValue
+        Dim ds As DataSet
+        ds = clsdataBus.Lc_Business.SELECT_TABLE(" URGENT", " l_pt_status ", "WHERE PT_STATUS_CODE = '" & txtPtStatus.Text & "'")
+        If ds.Tables(0).Rows.Count > 0 Then
+            cboUrgent.EditValue = ds.Tables(0).Rows(0).Item("URGENT")
+        End If
+
     End Sub
 
     Private Sub cboProvider_EditValueChanged(sender As Object, e As EventArgs) Handles cboProvider.EditValueChanged
@@ -491,4 +499,32 @@ Public Class frmQueueEdit
         txtProvider.Text = cboRoom.EditValue
         cboProvider.EditValue = txtProvider.Text
     End Sub
+
+    Private Sub cmdRoomSetting_Click(sender As Object, e As EventArgs) Handles cmdRoomSetting.Click
+        Dim f As New frmDoctorRoom
+        f.ShowDialog()
+        cboRoom.Properties.DataSource = Nothing
+        ShowRoom()
+    End Sub
+    Private Sub chkSelectRight_Click(sender As Object, e As EventArgs) Handles chkSelectRight.Click
+        If chkSelectRight.Checked = True Then
+            txtINSTYPE_NEW.Text = txtINTYPE_NEW.Text
+            bntINSTYPE_NEW.Text = ClsBusiness.Lc_Business.SELECT_NAME_INSTYPE_NEW(txtINSTYPE_NEW.Text)
+        Else
+            txtINSTYPE_NEW.Text = "9100"
+            bntINSTYPE_NEW.Text = ClsBusiness.Lc_Business.SELECT_NAME_INSTYPE_NEW(txtINSTYPE_NEW.Text)
+        End If
+    End Sub
+
+    Private Sub bntINSTYPE_NEW_Click(sender As Object, e As EventArgs) Handles bntINSTYPE_NEW.Click
+        Dim f As New frmLookupINSCL
+        f.ShowDialog()
+        If vQinscl <> "" Then
+            txtINSTYPE_NEW.Text = vQinscl
+            bntINSTYPE_NEW.Text = ClsBusiness.Lc_Business.SELECT_NAME_INSTYPE_NEW(txtINSTYPE_NEW.Text)
+        End If
+        vQinscl = ""
+    End Sub
+
+
 End Class

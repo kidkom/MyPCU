@@ -26,16 +26,18 @@ Partial Class frmQueueEdit
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmQueueEdit))
         Me.FluentDesignFormContainer1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.chkSelectRight = New System.Windows.Forms.CheckBox()
+        Me.cmdRoomSetting = New System.Windows.Forms.Button()
         Me.CheckEdit5 = New DevExpress.XtraEditors.CheckEdit()
         Me.txtPtStatus = New DevExpress.XtraEditors.TextEdit()
-        Me.ImageComboBoxEdit1 = New DevExpress.XtraEditors.ImageComboBoxEdit()
+        Me.cboUrgent = New DevExpress.XtraEditors.ImageComboBoxEdit()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnPtStatus = New System.Windows.Forms.Button()
         Me.chkRefer1 = New System.Windows.Forms.CheckBox()
         Me.txtCauseIn = New DevExpress.XtraEditors.TextEdit()
         Me.chkRefer2 = New System.Windows.Forms.CheckBox()
         Me.chkRefer0 = New System.Windows.Forms.CheckBox()
-        Me.cboINSTYPE_NEW = New DevExpress.XtraEditors.ButtonEdit()
+        Me.bntINSTYPE_NEW = New DevExpress.XtraEditors.ButtonEdit()
         Me.cboProvider = New DevExpress.XtraEditors.LookUpEdit()
         Me.txtProvider = New DevExpress.XtraEditors.TextEdit()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -44,7 +46,6 @@ Partial Class frmQueueEdit
         Me.cboClinic = New DevExpress.XtraEditors.LookUpEdit()
         Me.txtClinic = New DevExpress.XtraEditors.TextEdit()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.CheckEdit9 = New DevExpress.XtraEditors.CheckEdit()
         Me.txtINSTYPE_NEW = New DevExpress.XtraEditors.TextEdit()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.CheckEdit7 = New DevExpress.XtraEditors.CheckEdit()
@@ -140,15 +141,14 @@ Partial Class frmQueueEdit
         Me.GroupControl3.SuspendLayout()
         CType(Me.CheckEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPtStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImageComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboUrgent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCauseIn.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bntINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboRoom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboClinic.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtClinic.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CheckEdit9.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit7.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CheckEdit6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -207,15 +207,17 @@ Partial Class frmQueueEdit
         '
         'GroupControl3
         '
+        Me.GroupControl3.Controls.Add(Me.chkSelectRight)
+        Me.GroupControl3.Controls.Add(Me.cmdRoomSetting)
         Me.GroupControl3.Controls.Add(Me.CheckEdit5)
         Me.GroupControl3.Controls.Add(Me.txtPtStatus)
-        Me.GroupControl3.Controls.Add(Me.ImageComboBoxEdit1)
+        Me.GroupControl3.Controls.Add(Me.cboUrgent)
         Me.GroupControl3.Controls.Add(Me.btnPtStatus)
         Me.GroupControl3.Controls.Add(Me.chkRefer1)
         Me.GroupControl3.Controls.Add(Me.txtCauseIn)
         Me.GroupControl3.Controls.Add(Me.chkRefer2)
         Me.GroupControl3.Controls.Add(Me.chkRefer0)
-        Me.GroupControl3.Controls.Add(Me.cboINSTYPE_NEW)
+        Me.GroupControl3.Controls.Add(Me.bntINSTYPE_NEW)
         Me.GroupControl3.Controls.Add(Me.cboProvider)
         Me.GroupControl3.Controls.Add(Me.txtProvider)
         Me.GroupControl3.Controls.Add(Me.Label26)
@@ -224,7 +226,6 @@ Partial Class frmQueueEdit
         Me.GroupControl3.Controls.Add(Me.cboClinic)
         Me.GroupControl3.Controls.Add(Me.txtClinic)
         Me.GroupControl3.Controls.Add(Me.Label24)
-        Me.GroupControl3.Controls.Add(Me.CheckEdit9)
         Me.GroupControl3.Controls.Add(Me.txtINSTYPE_NEW)
         Me.GroupControl3.Controls.Add(Me.Label21)
         Me.GroupControl3.Controls.Add(Me.CheckEdit7)
@@ -246,6 +247,26 @@ Partial Class frmQueueEdit
         Me.GroupControl3.TabIndex = 1187
         Me.GroupControl3.Text = "บันทึกการเข้ารับบริการ"
         '
+        'chkSelectRight
+        '
+        Me.chkSelectRight.AutoSize = True
+        Me.chkSelectRight.Location = New System.Drawing.Point(684, 185)
+        Me.chkSelectRight.Name = "chkSelectRight"
+        Me.chkSelectRight.Size = New System.Drawing.Size(84, 21)
+        Me.chkSelectRight.TabIndex = 1311
+        Me.chkSelectRight.Text = "ตามสิทธิที่มี"
+        Me.chkSelectRight.UseVisualStyleBackColor = True
+        '
+        'cmdRoomSetting
+        '
+        Me.cmdRoomSetting.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.cmdRoomSetting.Image = Global.MyPCU.My.Resources.Resources.a_edit4
+        Me.cmdRoomSetting.Location = New System.Drawing.Point(720, 122)
+        Me.cmdRoomSetting.Name = "cmdRoomSetting"
+        Me.cmdRoomSetting.Size = New System.Drawing.Size(38, 26)
+        Me.cmdRoomSetting.TabIndex = 1310
+        Me.cmdRoomSetting.UseVisualStyleBackColor = True
+        '
         'CheckEdit5
         '
         Me.CheckEdit5.Location = New System.Drawing.Point(388, 214)
@@ -265,17 +286,17 @@ Partial Class frmQueueEdit
         Me.txtPtStatus.Size = New System.Drawing.Size(62, 24)
         Me.txtPtStatus.TabIndex = 1293
         '
-        'ImageComboBoxEdit1
+        'cboUrgent
         '
-        Me.ImageComboBoxEdit1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.cboUrgent.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ImageComboBoxEdit1.Location = New System.Drawing.Point(561, 91)
-        Me.ImageComboBoxEdit1.Name = "ImageComboBoxEdit1"
-        Me.ImageComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ImageComboBoxEdit1.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.ImageComboBoxItem() {New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ไม่เร่งด่วน", "1", 0), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ค่อนข้างเร่งด่วน", "2", 1), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("เร่งด่วน", "3", 2), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ฉุกเฉิน", "4", 3), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ต้องช่วยฟื้นคืนชีพ", "5", 4)})
-        Me.ImageComboBoxEdit1.Properties.SmallImages = Me.ImageList1
-        Me.ImageComboBoxEdit1.Size = New System.Drawing.Size(197, 24)
-        Me.ImageComboBoxEdit1.TabIndex = 1308
+        Me.cboUrgent.Location = New System.Drawing.Point(561, 91)
+        Me.cboUrgent.Name = "cboUrgent"
+        Me.cboUrgent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cboUrgent.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.ImageComboBoxItem() {New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ไม่เร่งด่วน", "1", 0), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ค่อนข้างเร่งด่วน", "2", 1), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("เร่งด่วน", "3", 2), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ฉุกเฉิน", "4", 3), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("ต้องช่วยฟื้นคืนชีพ", "5", 4)})
+        Me.cboUrgent.Properties.SmallImages = Me.ImageList1
+        Me.cboUrgent.Size = New System.Drawing.Size(197, 24)
+        Me.cboUrgent.TabIndex = 1308
         '
         'ImageList1
         '
@@ -339,15 +360,15 @@ Partial Class frmQueueEdit
         Me.chkRefer0.Text = "มาเอง"
         Me.chkRefer0.UseVisualStyleBackColor = True
         '
-        'cboINSTYPE_NEW
+        'bntINSTYPE_NEW
         '
-        Me.cboINSTYPE_NEW.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.bntINSTYPE_NEW.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cboINSTYPE_NEW.Location = New System.Drawing.Point(218, 183)
-        Me.cboINSTYPE_NEW.Name = "cboINSTYPE_NEW"
-        Me.cboINSTYPE_NEW.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.cboINSTYPE_NEW.Size = New System.Drawing.Size(460, 24)
-        Me.cboINSTYPE_NEW.TabIndex = 1303
+        Me.bntINSTYPE_NEW.Location = New System.Drawing.Point(218, 183)
+        Me.bntINSTYPE_NEW.Name = "bntINSTYPE_NEW"
+        Me.bntINSTYPE_NEW.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
+        Me.bntINSTYPE_NEW.Size = New System.Drawing.Size(460, 24)
+        Me.bntINSTYPE_NEW.TabIndex = 1303
         '
         'cboProvider
         '
@@ -387,7 +408,7 @@ Partial Class frmQueueEdit
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(616, 127)
+        Me.Label25.Location = New System.Drawing.Point(569, 127)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(54, 17)
         Me.Label25.TabIndex = 1299
@@ -395,12 +416,12 @@ Partial Class frmQueueEdit
         '
         'cboRoom
         '
-        Me.cboRoom.Location = New System.Drawing.Point(671, 123)
+        Me.cboRoom.Location = New System.Drawing.Point(624, 123)
         Me.cboRoom.Name = "cboRoom"
         Me.cboRoom.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboRoom.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
         Me.cboRoom.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.cboRoom.Size = New System.Drawing.Size(87, 24)
+        Me.cboRoom.Size = New System.Drawing.Size(90, 24)
         Me.cboRoom.TabIndex = 1298
         '
         'cboClinic
@@ -411,7 +432,7 @@ Partial Class frmQueueEdit
         Me.cboClinic.Properties.Appearance.Options.UseFont = True
         Me.cboClinic.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboClinic.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.cboClinic.Size = New System.Drawing.Size(395, 24)
+        Me.cboClinic.Size = New System.Drawing.Size(342, 24)
         Me.cboClinic.TabIndex = 1297
         '
         'txtClinic
@@ -435,14 +456,6 @@ Partial Class frmQueueEdit
         Me.Label24.Size = New System.Drawing.Size(37, 17)
         Me.Label24.TabIndex = 1295
         Me.Label24.Text = "แผนก"
-        '
-        'CheckEdit9
-        '
-        Me.CheckEdit9.Location = New System.Drawing.Point(684, 185)
-        Me.CheckEdit9.Name = "CheckEdit9"
-        Me.CheckEdit9.Properties.Caption = "ตามสิทธิที่มี"
-        Me.CheckEdit9.Size = New System.Drawing.Size(88, 21)
-        Me.CheckEdit9.TabIndex = 1294
         '
         'txtINSTYPE_NEW
         '
@@ -1284,6 +1297,7 @@ Partial Class frmQueueEdit
         Me.Controls.Add(Me.FluentDesignFormContainer1)
         Me.Controls.Add(Me.AccordionControl1)
         Me.Controls.Add(Me.FluentDesignFormControl1)
+        Me.EnableAcrylicAccent = False
         Me.FluentDesignFormControl = Me.FluentDesignFormControl1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -1298,15 +1312,14 @@ Partial Class frmQueueEdit
         Me.GroupControl3.PerformLayout()
         CType(Me.CheckEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPtStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImageComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboUrgent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCauseIn.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bntINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboRoom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboClinic.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtClinic.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CheckEdit9.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtINSTYPE_NEW.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit7.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CheckEdit6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1437,7 +1450,6 @@ Partial Class frmQueueEdit
     Friend WithEvents txtStatusNhso As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label23 As Label
     Friend WithEvents AccordionControlSeparator12 As DevExpress.XtraBars.Navigation.AccordionControlSeparator
-    Friend WithEvents CheckEdit9 As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents cboClinic As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents txtClinic As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label24 As Label
@@ -1446,14 +1458,16 @@ Partial Class frmQueueEdit
     Friend WithEvents Label26 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents cboRoom As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents cboINSTYPE_NEW As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents bntINSTYPE_NEW As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents chkRefer2 As CheckBox
     Friend WithEvents chkRefer0 As CheckBox
     Friend WithEvents txtCauseIn As DevExpress.XtraEditors.TextEdit
     Friend WithEvents chkRefer1 As CheckBox
     Friend WithEvents btnPtStatus As Button
     Friend WithEvents txtPtStatus As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents ImageComboBoxEdit1 As DevExpress.XtraEditors.ImageComboBoxEdit
+    Friend WithEvents cboUrgent As DevExpress.XtraEditors.ImageComboBoxEdit
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents CheckEdit5 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents cmdRoomSetting As Button
+    Friend WithEvents chkSelectRight As CheckBox
 End Class

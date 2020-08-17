@@ -198,4 +198,7 @@
     Public vReferinNo As String = ""
     Public vReferinDateExpire As String = ""
 
+    '********สิทธิ********
+    Public vQinscl As String = ""
+
 End Module

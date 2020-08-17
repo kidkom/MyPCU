@@ -27,7 +27,7 @@ Public Class frmHospConfig
             lblAmphurName.Text = ds.Tables(0).Rows(0).Item("AMPHUR_NAME").ToString
             txtHmain.Text = ds.Tables(0).Rows(0).Item("HMAIN").ToString
 
-            lblHmain.Text = ds.Tables(0).Rows(0).Item("HMAIN_NAME").ToString
+            bntHospName.Text = ds.Tables(0).Rows(0).Item("HMAIN_NAME").ToString
             If Not IsDBNull(ds.Tables(0).Rows(0).Item("LATITUDE")) Then
                 txtLATITUDE.Text = ds.Tables(0).Rows(0).Item("LATITUDE").ToString
             End If
@@ -106,11 +106,11 @@ Public Class frmHospConfig
         Dim ds As DataSet
         ds = clsdataBus.Lc_Business.SELECT_DATA("l_hospitals", "WHERE HOSPCODE = '" & strString & "'")
         If ds.Tables(0).Rows.Count > 0 Then
-            lblHmain.Text = ds.Tables(0).Rows(0).Item("HOSPNAME").ToString
+            bntHospName.Text = ds.Tables(0).Rows(0).Item("HOSPNAME").ToString
         End If
     End Sub
 
-    Private Sub cmdSearch2_Click(sender As Object, e As EventArgs) Handles cmdSearch2.Click
+    Private Sub cmdSearch2_Click(sender As Object, e As EventArgs)
         Dim fHospSearch As New frmHospSearch
         fHospSearch.ShowDialog()
         If vTmpHcode <> "" Then
@@ -187,7 +187,7 @@ Public Class frmHospConfig
             '----Delete data in Table Config----
             clsbusent.Lc_BusinessEntity.Turncate_table("l_confighcode")
             str_Result = clsbusent.Lc_BusinessEntity.Insertm_table("l_confighcode (HOSPCODE,HOSPNAME,PROVINCE_ID,PROVINCE_NAME,AMPHUR_ID,AMPHUR_NAME,HMAIN,HMAIN_NAME,LATITUDE,LONGITUDE,TEL,DRUG_STORE,DRUG_LABEL,HNPID,HSERV,506ONLINE,WEB506,USERNAME,PASSWORD,WEB506_2,ADDRESS)",
-                    "'" & txtHospCode.Text & "','" & lblHospName.Text & "','" & lblProvinceID.Text & "','" & lblProvinceName.Text & "','" & lblAmphurID.Text & "','" & lblAmphurName.Text & "','" & txtHmain.Text & "','" & lblHmain.Text & "','" & LATITUDE & "','" & LONGITUDE & "','" & txtTEL.Text & "','" & tmpDrugStore & "','" & tmpDrugLabel & "','" & tmpvHNPID & "','" & txt506.Text & "','" & tmp506ONLINE & "','" & tmpWEB506 & "','" & tmpUSERNAME & "','" & tmpPASSWORD & "','" & tmpWEB506_2 & "','" & TextBox1.Text & "'")
+                    "'" & txtHospCode.Text & "','" & lblHospName.Text & "','" & lblProvinceID.Text & "','" & lblProvinceName.Text & "','" & lblAmphurID.Text & "','" & lblAmphurName.Text & "','" & txtHmain.Text & "','" & bntHospName.Text & "','" & LATITUDE & "','" & LONGITUDE & "','" & txtTEL.Text & "','" & tmpDrugStore & "','" & tmpDrugLabel & "','" & tmpvHNPID & "','" & txt506.Text & "','" & tmp506ONLINE & "','" & tmpWEB506 & "','" & tmpUSERNAME & "','" & tmpPASSWORD & "','" & tmpWEB506_2 & "','" & TextBox1.Text & "'")
 
 
             If str_Result = True Then
@@ -202,5 +202,15 @@ Public Class frmHospConfig
             XtraMessageBox.Show("มีข้อผิดพลาด ดังนี้ : " & ex.ToString, "PCUbyKIDKOM", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End Try
+    End Sub
+    Private Sub bntHospName_Click(sender As Object, e As EventArgs) Handles bntHospName.Click
+        Dim f As New frmHospSearch
+        f.ShowDialog()
+        If vTmpHcode <> "" Then
+            txtHmain.Text = vTmpHcode
+            bntHospName.Text = ClsBusiness.Lc_Business.SELECT_NAME_HOSPITAL(txtHmain.Text)
+        End If
+        vTmpHcode = ""
+
     End Sub
 End Class

@@ -17,7 +17,7 @@ Public Class frmReferInEdit
             txtHospin.Text = vTmpHcode
             bntHospName.Text = ClsBusiness.Lc_Business.SELECT_NAME_HOSPITAL(txtHospin.Text)
         End If
-        vHcode = ""
+        vTmpHcode = ""
         txtREFER_NO.Select()
     End Sub
     Private Sub CauseIn()

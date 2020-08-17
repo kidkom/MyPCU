@@ -73,7 +73,7 @@ Partial Class frmLookupNation
         '
         Me.cmdSave.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSave.Image = Global.MyPCU.My.Resources.Resources.a_save
-        Me.cmdSave.Location = New System.Drawing.Point(665, 201)
+        Me.cmdSave.Location = New System.Drawing.Point(665, 168)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(43, 32)
         Me.cmdSave.TabIndex = 1131
@@ -84,7 +84,7 @@ Partial Class frmLookupNation
         '
         Me.cmdAdd.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdAdd.Image = Global.MyPCU.My.Resources.Resources.a_add
-        Me.cmdAdd.Location = New System.Drawing.Point(616, 201)
+        Me.cmdAdd.Location = New System.Drawing.Point(616, 168)
         Me.cmdAdd.Name = "cmdAdd"
         Me.cmdAdd.Size = New System.Drawing.Size(43, 32)
         Me.cmdAdd.TabIndex = 1130
@@ -95,7 +95,7 @@ Partial Class frmLookupNation
         '
         Me.chkCancel.AutoSize = True
         Me.chkCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.chkCancel.Location = New System.Drawing.Point(99, 208)
+        Me.chkCancel.Location = New System.Drawing.Point(99, 175)
         Me.chkCancel.Name = "chkCancel"
         Me.chkCancel.Size = New System.Drawing.Size(58, 21)
         Me.chkCancel.TabIndex = 1129
@@ -107,7 +107,7 @@ Partial Class frmLookupNation
         Me.chkUseOnly.AutoSize = True
         Me.chkUseOnly.Checked = True
         Me.chkUseOnly.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkUseOnly.Location = New System.Drawing.Point(15, 208)
+        Me.chkUseOnly.Location = New System.Drawing.Point(15, 175)
         Me.chkUseOnly.Name = "chkUseOnly"
         Me.chkUseOnly.Size = New System.Drawing.Size(78, 21)
         Me.chkUseOnly.TabIndex = 1128
@@ -117,7 +117,7 @@ Partial Class frmLookupNation
         'chkAll
         '
         Me.chkAll.AutoSize = True
-        Me.chkAll.Location = New System.Drawing.Point(163, 208)
+        Me.chkAll.Location = New System.Drawing.Point(163, 175)
         Me.chkAll.Name = "chkAll"
         Me.chkAll.Size = New System.Drawing.Size(62, 21)
         Me.chkAll.TabIndex = 1127
@@ -137,7 +137,7 @@ Partial Class frmLookupNation
         Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(696, 175)
+        Me.GroupControl1.Size = New System.Drawing.Size(696, 150)
         Me.GroupControl1.TabIndex = 1126
         Me.GroupControl1.Text = "กำหนดรหัสเชื้อชาติ / สัญชาติ"
         '
@@ -208,10 +208,13 @@ Partial Class frmLookupNation
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.BetterListView1.Location = New System.Drawing.Point(12, 241)
+        Me.BetterListView1.Location = New System.Drawing.Point(12, 206)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(696, 400)
+        Me.BetterListView1.Size = New System.Drawing.Size(696, 435)
         Me.BetterListView1.TabIndex = 1125
+        '
+        'Timer1
+        '
         '
         'SplashScreenManager1
         '
