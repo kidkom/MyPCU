@@ -622,6 +622,18 @@
     <Compile Include="FormProviderUser\frmUserEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormReports\Dent\frmRptDenMain.Designer.vb">
+      <DependentUpon>frmRptDenMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Dent\frmRptDenMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Dent\frmRptDentUC.Designer.vb">
+      <DependentUpon>frmRptDentUC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Dent\frmRptDentUC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReports\OPD\frmDiseaseOrder.Designer.vb">
       <DependentUpon>frmDiseaseOrder.vb</DependentUpon>
     </Compile>
@@ -919,6 +931,9 @@
     <EmbeddedResource Include="FormAbout\XtraForm1.resx">
       <DependentUpon>XtraForm1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout\XtraForm2.resx">
+      <DependentUpon>XtraForm2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAssets\FormAssets\frmAssetDecline.resx">
       <DependentUpon>frmAssetDecline.vb</DependentUpon>
     </EmbeddedResource>
@@ -1117,6 +1132,12 @@
     <EmbeddedResource Include="FormProviderUser\frmUserEdit.resx">
       <DependentUpon>frmUserEdit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Dent\frmRptDenMain.resx">
+      <DependentUpon>frmRptDenMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Dent\frmRptDentUC.resx">
+      <DependentUpon>frmRptDentUC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReports\OPD\frmDiseaseOrder.resx">
       <DependentUpon>frmDiseaseOrder.vb</DependentUpon>
     </EmbeddedResource>
@@ -1285,6 +1306,11 @@
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
     <Content Include="Resources\1_material2.png" />
+    <None Include="Resources\a_cvd.png" />
+    <None Include="Resources\a_pie.png" />
+    <None Include="Resources\a_card5.png" />
+    <None Include="Resources\a_pregnant1.png" />
+    <None Include="Resources\a_boy.png" />
     <None Include="Resources\a_exoired.png" />
     <None Include="Resources\a_withdraw.png" />
     <None Include="Resources\a_add3.png" />

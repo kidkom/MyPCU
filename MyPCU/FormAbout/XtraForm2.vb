@@ -1,3 +1,3 @@
-﻿Public Class XtraForm2
+﻿Public Class frmDentalUC
 
 End Class

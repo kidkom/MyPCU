@@ -27,12 +27,12 @@ Partial Class frmDiseaseOrder
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.chkMonth = New System.Windows.Forms.CheckBox()
-        Me.optYear = New System.Windows.Forms.CheckBox()
+        Me.chkYear = New System.Windows.Forms.CheckBox()
         Me.chkAge = New System.Windows.Forms.CheckBox()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
-        Me.chkWomen = New System.Windows.Forms.CheckBox()
-        Me.optSexFemale = New System.Windows.Forms.CheckBox()
-        Me.optSexAll = New System.Windows.Forms.CheckBox()
+        Me.chkfemale = New System.Windows.Forms.CheckBox()
+        Me.chkmale = New System.Windows.Forms.CheckBox()
+        Me.chkSexAll = New System.Windows.Forms.CheckBox()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.chkMstatus9 = New System.Windows.Forms.CheckBox()
         Me.chkMstatus6 = New System.Windows.Forms.CheckBox()
@@ -43,16 +43,16 @@ Partial Class frmDiseaseOrder
         Me.chkMstatusAll = New System.Windows.Forms.CheckBox()
         Me.chkMstatus1 = New System.Windows.Forms.CheckBox()
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.ChecktypeAll = New System.Windows.Forms.CheckBox()
         Me.chkTypeArea4 = New System.Windows.Forms.CheckBox()
         Me.chkTypeArea3 = New System.Windows.Forms.CheckBox()
         Me.chkTypeArea5 = New System.Windows.Forms.CheckBox()
         Me.chkTypeArea1 = New System.Windows.Forms.CheckBox()
         Me.chkTypeArea2 = New System.Windows.Forms.CheckBox()
         Me.GroupControl5 = New DevExpress.XtraEditors.GroupControl()
-        Me.optPP = New System.Windows.Forms.CheckBox()
-        Me.optOP = New System.Windows.Forms.CheckBox()
-        Me.optOPPP = New System.Windows.Forms.CheckBox()
+        Me.chkPP = New System.Windows.Forms.CheckBox()
+        Me.chkOP = New System.Windows.Forms.CheckBox()
+        Me.chkOPPP = New System.Windows.Forms.CheckBox()
         Me.cmdPrintReport1 = New DevExpress.XtraEditors.SimpleButton()
         Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -62,11 +62,11 @@ Partial Class frmDiseaseOrder
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupControl6 = New DevExpress.XtraEditors.GroupControl()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.GroupControl7 = New DevExpress.XtraEditors.GroupControl()
+        Me.chkInsSSS = New System.Windows.Forms.CheckBox()
+        Me.chkInsOFC = New System.Windows.Forms.CheckBox()
+        Me.chkInsUC = New System.Windows.Forms.CheckBox()
+        Me.chkInsAll = New System.Windows.Forms.CheckBox()
+        Me.vil = New DevExpress.XtraEditors.GroupControl()
         Me.cboVillage = New DevExpress.XtraEditors.LookUpEdit()
         Me.chkVill = New System.Windows.Forms.CheckBox()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
@@ -94,8 +94,8 @@ Partial Class frmDiseaseOrder
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl6.SuspendLayout()
-        CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl7.SuspendLayout()
+        CType(Me.vil, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.vil.SuspendLayout()
         CType(Me.cboVillage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl8.SuspendLayout()
@@ -110,7 +110,7 @@ Partial Class frmDiseaseOrder
         Me.GroupControl1.Controls.Add(Me.Label22)
         Me.GroupControl1.Controls.Add(Me.Label21)
         Me.GroupControl1.Controls.Add(Me.chkMonth)
-        Me.GroupControl1.Controls.Add(Me.optYear)
+        Me.GroupControl1.Controls.Add(Me.chkYear)
         Me.GroupControl1.Controls.Add(Me.chkAge)
         Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
@@ -180,15 +180,15 @@ Partial Class frmDiseaseOrder
         Me.chkMonth.Text = "เดือน"
         Me.chkMonth.UseVisualStyleBackColor = True
         '
-        'optYear
+        'chkYear
         '
-        Me.optYear.AutoSize = True
-        Me.optYear.Location = New System.Drawing.Point(54, 62)
-        Me.optYear.Name = "optYear"
-        Me.optYear.Size = New System.Drawing.Size(34, 21)
-        Me.optYear.TabIndex = 1264
-        Me.optYear.Text = "ปี"
-        Me.optYear.UseVisualStyleBackColor = True
+        Me.chkYear.AutoSize = True
+        Me.chkYear.Location = New System.Drawing.Point(54, 62)
+        Me.chkYear.Name = "chkYear"
+        Me.chkYear.Size = New System.Drawing.Size(34, 21)
+        Me.chkYear.TabIndex = 1264
+        Me.chkYear.Text = "ปี"
+        Me.chkYear.UseVisualStyleBackColor = True
         '
         'chkAge
         '
@@ -197,16 +197,16 @@ Partial Class frmDiseaseOrder
         Me.chkAge.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkAge.Location = New System.Drawing.Point(54, 35)
         Me.chkAge.Name = "chkAge"
-        Me.chkAge.Size = New System.Drawing.Size(62, 21)
+        Me.chkAge.Size = New System.Drawing.Size(95, 21)
         Me.chkAge.TabIndex = 1259
-        Me.chkAge.Text = "ทั้งหมด"
+        Me.chkAge.Text = "ไม่ระบุช่วงอายุ"
         Me.chkAge.UseVisualStyleBackColor = True
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.chkWomen)
-        Me.GroupControl2.Controls.Add(Me.optSexFemale)
-        Me.GroupControl2.Controls.Add(Me.optSexAll)
+        Me.GroupControl2.Controls.Add(Me.chkfemale)
+        Me.GroupControl2.Controls.Add(Me.chkmale)
+        Me.GroupControl2.Controls.Add(Me.chkSexAll)
         Me.GroupControl2.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl2.Location = New System.Drawing.Point(403, 12)
         Me.GroupControl2.Name = "GroupControl2"
@@ -214,37 +214,37 @@ Partial Class frmDiseaseOrder
         Me.GroupControl2.TabIndex = 1
         Me.GroupControl2.Text = "เพศ"
         '
-        'chkWomen
+        'chkfemale
         '
-        Me.chkWomen.AutoSize = True
-        Me.chkWomen.Location = New System.Drawing.Point(88, 48)
-        Me.chkWomen.Name = "chkWomen"
-        Me.chkWomen.Size = New System.Drawing.Size(51, 21)
-        Me.chkWomen.TabIndex = 1265
-        Me.chkWomen.Text = "หญิง"
-        Me.chkWomen.UseVisualStyleBackColor = True
+        Me.chkfemale.AutoSize = True
+        Me.chkfemale.Location = New System.Drawing.Point(88, 53)
+        Me.chkfemale.Name = "chkfemale"
+        Me.chkfemale.Size = New System.Drawing.Size(51, 21)
+        Me.chkfemale.TabIndex = 1265
+        Me.chkfemale.Text = "หญิง"
+        Me.chkfemale.UseVisualStyleBackColor = True
         '
-        'optSexFemale
+        'chkmale
         '
-        Me.optSexFemale.AutoSize = True
-        Me.optSexFemale.Location = New System.Drawing.Point(33, 48)
-        Me.optSexFemale.Name = "optSexFemale"
-        Me.optSexFemale.Size = New System.Drawing.Size(48, 21)
-        Me.optSexFemale.TabIndex = 1264
-        Me.optSexFemale.Text = "ชาย"
-        Me.optSexFemale.UseVisualStyleBackColor = True
+        Me.chkmale.AutoSize = True
+        Me.chkmale.Location = New System.Drawing.Point(33, 52)
+        Me.chkmale.Name = "chkmale"
+        Me.chkmale.Size = New System.Drawing.Size(48, 21)
+        Me.chkmale.TabIndex = 1264
+        Me.chkmale.Text = "ชาย"
+        Me.chkmale.UseVisualStyleBackColor = True
         '
-        'optSexAll
+        'chkSexAll
         '
-        Me.optSexAll.AutoSize = True
-        Me.optSexAll.Checked = True
-        Me.optSexAll.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.optSexAll.Location = New System.Drawing.Point(33, 24)
-        Me.optSexAll.Name = "optSexAll"
-        Me.optSexAll.Size = New System.Drawing.Size(62, 21)
-        Me.optSexAll.TabIndex = 1259
-        Me.optSexAll.Text = "ทั้งหมด"
-        Me.optSexAll.UseVisualStyleBackColor = True
+        Me.chkSexAll.AutoSize = True
+        Me.chkSexAll.Checked = True
+        Me.chkSexAll.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkSexAll.Location = New System.Drawing.Point(33, 24)
+        Me.chkSexAll.Name = "chkSexAll"
+        Me.chkSexAll.Size = New System.Drawing.Size(62, 21)
+        Me.chkSexAll.TabIndex = 1259
+        Me.chkSexAll.Text = "ทั้งหมด"
+        Me.chkSexAll.UseVisualStyleBackColor = True
         '
         'GroupControl3
         '
@@ -338,8 +338,6 @@ Partial Class frmDiseaseOrder
         'chkMstatusAll
         '
         Me.chkMstatusAll.AutoSize = True
-        Me.chkMstatusAll.Checked = True
-        Me.chkMstatusAll.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkMstatusAll.Location = New System.Drawing.Point(12, 31)
         Me.chkMstatusAll.Name = "chkMstatusAll"
         Me.chkMstatusAll.Size = New System.Drawing.Size(62, 21)
@@ -361,7 +359,7 @@ Partial Class frmDiseaseOrder
         '
         'GroupControl4
         '
-        Me.GroupControl4.Controls.Add(Me.CheckBox8)
+        Me.GroupControl4.Controls.Add(Me.ChecktypeAll)
         Me.GroupControl4.Controls.Add(Me.chkTypeArea4)
         Me.GroupControl4.Controls.Add(Me.chkTypeArea3)
         Me.GroupControl4.Controls.Add(Me.chkTypeArea5)
@@ -374,17 +372,15 @@ Partial Class frmDiseaseOrder
         Me.GroupControl4.TabIndex = 3
         Me.GroupControl4.Text = "สถานะบุคคคล(TYPE AREA)"
         '
-        'CheckBox8
+        'ChecktypeAll
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Checked = True
-        Me.CheckBox8.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox8.Location = New System.Drawing.Point(124, 48)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(62, 21)
-        Me.CheckBox8.TabIndex = 1260
-        Me.CheckBox8.Text = "ทั้งหมด"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.ChecktypeAll.AutoSize = True
+        Me.ChecktypeAll.Location = New System.Drawing.Point(124, 48)
+        Me.ChecktypeAll.Name = "ChecktypeAll"
+        Me.ChecktypeAll.Size = New System.Drawing.Size(62, 21)
+        Me.ChecktypeAll.TabIndex = 1260
+        Me.ChecktypeAll.Text = "ทั้งหมด"
+        Me.ChecktypeAll.UseVisualStyleBackColor = True
         '
         'chkTypeArea4
         '
@@ -444,9 +440,9 @@ Partial Class frmDiseaseOrder
         '
         'GroupControl5
         '
-        Me.GroupControl5.Controls.Add(Me.optPP)
-        Me.GroupControl5.Controls.Add(Me.optOP)
-        Me.GroupControl5.Controls.Add(Me.optOPPP)
+        Me.GroupControl5.Controls.Add(Me.chkPP)
+        Me.GroupControl5.Controls.Add(Me.chkOP)
+        Me.GroupControl5.Controls.Add(Me.chkOPPP)
         Me.GroupControl5.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl5.Location = New System.Drawing.Point(403, 97)
         Me.GroupControl5.Name = "GroupControl5"
@@ -454,37 +450,37 @@ Partial Class frmDiseaseOrder
         Me.GroupControl5.TabIndex = 4
         Me.GroupControl5.Text = "ประเภทการวินิจฉัย"
         '
-        'optPP
+        'chkPP
         '
-        Me.optPP.AutoSize = True
-        Me.optPP.Location = New System.Drawing.Point(27, 82)
-        Me.optPP.Name = "optPP"
-        Me.optPP.Size = New System.Drawing.Size(41, 21)
-        Me.optPP.TabIndex = 1265
-        Me.optPP.Text = "PP"
-        Me.optPP.UseVisualStyleBackColor = True
+        Me.chkPP.AutoSize = True
+        Me.chkPP.Location = New System.Drawing.Point(33, 83)
+        Me.chkPP.Name = "chkPP"
+        Me.chkPP.Size = New System.Drawing.Size(41, 21)
+        Me.chkPP.TabIndex = 1265
+        Me.chkPP.Text = "PP"
+        Me.chkPP.UseVisualStyleBackColor = True
         '
-        'optOP
+        'chkOP
         '
-        Me.optOP.AutoSize = True
-        Me.optOP.Location = New System.Drawing.Point(27, 55)
-        Me.optOP.Name = "optOP"
-        Me.optOP.Size = New System.Drawing.Size(44, 21)
-        Me.optOP.TabIndex = 1264
-        Me.optOP.Text = "OP"
-        Me.optOP.UseVisualStyleBackColor = True
+        Me.chkOP.AutoSize = True
+        Me.chkOP.Location = New System.Drawing.Point(33, 56)
+        Me.chkOP.Name = "chkOP"
+        Me.chkOP.Size = New System.Drawing.Size(44, 21)
+        Me.chkOP.TabIndex = 1264
+        Me.chkOP.Text = "OP"
+        Me.chkOP.UseVisualStyleBackColor = True
         '
-        'optOPPP
+        'chkOPPP
         '
-        Me.optOPPP.AutoSize = True
-        Me.optOPPP.Checked = True
-        Me.optOPPP.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.optOPPP.Location = New System.Drawing.Point(27, 31)
-        Me.optOPPP.Name = "optOPPP"
-        Me.optOPPP.Size = New System.Drawing.Size(62, 21)
-        Me.optOPPP.TabIndex = 1259
-        Me.optOPPP.Text = "ทั้งหมด"
-        Me.optOPPP.UseVisualStyleBackColor = True
+        Me.chkOPPP.AutoSize = True
+        Me.chkOPPP.Checked = True
+        Me.chkOPPP.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkOPPP.Location = New System.Drawing.Point(33, 32)
+        Me.chkOPPP.Name = "chkOPPP"
+        Me.chkOPPP.Size = New System.Drawing.Size(62, 21)
+        Me.chkOPPP.TabIndex = 1259
+        Me.chkOPPP.Text = "ทั้งหมด"
+        Me.chkOPPP.UseVisualStyleBackColor = True
         '
         'cmdPrintReport1
         '
@@ -582,10 +578,10 @@ Partial Class frmDiseaseOrder
         '
         'GroupControl6
         '
-        Me.GroupControl6.Controls.Add(Me.CheckBox9)
-        Me.GroupControl6.Controls.Add(Me.CheckBox5)
-        Me.GroupControl6.Controls.Add(Me.CheckBox6)
-        Me.GroupControl6.Controls.Add(Me.CheckBox7)
+        Me.GroupControl6.Controls.Add(Me.chkInsSSS)
+        Me.GroupControl6.Controls.Add(Me.chkInsOFC)
+        Me.GroupControl6.Controls.Add(Me.chkInsUC)
+        Me.GroupControl6.Controls.Add(Me.chkInsAll)
         Me.GroupControl6.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl6.Location = New System.Drawing.Point(564, 12)
         Me.GroupControl6.Name = "GroupControl6"
@@ -593,58 +589,58 @@ Partial Class frmDiseaseOrder
         Me.GroupControl6.TabIndex = 1266
         Me.GroupControl6.Text = "สิทธิ์การรักษา"
         '
-        'CheckBox9
+        'chkInsSSS
         '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(12, 87)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(85, 21)
-        Me.CheckBox9.TabIndex = 1269
-        Me.CheckBox9.Text = "ประกันสังคม"
-        Me.CheckBox9.UseVisualStyleBackColor = True
+        Me.chkInsSSS.AutoSize = True
+        Me.chkInsSSS.Location = New System.Drawing.Point(12, 87)
+        Me.chkInsSSS.Name = "chkInsSSS"
+        Me.chkInsSSS.Size = New System.Drawing.Size(85, 21)
+        Me.chkInsSSS.TabIndex = 1269
+        Me.chkInsSSS.Text = "ประกันสังคม"
+        Me.chkInsSSS.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'chkInsOFC
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(12, 66)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(80, 21)
-        Me.CheckBox5.TabIndex = 1268
-        Me.CheckBox5.Text = "ข้าราชการ"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.chkInsOFC.AutoSize = True
+        Me.chkInsOFC.Location = New System.Drawing.Point(12, 66)
+        Me.chkInsOFC.Name = "chkInsOFC"
+        Me.chkInsOFC.Size = New System.Drawing.Size(80, 21)
+        Me.chkInsOFC.TabIndex = 1268
+        Me.chkInsOFC.Text = "ข้าราชการ"
+        Me.chkInsOFC.UseVisualStyleBackColor = True
         '
-        'CheckBox6
+        'chkInsUC
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(12, 46)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(119, 21)
-        Me.CheckBox6.TabIndex = 1267
-        Me.CheckBox6.Text = "หลักประกันสุขภาพ"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.chkInsUC.AutoSize = True
+        Me.chkInsUC.Location = New System.Drawing.Point(12, 46)
+        Me.chkInsUC.Name = "chkInsUC"
+        Me.chkInsUC.Size = New System.Drawing.Size(119, 21)
+        Me.chkInsUC.TabIndex = 1267
+        Me.chkInsUC.Text = "หลักประกันสุขภาพ"
+        Me.chkInsUC.UseVisualStyleBackColor = True
         '
-        'CheckBox7
+        'chkInsAll
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Checked = True
-        Me.CheckBox7.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox7.Location = New System.Drawing.Point(12, 24)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(62, 21)
-        Me.CheckBox7.TabIndex = 1266
-        Me.CheckBox7.Text = "ทั้งหมด"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.chkInsAll.AutoSize = True
+        Me.chkInsAll.Checked = True
+        Me.chkInsAll.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkInsAll.Location = New System.Drawing.Point(12, 24)
+        Me.chkInsAll.Name = "chkInsAll"
+        Me.chkInsAll.Size = New System.Drawing.Size(62, 21)
+        Me.chkInsAll.TabIndex = 1266
+        Me.chkInsAll.Text = "ทั้งหมด"
+        Me.chkInsAll.UseVisualStyleBackColor = True
         '
-        'GroupControl7
+        'vil
         '
-        Me.GroupControl7.Controls.Add(Me.cboVillage)
-        Me.GroupControl7.Controls.Add(Me.chkVill)
-        Me.GroupControl7.GroupStyle = DevExpress.Utils.GroupStyle.Card
-        Me.GroupControl7.Location = New System.Drawing.Point(12, 222)
-        Me.GroupControl7.Name = "GroupControl7"
-        Me.GroupControl7.Size = New System.Drawing.Size(546, 72)
-        Me.GroupControl7.TabIndex = 1308
-        Me.GroupControl7.Text = "GroupControl7"
+        Me.vil.Controls.Add(Me.cboVillage)
+        Me.vil.Controls.Add(Me.chkVill)
+        Me.vil.GroupStyle = DevExpress.Utils.GroupStyle.Card
+        Me.vil.Location = New System.Drawing.Point(12, 222)
+        Me.vil.Name = "vil"
+        Me.vil.Size = New System.Drawing.Size(546, 72)
+        Me.vil.TabIndex = 1308
+        Me.vil.Text = "พื้นที่รับผิดชอบ"
         '
         'cboVillage
         '
@@ -732,7 +728,7 @@ Partial Class frmDiseaseOrder
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 425)
         Me.Controls.Add(Me.GroupControl8)
-        Me.Controls.Add(Me.GroupControl7)
+        Me.Controls.Add(Me.vil)
         Me.Controls.Add(Me.GroupControl6)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.BetterListView1)
@@ -774,9 +770,9 @@ Partial Class frmDiseaseOrder
         CType(Me.GroupControl6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl6.ResumeLayout(False)
         Me.GroupControl6.PerformLayout()
-        CType(Me.GroupControl7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl7.ResumeLayout(False)
-        Me.GroupControl7.PerformLayout()
+        CType(Me.vil, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.vil.ResumeLayout(False)
+        Me.vil.PerformLayout()
         CType(Me.cboVillage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl8.ResumeLayout(False)
@@ -789,7 +785,7 @@ Partial Class frmDiseaseOrder
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents chkAge As CheckBox
     Friend WithEvents chkMonth As CheckBox
-    Friend WithEvents optYear As CheckBox
+    Friend WithEvents chkYear As CheckBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtAge2 As NumericUpDown
     Friend WithEvents txtAge1 As NumericUpDown
@@ -797,9 +793,9 @@ Partial Class frmDiseaseOrder
     Friend WithEvents Label22 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents chkWomen As CheckBox
-    Friend WithEvents optSexFemale As CheckBox
-    Friend WithEvents optSexAll As CheckBox
+    Friend WithEvents chkfemale As CheckBox
+    Friend WithEvents chkmale As CheckBox
+    Friend WithEvents chkSexAll As CheckBox
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents chkMstatus9 As CheckBox
     Friend WithEvents chkMstatus6 As CheckBox
@@ -816,9 +812,9 @@ Partial Class frmDiseaseOrder
     Friend WithEvents chkTypeArea1 As CheckBox
     Friend WithEvents chkTypeArea2 As CheckBox
     Friend WithEvents GroupControl5 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents optPP As CheckBox
-    Friend WithEvents optOP As CheckBox
-    Friend WithEvents optOPPP As CheckBox
+    Friend WithEvents chkPP As CheckBox
+    Friend WithEvents chkOP As CheckBox
+    Friend WithEvents chkOPPP As CheckBox
     Friend WithEvents cmdPrintReport1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmdSave As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label2 As Label
@@ -828,12 +824,12 @@ Partial Class frmDiseaseOrder
     Friend WithEvents BetterListView1 As ComponentOwl.BetterListView.BetterListView
     Friend WithEvents Label17 As Label
     Friend WithEvents GroupControl6 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents GroupControl7 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents chkInsSSS As CheckBox
+    Friend WithEvents chkInsOFC As CheckBox
+    Friend WithEvents chkInsUC As CheckBox
+    Friend WithEvents chkInsAll As CheckBox
+    Friend WithEvents ChecktypeAll As CheckBox
+    Friend WithEvents vil As DevExpress.XtraEditors.GroupControl
     Friend WithEvents cboVillage As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents chkVill As CheckBox
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager

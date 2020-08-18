@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class XtraForm2
+Partial Class frmDentalUC
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -19,8 +19,18 @@ Partial Class XtraForm2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'frmDentalUC
+        '
+        Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
+        Me.Appearance.Options.UseBackColor = True
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Text = "XtraForm2"
+        Me.ClientSize = New System.Drawing.Size(792, 388)
+        Me.Name = "frmDentalUC"
+        Me.Text = "รายงานบริการทางทันตกรรม (ประกันสุขภาพถ้วนหน้า)"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

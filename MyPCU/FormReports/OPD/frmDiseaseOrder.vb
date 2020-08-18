@@ -37,12 +37,9 @@ Public Class frmDiseaseOrder
             .Columns.Add(4).Text = "จำนวน (คน)"
             .Columns(4).Width = 130
             .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(5).Text = "จำนวน (คน)"
+            .Columns.Add(5).Text = "จำนวน (ครั้ง)"
             .Columns(5).Width = 150
             .Columns(5).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(6).Text = "จำนวน (ครั้ง)"
-            .Columns(6).Width = 150
-            .Columns(6).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
 
         End With
 
@@ -86,6 +83,7 @@ Public Class frmDiseaseOrder
         Dim tmpShow4 As String = ""
         Dim tmpShow5 As String = ""
         Dim tmpShowSex As String = ""
+        Dim tmpShowIns As String = ""
         tmpAge1 = txtAge1.Value.ToString
         tmpAge2 = txtAge2.Value.ToString
 
@@ -207,7 +205,7 @@ Public Class frmDiseaseOrder
         If chkAge.Checked = True Then
             tmpShow2 = " "
         Else
-            If optYear.Checked = True Then
+            If chkYear.Checked = True Then
                 tmpShow2 = " AND ((DATE_FORMAT(" & DateEnd & ",'%Y')-DATE_FORMAT(BIRTH,'%Y') - (DATE_FORMAT(" & DateEnd & ",'00-%m-%d')<DATE_FORMAT(BIRTH,'00-%m-%d'))) >= " & tmpAge1 & " AND  (DATE_FORMAT(" & DateEnd & ",'%Y')-DATE_FORMAT(BIRTH,'%Y') - (DATE_FORMAT(" & DateEnd & ",'00-%m-%d')<DATE_FORMAT(BIRTH,'00-%m-%d'))) < " & tmpAge2 & ")  "
             Else
                 tmpShow2 = " AND (TIMESTAMPDIFF(MONTH, DATE_FORMAT(BIRTH,'%Y-%m-%d'),DATE_FORMAT(" & DateEnd & ",'%Y-%m-%d')) >= " & tmpAge1 & " AND  TIMESTAMPDIFF(MONTH, DATE_FORMAT(BIRTH,'%Y-%m-%d'),DATE_FORMAT(" & DateEnd & ",'%Y-%m-%d')) <= " & tmpAge2 & ")  "
@@ -215,33 +213,58 @@ Public Class frmDiseaseOrder
             End If
         End If
 
-        If optOP.Checked = True Then
+        If chkOP.Checked = True Then
             tmpShow5 = " AND " & tmpOPDCode
-        ElseIf optPP.Checked = True Then
+        ElseIf chkPP.Checked = True Then
             tmpShow5 = " AND " & tmpPPCode
-        ElseIf optOPPP.Checked = True Then
+        ElseIf chkOPPP.Checked = True Then
             tmpShow5 = ""
         End If
 
 
-        If optSexAll.Checked = True Then
+        If chkSexAll.Checked = True Then
             tmpShowSex = ""
-        ElseIf optSexFemale.Checked = True Then
+        ElseIf chkmale.Checked = True Then
             tmpShowSex = " AND A.SEX = '1'"
-        ElseIf optSexFemale.Checked = True Then
+        ElseIf chkmale.Checked = True Then
             tmpShowSex = " AND A.SEX = '2'"
         End If
-        'tmpShow2 = " AND ((DATE_FORMAT(" & (DateTimePicker2.Value.ToString("yyyyMMdd").Substring(0, 4) -543) & DateTimePicker2.Value.ToString("yyyyMMdd").Substring(4, 4) & ",'%Y')-DATE_FORMAT(BIRTH,'%Y') - (DATE_FORMAT(" & (DateTimePicker2.Value.ToString("yyyyMMdd").Substring(0, 4) -543) & DateTimePicker2.Value.ToString("yyyyMMdd").Substring(4, 4) & ",'00-%m-%d')<DATE_FORMAT(BIRTH,'00-%m-%d'))) >= " & tmpAge1 & " AND  (DATE_FORMAT(" & (DateTimePicker2.Value.ToString("yyyyMMdd").Substring(0, 4) -543) & DateTimePicker2.Value.ToString("yyyyMMdd").Substring(4, 4) & ",'%Y')-DATE_FORMAT(BIRTH,'%Y') - (DATE_FORMAT(" & (DateTimePicker2.Value.ToString("yyyyMMdd").Substring(0, 4) -543) & DateTimePicker2.Value.ToString("yyyyMMdd").Substring(4, 4) & ",'00-%m-%d')<DATE_FORMAT(BIRTH,'00-%m-%d'))) <= " & tmpAge2 & ") AND (DATE_SERV >= " & (DateTimePicker1.Value.ToString("yyyyMMdd").Substring(0, 4) -543) & DateTimePicker1.Value.ToString("yyyyMMdd").Substring(4, 4) & " AND DATE_SERV <= " & (DateTimePicker2.Value.ToString("yyyyMMdd").Substring(0, 4) -543) & DateTimePicker2.Value.ToString("yyyyMMdd").Substring(4, 4) & ")  AND DIAGCODE IN('" & tmpDiagCODE.Replace(",", "','") & "') "
 
+
+        Dim tOFC As String = ""
+        Dim tUC As String = ""
+        Dim tSSS As String = ""
+        If chkInsUC.Checked = True Then
+            tUC = "03"
+        Else
+            tUC = "00"
+        End If
+        If chkInsOFC.Checked = True Then
+            tOFC = "01"
+        Else
+            tOFC = "00"
+        End If
+        If chkInsSSS.Checked = True Then
+            tSSS = "02"
+        Else
+            tSSS = "00"
+        End If
+        If chkInsAll.Checked = True Then
+            tmpShowIns = ""
+        ElseIf chkInsOFC.Checked = True Then
+            tmpShowIns = " AND INSTYPE_TYPE IN('" & tUC & "','" & tOFC & "','" & tSSS & "')"
+        End If
 
 
         Dim ds As DataSet
 
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("PDX,DESC_THAI,DESC_ENG,COUNT(DISTINCT(SEQ)) AS M_COUNT,COUNT(DISTINCT(A.PID)) AS P_COUNT", "m_person A JOIN m_service B ON(A.PID = B.PID) LEFT JOIN m_home C ON(A.HID = C.HID) JOIN l_icd10 D ON(B.PDX = D.CODE)", "WHERE B.STATUS_AF <> '8'   " & tmpShow2 & tmpShow & tmpShow3 & tmpShow4 & tmpShow5 & tmpShowSex & tmpVill & " AND (DATE_SERV >= " & DateEnd & " AND DATE_SERV <= " & DateStart & ") GROUP BY PDX ORDER BY COUNT(DISTINCT(A.PID)) DESC ")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("PDX,DESC_THAI,DESC_ENG,COUNT(DISTINCT(SEQ)) AS M_COUNT,COUNT(DISTINCT(A.PID)) AS P_COUNT" _
+                                                 , "m_person A JOIN m_service B ON(A.PID = B.PID) LEFT JOIN m_home C ON(A.HID = C.HID) JOIN l_icd10 D ON(B.PDX = D.CODE) JOIN l_instype_new ins ON(B.INSTYPE = ins.INSTYPE_CODE) " _
+                                                   , "WHERE B.STATUS_AF <> '8'   " & tmpShow2 & tmpShow & tmpShow3 & tmpShow4 & tmpShow5 & tmpShowSex & tmpVill & tmpShowIns & " AND (DATE_SERV >= " & DateStart & " AND DATE_SERV <= " & DateEnd & ") GROUP BY PDX ORDER BY COUNT(DISTINCT(A.PID)) DESC ")
 
         If ds.Tables(0).Rows.Count > 0 Then
 
-            DisplayData2(ds)
+            Displaydata(ds)
             Label17.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0").ToString & " รายการ"
             cmdPrintReport1.Enabled = True
         Else
@@ -251,9 +274,107 @@ Public Class frmDiseaseOrder
         End If
         SplashScreenManager1.CloseWaitForm()
     End Sub
-    Private Sub Displaydata2(ByVal ds As DataSet)
+    Private Sub Displaydata(ByVal ds As DataSet)
+
+        Dim anyData() As String = Nothing
+        Dim dr As DataRow
+        Dim tmpPrename As String = ""
+        Dim tmpOrder As String = ""
+        Dim tmpCID As String = ""
+        Dim tmpPID As String = ""
+
+        Dim tmpName As String = ""
+        Dim tmpDateServ As String = ""
+        Dim tmpInscl As String = ""
+        Dim tmpDx As String = ""
+        Dim tmpInsclID As String = ""
+        Dim drRpt As DataRow
+        Dim dt As DataTable
+        dt = New DataTable()
+
+        dt.Clear()
+        Dim Coulumn1 = New DataColumn("FIELD1", Type.GetType("System.String"))
+        Dim Coulumn2 = New DataColumn("FIELD2", Type.GetType("System.String"))
+        Dim Coulumn3 = New DataColumn("FIELD3", Type.GetType("System.String"))
+        Dim Coulumn4 = New DataColumn("FIELD4", Type.GetType("System.String"))
+        Dim Coulumn5 = New DataColumn("FIELD5", Type.GetType("System.String"))
+        Dim Coulumn6 = New DataColumn("FIELD6", Type.GetType("System.String"))
+        Dim Coulumn7 = New DataColumn("FIELD7", Type.GetType("System.String"))
+        Dim Coulumn8 = New DataColumn("FIELD8", Type.GetType("System.String"))
+        Dim Coulumn9 = New DataColumn("FIELD9", Type.GetType("System.String"))
+        Dim Coulumn10 = New DataColumn("FIELD10", Type.GetType("System.String"))
+        Dim Coulumn11 = New DataColumn("FIELD11", Type.GetType("System.String"))
+        Dim Coulumn12 = New DataColumn("FIELD12", Type.GetType("System.String"))
+        Dim Coulumn13 = New DataColumn("FIELD13", Type.GetType("System.String"))
+        dt.Columns.Add(Coulumn1)
+        dt.Columns.Add(Coulumn2)
+        dt.Columns.Add(Coulumn3)
+        dt.Columns.Add(Coulumn4)
+        dt.Columns.Add(Coulumn5)
+        dt.Columns.Add(Coulumn6)
+        dt.Columns.Add(Coulumn7)
+        dt.Columns.Add(Coulumn8)
+        dt.Columns.Add(Coulumn9)
+        dt.Columns.Add(Coulumn10)
+        dt.Columns.Add(Coulumn11)
+        dt.Columns.Add(Coulumn12)
+        dt.Columns.Add(Coulumn13)
+
+
+        Try
+            BetterListView1.Items.Clear()
+            BetterListView1.BeginUpdate()
+            BetterListView1.SuspendSort()
+            For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
+                dr = ds.Tables(0).Rows(i)
+                tmpOrder = CStr(i + 1)
+
+                BetterListView1.Items.Add(tmpOrder).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add(dr("PDX"))
+
+                If IsDBNull(dr("DESC_THAI")) Then
+                    BetterListView1.Items(i).SubItems.Add("****ไม่มีรหัสนี้ใน icd9cm หรือ icd10tm****")
+                Else
+                    BetterListView1.Items(i).SubItems.Add(dr("DESC_THAI").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
+                End If
+                If IsDBNull(dr("DESC_ENG")) Then
+                    BetterListView1.Items(i).SubItems.Add("****ไม่มีรหัสนี้ใน icd10 หรือ icd10tm****")
+                Else
+                    BetterListView1.Items(i).SubItems.Add(dr("DESC_ENG").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
+
+                End If
+                BetterListView1.Items(i).SubItems.Add(CInt(dr("P_COUNT")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+                BetterListView1.Items(i).SubItems.Add(CInt(dr("M_COUNT")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+
+
+                If (i Mod 2) = 0 Then
+                    BetterListView1.Items(i).BackColor = Color.MintCream
+                End If
+
+                dsRpt.Tables.Clear()
+                drRpt = dt.NewRow()
+                drRpt("FIELD1") = "รายงานการให้รหัสวินิจฉัยปัญหาสุขภาพในพื้นที่"
+                drRpt("FIELD2") = "หน่วยบริการ : " & vHname.Replace("รพ.สต.", "โรงพยาบาลส่งเสริมสุขภาพตำบล") & vbCrLf & "แสดงข้อมูลประมวลผล ระหว่างวันที่ " & CDate(dtpStart.EditValue).ToString("d MMMM yyyy") & " ถึงวันที่ " & CDate(dtpEnd.EditValue).ToString("d MMMM yyyy")
+                drRpt("FIELD3") = i + 1
+                drRpt("FIELD4") = dr("PDX")
+                drRpt("FIELD5") = dr("DESC_THAI") & vbCrLf & dr("DESC_ENG")
+                drRpt("FIELD6") = dr("P_COUNT")
+                drRpt("FIELD7") = dr("M_COUNT")
+                dt.Rows.Add(drRpt)
+            Next
+            dsRpt.Tables.Add(dt)
+            BetterListView1.AutoResizeColumn(2, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView1.AutoResizeColumn(3, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+
+            BetterListView1.ResumeSort(True)
+            BetterListView1.EndUpdate()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error002" & tmpPID, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End Try
 
     End Sub
+
 
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
         If dtpStart.EditValue = Nothing Or dtpEnd.EditValue = Nothing Then
@@ -263,5 +384,182 @@ Public Class frmDiseaseOrder
 
         ShowDataName()
 
+    End Sub
+
+    Private Sub cmdPrintReport1_Click(sender As Object, e As EventArgs) Handles cmdPrintReport1.Click
+        Dim fReport As New frmReportView
+        Dim params As ReportParameter
+
+        params = New ReportParameter("RateId")
+
+        fReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\Reports\rptDiseaseOrder.rdlc"
+
+        fReport.ReportViewer1.LocalReport.DataSources.Clear()
+        CurrentReportDataSource.Name = "DataSet20F"
+        CurrentReportDataSource.value = dsRpt.Tables(0)
+        fReport.ReportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource)
+
+        fReport.ShowDialog()
+
+    End Sub
+
+    Private Sub chkAge_Click(sender As Object, e As EventArgs) Handles chkAge.Click
+        chkAge.Checked = True
+        chkYear.Checked = False
+        chkMonth.Checked = False
+    End Sub
+
+    Private Sub chkYear_Click(sender As Object, e As EventArgs) Handles chkYear.Click
+        chkAge.Checked = False
+        chkYear.Checked = True
+        chkMonth.Checked = False
+    End Sub
+
+    Private Sub chkMonth_Click(sender As Object, e As EventArgs) Handles chkMonth.Click
+        chkAge.Checked = False
+        chkYear.Checked = False
+        chkMonth.Checked = True
+    End Sub
+
+    Private Sub chkSexAll_click(sender As Object, e As EventArgs) Handles chkSexAll.Click
+        chkSexAll.Checked = True
+        chkmale.Checked = False
+        chkfemale.Checked = False
+    End Sub
+
+    Private Sub chkmale_Click(sender As Object, e As EventArgs) Handles chkmale.Click
+        chkSexAll.Checked = False
+        chkmale.Checked = True
+        chkfemale.Checked = False
+    End Sub
+
+    Private Sub chkfemale_Click(sender As Object, e As EventArgs) Handles chkfemale.Click
+        chkSexAll.Checked = False
+        chkmale.Checked = False
+        chkfemale.Checked = True
+    End Sub
+
+    Private Sub chkOPPP_Click(sender As Object, e As EventArgs) Handles chkOPPP.Click
+        chkOPPP.Checked = True
+        chkOP.Checked = False
+        chkPP.Checked = False
+    End Sub
+
+    Private Sub chkPP_Click(sender As Object, e As EventArgs) Handles chkPP.Click
+        chkOPPP.Checked = False
+        chkOP.Checked = False
+        chkPP.Checked = True
+    End Sub
+
+    Private Sub chkOP_Click(sender As Object, e As EventArgs) Handles chkOP.Click
+        chkOPPP.Checked = False
+        chkOP.Checked = True
+        chkPP.Checked = False
+    End Sub
+
+    Private Sub ChecktypeAll_Click(sender As Object, e As EventArgs) Handles ChecktypeAll.Click
+        ChecktypeAll.Checked = True
+        chkTypeArea1.Checked = True
+        chkTypeArea2.Checked = True
+        chkTypeArea3.Checked = True
+        chkTypeArea4.Checked = True
+        chkTypeArea5.Checked = True
+
+    End Sub
+
+    Private Sub chkTypeArea1_Click(sender As Object, e As EventArgs) Handles chkTypeArea1.Click
+        If chkTypeArea1.Checked = False Then
+            ChecktypeAll.Checked = False
+        End If
+    End Sub
+
+    Private Sub chkTypeArea2_Click(sender As Object, e As EventArgs) Handles chkTypeArea2.Click
+        If chkTypeArea2.Checked = False Then
+            ChecktypeAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkTypeArea3_Click(sender As Object, e As EventArgs) Handles chkTypeArea3.Click
+        If chkTypeArea3.Checked = False Then
+            ChecktypeAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkTypeArea4_Click(sender As Object, e As EventArgs) Handles chkTypeArea4.Click
+        If chkTypeArea4.Checked = False Then
+            ChecktypeAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkTypeArea5_Click(sender As Object, e As EventArgs) Handles chkTypeArea5.Click
+        If chkTypeArea5.Checked = False Then
+            ChecktypeAll.Checked = False
+        End If
+    End Sub
+
+    Private Sub chkMstatusAll_Click(sender As Object, e As EventArgs) Handles chkMstatusAll.Click
+        chkMstatusAll.Checked = True
+        chkMstatus1.Checked = True
+        chkMstatus2.Checked = True
+        chkMstatus3.Checked = True
+        chkMstatus4.Checked = True
+        chkMstatus5.Checked = True
+        chkMstatus6.Checked = True
+        chkMstatus9.Checked = True
+    End Sub
+    Private Sub chkMstatus1_Click(sender As Object, e As EventArgs) Handles chkMstatus1.Click
+        If chkMstatus1.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkMstatus2_Click(sender As Object, e As EventArgs) Handles chkMstatus2.Click
+        If chkMstatus2.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkMstatus3_Click(sender As Object, e As EventArgs) Handles chkMstatus3.Click
+        If chkMstatus3.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkMstatus4_Click(sender As Object, e As EventArgs) Handles chkMstatus4.Click
+        If chkMstatus4.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkMstatus5_Click(sender As Object, e As EventArgs) Handles chkMstatus5.Click
+        If chkMstatus5.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkMstatus6_Click(sender As Object, e As EventArgs) Handles chkMstatus6.Click
+        If chkMstatus6.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkMstatus9_Click(sender As Object, e As EventArgs) Handles chkMstatus9.Click
+        If chkMstatus9.Checked = False Then
+            chkMstatusAll.Checked = False
+        End If
+    End Sub
+
+    Private Sub chkInsAll_Click(sender As Object, e As EventArgs) Handles chkInsAll.Click
+        chkInsAll.Checked = True
+        chkInsOFC.Checked = True
+        chkInsSSS.Checked = True
+        chkInsUC.Checked = True
+    End Sub
+
+    Private Sub chkInsOFC_Click(sender As Object, e As EventArgs) Handles chkInsOFC.Click
+        If chkInsOFC.Checked = False Then
+            chkInsAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkInsSSS_Click(sender As Object, e As EventArgs) Handles chkInsSSS.Click
+        If chkInsSSS.Checked = False Then
+            chkInsAll.Checked = False
+        End If
+    End Sub
+    Private Sub chkInsuc_Click(sender As Object, e As EventArgs) Handles chkInsUC.Click
+        If chkInsUC.Checked = False Then
+            chkInsAll.Checked = False
+        End If
     End Sub
 End Class

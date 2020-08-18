@@ -107,7 +107,6 @@ Public Class frmProvider
     Private Sub DisplayData(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As ListViewItem
         Dim NAMEUSER As String = ""
         Dim tmpPrename As String = ""
         Dim tmpProvider As String = ""
@@ -194,7 +193,6 @@ Public Class frmProvider
         End Try
 
     End Sub
-
 
     Private Sub cmdSearch_Click(sender As Object, e As EventArgs) Handles cmdSearch.Click
         chkAll.Checked = False

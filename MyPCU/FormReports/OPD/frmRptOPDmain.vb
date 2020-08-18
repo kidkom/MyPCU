@@ -1,5 +1,5 @@
 ﻿Imports DevExpress.XtraBars.Docking
-Public Class frmRptOPDmain
+Public Class frmRptOPDMain
     Private Sub AccordionControlElement1_Click(sender As Object, e As EventArgs) Handles AccordionControlElement1.Click
 
 
@@ -17,4 +17,6 @@ Public Class frmRptOPDmain
         panel1.Controls.Add(f)
         f.Show()
     End Sub
+
+
 End Class

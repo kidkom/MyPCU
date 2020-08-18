@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmRptOPDmain
+Partial Class frmRptOPDMain
     Inherits DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
 
     'Form overrides dispose to clean up the component list.
@@ -62,18 +62,21 @@ Partial Class frmRptOPDmain
         '
         'AccordionControlElement1
         '
+        Me.AccordionControlElement1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_patient
         Me.AccordionControlElement1.Name = "AccordionControlElement1"
         Me.AccordionControlElement1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement1.Text = "จำนวนการรับบริการผู้ป่วยนอก"
         '
         'AccordionControlElement2
         '
+        Me.AccordionControlElement2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_card4
         Me.AccordionControlElement2.Name = "AccordionControlElement2"
         Me.AccordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement2.Text = "จำนวนการรับบริการผู้ป่วยนอกแยกรายสิทธิ์"
         '
         'AccordionControlElement3
         '
+        Me.AccordionControlElement3.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_doctor
         Me.AccordionControlElement3.Name = "AccordionControlElement3"
         Me.AccordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement3.Text = "อันดับการให้วินิจฉัย"
@@ -101,7 +104,7 @@ Partial Class frmRptOPDmain
         Me.DocumentManager1.View = Me.TabbedView1
         Me.DocumentManager1.ViewCollection.AddRange(New DevExpress.XtraBars.Docking2010.Views.BaseView() {Me.TabbedView1})
         '
-        'frmRptOPDmain
+        'frmRptOPDMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -113,7 +116,7 @@ Partial Class frmRptOPDmain
         Me.FluentDesignFormControl = Me.FluentDesignFormControl1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.Name = "frmRptOPDmain"
+        Me.Name = "frmRptOPDMain"
         Me.NavigationControl = Me.AccordionControl1
         Me.Text = "รายงานเกี่ยวกับการให้บริการผู้ป่วยนอก"
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
