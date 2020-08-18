@@ -550,6 +550,12 @@
     <Compile Include="FormPP\Nutrition\frmNutritionMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPP\Nutrition\frmPersonNutrition.Designer.vb">
+      <DependentUpon>frmPersonNutrition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPP\Nutrition\frmPersonNutrition.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPP\Vaccine\frmPersonEpi.Designer.vb">
       <DependentUpon>frmPersonEpi.vb</DependentUpon>
     </Compile>
@@ -1074,6 +1080,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPP\Nutrition\frmNutritionMain.resx">
       <DependentUpon>frmNutritionMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPP\Nutrition\frmPersonNutrition.resx">
+      <DependentUpon>frmPersonNutrition.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPP\Vaccine\frmPersonEpi.resx">
       <DependentUpon>frmPersonEpi.vb</DependentUpon>

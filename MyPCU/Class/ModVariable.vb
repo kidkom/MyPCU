@@ -187,6 +187,10 @@
     Public vEpiPID As String = ""
     Public vVaccineRowID As String = ""
 
+    '********NUTRITION*****
+    Public vNutritionPID As String = ""
+    Public vNutritionRowID As String = ""
+
 
     '********SERVICE********
     Public vQueueSEQ As String = ""

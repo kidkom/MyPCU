@@ -113,6 +113,7 @@ Public Class frmPersonEpi
         If vTmpHcode <> "" Then
             txtVaccinePlaceCode.Text = vTmpHcode
             txtVaccinePlaceName.Text = clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(vTmpHcode)
+            chkUnkonw.Checked = False
             vTmpHcode = ""
         End If
     End Sub

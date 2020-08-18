@@ -34,32 +34,35 @@ Public Class frmNutritionMain
             .Columns(1).Width = 0
             .Columns(1).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(2).Text = "วันที่ตรวจ"
-            .Columns(2).Width = 150
+            .Columns(2).Width = 120
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(3).Text = "น้ำหนัก"
+            .Columns.Add(3).Text = "อายุ(เดือน)"
             .Columns(3).Width = 100
             .Columns(3).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(4).Text = "ส่วนสูง"
+            .Columns.Add(4).Text = "น้ำหนัก"
             .Columns(4).Width = 100
             .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(5).Text = "เส้นรอบศีรษะ"
+            .Columns.Add(5).Text = "ส่วนสูง"
             .Columns(5).Width = 100
             .Columns(5).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(6).Text = "การกินนม"
-            .Columns(6).Width = 180
+            .Columns.Add(6).Text = "เส้นรอบศีรษะ"
+            .Columns(6).Width = 100
             .Columns(6).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(7).Text = "ขวดนม"
-            .Columns(7).Width = 200
+            .Columns.Add(7).Text = "อาหารและนม"
+            .Columns(7).Width = 150
             .Columns(7).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(8).Text = "ผู้ให้บริการ"
-            .Columns(8).Width = 200
+            .Columns.Add(8).Text = "การใช้ขวดนม"
+            .Columns(8).Width = 100
             .Columns(8).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(9).Text = "สถานบริการ"
-            .Columns(9).Width = 180
+            .Columns.Add(9).Text = "ผู้ให้บริการ"
+            .Columns(9).Width = 200
             .Columns(9).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(10).Text = "วันที่ปรับปรุงข้อมูล"
-            .Columns(10).Width = 180
+            .Columns.Add(10).Text = "สถานบริการ"
+            .Columns(10).Width = 150
             .Columns(10).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
+            .Columns.Add(11).Text = "วันที่ปรับปรุงข้อมูล"
+            .Columns(11).Width = 150
+            .Columns(11).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
         txtPID.Select()
@@ -263,8 +266,10 @@ Public Class frmNutritionMain
         SplashScreenManager1.ShowWaitForm()
         Dim ds As DataSet
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("PID,ROWID,HOSPCODE,SEQ,DATE_SERV,NUTRITIONPLACE,WEIGHT,HEIGHT,HEADCIRCUM,CHILDDEVELOP,FOOD,BOTTLE," _
-                                                 & "PROVIDER,D_UPDATE,STATUS_AF", "m_nutrition", "WHERE PID = '" & lblPID.Text & "' AND STATUS_AF <> '8'  ORDER BY DATE_SERV DESC")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("a.PID,a.ROWID,a.HOSPCODE,a.SEQ,a.DATE_SERV,a.AGEMONTH,a.NUTRITIONPLACE,a.WEIGHT,a.HEIGHT,a.HEADCIRCUM,a.CHILDDEVELOP,a.FOOD,a.BOTTLE," _
+                                                 & "a.PROVIDER,a.D_UPDATE,a.STATUS_AF,b.FOOD_DESC,c.BOTTLE_DESC" _
+                                                 , "m_nutrition a LEFT JOIN l_food b on(a.FOOD = b.FOOD_CODE) LEFT JOIN l_bottle c on(a.BOTTLE = c.BOTTLE_CODE)" _
+                                                 , "WHERE PID = '" & lblPID.Text & "' AND STATUS_AF <> '8'  ORDER BY DATE_SERV DESC")
 
         If ds.Tables(0).Rows.Count > 0 Then
             DisplayData(ds)
@@ -310,13 +315,14 @@ Public Class frmNutritionMain
                 End If
                 BetterListView1.Items(i).SubItems.Add((dr("ROWID")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(Thaidate(dr("DATE_SERV")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add((dr("AGEMONTH")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("WEIGHT")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("HEIGHT")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("HEADCIRCUM")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
-
-                BetterListView1.Items(i).SubItems.Add("")
-
-                BetterListView1.Items(i).SubItems.Add("")
+                BetterListView1.Items(i).SubItems.Add((dr("FOOD_DESC")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add((dr("BOTTLE_DESC")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                'BetterListView1.Items(i).SubItems.Add("")
+                'BetterListView1.Items(i).SubItems.Add("")
 
                 BetterListView1.Items(i).SubItems.Add(clsdataBus.Lc_Business.SELECT_NAME_PROVIDER(dr("PROVIDER")).ToString).AlignHorizontal = TextAlignmentHorizontal.Left
                 BetterListView1.Items(i).SubItems.Add(clsdataBus.Lc_Business.SELECT_NAME_HOSPITAL(dr("NUTRITIONPLACE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Left
@@ -352,4 +358,39 @@ Public Class frmNutritionMain
         End Try
 
     End Sub
+    Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
+        vNutritionPID = lblPID.Text
+
+        Dim f As New frmPersonNutrition
+        f.ShowDialog()
+
+        vNutritionPID = ""
+        ShowDataNutrition()
+
+    End Sub
+    Private Sub BetterListView1_DoubleClick(sender As Object, e As EventArgs) Handles BetterListView1.DoubleClick
+        For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
+            Dim lvi As BetterListViewItem
+            lvi = BetterListView1.SelectedItems(i)
+            vNutritionRowID = lvi.SubItems.Item(1).Text
+        Next
+
+        vNutritionPID = lblPID.Text
+
+        Dim f As New frmPersonNutrition
+        f.ShowDialog()
+        cmdEdit.Enabled = False
+        vNutritionRowID = ""
+        ShowDataNutrition()
+
+    End Sub
+
+    Private Sub BetterListView1_ItemSelectionChanged(sender As Object, eventArgs As BetterListViewItemSelectionChangedEventArgs) Handles BetterListView1.ItemSelectionChanged
+        For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
+            Dim lvi As BetterListViewItem
+            lvi = BetterListView1.SelectedItems(i)
+            vNutritionRowID = lvi.SubItems.Item(1).Text
+        Next
+    End Sub
+
 End Class
