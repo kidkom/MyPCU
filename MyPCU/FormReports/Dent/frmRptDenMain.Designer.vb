@@ -52,10 +52,10 @@ Partial Class frmRptDenMain
         'FluentDesignFormContainer1
         '
         Me.FluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(398, 31)
+        Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(310, 31)
         Me.FluentDesignFormContainer1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.FluentDesignFormContainer1.Name = "FluentDesignFormContainer1"
-        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(626, 447)
+        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(875, 628)
         Me.FluentDesignFormContainer1.TabIndex = 0
         '
         'AccordionControl1
@@ -66,7 +66,7 @@ Partial Class frmRptDenMain
         Me.AccordionControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.AccordionControl1.Name = "AccordionControl1"
         Me.AccordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch
-        Me.AccordionControl1.Size = New System.Drawing.Size(398, 447)
+        Me.AccordionControl1.Size = New System.Drawing.Size(310, 628)
         Me.AccordionControl1.TabIndex = 1
         Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -75,21 +75,21 @@ Partial Class frmRptDenMain
         Me.AccordionControlElement1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_pie
         Me.AccordionControlElement1.Name = "AccordionControlElement1"
         Me.AccordionControlElement1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement1.Text = "รายงานสรุปข้อมูลผู้รับบริการทันตกรรม"
+        Me.AccordionControlElement1.Text = "สรุปข้อมูลผู้รับบริการทันตกรรม"
         '
         'AccordionControlElement2
         '
         Me.AccordionControlElement2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_card5
         Me.AccordionControlElement2.Name = "AccordionControlElement2"
         Me.AccordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement2.Text = "รายงานสรุปข้อมูลทันตกรรม (ประกันสุขภาพถ้วนหน้า)"
+        Me.AccordionControlElement2.Text = "สรุปข้อมูลทันตกรรม (ประกันสุขภาพถ้วนหน้า)"
         '
         'AccordionControlElement3
         '
         Me.AccordionControlElement3.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_card4
         Me.AccordionControlElement3.Name = "AccordionControlElement3"
         Me.AccordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement3.Text = "รายงานข้อมูลบริการทันตกรรมจำแนกตามสิทธิ"
+        Me.AccordionControlElement3.Text = "ข้อมูลบริการทันตกรรมจำแนกตามสิทธิ"
         '
         'AccordionControlElement4
         '
@@ -103,49 +103,49 @@ Partial Class frmRptDenMain
         Me.AccordionControlElement5.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_pregnant
         Me.AccordionControlElement5.Name = "AccordionControlElement5"
         Me.AccordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement5.Text = "รายงานข้อมูลทันตกรรมในหญิงตั้งครรภ์"
+        Me.AccordionControlElement5.Text = "ข้อมูลทันตกรรมในหญิงตั้งครรภ์"
         '
         'AccordionControlElement6
         '
         Me.AccordionControlElement6.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_boy
         Me.AccordionControlElement6.Name = "AccordionControlElement6"
         Me.AccordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement6.Text = "รายงานการเคลือบฟลูออไรด์วานิชในเด็ก"
+        Me.AccordionControlElement6.Text = "การเคลือบฟลูออไรด์วานิชในเด็ก"
         '
         'AccordionControlElement12
         '
         Me.AccordionControlElement12.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_edit4
         Me.AccordionControlElement12.Name = "AccordionControlElement12"
         Me.AccordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement12.Text = "รายงานข้อมูลบริการทางทันตกรรมตามเงื่อนไข"
+        Me.AccordionControlElement12.Text = "ข้อมูลบริการทางทันตกรรมตามเงื่อนไข"
         '
         'AccordionControlElement8
         '
         Me.AccordionControlElement8.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_toorh2
         Me.AccordionControlElement8.Name = "AccordionControlElement8"
         Me.AccordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement8.Text = "รายงานการตรวจภาวะทันตสุขภาพ"
+        Me.AccordionControlElement8.Text = "ข้อมูลการตรวจภาวะทันตสุขภาพ"
         '
         'AccordionControlElement9
         '
         Me.AccordionControlElement9.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_student
         Me.AccordionControlElement9.Name = "AccordionControlElement9"
         Me.AccordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement9.Text = "รายงานการตรวจภาวะทันตสุขภาพในเด็กนักเรียน"
+        Me.AccordionControlElement9.Text = "การตรวจภาวะทันตสุขภาพในเด็กนักเรียน"
         '
         'AccordionControlElement10
         '
         Me.AccordionControlElement10.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_search_person
         Me.AccordionControlElement10.Name = "AccordionControlElement10"
         Me.AccordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement10.Text = "รายงานความครอบคลุมการตรวจภาวะทันตสุขภาพ ตามช่วงอายุ"
+        Me.AccordionControlElement10.Text = "การตรวจภาวะทันตสุขภาพ ตามช่วงอายุ"
         '
         'AccordionControlElement11
         '
         Me.AccordionControlElement11.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_cvd
         Me.AccordionControlElement11.Name = "AccordionControlElement11"
         Me.AccordionControlElement11.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement11.Text = "รายงานความครอบคลุมการตรวจภาวะทันตสุขภาพ ในผู้ป่วยเบาหวาน ความดันโลหิตสูง"
+        Me.AccordionControlElement11.Text = "การตรวจภาวะทันตสุขภาพ ในผู้ป่วยโรคเรื้อรัง"
         '
         'FluentDesignFormControl1
         '
@@ -155,7 +155,7 @@ Partial Class frmRptDenMain
         Me.FluentDesignFormControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.FluentDesignFormControl1.Name = "FluentDesignFormControl1"
         Me.FluentDesignFormControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1024, 31)
+        Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1185, 31)
         Me.FluentDesignFormControl1.TabIndex = 2
         Me.FluentDesignFormControl1.TabStop = False
         '
@@ -183,7 +183,7 @@ Partial Class frmRptDenMain
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 478)
+        Me.ClientSize = New System.Drawing.Size(1185, 659)
         Me.ControlContainer = Me.FluentDesignFormContainer1
         Me.Controls.Add(Me.FluentDesignFormContainer1)
         Me.Controls.Add(Me.AccordionControl1)
