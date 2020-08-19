@@ -17,7 +17,7 @@ Public Class frmRptDentUC
         cboProviderAction()
 
         With BetterListView1
-            .Columns.Add(0).Text = ""
+            .Columns.Add(0).Text = "ลำดับ"
             .Columns(0).Width = 30
             .Columns(0).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(1).Text = "เดือน"
@@ -144,15 +144,6 @@ Public Class frmRptDentUC
 
         End With
 
-        'ds = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,CONCAT(B.PRENAME,NAME,' ',LNAME) AS PROVIDER_NAME", "m_provider A LEFT JOIN l_prename B ON(A.PRENAME = B.PRENAME_CODE)", " WHERE A.STATUS = '1' AND STATUS_AF <> '8' AND PROVIDERTYPE IN('02','06') ORDER BY NAME")
-        'If ds.Tables(0).Rows.Count > 0 Then
-        '    With cboProvider
-        '        .DataSource = ds.Tables(0)
-        '        .DisplayMember = "PROVIDER_NAME"
-        '        .ValueMember = "PROVIDER"
-        '        .SelectedValue = 0
-        '    End With
-        'End If
     End Sub
     Private Sub cboProviderAction()
         Dim ds As DataSet
@@ -174,11 +165,11 @@ Public Class frmRptDentUC
     Private Sub ShowData()
         Dim tmpSQL As String = ""
 
-        'If CheckBox1.Checked = True Then
-        tmpSQL = " AND B.PROVIDER = '" & cboProvider.EditValue & "'"
-        'Else
-        '    tmpSQL = ""
-        'End If
+        If CheckBox1.Checked = True Then
+            tmpSQL = " AND B.PROVIDER = '" & cboProvider.EditValue & "'"
+        Else
+            tmpSQL = ""
+        End If
 
         Dim DateStart As String = CDate(dtpStart.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
         Dim DateEnd As String = CDate(dtpEnd.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
@@ -324,6 +315,7 @@ Public Class frmRptDentUC
             BetterListView1.Items.Clear()
             BetterListView1.BeginUpdate()
             BetterListView1.SuspendSort()
+
             For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
                 dr = ds.Tables(0).Rows(i)
                 Dim tmpMonthName As String = "'"
@@ -353,7 +345,8 @@ Public Class frmRptDentUC
                     tmpMonthName = "ก.ย. " & CStr(CInt(dr("MONTH_SERV").ToString.Substring(0, 4)) + 543).Substring(2, 2)
                 End If
 
-                BetterListView1.Items.Add(tmpMonthName).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items.Add((i + 1).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add(tmpMonthName).AlignHorizontal = TextAlignmentHorizontal.Center
                 If Not IsDBNull(dr("COUNT_ALL")) Then
                     BetterListView1.Items(i).SubItems.Add(CInt(dr("COUNT_ALL")).ToString("#,##0"))
                 Else
@@ -577,6 +570,8 @@ Public Class frmRptDentUC
             BetterListView1.Items(k).SubItems.Add(CInt(sum23).ToString("#,##0"))
             BetterListView1.Items(k).SubItems.Add(CInt(sum24).ToString("#,##0"))
 
+            BetterListView1.ResumeSort(True)
+            BetterListView1.EndUpdate()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -586,7 +581,7 @@ Public Class frmRptDentUC
     Private Sub DisplayData2(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As ListViewItem
+        Dim itm As BetterListViewItem
         Dim tmpPrename As String = ""
         Dim tmpDNAME As String = ""
         Dim tmpAmount As String = ""
@@ -715,7 +710,7 @@ Public Class frmRptDentUC
                             Else
                                 BetterListView2.Items(i).SubItems.Add("วันเดือนปีเกิดไม่ถูกต้อง")
                             End If
-                            'itm.SubItems.Add(DateTime.ParseExact(tmpDOB, "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
+
                         Else
 
                             BetterListView2.Items(i).SubItems.Add("")
@@ -764,22 +759,22 @@ Public Class frmRptDentUC
                     End If
 
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
 
                 If Not IsDBNull(dr("PROVIDER")) Then
-                    itm.SubItems.Add(ClsBusiness.Lc_Business.SELECT_NAME_PROVIDER(dr("PROVIDER")))
+                    BetterListView2.Items(i).SubItems.Add(ClsBusiness.Lc_Business.SELECT_NAME_PROVIDER(dr("PROVIDER")))
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
                 If Not IsDBNull(dr("D_UPDATE")) Then
-                    itm.SubItems.Add(DateTime.ParseExact(dr("D_UPDATE").ToString.Substring(0, 4) + 543 & dr("D_UPDATE").ToString.Substring(4, 4), "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
+                    BetterListView2.Items(i).SubItems.Add(DateTime.ParseExact(dr("D_UPDATE").ToString.Substring(0, 4) + 543 & dr("D_UPDATE").ToString.Substring(4, 4), "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
 
-                If (itm.Index Mod 2) = 0 Then
-                    itm.BackColor = Color.FromArgb(255, 255, 128)
+                If (i Mod 2) = 0 Then
+                    BetterListView2.Items(i).BackColor = Color.FromArgb(255, 255, 128)
                 End If
 
                 drRpt("FIELD1") = ClsBusiness.Lc_Business.SELECT_NAME_HCODE(vHcode).ToString.Replace("รพ.สต.", "โรงพยาบาลส่งเสริมสุขภาพตำบล") & vbCrLf & "ข้อมูลการให้บริการตั้งแต่วันที่ " & CDate(dtpStart.EditValue).ToString("d MMMM yyyy") & " ถึงวันที่ " & CDate(dtpEnd.EditValue).ToString("d MMMM yyyy")
@@ -789,7 +784,7 @@ Public Class frmRptDentUC
                 tmpPID = dr("HN")
                 If IsDBNull(dr("BIRTH")) Then
                     tmpAge = "ไม่มีข้อมูล"
-                    'itm.SubItems.Add("")
+
                 Else
                     If dr("BIRTH") <> "" Then
                         Dim tmpDOB = dr("BIRTH").ToString.Substring(0, 4) + 543 & dr("BIRTH").ToString.Substring(4, 4)
@@ -801,9 +796,9 @@ Public Class frmRptDentUC
                             Dim Month As Integer = 0
                             Dim Days As Integer = 0
                             Dim StrAge As String = Nothing
-                            ' Check if the DOB is less than current date
+
                             If DOB < tmpDOS2 Then
-                                ' Calculate Difference between current date and DOB
+
                                 Dim dateDiff As TimeSpan = tmpDOS2 - DOB
                                 Dim age As New DateTime(dateDiff.Ticks)
                                 Years = age.Year - 1
@@ -813,14 +808,13 @@ Public Class frmRptDentUC
                             Else
                                 tmpAge = "วันเดือนปีเกิดไม่ถูกต้อง"
                             End If
-                            'itm.SubItems.Add(DateTime.ParseExact(tmpDOB, "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
                         Else
-                            'itm.SubItems.Add("")
+
                             tmpAge = ""
                         End If
                     Else
                         tmpAge = "ไม่มีข้อมูล"
-                        'itm.SubItems.Add("")
+
                     End If
 
                 End If
@@ -893,8 +887,6 @@ Public Class frmRptDentUC
                 drRpt("FIELD8") = "ยา : " & vbCrLf & tmpRx & vbCrLf & "หัตถการ : " & vbCrLf & tmpPx
                 drRpt("FIELD9") = "ต้นทุน : " & dr("COST") & vbCrLf & "ค่าบริการ : " & dr("PRICE") & vbCrLf & "จ่ายจริง : " & dr("PAYPRICE")
 
-
-
                 dt.Rows.Add(drRpt)
             Next
 
@@ -928,5 +920,66 @@ Public Class frmRptDentUC
         BetterListView1.Items.Clear()
         ShowData()
         SplashScreenManager1.CloseWaitForm()
+    End Sub
+
+    Private Sub ComboBoxEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles cboProced.EditValueChanged
+        Dim tmpSQL As String = ""
+        Dim tmpSQL2 As String = ""
+        Dim tmpSQL3 As String = ""
+
+        If cboProced.SelectedIndex = 0 Then
+            tmpSQL2 = "  "
+        ElseIf cboProced.SelectedIndex = 1 Then
+            tmpSQL2 = " AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 2 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2372700','2382770') "
+        ElseIf cboProced.SelectedIndex = 3 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2372700','2382770') AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 4 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('23771','23871') "
+        ElseIf cboProced.SelectedIndex = 5 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('23771','23871')  AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 6 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('22773','22873') "
+        ElseIf cboProced.SelectedIndex = 7 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('22773','22873') AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 8 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377030','2387030') "
+        ElseIf cboProced.SelectedIndex = 9 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377030','2387030') AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 10 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377020','2377021','2387020','2387021')   "
+        ElseIf cboProced.SelectedIndex = 11 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377020','2377021','2387020','2387021')  AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 12 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377010','2377021','2387010','2387021') "
+        ElseIf cboProced.SelectedIndex = 13 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377010','2377021','2387010','2387021')  AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 14 Then
+            tmpSQL2 = " AND (PROCEDCODE NOT IN('2372700','2382770') AND SUBSTR(PROCEDCODE,1,5) NOT IN('23771','23871') AND SUBSTR(PROCEDCODE,1,5) NOT IN('22773','22873') AND  SUBSTR(PROCEDCODE,1,5) NOT IN('22772') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228742') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228741')  AND SUBSTR(PROCEDCODE,1,5) NOT IN('23826') AND PROCEDCODE NOT IN('2377010','2377020','2377021','2387010','2387020','2387021') AND PROCEDCODE NOT IN('2377030','2387030')) "
+        ElseIf cboProced.SelectedIndex = 15 Then
+            tmpSQL2 = " AND (PROCEDCODE NOT IN('2372700','2382770') AND SUBSTR(PROCEDCODE,1,5) NOT IN('23771','23871') AND SUBSTR(PROCEDCODE,1,5) NOT IN('22773','22873') AND  SUBSTR(PROCEDCODE,1,5) NOT IN('22772') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228742') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228741')  AND SUBSTR(PROCEDCODE,1,5) NOT IN('23826') AND PROCEDCODE NOT IN('2377010','2377020','2377021','2387010','2387020','2387021') AND PROCEDCODE NOT IN('2377030','2387030')) AND INSTYPE = '0100' "
+        End If
+
+
+        If CheckBox1.Checked = True Then
+            tmpSQL3 = " AND C.PROVIDER = '" & cboProvider.EditValue & "'"
+        Else
+            tmpSQL3 = ""
+        End If
+
+        Dim DateStart As String = CDate(dtpStart.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
+        Dim DateEnd As String = CDate(dtpEnd.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
+        Dim ds As DataSet
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("A.PID,A.ROWID,B.HN,CID,PRENAME,NAME,LNAME,BIRTH,A.DATE_SERV,A.SEQ,INSID,PROCEDCODE,DESC_THA,PROVIDER,SUBSTR(A.D_UPDATE,1,8) AS D_UPDATE,SERVPLACE,CHIEFCOMP,INSTYPE,INSID,MAIN,A.COST,A.PRICE,A.PAYPRICE", "m_service A JOIN m_person B ON(A.PID = B.PID) JOIN m_procedure_opd C ON(A.SEQ = C.SEQ) LEFT JOIN l_icd9 D ON(PROCEDCODE = CODE)  ", "WHERE (A.STATUS_AF <> '8' AND C.STATUS_AF <> '8') AND (A.DATE_SERV >= " & DateStart & " AND A.DATE_SERV <= " & DateEnd & ")  AND D.DENTAL = 'Y'" & tmpSQL2 & tmpSQL3 & " AND PROVIDER IN(SELECT PROVIDER FROM m_provider WHERE PROVIDERTYPE IN('02','06'))  ORDER BY A.DATE_SERV,CID ")
+        If ds.Tables(0).Rows.Count > 0 Then
+            DisplayData2(ds)
+            Label17.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0").ToString & " รายการ"
+            cmdPrint2.Enabled = True
+        Else
+            BetterListView2.Items.Clear()
+            Label17.Text = "จำนวน 0 รายการ"
+            cmdPrint2.Enabled = False
+        End If
     End Sub
 End Class

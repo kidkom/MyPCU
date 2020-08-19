@@ -25,7 +25,6 @@ Partial Class frmRptDentUC
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtpStart = New DevExpress.XtraEditors.DateEdit()
         Me.cboProvider = New DevExpress.XtraEditors.LookUpEdit()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
         Me.cmdSave = New DevExpress.XtraEditors.SimpleButton()
         Me.BetterListView2 = New ComponentOwl.BetterListView.BetterListView()
@@ -33,6 +32,9 @@ Partial Class frmRptDentUC
         Me.cmdPrint2 = New DevExpress.XtraEditors.SimpleButton()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
+        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.cboProced = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.dtpEnd.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpEnd.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpStart.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,12 +42,15 @@ Partial Class frmRptDentUC
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BetterListView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl1.SuspendLayout()
+        CType(Me.cboProced.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(653, 34)
+        Me.Label2.Location = New System.Drawing.Point(673, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(42, 17)
         Me.Label2.TabIndex = 1305
@@ -54,7 +59,7 @@ Partial Class frmRptDentUC
         'dtpEnd
         '
         Me.dtpEnd.EditValue = Nothing
-        Me.dtpEnd.Location = New System.Drawing.Point(701, 30)
+        Me.dtpEnd.Location = New System.Drawing.Point(721, 7)
         Me.dtpEnd.Name = "dtpEnd"
         Me.dtpEnd.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.dtpEnd.Properties.Appearance.Options.UseBackColor = True
@@ -71,7 +76,7 @@ Partial Class frmRptDentUC
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(374, 33)
+        Me.Label3.Location = New System.Drawing.Point(394, 10)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(133, 17)
         Me.Label3.TabIndex = 1303
@@ -80,7 +85,7 @@ Partial Class frmRptDentUC
         'dtpStart
         '
         Me.dtpStart.EditValue = Nothing
-        Me.dtpStart.Location = New System.Drawing.Point(511, 30)
+        Me.dtpStart.Location = New System.Drawing.Point(531, 7)
         Me.dtpStart.Name = "dtpStart"
         Me.dtpStart.Properties.Appearance.BackColor = System.Drawing.Color.Beige
         Me.dtpStart.Properties.Appearance.Options.UseBackColor = True
@@ -96,39 +101,31 @@ Partial Class frmRptDentUC
         '
         'cboProvider
         '
-        Me.cboProvider.Location = New System.Drawing.Point(77, 30)
+        Me.cboProvider.Location = New System.Drawing.Point(122, 7)
         Me.cboProvider.Name = "cboProvider"
         Me.cboProvider.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cboProvider.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
         Me.cboProvider.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.cboProvider.Size = New System.Drawing.Size(288, 24)
+        Me.cboProvider.Size = New System.Drawing.Size(256, 24)
         Me.cboProvider.TabIndex = 1307
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 33)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(61, 17)
-        Me.Label6.TabIndex = 1306
-        Me.Label6.Text = "ผู้ให้บริการ"
         '
         'BetterListView1
         '
-        Me.BetterListView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BetterListView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
-        Me.BetterListView1.Location = New System.Drawing.Point(16, 63)
+        Me.BetterListView1.Location = New System.Drawing.Point(11, 37)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(929, 152)
+        Me.BetterListView1.Size = New System.Drawing.Size(951, 143)
         Me.BetterListView1.TabIndex = 1308
         '
         'cmdSave
         '
         Me.cmdSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdSave.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_play
-        Me.cmdSave.Location = New System.Drawing.Point(853, 26)
+        Me.cmdSave.Location = New System.Drawing.Point(871, 3)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(90, 31)
         Me.cmdSave.TabIndex = 1309
@@ -136,20 +133,21 @@ Partial Class frmRptDentUC
         '
         'BetterListView2
         '
-        Me.BetterListView2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.BetterListView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BetterListView2.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.BetterListView2.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
-        Me.BetterListView2.Location = New System.Drawing.Point(16, 259)
+        Me.BetterListView2.Location = New System.Drawing.Point(12, 37)
         Me.BetterListView2.Name = "BetterListView2"
-        Me.BetterListView2.Size = New System.Drawing.Size(930, 162)
+        Me.BetterListView2.Size = New System.Drawing.Size(950, 144)
         Me.BetterListView2.TabIndex = 1310
         '
         'cmdPrint
         '
         Me.cmdPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdPrint.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrint.Location = New System.Drawing.Point(854, 221)
+        Me.cmdPrint.Location = New System.Drawing.Point(873, 186)
         Me.cmdPrint.Name = "cmdPrint"
         Me.cmdPrint.Size = New System.Drawing.Size(89, 31)
         Me.cmdPrint.TabIndex = 1311
@@ -159,7 +157,7 @@ Partial Class frmRptDentUC
         '
         Me.cmdPrint2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdPrint2.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrint2.Location = New System.Drawing.Point(853, 429)
+        Me.cmdPrint2.Location = New System.Drawing.Point(873, 191)
         Me.cmdPrint2.Name = "cmdPrint2"
         Me.cmdPrint2.Size = New System.Drawing.Size(90, 31)
         Me.cmdPrint2.TabIndex = 1312
@@ -170,7 +168,7 @@ Partial Class frmRptDentUC
         Me.Label17.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label17.Location = New System.Drawing.Point(13, 436)
+        Me.Label17.Location = New System.Drawing.Point(12, 191)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(43, 17)
         Me.Label17.TabIndex = 1313
@@ -180,6 +178,51 @@ Partial Class frmRptDentUC
         '
         Me.SplashScreenManager1.ClosingDelay = 500
         '
+        'SplitContainerControl1
+        '
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Horizontal = False
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.CheckBox1)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.cboProvider)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtpStart)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.cmdPrint)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.dtpEnd)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label2)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.BetterListView1)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.cmdSave)
+        Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.cboProced)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.BetterListView2)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.cmdPrint2)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.Label17)
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(974, 473)
+        Me.SplitContainerControl1.SplitterPosition = 223
+        Me.SplitContainerControl1.TabIndex = 1314
+        '
+        'cboProced
+        '
+        Me.cboProced.Location = New System.Drawing.Point(12, 7)
+        Me.cboProced.Name = "cboProced"
+        Me.cboProced.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cboProced.Properties.Items.AddRange(New Object() {"ทั้งหมด", "บัตรทอง", "ถอนฟัน", "ถอนฟัน (UC)", "อุดฟัน", "อุดฟัน (UC)", "ขูดหินปูน", "ขูดหินปูน (UC)", "เคลือบหลุมร่องฟัน", "เคลือบหลุมร่องฟัน  (UC)", "เคลือบฟลูออไรด์", "เคลือบฟลูออไรด์ (UC)", "ขัดฟัน", "ขัดฟัน (UC)", "อื่นๆ", "อื่นๆ (UC)"})
+        Me.cboProced.Size = New System.Drawing.Size(181, 24)
+        Me.cboProced.TabIndex = 1314
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(12, 9)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(104, 21)
+        Me.CheckBox1.TabIndex = 1312
+        Me.CheckBox1.Text = "เลือกผู้ให้บริการ"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'frmRptDentUC
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -187,18 +230,7 @@ Partial Class frmRptDentUC
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(974, 473)
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.cmdPrint2)
-        Me.Controls.Add(Me.cmdPrint)
-        Me.Controls.Add(Me.BetterListView2)
-        Me.Controls.Add(Me.cmdSave)
-        Me.Controls.Add(Me.BetterListView1)
-        Me.Controls.Add(Me.cboProvider)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.dtpEnd)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.dtpStart)
+        Me.Controls.Add(Me.SplitContainerControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmRptDentUC"
         Me.Text = "รายงานสรุปข้อมูลทันตกรรม (ประกันสุขภาพถ้วนหน้า)"
@@ -209,8 +241,10 @@ Partial Class frmRptDentUC
         CType(Me.cboProvider.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BetterListView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl1.ResumeLayout(False)
+        CType(Me.cboProced.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -219,7 +253,6 @@ Partial Class frmRptDentUC
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpStart As DevExpress.XtraEditors.DateEdit
     Friend WithEvents cboProvider As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents Label6 As Label
     Friend WithEvents BetterListView1 As ComponentOwl.BetterListView.BetterListView
     Friend WithEvents cmdSave As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BetterListView2 As ComponentOwl.BetterListView.BetterListView
@@ -227,4 +260,7 @@ Partial Class frmRptDentUC
     Friend WithEvents cmdPrint2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Label17 As Label
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+    Friend WithEvents cboProced As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

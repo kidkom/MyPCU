@@ -276,8 +276,7 @@ Public Class frmRptProviderSum
         fReport.ShowDialog()
 
     End Sub
-
-    Private Sub BetterListView1_ItemSelectionChanged(sender As Object, eventArgs As BetterListViewItemSelectionChangedEventArgs) Handles BetterListView1.ItemSelectionChanged
+    Private Sub BetterListView1_SelectedItemsChanged(sender As Object, eventArgs As BetterListViewSelectedItemsChangedEventArgs) Handles BetterListView1.SelectedItemsChanged
         For i As Integer = 0 To BetterListView1.SelectedItems.Count - 1
             Dim lvi As BetterListViewItem
             lvi = BetterListView1.SelectedItems(i)
@@ -287,7 +286,6 @@ Public Class frmRptProviderSum
             Label6.Text = tmpProvierName & " [" & tmpProvierNameType & "]"
         Next
     End Sub
-
     Private Sub BetterListView1_Click(sender As Object, e As EventArgs) Handles BetterListView1.Click
         ShowData()
     End Sub
@@ -542,4 +540,6 @@ Public Class frmRptProviderSum
         chkPP.Checked = True
         ShowData()
     End Sub
+
+
 End Class
