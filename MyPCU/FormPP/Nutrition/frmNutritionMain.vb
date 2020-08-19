@@ -268,7 +268,7 @@ Public Class frmNutritionMain
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
         ds = clsdataBus.Lc_Business.SELECT_TABLE("a.PID,a.ROWID,a.HOSPCODE,a.SEQ,a.DATE_SERV,a.AGEMONTH,a.NUTRITIONPLACE,a.WEIGHT,a.HEIGHT,a.HEADCIRCUM,a.CHILDDEVELOP,a.FOOD,a.BOTTLE," _
                                                  & "a.PROVIDER,a.D_UPDATE,a.STATUS_AF,b.FOOD_DESC,c.BOTTLE_DESC" _
-                                                 , "m_nutrition a LEFT JOIN l_food b on(a.FOOD = b.FOOD_CODE) LEFT JOIN l_bottle c on(a.BOTTLE = c.BOTTLE_CODE)" _
+                                                 , "m_nutrition a  LEFT JOIN l_food b on(a.FOOD = b.FOOD_CODE) LEFT JOIN l_bottle c on(a.BOTTLE = c.BOTTLE_CODE)" _
                                                  , "WHERE PID = '" & lblPID.Text & "' AND STATUS_AF <> '8'  ORDER BY DATE_SERV DESC")
 
         If ds.Tables(0).Rows.Count > 0 Then
@@ -281,21 +281,7 @@ Public Class frmNutritionMain
         SplashScreenManager1.CloseWaitForm()
     End Sub
 
-    'Private Sub ShowDataNutrition()
-    '    SplashScreenManager1.ShowWaitForm()
-    '    Dim ds As DataSet
-    '    Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
-    '    ds = clsdataBus.Lc_Business.SELECT_TABLE("*", "m_nutrition", "WHERE PID = '" & lblPID.Text & "' AND STATUS_AF <> '8'  ORDER BY DATE_SERV DESC")
 
-    '    If ds.Tables(0).Rows.Count > 0 Then
-    '        DisplayData(ds)
-    '        Label2.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0").ToString & " รายการ"
-    '    Else
-    '        BetterListView1.Items.Clear()
-    '        Label2.Text = "จำนวน 0 รายการ"
-    '    End If
-    '    SplashScreenManager1.CloseWaitForm()
-    'End Sub
     Private Sub DisplayData(ByVal ds As DataSet)
 
         Dim dr As DataRow
@@ -316,6 +302,7 @@ Public Class frmNutritionMain
                 BetterListView1.Items(i).SubItems.Add((dr("ROWID")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(Thaidate(dr("DATE_SERV")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("AGEMONTH")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                'BetterListView1.Items(i).SubItems.Add((dr("AGE_YEAR") & " ปี " & dr("AGE_MONTH") & " เดือน " & dr("AGE_DAY") & " วัน").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("WEIGHT")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("HEIGHT")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("HEADCIRCUM")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center

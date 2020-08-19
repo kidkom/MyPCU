@@ -484,6 +484,7 @@ Partial Class frmNutritionMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1039, 606)
         Me.Controls.Add(Me.FluentDesignFormContainer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmNutritionMain"
         Me.Text = "โภชนาการ"
         Me.FluentDesignFormContainer1.ResumeLayout(False)
