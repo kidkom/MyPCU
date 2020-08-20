@@ -56,7 +56,7 @@ Partial Class frmProviderRx
         Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
         Me.BetterListView1.Location = New System.Drawing.Point(12, 89)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(772, 279)
+        Me.BetterListView1.Size = New System.Drawing.Size(1022, 462)
         Me.BetterListView1.TabIndex = 1288
         '
         'cboProvider
@@ -82,7 +82,7 @@ Partial Class frmProviderRx
         '
         Me.cmdPrintReport1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdPrintReport1.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_print2
-        Me.cmdPrintReport1.Location = New System.Drawing.Point(705, 58)
+        Me.cmdPrintReport1.Location = New System.Drawing.Point(955, 58)
         Me.cmdPrintReport1.Name = "cmdPrintReport1"
         Me.cmdPrintReport1.Size = New System.Drawing.Size(79, 24)
         Me.cmdPrintReport1.TabIndex = 1303
@@ -153,7 +153,7 @@ Partial Class frmProviderRx
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 371)
+        Me.Label5.Location = New System.Drawing.Point(12, 554)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 17)
         Me.Label5.TabIndex = 1304
@@ -181,7 +181,7 @@ Partial Class frmProviderRx
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(796, 404)
+        Me.ClientSize = New System.Drawing.Size(1046, 587)
         Me.Controls.Add(Me.cmdToday)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cmdPrintReport1)

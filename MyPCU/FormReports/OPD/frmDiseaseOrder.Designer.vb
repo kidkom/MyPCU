@@ -217,7 +217,7 @@ Partial Class frmDiseaseOrder
         'chkfemale
         '
         Me.chkfemale.AutoSize = True
-        Me.chkfemale.Location = New System.Drawing.Point(88, 53)
+        Me.chkfemale.Location = New System.Drawing.Point(88, 49)
         Me.chkfemale.Name = "chkfemale"
         Me.chkfemale.Size = New System.Drawing.Size(51, 21)
         Me.chkfemale.TabIndex = 1265
@@ -227,7 +227,7 @@ Partial Class frmDiseaseOrder
         'chkmale
         '
         Me.chkmale.AutoSize = True
-        Me.chkmale.Location = New System.Drawing.Point(33, 52)
+        Me.chkmale.Location = New System.Drawing.Point(33, 48)
         Me.chkmale.Name = "chkmale"
         Me.chkmale.Size = New System.Drawing.Size(48, 21)
         Me.chkmale.TabIndex = 1264

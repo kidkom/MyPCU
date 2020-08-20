@@ -52,21 +52,21 @@ Partial Class frmRptDenMain
         'FluentDesignFormContainer1
         '
         Me.FluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(310, 31)
+        Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(310, 0)
         Me.FluentDesignFormContainer1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.FluentDesignFormContainer1.Name = "FluentDesignFormContainer1"
-        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(875, 628)
+        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(875, 659)
         Me.FluentDesignFormContainer1.TabIndex = 0
         '
         'AccordionControl1
         '
         Me.AccordionControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement2, Me.AccordionControlElement3, Me.AccordionControlElement4, Me.AccordionControlElement5, Me.AccordionControlElement6, Me.AccordionControlElement12, Me.AccordionControlElement8, Me.AccordionControlElement9, Me.AccordionControlElement10, Me.AccordionControlElement11})
-        Me.AccordionControl1.Location = New System.Drawing.Point(0, 31)
+        Me.AccordionControl1.Location = New System.Drawing.Point(0, 0)
         Me.AccordionControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.AccordionControl1.Name = "AccordionControl1"
         Me.AccordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch
-        Me.AccordionControl1.Size = New System.Drawing.Size(310, 628)
+        Me.AccordionControl1.Size = New System.Drawing.Size(310, 659)
         Me.AccordionControl1.TabIndex = 1
         Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -155,7 +155,7 @@ Partial Class frmRptDenMain
         Me.FluentDesignFormControl1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.FluentDesignFormControl1.Name = "FluentDesignFormControl1"
         Me.FluentDesignFormControl1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1185, 31)
+        Me.FluentDesignFormControl1.Size = New System.Drawing.Size(1185, 0)
         Me.FluentDesignFormControl1.TabIndex = 2
         Me.FluentDesignFormControl1.TabStop = False
         '
@@ -189,6 +189,7 @@ Partial Class frmRptDenMain
         Me.Controls.Add(Me.AccordionControl1)
         Me.Controls.Add(Me.FluentDesignFormControl1)
         Me.FluentDesignFormControl = Me.FluentDesignFormControl1
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "frmRptDenMain"

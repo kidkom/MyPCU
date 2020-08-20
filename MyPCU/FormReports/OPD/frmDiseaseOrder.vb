@@ -192,8 +192,8 @@ Public Class frmDiseaseOrder
         tmpShow4 = "AND TYPEAREA IN ('" & ta1 & "','" & ta2 & "','" & ta3 & "','" & ta4 & "','" & ta5 & "')"
 
         If chkVill.Checked = True Then
-            tmpVill = " AND CONCAT(B.CHANGWAT,B.AMPUR,B.TAMBON,B.VILLAGE,B.VILLANAME) = '" & cboVillage.EditValue & "'"
-            tmpVill2 = " WHERE CONCAT(B.CHANGWAT,B.AMPUR,B.TAMBON,B.VILLAGE,B.VILLANAME) = '" & cboVillage.EditValue & "'"
+            tmpVill = " AND CONCAT(C.CHANGWAT,C.AMPUR,C.TAMBON,C.VILLAGE,C.VILLANAME) = '" & cboVillage.EditValue & "'"
+            tmpVill2 = " WHERE CONCAT(C.CHANGWAT,C.AMPUR,C.TAMBON,C.VILLAGE,C.VILLANAME) = '" & cboVillage.EditValue & "'"
         Else
             tmpVill = ""
         End If
@@ -251,13 +251,13 @@ Public Class frmDiseaseOrder
         End If
         If chkInsAll.Checked = True Then
             tmpShowIns = ""
-        ElseIf chkInsOFC.Checked = True Then
+        Else
             tmpShowIns = " AND INSTYPE_TYPE IN('" & tUC & "','" & tOFC & "','" & tSSS & "')"
         End If
 
 
         Dim ds As DataSet
-
+        Dim tmpSQL As String = "WHERE B.STATUS_AF <> '8'   " & tmpShow2 & tmpShow & tmpShow3 & tmpShow4 & tmpShow5 & tmpShowSex & tmpVill & tmpShowIns & " AND (DATE_SERV >= " & DateStart & " AND DATE_SERV <= " & DateEnd & ") GROUP BY PDX ORDER BY COUNT(DISTINCT(A.PID)) DESC"
         ds = clsdataBus.Lc_Business.SELECT_TABLE("PDX,DESC_THAI,DESC_ENG,COUNT(DISTINCT(SEQ)) AS M_COUNT,COUNT(DISTINCT(A.PID)) AS P_COUNT" _
                                                  , "m_person A JOIN m_service B ON(A.PID = B.PID) LEFT JOIN m_home C ON(A.HID = C.HID) JOIN l_icd10 D ON(B.PDX = D.CODE) JOIN l_instype_new ins ON(B.INSTYPE = ins.INSTYPE_CODE) " _
                                                    , "WHERE B.STATUS_AF <> '8'   " & tmpShow2 & tmpShow & tmpShow3 & tmpShow4 & tmpShow5 & tmpShowSex & tmpVill & tmpShowIns & " AND (DATE_SERV >= " & DateStart & " AND DATE_SERV <= " & DateEnd & ") GROUP BY PDX ORDER BY COUNT(DISTINCT(A.PID)) DESC ")
