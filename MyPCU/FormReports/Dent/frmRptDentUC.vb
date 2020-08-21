@@ -17,8 +17,8 @@ Public Class frmRptDentUC
         cboProviderAction()
 
         With BetterListView1
-            .Columns.Add(0).Text = ""
-            .Columns(0).Width = 30
+            .Columns.Add(0).Text = "ลำดับ"
+            .Columns(0).Width = 50
             .Columns(0).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(1).Text = "เดือน"
             .Columns(1).Width = 80
@@ -144,15 +144,7 @@ Public Class frmRptDentUC
 
         End With
 
-        'ds = clsdataBus.Lc_Business.SELECT_TABLE("PROVIDER,CONCAT(B.PRENAME,NAME,' ',LNAME) AS PROVIDER_NAME", "m_provider A LEFT JOIN l_prename B ON(A.PRENAME = B.PRENAME_CODE)", " WHERE A.STATUS = '1' AND STATUS_AF <> '8' AND PROVIDERTYPE IN('02','06') ORDER BY NAME")
-        'If ds.Tables(0).Rows.Count > 0 Then
-        '    With cboProvider
-        '        .DataSource = ds.Tables(0)
-        '        .DisplayMember = "PROVIDER_NAME"
-        '        .ValueMember = "PROVIDER"
-        '        .SelectedValue = 0
-        '    End With
-        'End If
+        dtpStart.Select()
     End Sub
     Private Sub cboProviderAction()
         Dim ds As DataSet
@@ -174,11 +166,11 @@ Public Class frmRptDentUC
     Private Sub ShowData()
         Dim tmpSQL As String = ""
 
-        'If CheckBox1.Checked = True Then
-        tmpSQL = " AND B.PROVIDER = '" & cboProvider.EditValue & "'"
-        'Else
-        '    tmpSQL = ""
-        'End If
+        If CheckBox1.Checked = True Then
+            tmpSQL = " AND B.PROVIDER = '" & cboProvider.EditValue & "'"
+        Else
+            tmpSQL = ""
+        End If
 
         Dim DateStart As String = CDate(dtpStart.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
         Dim DateEnd As String = CDate(dtpEnd.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
@@ -324,6 +316,7 @@ Public Class frmRptDentUC
             BetterListView1.Items.Clear()
             BetterListView1.BeginUpdate()
             BetterListView1.SuspendSort()
+
             For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
                 dr = ds.Tables(0).Rows(i)
                 Dim tmpMonthName As String = "'"
@@ -353,131 +346,132 @@ Public Class frmRptDentUC
                     tmpMonthName = "ก.ย. " & CStr(CInt(dr("MONTH_SERV").ToString.Substring(0, 4)) + 543).Substring(2, 2)
                 End If
 
-                BetterListView1.Items.Add(tmpMonthName).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items.Add((i + 1).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add(tmpMonthName).AlignHorizontal = TextAlignmentHorizontal.Center
                 If Not IsDBNull(dr("COUNT_ALL")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("COUNT_ALL")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("COUNT_ALL")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("COUNT_UC")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("COUNT_UC")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("COUNT_UC")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX2")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX2")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX2")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX2")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX2")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX2")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX3")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX3")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX3")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX3")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX3")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX3")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX4")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX4")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX4")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX4")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX4")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX4")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX5")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX5")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX5")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX5")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX5")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX5")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX5_2")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX5")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX5")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX5_2")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX5")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX5")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX6")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX6")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX6")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX6")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX6")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX6")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX7")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX7")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX7")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX7")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX7")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX7")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
 
                 If Not IsDBNull(dr("P_EX8")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX8")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX8")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX8")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX8")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX8")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX9")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX9")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX9")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX9")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX9")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX9")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("P_EX10")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX10")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("P_EX10")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
                 If Not IsDBNull(dr("C_EX10")) Then
-                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX10")).ToString("#,##0"))
+                    BetterListView1.Items(i).SubItems.Add(CInt(dr("C_EX10")).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
                 Else
                     BetterListView1.Items(i).SubItems.Add("0")
                 End If
 
                 If (i Mod 2) = 0 Then
-                    BetterListView1.Items(i).BackColor = Color.MintCream
+                    BetterListView1.Items(i).BackColor = Color.WhiteSmoke
                 End If
 
                 sum1 = CInt(dr("COUNT_ALL")) + sum1
@@ -546,47 +540,147 @@ Public Class frmRptDentUC
             Next
 
             dsRpt.Tables.Add(dt)
-            BetterListView1.Items.Add("รวม")
+            BetterListView1.Items.Add("")
+            BetterListView1.Items(k).SubItems.Add("รวม").AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum1).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum2).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum3).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum4).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum5).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
 
-            BetterListView1.Items(k).SubItems.Add(CInt(sum1).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum2).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum3).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum4).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum5).ToString("#,##0"))
+            BetterListView1.Items(k).SubItems.Add(CInt(sum6).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum7).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum8).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum9).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum10).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
 
-            BetterListView1.Items(k).SubItems.Add(CInt(sum6).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum7).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum8).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum9).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum10).ToString("#,##0"))
+            BetterListView1.Items(k).SubItems.Add(CInt(sum11).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum12).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum13).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum14).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum15).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
 
-            BetterListView1.Items(k).SubItems.Add(CInt(sum11).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum12).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum13).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum14).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum15).ToString("#,##0"))
+            BetterListView1.Items(k).SubItems.Add(CInt(sum16).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum17).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum18).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum19).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum20).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
 
-            BetterListView1.Items(k).SubItems.Add(CInt(sum16).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum17).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum18).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum19).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum20).ToString("#,##0"))
+            BetterListView1.Items(k).SubItems.Add(CInt(sum21).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum22).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum23).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).SubItems.Add(CInt(sum24).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
+            BetterListView1.Items(k).BackColor = Color.LightBlue
 
-            BetterListView1.Items(k).SubItems.Add(CInt(sum21).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum22).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum23).ToString("#,##0"))
-            BetterListView1.Items(k).SubItems.Add(CInt(sum24).ToString("#,##0"))
 
+            BetterListView1.ResumeSort(True)
+            BetterListView1.EndUpdate()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
     End Sub
+
+    Private Sub cmdPrint2_Click(sender As Object, e As EventArgs) Handles cmdPrint2.Click
+        Dim fReport As New frmReportView
+        Dim params As ReportParameter
+        params = New ReportParameter("RateId")
+        fReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\Reports\rptServiceReport.rdlc"
+
+        fReport.ReportViewer1.LocalReport.DataSources.Clear()
+        CurrentReportDataSource.Name = "DataSet20F"
+        CurrentReportDataSource.value = dsRpt.Tables(0)
+        fReport.ReportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource)
+
+        fReport.ShowDialog()
+
+    End Sub
+
+    Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
+        If dtpStart.EditValue = Nothing Or dtpEnd.EditValue = Nothing Then
+            XtraMessageBox.Show("กรุณากำหนดวันที่ก่อน", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+        SplashScreenManager1.ShowWaitForm()
+        cmdPrint.Enabled = False
+        BetterListView1.Items.Clear()
+        ShowData()
+        SplashScreenManager1.CloseWaitForm()
+    End Sub
+
+    Private Sub ComboBoxEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles cboProced.EditValueChanged
+        If dtpStart.EditValue = Nothing Or dtpEnd.EditValue = Nothing Then
+            XtraMessageBox.Show("กรุณากำหนดวันที่ก่อน", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+        SplashScreenManager1.ShowWaitForm()
+
+        Dim tmpSQL As String = ""
+        Dim tmpSQL2 As String = ""
+        Dim tmpSQL3 As String = ""
+
+        If cboProced.SelectedIndex = 0 Then
+            tmpSQL2 = "  "
+        ElseIf cboProced.SelectedIndex = 1 Then
+            tmpSQL2 = " AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 2 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2372700','2382770') "
+        ElseIf cboProced.SelectedIndex = 3 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2372700','2382770') AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 4 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('23771','23871') "
+        ElseIf cboProced.SelectedIndex = 5 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('23771','23871')  AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 6 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('22773','22873') "
+        ElseIf cboProced.SelectedIndex = 7 Then
+            tmpSQL2 = " AND SUBSTR(PROCEDCODE,1,5) IN('22773','22873') AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 8 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377030','2387030') "
+        ElseIf cboProced.SelectedIndex = 9 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377030','2387030') AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 10 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377020','2377021','2387020','2387021')   "
+        ElseIf cboProced.SelectedIndex = 11 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377020','2377021','2387020','2387021')  AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 12 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377010','2377021','2387010','2387021') "
+        ElseIf cboProced.SelectedIndex = 13 Then
+            tmpSQL2 = " AND PROCEDCODE IN('2377010','2377021','2387010','2387021')  AND INSTYPE = '0100' "
+        ElseIf cboProced.SelectedIndex = 14 Then
+            tmpSQL2 = " AND (PROCEDCODE NOT IN('2372700','2382770') AND SUBSTR(PROCEDCODE,1,5) NOT IN('23771','23871') AND SUBSTR(PROCEDCODE,1,5) NOT IN('22773','22873') AND  SUBSTR(PROCEDCODE,1,5) NOT IN('22772') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228742') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228741')  AND SUBSTR(PROCEDCODE,1,5) NOT IN('23826') AND PROCEDCODE NOT IN('2377010','2377020','2377021','2387010','2387020','2387021') AND PROCEDCODE NOT IN('2377030','2387030')) "
+        ElseIf cboProced.SelectedIndex = 15 Then
+            tmpSQL2 = " AND (PROCEDCODE NOT IN('2372700','2382770') AND SUBSTR(PROCEDCODE,1,5) NOT IN('23771','23871') AND SUBSTR(PROCEDCODE,1,5) NOT IN('22773','22873') AND  SUBSTR(PROCEDCODE,1,5) NOT IN('22772') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228742') AND SUBSTR(PROCEDCODE,1,6) NOT IN('228741')  AND SUBSTR(PROCEDCODE,1,5) NOT IN('23826') AND PROCEDCODE NOT IN('2377010','2377020','2377021','2387010','2387020','2387021') AND PROCEDCODE NOT IN('2377030','2387030')) AND INSTYPE = '0100' "
+        End If
+
+
+        If CheckBox1.Checked = True Then
+            tmpSQL3 = " AND C.PROVIDER = '" & cboProvider.EditValue & "'"
+        Else
+            tmpSQL3 = ""
+        End If
+
+        Dim DateStart As String = CDate(dtpStart.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
+        Dim DateEnd As String = CDate(dtpEnd.EditValue).ToString("yyyyMMdd", CultureInfo.CreateSpecificCulture("en-EN"))
+        Dim ds As DataSet
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("A.PID,A.ROWID,B.HN,CID,PRENAME,NAME,LNAME,BIRTH,A.DATE_SERV,A.SEQ,INSID,PROCEDCODE,DESC_THA,PROVIDER,SUBSTR(A.D_UPDATE,1,8) AS D_UPDATE,SERVPLACE,CHIEFCOMP,INSTYPE,INSID,MAIN,A.COST,A.PRICE,A.PAYPRICE,B.SEX", "m_service A JOIN m_person B ON(A.PID = B.PID) JOIN m_procedure_opd C ON(A.SEQ = C.SEQ) LEFT JOIN l_icd9 D ON(PROCEDCODE = CODE)  ", "WHERE (A.STATUS_AF <> '8' AND C.STATUS_AF <> '8') AND (A.DATE_SERV >= " & DateStart & " AND A.DATE_SERV <= " & DateEnd & ")  AND D.DENTAL = 'Y'" & tmpSQL2 & tmpSQL3 & " AND PROVIDER IN(SELECT PROVIDER FROM m_provider WHERE PROVIDERTYPE IN('02','06'))  ORDER BY A.DATE_SERV,CID ")
+        If ds.Tables(0).Rows.Count > 0 Then
+            DisplayData2(ds)
+            Label17.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0").ToString & " รายการ"
+            cmdPrint2.Enabled = True
+        Else
+            BetterListView2.Items.Clear()
+            Label17.Text = "จำนวน 0 รายการ"
+            cmdPrint2.Enabled = False
+        End If
+        SplashScreenManager1.CloseWaitForm()
+    End Sub
     Private Sub DisplayData2(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
         Dim dr As DataRow
-        Dim itm As ListViewItem
+
         Dim tmpPrename As String = ""
         Dim tmpDNAME As String = ""
         Dim tmpAmount As String = ""
@@ -647,12 +741,22 @@ Public Class frmRptDentUC
         Try
             BetterListView2.Items.Clear()
             BetterListView2.BeginUpdate()
+            BetterListView2.SuspendSort()
+
             For i As Integer = 0 To ds.Tables(0).Rows.Count - 1
                 dr = ds.Tables(0).Rows(i)
                 dsRpt.Tables.Clear()
                 drRpt = dt.NewRow()
                 tmpOrder = (i + 1).ToString
-                BetterListView2.Items.Add(tmpOrder)
+
+                If dr("SEX") = "1" Then
+                    BetterListView2.Items.Add(ImageList1.Images.Item(0)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                Else
+                    BetterListView2.Items.Add(ImageList1.Images.Item(1)).AlignHorizontalImage = BetterListViewImageAlignmentHorizontal.OverlayCenter
+                End If
+
+                BetterListView2.Items(i).SubItems.Add(tmpOrder).AlignHorizontal = TextAlignmentHorizontal.Center
+
                 If Not IsDBNull(dr("ROWID")) Then
                     BetterListView2.Items(i).SubItems.Add(dr("ROWID"))
                 Else
@@ -660,31 +764,32 @@ Public Class frmRptDentUC
                 End If
                 If Not IsDBNull(dr("CID")) Then
                     Try
-                        BetterListView2.Items(i).SubItems.Add(Decode(dr("CID")))
-                        tmpCID = Decode(dr("CID"))
+                        BetterListView2.Items(i).SubItems.Add(dr("CID").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                        tmpCID = dr("CID")
                     Catch ex As Exception
                         BetterListView2.Items(i).SubItems.Add("ข้อมูลผิดพลาด")
                         tmpCID = ""
                     End Try
                 Else
-                    BetterListView2.Items(i).SubItems.Add("-")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
                 If Not IsDBNull(dr("PID")) Then
-                    BetterListView2.Items(i).SubItems.Add(dr("PID"))
+                    BetterListView2.Items(i).SubItems.Add(dr("PID").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 Else
-                    BetterListView2.Items(i).SubItems.Add("-")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
                 If Not IsDBNull(dr("HN")) Then
-                    BetterListView2.Items(i).SubItems.Add(dr("HN"))
+                    BetterListView2.Items(i).SubItems.Add(dr("HN").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 Else
-                    BetterListView2.Items(i).SubItems.Add("-")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
                 If Not IsDBNull(dr("PRENAME")) Then
                     tmpPrename = clsdataBus.Lc_Business.SELECT_NAME_PRENAME(dr("PRENAME"))
                 End If
                 Try
-                    BetterListView2.Items(i).SubItems.Add(tmpPrename & (Decode(dr("NAME"))) & " " & (Decode(dr("LNAME"))))
-                    tmpName = tmpPrename & (Decode(dr("NAME"))) & " " & (Decode(dr("LNAME")))
+                    tmpName = tmpPrename & ((dr("NAME"))) & " " & ((dr("LNAME")))
+                    BetterListView2.Items(i).SubItems.Add(tmpName).AlignHorizontal = TextAlignmentHorizontal.Left
+
                 Catch ex As Exception
                     BetterListView2.Items(i).SubItems.Add("ข้อมูลผิดพลาด")
                     tmpName = ""
@@ -711,11 +816,11 @@ Public Class frmRptDentUC
                                 Years = age.Year - 1
                                 Month = age.Month - 1
                                 Days = age.Day - 1
-                                BetterListView2.Items(i).SubItems.Add(Years.ToString() & "/" & Month.ToString() & "/" & Days.ToString())
+                                BetterListView2.Items(i).SubItems.Add((Years.ToString() & "/" & Month.ToString() & "/" & Days.ToString()).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                             Else
                                 BetterListView2.Items(i).SubItems.Add("วันเดือนปีเกิดไม่ถูกต้อง")
                             End If
-                            'itm.SubItems.Add(DateTime.ParseExact(tmpDOB, "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
+
                         Else
 
                             BetterListView2.Items(i).SubItems.Add("")
@@ -729,17 +834,18 @@ Public Class frmRptDentUC
 
                 If Not IsDBNull(dr("DATE_SERV")) Then
                     BetterListView2.Items(i).SubItems.Add(dr("DATE_SERV"))
-                    BetterListView2.Items(i).SubItems.Add(DateTime.ParseExact(dr("DATE_SERV").ToString.Substring(0, 4) + 543 & dr("DATE_SERV").ToString.Substring(4, 4), "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
                     tmpDateServ = DateTime.ParseExact(dr("DATE_SERV").ToString.Substring(0, 4) + 543 & dr("DATE_SERV").ToString.Substring(4, 4), "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yy")
+
+                    BetterListView2.Items(i).SubItems.Add(tmpDateServ).AlignHorizontal = TextAlignmentHorizontal.Center
                 Else
                     BetterListView2.Items(i).SubItems.Add("")
                     BetterListView2.Items(i).SubItems.Add("")
                 End If
                 If Not IsDBNull(dr("SERVPLACE")) Then
                     If dr("SERVPLACE") = "1" Then
-                        BetterListView2.Items(i).SubItems.Add("ในหน่วยฯ")
+                        BetterListView2.Items(i).SubItems.Add("ในหน่วยฯ").AlignHorizontal = TextAlignmentHorizontal.Center
                     Else
-                        BetterListView2.Items(i).SubItems.Add("นอกหน่วยฯ")
+                        BetterListView2.Items(i).SubItems.Add("นอกหน่วยฯ").AlignHorizontal = TextAlignmentHorizontal.Center
                     End If
                 Else
                     BetterListView2.Items(i).SubItems.Add("")
@@ -747,7 +853,7 @@ Public Class frmRptDentUC
 
                 If Not IsDBNull(dr("PROCEDCODE")) Then
 
-                    BetterListView2.Items(i).SubItems.Add(dr("DESC_THA") & " (" & dr("PROCEDCODE") & ")")
+                    BetterListView2.Items(i).SubItems.Add((dr("DESC_THA") & " (" & dr("PROCEDCODE") & ")").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
 
                     Dim ds3 As DataSet
                     ds3 = clsdataBus.Lc_Business.SELECT_TABLE("PROCEDCODE,DESC_THA", "m_procedure_opd A JOIN l_icd9 B ON(A.PROCEDCODE = B.CODE) ", "WHERE 10TMD = 'Y' AND STATUS_AF <> '8' AND SEQ = '" & dr("SEQ") & "'")
@@ -764,22 +870,22 @@ Public Class frmRptDentUC
                     End If
 
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
 
                 If Not IsDBNull(dr("PROVIDER")) Then
-                    itm.SubItems.Add(ClsBusiness.Lc_Business.SELECT_NAME_PROVIDER(dr("PROVIDER")))
+                    BetterListView2.Items(i).SubItems.Add(ClsBusiness.Lc_Business.SELECT_NAME_PROVIDER(dr("PROVIDER")).ToString).AlignHorizontal = TextAlignmentHorizontal.Left
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
                 If Not IsDBNull(dr("D_UPDATE")) Then
-                    itm.SubItems.Add(DateTime.ParseExact(dr("D_UPDATE").ToString.Substring(0, 4) + 543 & dr("D_UPDATE").ToString.Substring(4, 4), "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
+                    BetterListView2.Items(i).SubItems.Add(DateTime.ParseExact(dr("D_UPDATE").ToString.Substring(0, 4) + 543 & dr("D_UPDATE").ToString.Substring(4, 4), "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy")).AlignHorizontal = TextAlignmentHorizontal.Center
                 Else
-                    itm.SubItems.Add("")
+                    BetterListView2.Items(i).SubItems.Add("")
                 End If
 
-                If (itm.Index Mod 2) = 0 Then
-                    itm.BackColor = Color.FromArgb(255, 255, 128)
+                If (i Mod 2) = 0 Then
+                    BetterListView2.Items(i).BackColor = Color.WhiteSmoke
                 End If
 
                 drRpt("FIELD1") = ClsBusiness.Lc_Business.SELECT_NAME_HCODE(vHcode).ToString.Replace("รพ.สต.", "โรงพยาบาลส่งเสริมสุขภาพตำบล") & vbCrLf & "ข้อมูลการให้บริการตั้งแต่วันที่ " & CDate(dtpStart.EditValue).ToString("d MMMM yyyy") & " ถึงวันที่ " & CDate(dtpEnd.EditValue).ToString("d MMMM yyyy")
@@ -789,7 +895,7 @@ Public Class frmRptDentUC
                 tmpPID = dr("HN")
                 If IsDBNull(dr("BIRTH")) Then
                     tmpAge = "ไม่มีข้อมูล"
-                    'itm.SubItems.Add("")
+
                 Else
                     If dr("BIRTH") <> "" Then
                         Dim tmpDOB = dr("BIRTH").ToString.Substring(0, 4) + 543 & dr("BIRTH").ToString.Substring(4, 4)
@@ -801,9 +907,9 @@ Public Class frmRptDentUC
                             Dim Month As Integer = 0
                             Dim Days As Integer = 0
                             Dim StrAge As String = Nothing
-                            ' Check if the DOB is less than current date
+
                             If DOB < tmpDOS2 Then
-                                ' Calculate Difference between current date and DOB
+
                                 Dim dateDiff As TimeSpan = tmpDOS2 - DOB
                                 Dim age As New DateTime(dateDiff.Ticks)
                                 Years = age.Year - 1
@@ -813,14 +919,13 @@ Public Class frmRptDentUC
                             Else
                                 tmpAge = "วันเดือนปีเกิดไม่ถูกต้อง"
                             End If
-                            'itm.SubItems.Add(DateTime.ParseExact(tmpDOB, "yyyyMMdd", CultureInfo.CurrentCulture).ToString("d MMM yyyy"))
                         Else
-                            'itm.SubItems.Add("")
+
                             tmpAge = ""
                         End If
                     Else
                         tmpAge = "ไม่มีข้อมูล"
-                        'itm.SubItems.Add("")
+
                     End If
 
                 End If
@@ -893,40 +998,25 @@ Public Class frmRptDentUC
                 drRpt("FIELD8") = "ยา : " & vbCrLf & tmpRx & vbCrLf & "หัตถการ : " & vbCrLf & tmpPx
                 drRpt("FIELD9") = "ต้นทุน : " & dr("COST") & vbCrLf & "ค่าบริการ : " & dr("PRICE") & vbCrLf & "จ่ายจริง : " & dr("PAYPRICE")
 
-
-
                 dt.Rows.Add(drRpt)
             Next
 
-            BetterListView2.EndUpdate()
             dsRpt.Tables.Add(dt)
+            BetterListView2.AutoResizeColumn(3, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView2.AutoResizeColumn(6, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView2.AutoResizeColumn(7, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView2.AutoResizeColumn(10, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView2.AutoResizeColumn(11, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+            BetterListView2.AutoResizeColumn(12, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
+
+            BetterListView2.ResumeSort(True)
+            BetterListView2.EndUpdate()
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error002", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
 
-    End Sub
-    Private Sub cmdPrint2_Click(sender As Object, e As EventArgs) Handles cmdPrint2.Click
-        Dim fReport As New frmReportView
-        Dim params As ReportParameter
-        params = New ReportParameter("RateId")
-        fReport.ReportViewer1.LocalReport.ReportPath = Application.StartupPath & "\Reports\rptServiceReport.rdlc"
-
-        fReport.ReportViewer1.LocalReport.DataSources.Clear()
-        CurrentReportDataSource.Name = "DataSet20F"
-        CurrentReportDataSource.value = dsRpt.Tables(0)
-        fReport.ReportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource)
-
-        fReport.ShowDialog()
-
-    End Sub
-
-    Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
-        SplashScreenManager1.ShowWaitForm()
-        cmdPrint.Enabled = False
-        BetterListView1.Items.Clear()
-        ShowData()
-        SplashScreenManager1.CloseWaitForm()
     End Sub
 End Class
