@@ -7,6 +7,7 @@ Imports ComponentOwl.BetterListView
 Imports DevExpress.XtraEditors
 Public Class frmQueueEdit
     Dim tmpCID As String = ""
+    Dim tmpSQL As String = ""
     Private Sub frmQueueEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtPID.Select()
         Label16.Visible = False
@@ -399,6 +400,7 @@ Public Class frmQueueEdit
         vReferinCause = ""
         vReferinNo = ""
         vReferinDateExpire = ""
+
     End Sub
     Private Sub btnPtResonEdit_Click(sender As Object, e As EventArgs) Handles btnPtResonEdit.Click
         Dim f As New frmReasonToService
@@ -526,5 +528,8 @@ Public Class frmQueueEdit
         vQinscl = ""
     End Sub
 
-
+    Private Sub AccordionControlElement15_Click(sender As Object, e As EventArgs) Handles AccordionControlElement15.Click
+        Dim f As New frmQueueHx
+        f.ShowDialog()
+    End Sub
 End Class

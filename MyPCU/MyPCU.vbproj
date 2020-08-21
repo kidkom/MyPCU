@@ -760,6 +760,12 @@
     <Compile Include="FormService\Screen\frmQueueEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormService\Screen\frmQueueHx.Designer.vb">
+      <DependentUpon>frmQueueHx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormService\Screen\frmQueueHx.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormService\Screen\frmQueueService.Designer.vb">
       <DependentUpon>frmQueueService.vb</DependentUpon>
     </Compile>
@@ -1212,6 +1218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormService\Screen\frmQueueEdit.resx">
       <DependentUpon>frmQueueEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormService\Screen\frmQueueHx.resx">
+      <DependentUpon>frmQueueHx.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormService\Screen\frmQueueService.resx">
       <DependentUpon>frmQueueService.vb</DependentUpon>
