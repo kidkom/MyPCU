@@ -550,6 +550,12 @@
     <Compile Include="FormPP\FP\frmFpMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPP\FP\frmPersonFp.Designer.vb">
+      <DependentUpon>frmPersonFp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPP\FP\frmPersonFp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPP\Nutrition\frmNutritionMain.Designer.vb">
       <DependentUpon>frmNutritionMain.vb</DependentUpon>
     </Compile>
@@ -1101,6 +1107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPP\FP\frmFpMain.resx">
       <DependentUpon>frmFpMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPP\FP\frmPersonFp.resx">
+      <DependentUpon>frmPersonFp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPP\Nutrition\frmNutritionMain.resx">
       <DependentUpon>frmNutritionMain.vb</DependentUpon>

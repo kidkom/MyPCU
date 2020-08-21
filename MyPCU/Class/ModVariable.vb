@@ -191,6 +191,10 @@
     Public vNutritionPID As String = ""
     Public vNutritionRowID As String = ""
 
+    '********FP*****
+    Public vFpPID As String = ""
+    Public vFpRowID As String = ""
+
 
     '********SERVICE********
     Public vQueueSEQ As String = ""

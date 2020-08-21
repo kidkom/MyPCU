@@ -219,10 +219,32 @@ Public Class frmPersonNutrition
 
 
     Private Sub txtHeight_KeyDown(sender As Object, e As KeyEventArgs) Handles txtHeight.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtHeadCircum.Select()
-            txtHeadCircum.SelectAll()
-        End If
+        Try
+            If e.KeyCode = Keys.Enter Then
+                Try
+                    txtHeight.Text = CInt(txtHeight.Text).ToString("##0")
+                    If CInt(txtHeight.Text) > 300 Then
+                        MessageBox.Show("ส่วนสูงมากกว่า 3 เมตร!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        txtHeight.SelectAll()
+                        Exit Sub
+                    End If
+                    If CInt(txtHeight.Text) > 0 And CInt(txtHeight.Text) < 20 Then
+                        MessageBox.Show("ส่วนสูงน้อยกว่า 20 เซนติเมตร!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        txtHeight.SelectAll()
+                        Exit Sub
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("บันทึกตัวเลขไม่ถูกต้อง!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    txtHeight.SelectAll()
+                    Exit Sub
+                End Try
+                CheckData()
+                txtHeadCircum.Select()
+                txtHeadCircum.SelectAll()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub txtHeadCircum_KeyDown(sender As Object, e As KeyEventArgs) Handles txtHeadCircum.KeyDown
@@ -293,6 +315,25 @@ Public Class frmPersonNutrition
     End Sub
 
     Private Sub txtHeight_Leave(sender As Object, e As EventArgs) Handles txtHeight.Leave
+        Try
+            txtHeight.Text = CInt(txtHeight.Text).ToString("##0")
+            If CInt(txtHeight.Text) > 300 Then
+                MessageBox.Show("ส่วนสูงมากกว่า 3 เมตร!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                txtHeight.SelectAll()
+                Exit Sub
+            End If
+            If CInt(txtHeight.Text) > 0 And CInt(txtHeight.Text) < 20 Then
+                MessageBox.Show("ส่วนสูงน้อยกว่า 20 เซนติเมตร!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                txtHeight.SelectAll()
+                Exit Sub
+            End If
+            CheckData()
+        Catch ex As Exception
+            MessageBox.Show("บันทึกตัวเลขไม่ถูกต้อง!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtHeight.SelectAll()
+            Exit Sub
+        End Try
+        CheckData()
         txtHeadCircum.Select()
         txtHeadCircum.SelectAll()
     End Sub
@@ -468,30 +509,30 @@ Public Class frmPersonNutrition
             txtHeight.SelectAll()
             Exit Sub
         End If
-        If txtHeadCircum.Text = "" Then
-            XtraMessageBox.Show("บันทึกเส้นรอบศีรษะก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtHeadCircum.Select()
-            txtHeadCircum.SelectAll()
-            Exit Sub
-        End If
-        If txtChildDevelope.Text = "" Then
-            XtraMessageBox.Show("บันทึกระดับพัฒนาการก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtChildDevelope.Select()
-            txtChildDevelope.SelectAll()
-            Exit Sub
-        End If
-        If txtFood.Text = "" Then
-            XtraMessageBox.Show("บันทึการกินอาหารและนมก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtFood.Select()
-            txtFood.SelectAll()
-            Exit Sub
-        End If
-        If txtBottle.Text = "" Then
-            XtraMessageBox.Show("บันทึการใช้ขวดนมก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtBottle.Select()
-            txtBottle.SelectAll()
-            Exit Sub
-        End If
+        'If txtHeadCircum.Text = "" Then
+        '    XtraMessageBox.Show("บันทึกเส้นรอบศีรษะก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    txtHeadCircum.Select()
+        '    txtHeadCircum.SelectAll()
+        '    Exit Sub
+        'End If
+        'If txtChildDevelope.Text = "" Then
+        '    XtraMessageBox.Show("บันทึกระดับพัฒนาการก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    txtChildDevelope.Select()
+        '    txtChildDevelope.SelectAll()
+        '    Exit Sub
+        'End If
+        'If txtFood.Text = "" Then
+        '    XtraMessageBox.Show("บันทึการกินอาหารและนมก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    txtFood.Select()
+        '    txtFood.SelectAll()
+        '    Exit Sub
+        'End If
+        'If txtBottle.Text = "" Then
+        '    XtraMessageBox.Show("บันทึการใช้ขวดนมก่อน !!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    txtBottle.Select()
+        '    txtBottle.SelectAll()
+        '    Exit Sub
+        'End If
         If txtNutritionPlaceCode.Text = vHcode Then
             XtraMessageBox.Show("ไม่สามารถบันทึกได้ หากให้บริการเองต้องไปบันทึกหน้าการให้บริการ!!! ", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtNutritionPlaceCode.Select()
@@ -643,4 +684,5 @@ Public Class frmPersonNutrition
         ToolTipController1.SetToolTip(lblErrorCode, tmpErrorDesc2.ToString)
 
     End Sub
+
 End Class

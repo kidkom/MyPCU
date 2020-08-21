@@ -19,6 +19,8 @@ Partial Class frmFpMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFpMain))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblAge = New DevExpress.XtraEditors.TextEdit()
         Me.lblBirth = New DevExpress.XtraEditors.TextEdit()
@@ -55,6 +57,8 @@ Partial Class frmFpMain
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtPID = New System.Windows.Forms.TextBox()
+        Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.lblAge.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lblBirth.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -436,6 +440,16 @@ Partial Class frmFpMain
         Me.txtPID.TabIndex = 1292
         Me.txtPID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'SplashScreenManager1
+        '
+        Me.SplashScreenManager1.ClosingDelay = 500
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "a_sex.png")
+        '
         'frmFpMain
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
@@ -516,4 +530,6 @@ Partial Class frmFpMain
     Friend WithEvents Button2 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents txtPID As TextBox
+    Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents ImageList1 As ImageList
 End Class
