@@ -19,6 +19,7 @@ Partial Class frmDiseaseOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDiseaseOrder))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtAge2 = New System.Windows.Forms.NumericUpDown()
@@ -743,6 +744,7 @@ Partial Class frmDiseaseOrder
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmDiseaseOrder"
         Me.Text = "รายงานอันดับการให้รหัส ICD10"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

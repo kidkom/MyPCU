@@ -1205,4 +1205,18 @@ Public Class frmMain
         f.Dock = DockStyle.Fill
         f.Show()
     End Sub
+
+    Private Sub BarButtonItem179_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem179.ItemClick
+        Dim CurrentForm As Form
+        For Each CurrentForm In Me.MdiChildren
+            If TypeOf CurrentForm Is frmRptThaimedMain Then
+                CurrentForm.MdiParent = Me
+                Exit Sub
+            End If
+        Next
+        Dim f As New frmRptThaimedMain
+        f.MdiParent = Me
+        f.Dock = DockStyle.Fill
+        f.Show()
+    End Sub
 End Class

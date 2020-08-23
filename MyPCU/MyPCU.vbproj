@@ -400,6 +400,12 @@
     <Compile Include="FormDrugStore\frmDrugAmountWarning.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormDrugStore\Lookup\frmDrugMethod.Designer.vb">
+      <DependentUpon>frmDrugMethod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDrugStore\Lookup\frmDrugMethod.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormInventory\frmImportTMT.Designer.vb">
       <DependentUpon>frmImportTMT.vb</DependentUpon>
     </Compile>
@@ -698,6 +704,36 @@
       <DependentUpon>frmRptProviderSum.vb</DependentUpon>
     </Compile>
     <Compile Include="FormReports\Provider\frmRptProviderSum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptDrugHerb.Designer.vb">
+      <DependentUpon>frmRptDrugHerb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptDrugHerb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmThaiDrugCost.Designer.vb">
+      <DependentUpon>frmThaiDrugCost.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmThaiDrugCost.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptThaimedMain.Designer.vb">
+      <DependentUpon>frmRptThaimedMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptThaimedMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptThaiProced.Designer.vb">
+      <DependentUpon>frmRptThaiProced.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptThaiProced.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptThaiProcedSelect.Designer.vb">
+      <DependentUpon>frmRptThaiProcedSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReports\Thaimed\frmRptThaiProcedSelect.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSearch\frmHospSearch.Designer.vb">
@@ -1042,6 +1078,9 @@
     <EmbeddedResource Include="FormData\frmRestore.resx">
       <DependentUpon>frmRestore.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDrugStore\Lookup\frmDrugMethod.resx">
+      <DependentUpon>frmDrugMethod.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInventory\frmImportTMT.resx">
       <DependentUpon>frmImportTMT.vb</DependentUpon>
     </EmbeddedResource>
@@ -1189,6 +1228,21 @@
     <EmbeddedResource Include="FormReports\Provider\frmRptProviderSum.resx">
       <DependentUpon>frmRptProviderSum.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Thaimed\frmRptDrugHerb.resx">
+      <DependentUpon>frmRptDrugHerb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Thaimed\frmThaiDrugCost.resx">
+      <DependentUpon>frmThaiDrugCost.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Thaimed\frmRptThaimedMain.resx">
+      <DependentUpon>frmRptThaimedMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Thaimed\frmRptThaiProced.resx">
+      <DependentUpon>frmRptThaiProced.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReports\Thaimed\frmRptThaiProcedSelect.resx">
+      <DependentUpon>frmRptThaiProcedSelect.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSearch\frmHospSearch.resx">
       <DependentUpon>frmHospSearch.vb</DependentUpon>
     </EmbeddedResource>
@@ -1333,6 +1387,8 @@
   <ItemGroup>
     <Content Include="myhosp_blue.ico" />
     <Content Include="Resources\1_material2.png" />
+    <None Include="Resources\1_play2.png" />
+    <None Include="Resources\a_herb.png" />
     <None Include="Resources\a_cvd.png" />
     <None Include="Resources\a_pie.png" />
     <None Include="Resources\a_card5.png" />

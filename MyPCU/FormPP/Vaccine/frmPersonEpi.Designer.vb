@@ -22,6 +22,8 @@ Partial Class frmPersonEpi
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPersonEpi))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.cmdMethod = New System.Windows.Forms.Button()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -55,8 +57,8 @@ Partial Class frmPersonEpi
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblErrorCode = New System.Windows.Forms.Label()
-        Me.btnSave = New System.Windows.Forms.Button()
         Me.ToolTipController1 = New DevExpress.Utils.ToolTipController(Me.components)
+        Me.btnSave = New System.Windows.Forms.Button()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,6 +81,8 @@ Partial Class frmPersonEpi
         '
         Me.GroupControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupControl1.Controls.Add(Me.Button2)
+        Me.GroupControl1.Controls.Add(Me.cmdMethod)
         Me.GroupControl1.Controls.Add(Me.CheckBox2)
         Me.GroupControl1.Controls.Add(Me.CheckBox1)
         Me.GroupControl1.Controls.Add(Me.Label13)
@@ -117,6 +121,28 @@ Partial Class frmPersonEpi
         Me.GroupControl1.Size = New System.Drawing.Size(791, 307)
         Me.GroupControl1.TabIndex = 1154
         Me.GroupControl1.Text = "บันทึกข้อมูลการได้รับวัคซีน (กรณีไม่ได้ให้บริการเอง)"
+        '
+        'Button2
+        '
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(594, 167)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(31, 25)
+        Me.Button2.TabIndex = 1286
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'cmdMethod
+        '
+        Me.cmdMethod.Image = CType(resources.GetObject("cmdMethod.Image"), System.Drawing.Image)
+        Me.cmdMethod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdMethod.Location = New System.Drawing.Point(314, 167)
+        Me.cmdMethod.Name = "cmdMethod"
+        Me.cmdMethod.Size = New System.Drawing.Size(31, 25)
+        Me.cmdMethod.TabIndex = 1285
+        Me.cmdMethod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.cmdMethod.UseVisualStyleBackColor = True
         '
         'CheckBox2
         '
@@ -207,7 +233,7 @@ Partial Class frmPersonEpi
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(359, 170)
+        Me.Label10.Location = New System.Drawing.Point(359, 171)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(69, 17)
         Me.Label10.TabIndex = 1276
@@ -226,7 +252,7 @@ Partial Class frmPersonEpi
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(40, 170)
+        Me.Label9.Location = New System.Drawing.Point(40, 171)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 17)
         Me.Label9.TabIndex = 1274
@@ -535,4 +561,6 @@ Partial Class frmPersonEpi
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents LookUpEdit4 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents Button2 As Button
+    Friend WithEvents cmdMethod As Button
 End Class

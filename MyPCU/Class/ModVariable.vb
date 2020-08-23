@@ -87,6 +87,8 @@
     Public ckType2 As String = ""
     Public pPID As String = ""
     Public hHID As String = ""
+    Public vProcedSelect As String = ""
+
 
     'เกี่ยวกับการ import data 
     Public iUTF8 As String = ""

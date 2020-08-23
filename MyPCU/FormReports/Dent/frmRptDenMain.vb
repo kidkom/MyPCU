@@ -1,8 +1,6 @@
 ﻿Imports DevExpress.XtraBars.Docking
 Public Class frmRptDenMain
-    Private Sub frmRptDenMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub AccordionControlElement2_Click(sender As Object, e As EventArgs) Handles AccordionControlElement2.Click
 

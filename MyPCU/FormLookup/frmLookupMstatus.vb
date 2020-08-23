@@ -158,6 +158,9 @@ Public Class frmLookupMstatus
             tmpROWID = lvi.SubItems.Item(0).Text
         Next
 
+
+    End Sub
+    Private Sub BetterListView1_Click(sender As Object, e As EventArgs) Handles BetterListView1.Click
         Dim ds As DataSet
         ds = clsdataBus.Lc_Business.SELECT_TABLE("MSTATUS_DESC,STATUS_AF,MSTATUS_STD_CODE", " l_mypcu_mstatus ", " WHERE ROWID = '" & tmpROWID & "'")
         If ds.Tables(0).Rows.Count > 0 Then
@@ -196,7 +199,8 @@ Public Class frmLookupMstatus
             Exit Sub
         End If
         GenCode()
-        Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 10)
+        Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate_En()
+
         clsbusent.Lc_BusinessEntity.Insertm_table("l_mypcu_mstatus (MSTATUS_CODE,MSTATUS_DESC,MSTATUS_STD_CODE,USER_REC,D_UPDATE,STATUS_AF)",
          "'" & tmpCode & "','" & tmpMSTATUS & "','" & lblMarialStatusCode.Text & "','" & vUSERID & "','" & tmpNow & "','1'")
 
@@ -240,4 +244,6 @@ Public Class frmLookupMstatus
         Timer1.Enabled = True
         ClearData()
     End Sub
+
+
 End Class

@@ -316,4 +316,9 @@ Public Class frmPersonEpi
         ToolTipController1.SetToolTip(lblErrorCode, tmpErrorDesc2.ToString)
 
     End Sub
+
+    Private Sub cmdMethod_Click(sender As Object, e As EventArgs) Handles cmdMethod.Click
+        Dim f As New frmDrugMethod
+        f.ShowDialog()
+    End Sub
 End Class

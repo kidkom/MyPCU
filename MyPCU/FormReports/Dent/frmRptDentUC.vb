@@ -224,7 +224,6 @@ Public Class frmRptDentUC
     End Sub
     Private Sub DisplayData(ByVal ds As DataSet)
         Dim anyData() As String = Nothing
-        Dim itm As BetterListViewItem
 
         Dim dr As DataRow
         Dim sum1 As Integer = 0
@@ -571,7 +570,6 @@ Public Class frmRptDentUC
             BetterListView1.Items(k).SubItems.Add(CInt(sum23).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
             BetterListView1.Items(k).SubItems.Add(CInt(sum24).ToString("#,##0")).AlignHorizontal = TextAlignmentHorizontal.Right
             BetterListView1.Items(k).BackColor = Color.LightBlue
-
 
             BetterListView1.ResumeSort(True)
             BetterListView1.EndUpdate()
@@ -1019,4 +1017,7 @@ Public Class frmRptDentUC
         End Try
 
     End Sub
+
+
+
 End Class
