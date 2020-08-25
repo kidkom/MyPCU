@@ -41,6 +41,7 @@ Partial Class frmPersonFp
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTipController1 = New DevExpress.Utils.ToolTipController(Me.components)
+        Me.chkCancel = New System.Windows.Forms.CheckBox()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cboFpType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,11 +55,12 @@ Partial Class frmPersonFp
         '
         'lblErrorCode
         '
+        Me.lblErrorCode.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblErrorCode.AutoSize = True
         Me.lblErrorCode.BackColor = System.Drawing.Color.AntiqueWhite
         Me.lblErrorCode.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lblErrorCode.ForeColor = System.Drawing.Color.Crimson
-        Me.lblErrorCode.Location = New System.Drawing.Point(17, 333)
+        Me.lblErrorCode.Location = New System.Drawing.Point(17, 243)
         Me.lblErrorCode.Name = "lblErrorCode"
         Me.lblErrorCode.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.lblErrorCode.Size = New System.Drawing.Size(67, 17)
@@ -68,8 +70,9 @@ Partial Class frmPersonFp
         '
         'btnSave
         '
+        Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnSave.Image = Global.MyPCU.My.Resources.Resources.a_save
-        Me.btnSave.Location = New System.Drawing.Point(697, 327)
+        Me.btnSave.Location = New System.Drawing.Point(697, 237)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(108, 28)
         Me.btnSave.TabIndex = 1160
@@ -79,8 +82,10 @@ Partial Class frmPersonFp
         '
         'GroupControl1
         '
-        Me.GroupControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GroupControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupControl1.Controls.Add(Me.chkCancel)
         Me.GroupControl1.Controls.Add(Me.cboFpType)
         Me.GroupControl1.Controls.Add(Me.Label2)
         Me.GroupControl1.Controls.Add(Me.txtFpPlaceName)
@@ -100,7 +105,7 @@ Partial Class frmPersonFp
         Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl1.Location = New System.Drawing.Point(14, 14)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(791, 307)
+        Me.GroupControl1.Size = New System.Drawing.Size(791, 217)
         Me.GroupControl1.TabIndex = 1159
         Me.GroupControl1.Text = "บันทึกข้อมูลการให้บริการวางแผนครอบครัว"
         '
@@ -273,13 +278,24 @@ Partial Class frmPersonFp
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "วันที่รับบริการ"
         '
+        'chkCancel
+        '
+        Me.chkCancel.AutoSize = True
+        Me.chkCancel.ForeColor = System.Drawing.Color.Maroon
+        Me.chkCancel.Location = New System.Drawing.Point(183, 173)
+        Me.chkCancel.Name = "chkCancel"
+        Me.chkCancel.Size = New System.Drawing.Size(58, 21)
+        Me.chkCancel.TabIndex = 1293
+        Me.chkCancel.Text = "ยกเลิก"
+        Me.chkCancel.UseVisualStyleBackColor = True
+        '
         'frmPersonFp
         '
         Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(818, 369)
+        Me.ClientSize = New System.Drawing.Size(818, 275)
         Me.Controls.Add(Me.lblErrorCode)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.GroupControl1)
@@ -322,4 +338,5 @@ Partial Class frmPersonFp
     Friend WithEvents Label1 As Label
     Friend WithEvents txtFpType As DevExpress.XtraEditors.TextEdit
     Friend WithEvents ToolTipController1 As DevExpress.Utils.ToolTipController
+    Friend WithEvents chkCancel As CheckBox
 End Class

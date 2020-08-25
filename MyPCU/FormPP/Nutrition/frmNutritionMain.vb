@@ -78,7 +78,7 @@ Public Class frmNutritionMain
 
         Dim ds As DataSet
         ds = clsdataBus.Lc_Business.SELECT_TABLE("PID,HID,HN,CID,IFNULL(PRENAME_DESC,'') AS  PRENAME_DESC,NAME,LNAME,s.SEX,IFNULL(BIRTH,'') AS BIRTH," _
-            & "TIMESTAMPDIFF(YEAR, BIRTH, Now()) As AGE_YEAR,TIMESTAMPDIFF( MONTH, BIRTH, now() ) % 12 As AGE_MONTH," _
+            & "TIMESTAMPDIFF(YEAR, BIRTH, Now()) As AGE_YEAR,TIMESTAMPDIFF(MONTH, BIRTH, now() ) % 12 As AGE_MONTH," _
             & "FLOOR( TIMESTAMPDIFF( DAY, BIRTH, now() ) % 30.4375 ) AS AGE_DAY", " m_person a LEFT JOIN l_mypcu_prename b ON(a.PRENAME_HOS = b.PRENAME_CODE) LEFT JOIN l_sex s ON(a.SEX = s.SEX_CODE) ", " WHERE CID = '" & tmpCID & "' AND a.STATUS_AF <> '8' ")
 
         If ds.Tables(0).Rows.Count > 0 Then
@@ -267,9 +267,9 @@ Public Class frmNutritionMain
         Dim ds As DataSet
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
         ds = clsdataBus.Lc_Business.SELECT_TABLE("a.PID,a.ROWID,a.HOSPCODE,a.SEQ,a.DATE_SERV,a.AGEMONTH,a.NUTRITIONPLACE,a.WEIGHT,a.HEIGHT,a.HEADCIRCUM,a.CHILDDEVELOP,a.FOOD,a.BOTTLE," _
-                                                 & "a.PROVIDER,a.D_UPDATE,a.STATUS_AF,b.FOOD_DESC,c.BOTTLE_DESC" _
-                                                 , "m_nutrition a  LEFT JOIN l_food b on(a.FOOD = b.FOOD_CODE) LEFT JOIN l_bottle c on(a.BOTTLE = c.BOTTLE_CODE)" _
-                                                 , "WHERE PID = '" & lblPID.Text & "' AND STATUS_AF <> '8'  ORDER BY DATE_SERV DESC")
+                                                 & "a.PROVIDER,a.D_UPDATE,a.STATUS_AF,b.FOOD_DESC,c.BOTTLE_DESC,TIMESTAMPDIFF(MONTH, BIRTH, DATE_SERV) AS MONTH_AGE" _
+                                                 , "m_nutrition a JOIN m_person p ON(a.PID = p.PID) LEFT JOIN l_food b on(a.FOOD = b.FOOD_CODE) LEFT JOIN l_bottle c on(a.BOTTLE = c.BOTTLE_CODE)" _
+                                                 , "WHERE a.PID = '" & lblPID.Text & "' AND a.STATUS_AF <> '8'  ORDER BY DATE_SERV DESC")
 
         If ds.Tables(0).Rows.Count > 0 Then
             DisplayData(ds)
@@ -301,7 +301,7 @@ Public Class frmNutritionMain
                 End If
                 BetterListView1.Items(i).SubItems.Add((dr("ROWID")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(Thaidate(dr("DATE_SERV")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
-                BetterListView1.Items(i).SubItems.Add((dr("AGEMONTH")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add((dr("MONTH_AGE")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 'BetterListView1.Items(i).SubItems.Add((dr("AGE_YEAR") & " ปี " & dr("AGE_MONTH") & " เดือน " & dr("AGE_DAY") & " วัน").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("WEIGHT")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add((dr("HEIGHT")).ToString).AlignHorizontal = TextAlignmentHorizontal.Center

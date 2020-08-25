@@ -155,22 +155,26 @@ Public Class frmPersonFp
     End Sub
     Private Sub txtDateServ_Leave(sender As Object, e As EventArgs) Handles txtDateServ.Leave
         TimeEdit1.Select()
+        CheckData()
     End Sub
 
     Private Sub txtDateServ_KeyDown(sender As Object, e As KeyEventArgs) Handles txtDateServ.KeyDown
         If e.KeyCode = Keys.Enter Then
             TimeEdit1.Select()
             TimeEdit1.SelectAll()
+            CheckData()
         End If
     End Sub
     Private Sub TimeEdit1_Leave(sender As Object, e As EventArgs) Handles TimeEdit1.Leave
         txtFpType.Select()
+        CheckData()
     End Sub
 
     Private Sub TimeEdit1_KeyDown(sender As Object, e As KeyEventArgs) Handles TimeEdit1.KeyDown
         If e.KeyCode = Keys.Enter Then
             txtFpType.Select()
             txtFpType.SelectAll()
+            CheckData()
         End If
     End Sub
 
@@ -179,6 +183,7 @@ Public Class frmPersonFp
             cboFpType.EditValue = txtFpType.Text
             txtFpPlaceCode.Select()
             txtFpPlaceCode.SelectAll()
+            CheckData()
         End If
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -242,8 +247,8 @@ Public Class frmPersonFp
             End If
 
 
-            clsbusent.Lc_BusinessEntity.Insertm_table("m_fp (HOSPCODE,PID,SEQ,DATE_SERV,FPPLACE,FPTYPE,PROVIDER,D_UPDATE,USER_REC,STATUS_AF)",
-              "'" & vHcode & "','" & vFpPID & "','','" & DATE_SERV & "','" & FPPLACE & "','" & FPTYPE & "','" & PROVIDER & "','" & tmpNow & "','" & vUSERID & "','2'")
+            clsbusent.Lc_BusinessEntity.Insertm_table("m_fp (HOSPCODE,PID,SEQ,DATE_SERV,FPPLACE,FPTYPE,PROVIDER,D_UPDATE,USER_REC,STATUS_AF,MYDATA)",
+              "'" & vHcode & "','" & vFpPID & "','','" & DATE_SERV & "','" & FPPLACE & "','" & FPTYPE & "','" & PROVIDER & "','" & tmpNow & "','" & vUSERID & "','2','0' ")
             XtraMessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
             tmpUpdate = True
@@ -258,8 +263,15 @@ Public Class frmPersonFp
                     Exit Sub
                 End If
             End If
+            Dim tmpStatus As String = ""
+            If chkCancel.Checked = True Then
+                tmpStatus = "8"
+            Else
+                tmpStatus = "2"
+            End If
+
             clsbusent.Lc_BusinessEntity.Updatem_table("m_fp", "FPTYPE = '" & FPTYPE & "',FPPLACE = '" _
-                                          & FPPLACE & "', DATE_SERV = '" & DATE_SERV & "',PROVIDER = '" & PROVIDER & "',D_UPDATE = '" & tmpNow & "',STATUS_AF = '2'" _
+                                          & FPPLACE & "', DATE_SERV = '" & DATE_SERV & "',PROVIDER = '" & PROVIDER & "',D_UPDATE = '" & tmpNow & "',STATUS_AF = '" & tmpStatus & "',MYDATA = '2' " _
                                           , "ROWID = '" & vFpRowID & "'")
             XtraMessageBox.Show("บันทึกข้อมูลเรียบร้อยแล้ว", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
@@ -267,6 +279,7 @@ Public Class frmPersonFp
         End If
     End Sub
     Private Sub CheckData()
+
         chkData = True
         If txtDateServ.Text = Nothing Then
             txtDateServ.BackColor = Color.LightPink
@@ -279,7 +292,7 @@ Public Class frmPersonFp
             txtFpType.BackColor = Color.LightPink
             chkData = False
         Else
-            txtFpType.BackColor = Color.White
+            txtFpType.BackColor = Color.Beige
         End If
 
 

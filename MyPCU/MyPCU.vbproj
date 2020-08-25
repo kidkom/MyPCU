@@ -592,6 +592,12 @@
     <Compile Include="FormPP\Vaccine\frmVaccineMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPP\Women\frmWomenMain.Designer.vb">
+      <DependentUpon>frmWomenMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPP\Women\frmWomenMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPriceSetting\frmProcedEdit.Designer.vb">
       <DependentUpon>frmProcedEdit.vb</DependentUpon>
     </Compile>
@@ -1170,6 +1176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPP\Vaccine\frmVaccineMain.resx">
       <DependentUpon>frmVaccineMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPP\Women\frmWomenMain.resx">
+      <DependentUpon>frmWomenMain.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPriceSetting\frmProcedEdit.resx">
       <DependentUpon>frmProcedEdit.vb</DependentUpon>
