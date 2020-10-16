@@ -20,8 +20,6 @@ Public Class frmDBSetting
             txtDatabase.Text = Decode(file.Sections("Database").Keys("DbName").Value)
         Catch ex As Exception
             XtraMessageBox.Show("ไม่สามารถทำการเชื่อมต่อ database ได้", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Dim fDBSetting As New frmDBSetting
-            fDBSetting.ShowDialog()
             Exit Sub
         End Try
 

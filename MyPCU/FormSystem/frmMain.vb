@@ -1233,4 +1233,9 @@ Public Class frmMain
         f.Dock = DockStyle.Fill
         f.Show()
     End Sub
+
+    Private Sub BarButtonItem14_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem14.ItemClick
+        Dim f As New frmConfigThaiRefer
+        f.ShowDialog()
+    End Sub
 End Class

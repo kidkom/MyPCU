@@ -310,7 +310,7 @@ Public Class frmBkupData
         Dim strPort5 As String = ""
         Dim strDatabasename5 As String = ""
         Dim dsc As DataSet
-        dsc = clsdataBus.Lc_Business.SELECT_TABLE("*", "l_config_mypcu_pro", " WHERE ROWID = '09' ")
+        dsc = clsdataBus.Lc_Business.SELECT_TABLE("*", " l_config_mypcu_pro ", " WHERE ROWID = '09' ")
         If dsc.Tables(0).Rows.Count > 0 Then
             strDataSource6 = dsc.Tables(0).Rows(0).Item("HOST")
             strUserID6 = dsc.Tables(0).Rows(0).Item("USERNAME")

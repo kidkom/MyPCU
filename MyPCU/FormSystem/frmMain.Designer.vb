@@ -437,7 +437,7 @@ Partial Class frmMain
         '
         'BarButtonItem14
         '
-        Me.BarButtonItem14.Caption = "ค่าระบบ Refer"
+        Me.BarButtonItem14.Caption = "ตั้งค่าระบบ Thai Refer"
         Me.BarButtonItem14.Id = 14
         Me.BarButtonItem14.ImageOptions.Image = Global.MyPCU.My.Resources.Resources.a_refer
         Me.BarButtonItem14.Name = "BarButtonItem14"

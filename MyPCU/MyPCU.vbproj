@@ -868,6 +868,12 @@
     <Compile Include="FormSystem\frmConfigPicture.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormSystem\frmConfigThaiRefer.Designer.vb">
+      <DependentUpon>frmConfigThaiRefer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSystem\frmConfigThaiRefer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormSystem\frmDBSetting.Designer.vb">
       <DependentUpon>frmDBSetting.vb</DependentUpon>
     </Compile>
@@ -1314,6 +1320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSystem\frmConfigPicture.resx">
       <DependentUpon>frmConfigPicture.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSystem\frmConfigThaiRefer.resx">
+      <DependentUpon>frmConfigThaiRefer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSystem\frmDBSetting.resx">
       <DependentUpon>frmDBSetting.vb</DependentUpon>
