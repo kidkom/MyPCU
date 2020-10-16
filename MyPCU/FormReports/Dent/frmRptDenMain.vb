@@ -16,6 +16,8 @@ Public Class frmRptDenMain
         f.Show()
     End Sub
 
+    Private Sub AccordionControlElement12_Click(sender As Object, e As EventArgs) Handles AccordionControlElement12.Click
 
+    End Sub
 End Class
 
