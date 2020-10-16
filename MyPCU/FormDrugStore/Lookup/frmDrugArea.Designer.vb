@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmDrugMethod
+Partial Class frmDrugArea
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -21,7 +21,6 @@ Partial Class frmDrugMethod
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.BetterListView1 = New ComponentOwl.BetterListView.BetterListView()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.chkAll = New System.Windows.Forms.CheckBox()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.chkStatus = New System.Windows.Forms.CheckBox()
@@ -33,9 +32,10 @@ Partial Class frmDrugMethod
         Me.cmdSave = New System.Windows.Forms.Button()
         Me.cmdAdd = New System.Windows.Forms.Button()
         Me.chkCancel = New System.Windows.Forms.CheckBox()
-        Me.lblTotalRow = New System.Windows.Forms.Label()
         Me.chkUseOnly = New System.Windows.Forms.CheckBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SplashScreenManager1 = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.MyPCU.WaitForm1), True, True)
+        Me.lblTotalRow = New System.Windows.Forms.Label()
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -51,11 +51,8 @@ Partial Class frmDrugMethod
         Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.BetterListView1.Location = New System.Drawing.Point(12, 210)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(696, 431)
-        Me.BetterListView1.TabIndex = 1152
-        '
-        'Timer1
-        '
+        Me.BetterListView1.Size = New System.Drawing.Size(714, 431)
+        Me.BetterListView1.TabIndex = 1159
         '
         'chkAll
         '
@@ -63,7 +60,7 @@ Partial Class frmDrugMethod
         Me.chkAll.Location = New System.Drawing.Point(163, 172)
         Me.chkAll.Name = "chkAll"
         Me.chkAll.Size = New System.Drawing.Size(62, 21)
-        Me.chkAll.TabIndex = 1154
+        Me.chkAll.TabIndex = 1161
         Me.chkAll.Text = "ทั้งหมด"
         Me.chkAll.UseVisualStyleBackColor = True
         '
@@ -80,8 +77,8 @@ Partial Class frmDrugMethod
         Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(696, 154)
-        Me.GroupControl1.TabIndex = 1153
+        Me.GroupControl1.Size = New System.Drawing.Size(714, 154)
+        Me.GroupControl1.TabIndex = 1160
         Me.GroupControl1.Text = "กำหนดรหัสการให้วัคซีน"
         '
         'chkStatus
@@ -152,7 +149,7 @@ Partial Class frmDrugMethod
         Me.cmdSave.Location = New System.Drawing.Point(665, 172)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(43, 32)
-        Me.cmdSave.TabIndex = 1158
+        Me.cmdSave.TabIndex = 1165
         Me.cmdSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmdSave.UseVisualStyleBackColor = True
         '
@@ -163,7 +160,7 @@ Partial Class frmDrugMethod
         Me.cmdAdd.Location = New System.Drawing.Point(616, 172)
         Me.cmdAdd.Name = "cmdAdd"
         Me.cmdAdd.Size = New System.Drawing.Size(43, 32)
-        Me.cmdAdd.TabIndex = 1157
+        Me.cmdAdd.TabIndex = 1164
         Me.cmdAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmdAdd.UseVisualStyleBackColor = True
         '
@@ -174,19 +171,9 @@ Partial Class frmDrugMethod
         Me.chkCancel.Location = New System.Drawing.Point(99, 172)
         Me.chkCancel.Name = "chkCancel"
         Me.chkCancel.Size = New System.Drawing.Size(58, 21)
-        Me.chkCancel.TabIndex = 1156
+        Me.chkCancel.TabIndex = 1163
         Me.chkCancel.Text = "ยกเลิก"
         Me.chkCancel.UseVisualStyleBackColor = True
-        '
-        'lblTotalRow
-        '
-        Me.lblTotalRow.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblTotalRow.AutoSize = True
-        Me.lblTotalRow.Location = New System.Drawing.Point(12, 653)
-        Me.lblTotalRow.Name = "lblTotalRow"
-        Me.lblTotalRow.Size = New System.Drawing.Size(43, 17)
-        Me.lblTotalRow.TabIndex = 1159
-        Me.lblTotalRow.Text = "จำนวน"
         '
         'chkUseOnly
         '
@@ -196,31 +183,42 @@ Partial Class frmDrugMethod
         Me.chkUseOnly.Location = New System.Drawing.Point(15, 172)
         Me.chkUseOnly.Name = "chkUseOnly"
         Me.chkUseOnly.Size = New System.Drawing.Size(78, 21)
-        Me.chkUseOnly.TabIndex = 1155
+        Me.chkUseOnly.TabIndex = 1162
         Me.chkUseOnly.Text = "เฉพาะที่ใช้"
         Me.chkUseOnly.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
         '
         'SplashScreenManager1
         '
         Me.SplashScreenManager1.ClosingDelay = 500
         '
-        'frmDrugMethod
+        'lblTotalRow
         '
-        Me.Appearance.BackColor = System.Drawing.Color.Gainsboro
-        Me.Appearance.Options.UseBackColor = True
+        Me.lblTotalRow.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblTotalRow.AutoSize = True
+        Me.lblTotalRow.Location = New System.Drawing.Point(12, 653)
+        Me.lblTotalRow.Name = "lblTotalRow"
+        Me.lblTotalRow.Size = New System.Drawing.Size(43, 17)
+        Me.lblTotalRow.TabIndex = 1166
+        Me.lblTotalRow.Text = "จำนวน"
+        '
+        'frmDrugArea
+        '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(720, 690)
+        Me.ClientSize = New System.Drawing.Size(738, 690)
+        Me.Controls.Add(Me.lblTotalRow)
         Me.Controls.Add(Me.BetterListView1)
         Me.Controls.Add(Me.chkAll)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.cmdAdd)
         Me.Controls.Add(Me.chkCancel)
-        Me.Controls.Add(Me.lblTotalRow)
         Me.Controls.Add(Me.chkUseOnly)
-        Me.Name = "frmDrugMethod"
-        Me.Text = "การให้วัคซีน"
+        Me.Name = "frmDrugArea"
+        Me.Text = "ตำแหน่งที่ให้วัคซีน"
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -233,7 +231,6 @@ Partial Class frmDrugMethod
     End Sub
 
     Friend WithEvents BetterListView1 As ComponentOwl.BetterListView.BetterListView
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents chkAll As CheckBox
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents chkStatus As CheckBox
@@ -245,7 +242,8 @@ Partial Class frmDrugMethod
     Friend WithEvents cmdSave As Button
     Friend WithEvents cmdAdd As Button
     Friend WithEvents chkCancel As CheckBox
-    Friend WithEvents lblTotalRow As Label
     Friend WithEvents chkUseOnly As CheckBox
+    Friend WithEvents Timer1 As Timer
     Friend WithEvents SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager
+    Friend WithEvents lblTotalRow As Label
 End Class

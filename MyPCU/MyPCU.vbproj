@@ -400,6 +400,12 @@
     <Compile Include="FormDrugStore\frmDrugAmountWarning.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormDrugStore\Lookup\frmDrugArea.Designer.vb">
+      <DependentUpon>frmDrugArea.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDrugStore\Lookup\frmDrugArea.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormDrugStore\Lookup\frmDrugMethod.Designer.vb">
       <DependentUpon>frmDrugMethod.vb</DependentUpon>
     </Compile>
@@ -979,6 +985,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="ReportPrint\DataSet20F.Designer.vb">
@@ -1089,6 +1096,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormData\frmRestore.resx">
       <DependentUpon>frmRestore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDrugStore\Lookup\frmDrugArea.resx">
+      <DependentUpon>frmDrugArea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDrugStore\Lookup\frmDrugMethod.resx">
       <DependentUpon>frmDrugMethod.vb</DependentUpon>

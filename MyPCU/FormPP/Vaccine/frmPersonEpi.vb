@@ -16,6 +16,7 @@ Public Class frmPersonEpi
         lblErrorCode.Text = ""
         cboVaccineTypeAction()
         cboProviderAction()
+        cboVaccineMethodAction()
 
         If vVaccineRowID <> "" Then
             Dim ds As New DataSet
@@ -65,6 +66,22 @@ Public Class frmPersonEpi
 
 
     End Sub
+    Private Sub cboVaccineMethodAction()
+        Dim ds As DataSet
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("METHOD_CODE,CONCAT('[',METHOD_CODE,'] ',METHOD)  AS METHOD_DESC", "l_drug_method ", " WHERE STATUS_AF = '1' ORDER BY METHOD_CODE")
+        If ds.Tables(0).Rows.Count > 0 Then
+            With cboVaccineMethod
+                .Properties.DataSource = ds.Tables(0)
+                .Properties.DisplayMember = "METHOD_DESC"
+                .Properties.ValueMember = "METHOD_CODE"
+                .Properties.ForceInitialize()
+                .Properties.PopulateColumns()
+                .Properties.Columns(0).Visible = False
+                .Properties.ShowHeader = False
+                .Properties.NullText = "พิมพ์เพื่อค้นหา"
+            End With
+        End If
+    End Sub
     Private Sub cboVaccineTypeAction()
         Dim ds As DataSet
         ds = clsdataBus.Lc_Business.SELECT_TABLE("VACCINE_CODE,CONCAT('[',VACCINE_CODE,'] ',VACCINE_DESC_E) AS VACCINE_DESC", "l_vaccinetype ", " WHERE STATUS = '1' ORDER BY VACCINE_CODE")
@@ -98,7 +115,22 @@ Public Class frmPersonEpi
             End With
         End If
     End Sub
-
+    Private Sub cboVaccineAreaAction()
+        Dim ds As DataSet
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("AREA_CODE,CONCAT('[',AREA_CODE,'] ',AREA)  AS AREA_DESC", "l_drug_area ", " WHERE STATUS_AF = '1' ORDER BY AREA_CODE")
+        If ds.Tables(0).Rows.Count > 0 Then
+            With cboVaccineArea
+                .Properties.DataSource = ds.Tables(0)
+                .Properties.DisplayMember = "AREA_DESC"
+                .Properties.ValueMember = "AREA_CODE"
+                .Properties.ForceInitialize()
+                .Properties.PopulateColumns()
+                .Properties.Columns(0).Visible = False
+                .Properties.ShowHeader = False
+                .Properties.NullText = "พิมพ์เพื่อค้นหา"
+            End With
+        End If
+    End Sub
     Private Sub cboVaccineType_EditValueChanged(sender As Object, e As EventArgs) Handles cboVaccineType.EditValueChanged
         txtVaccineTypeCode.Text = cboVaccineType.EditValue
     End Sub
@@ -318,7 +350,19 @@ Public Class frmPersonEpi
     End Sub
 
     Private Sub cmdMethod_Click(sender As Object, e As EventArgs) Handles cmdMethod.Click
+
         Dim f As New frmDrugMethod
         f.ShowDialog()
+        cboVaccineMethodAction()
+
     End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Dim f As New frmDrugArea
+        f.ShowDialog()
+        cboVaccineAreaAction()
+
+    End Sub
+
+
 End Class

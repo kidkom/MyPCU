@@ -4,13 +4,11 @@ Imports clsbusent = MyPCU.ClsBusinessEntity
 Imports ComponentOwl.BetterListView
 Imports DevExpress.XtraEditors
 
-Public Class frmDrugMethod
+Public Class frmDrugArea
     Dim tmpROWID As String = ""
     Dim tmpCode As String = ""
     Dim tmpName As String = ""
-
-    Private Sub frmDrugMethod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub frmDrugArea_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         With BetterListView1
             .Columns.Add(0).Text = ""
             .Columns(0).Width = 0
@@ -18,7 +16,7 @@ Public Class frmDrugMethod
             .Columns.Add(1).Text = "รหัส"
             .Columns(1).Width = 100
             .Columns(1).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
-            .Columns.Add(2).Text = "การให้วัคซีน"
+            .Columns.Add(2).Text = "ตำแหน่งที่ให้วัคซีน"
             .Columns(2).Width = 120
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(3).Text = "รหัสมาตรฐาน"
@@ -29,9 +27,9 @@ Public Class frmDrugMethod
             .Columns(4).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
         End With
 
-        'MarialStatusAction()
         Timer1.Enabled = True
     End Sub
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Interval = 100
         Timer1.Enabled = False
@@ -70,7 +68,7 @@ Public Class frmDrugMethod
         ElseIf chkCancel.Checked = True Then
             tmpSQL = " WHERE STATUS_AF = '0' AND VACCINE = '1' "
         End If
-        ds = clsdataBus.Lc_Business.SELECT_TABLE(" ROWID,METHOD_CODE,METHOD,STD_CODE,STD_DESC,STATUS_AF ", " l_drug_method ", " " & tmpSQL & " ")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE(" ROWID,AREA_CODE,AREA,STD_CODE,STD_DESC,STATUS_AF ", " l_drug_area", " " & tmpSQL & " ")
         If ds.Tables(0).Rows.Count > 0 Then
             Betterdisplay(ds)
             lblTotalRow.Text = "จำนวน " & ds.Tables(0).Rows.Count.ToString("#,##0") & " รายการ"
@@ -91,8 +89,8 @@ Public Class frmDrugMethod
                 dr = ds.Tables(0).Rows(i)
                 BetterListView1.Items.Add(dr("ROWID").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
 
-                BetterListView1.Items(i).SubItems.Add(dr("METHOD_CODE").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
-                BetterListView1.Items(i).SubItems.Add(dr("METHOD").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
+                BetterListView1.Items(i).SubItems.Add(dr("AREA_CODE").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
+                BetterListView1.Items(i).SubItems.Add(dr("AREA").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
                 BetterListView1.Items(i).SubItems.Add(dr("STD_CODE").ToString).AlignHorizontal = TextAlignmentHorizontal.Center
                 BetterListView1.Items(i).SubItems.Add(dr("STD_DESC").ToString).AlignHorizontal = TextAlignmentHorizontal.Left
 
@@ -118,9 +116,9 @@ Public Class frmDrugMethod
     End Sub
     Private Sub GenCode()
         Dim ds As DataSet
-        ds = clsdataBus.Lc_Business.SELECT_TABLE(" (METHOD_CODE + 1) AS METHOD_CODE ", " l_drug_method a  ", " ORDER BY  METHOD_CODE+0 DESC LIMIT 1 ")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE(" (AREA_CODE + 1) AS AREA_CODE ", " l_drug_area  ", " ORDER BY  AREA_CODE+0 DESC LIMIT 1 ")
         If ds.Tables(0).Rows.Count > 0 Then
-            tmpCode = CInt(ds.Tables(0).Rows(0).Item("METHOD_CODE")).ToString("0000")
+            tmpCode = CInt(ds.Tables(0).Rows(0).Item("AREA_CODE")).ToString("0000")
         Else
             tmpCode = "0001"
         End If
@@ -144,7 +142,7 @@ Public Class frmDrugMethod
     End Sub
     Private Sub BetterListView1_Click(sender As Object, e As EventArgs) Handles BetterListView1.Click
         Dim ds As DataSet
-        ds = clsdataBus.Lc_Business.SELECT_TABLE("STD_DESC,STATUS_AF,STD_CODE", " l_drug_method ", " WHERE ROWID = '" & tmpROWID & "'")
+        ds = clsdataBus.Lc_Business.SELECT_TABLE("STD_DESC,STATUS_AF,STD_CODE", " l_drug_area", " WHERE ROWID = '" & tmpROWID & "'")
         If ds.Tables(0).Rows.Count > 0 Then
             txtMarialStatus.Text = ds.Tables(0).Rows(0).Item("STD_DESC")
             tmpName = txtMarialStatus.Text
@@ -175,7 +173,7 @@ Public Class frmDrugMethod
 
 
         Dim ds As DataSet
-        ds = ClsBusiness.Lc_Business.SELECT_TABLE(" ROWID,STD_CODE ", " l_drug_method   ", " WHERE STD_DESC = '" & tmpMSTATUS & "' ")
+        ds = ClsBusiness.Lc_Business.SELECT_TABLE(" ROWID,STD_CODE ", " l_drug_area  ", " WHERE STD_DESC = '" & tmpMSTATUS & "' ")
         If ds.Tables(0).Rows.Count > 0 Then
             XtraMessageBox.Show("มีการกำหนดแล้ว ไม่สามารถบันทึกซ้ำได้!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -183,7 +181,7 @@ Public Class frmDrugMethod
         GenCode()
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate_En()
 
-        clsbusent.Lc_BusinessEntity.Insertm_table("l_drug_method (METHOD_CODE,METHOD,STD_CODE,STD_DESC,USER_REC,D_UPDATE,STATUS_AF,VACCINE)",
+        clsbusent.Lc_BusinessEntity.Insertm_table("l_drug_area(AREA_CODE,AREA,STD_CODE,STD_DESC,USER_REC,D_UPDATE,STATUS_AF,VACCINE)",
          "'" & tmpCode & "','" & tmpMSTATUS & "','','','" & vUSERID & "','" & tmpNow & "','1','1'")
 
         Timer1.Enabled = True
@@ -213,7 +211,7 @@ Public Class frmDrugMethod
 
         If txtMarialStatus.Text <> tmpName Then
             Dim ds As DataSet
-            ds = ClsBusiness.Lc_Business.SELECT_TABLE(" ROWID,STD_CODE ", " l_drug_method   ", " WHERE STD_DESC = '" & tmpMSTATUS & "' ")
+            ds = ClsBusiness.Lc_Business.SELECT_TABLE(" ROWID,STD_CODE ", " l_drug_area  ", " WHERE STD_DESC = '" & tmpMSTATUS & "' ")
             If ds.Tables(0).Rows.Count > 0 Then
                 XtraMessageBox.Show("มีการกำหนดแล้ว ไม่สามารถบันทึกซ้ำได้!!!", vProgram, MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Exit Sub
@@ -221,12 +219,11 @@ Public Class frmDrugMethod
         End If
 
         Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 10)
-        clsbusent.Lc_BusinessEntity.Updatem_table(" l_drug_method ", "STATUS_AF = '" & tmpStatus & "', STD_DESC = '" & tmpMSTATUS & "',TD_CODE = '" & lblMarialStatusCode.Text & "',USER_REC = '" & vUSERID & "',D_UPDATE = '" & tmpNow & "'", " ROWID = '" & tmpROWID & "'")
+        clsbusent.Lc_BusinessEntity.Updatem_table(" l_drug_area ", "STATUS_AF = '" & tmpStatus & "', STD_DESC = '" & tmpMSTATUS & "',TD_CODE = '" & lblMarialStatusCode.Text & "',USER_REC = '" & vUSERID & "',D_UPDATE = '" & tmpNow & "'", " ROWID = '" & tmpROWID & "'")
 
         Timer1.Enabled = True
         ClearData()
     End Sub
-
 
 
 

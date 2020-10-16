@@ -32,9 +32,9 @@ Partial Class frmPersonEpi
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LookUpEdit4 = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LookUpEdit2 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.cboVaccineArea = New DevExpress.XtraEditors.LookUpEdit()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
+        Me.cboVaccineMethod = New DevExpress.XtraEditors.LookUpEdit()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TimeEdit1 = New DevExpress.XtraEditors.TimeEdit()
@@ -64,8 +64,8 @@ Partial Class frmPersonEpi
         CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboVaccineArea.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboVaccineMethod.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtVaccineTypeCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtVaccinePlaceCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,9 +91,9 @@ Partial Class frmPersonEpi
         Me.GroupControl1.Controls.Add(Me.NumericUpDown1)
         Me.GroupControl1.Controls.Add(Me.Label11)
         Me.GroupControl1.Controls.Add(Me.LookUpEdit4)
-        Me.GroupControl1.Controls.Add(Me.LookUpEdit2)
+        Me.GroupControl1.Controls.Add(Me.cboVaccineArea)
         Me.GroupControl1.Controls.Add(Me.Label10)
-        Me.GroupControl1.Controls.Add(Me.LookUpEdit1)
+        Me.GroupControl1.Controls.Add(Me.cboVaccineMethod)
         Me.GroupControl1.Controls.Add(Me.Label9)
         Me.GroupControl1.Controls.Add(Me.Label8)
         Me.GroupControl1.Controls.Add(Me.TimeEdit1)
@@ -220,15 +220,15 @@ Partial Class frmPersonEpi
         Me.LookUpEdit4.Size = New System.Drawing.Size(178, 24)
         Me.LookUpEdit4.TabIndex = 1277
         '
-        'LookUpEdit2
+        'cboVaccineArea
         '
-        Me.LookUpEdit2.Location = New System.Drawing.Point(434, 167)
-        Me.LookUpEdit2.Name = "LookUpEdit2"
-        Me.LookUpEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit2.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
-        Me.LookUpEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LookUpEdit2.Size = New System.Drawing.Size(154, 24)
-        Me.LookUpEdit2.TabIndex = 1277
+        Me.cboVaccineArea.Location = New System.Drawing.Point(434, 167)
+        Me.cboVaccineArea.Name = "cboVaccineArea"
+        Me.cboVaccineArea.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cboVaccineArea.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.cboVaccineArea.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.cboVaccineArea.Size = New System.Drawing.Size(154, 24)
+        Me.cboVaccineArea.TabIndex = 1277
         '
         'Label10
         '
@@ -239,15 +239,15 @@ Partial Class frmPersonEpi
         Me.Label10.TabIndex = 1276
         Me.Label10.Text = "ตำแหน่งที่ให้"
         '
-        'LookUpEdit1
+        'cboVaccineMethod
         '
-        Me.LookUpEdit1.Location = New System.Drawing.Point(130, 167)
-        Me.LookUpEdit1.Name = "LookUpEdit1"
-        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
-        Me.LookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        Me.LookUpEdit1.Size = New System.Drawing.Size(178, 24)
-        Me.LookUpEdit1.TabIndex = 1275
+        Me.cboVaccineMethod.Location = New System.Drawing.Point(130, 167)
+        Me.cboVaccineMethod.Name = "cboVaccineMethod"
+        Me.cboVaccineMethod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cboVaccineMethod.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains
+        Me.cboVaccineMethod.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        Me.cboVaccineMethod.Size = New System.Drawing.Size(178, 24)
+        Me.cboVaccineMethod.TabIndex = 1275
         '
         'Label9
         '
@@ -510,8 +510,8 @@ Partial Class frmPersonEpi
         CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboVaccineArea.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboVaccineMethod.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TimeEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtVaccineTypeCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtVaccinePlaceCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -551,9 +551,9 @@ Partial Class frmPersonEpi
     Friend WithEvents Label12 As Label
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label11 As Label
-    Friend WithEvents LookUpEdit2 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents cboVaccineArea As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents Label10 As Label
-    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents cboVaccineMethod As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents TimeEdit1 As DevExpress.XtraEditors.TimeEdit
