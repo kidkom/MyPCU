@@ -68,13 +68,10 @@ Public Class frmSendMyPCUConfig
             clsDataAcc3.G_DBPassword3 = strPassword
             clsDataAcc3.G_DBName3 = strDbname
 
-
-
             Dim ds As DataSet
             ds = clsdataBus.Lc_Business.SELECT_TABLE("ROWID", "l_config_mypcu_pro", " WHERE ROWID = '01' ")
             If ds.Tables(0).Rows.Count > 0 Then
                 clsbusent.Lc_BusinessEntity.Updatem_table("l_config_mypcu_pro", "HOST = '" & strDataSource & "' ,DATABASENAME = '" & strDbname & "',PORT = '" & strPort & "',USERNAME =  '" & strUserID & "',PASSWORD =  '" & strPassword & "'", " ROWID = '01' ")
-
             Else
                 clsbusent.Lc_BusinessEntity.Insertm_table("l_config_mypcu_pro(ROWID,HOST,DATABASENAME,PORT,USERNAME,PASSWORD)", "'01','" & strDataSource & "','" & strDbname & "','" & strPort & "','" & strUserID & "','" & strPassword & "'")
             End If
