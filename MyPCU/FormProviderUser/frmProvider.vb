@@ -184,7 +184,7 @@ Public Class frmProvider
             BetterListView1.AutoResizeColumn(8, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(9, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(10, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
-
+            BetterListView1.AutoResizeColumn(11, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.ResumeSort(True)
             BetterListView1.EndUpdate()
         Catch ex As Exception

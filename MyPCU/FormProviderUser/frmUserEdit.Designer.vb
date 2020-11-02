@@ -21,6 +21,7 @@ Partial Class frmUserEdit
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUserEdit))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.lblCIDError = New System.Windows.Forms.Label()
         Me.chkPorvider0 = New System.Windows.Forms.CheckBox()
         Me.chkPorvider1 = New System.Windows.Forms.CheckBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -57,7 +58,6 @@ Partial Class frmUserEdit
         Me.chkPop = New System.Windows.Forms.CheckBox()
         Me.cmdSave = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblCIDError = New System.Windows.Forms.Label()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.cboPrename.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,6 +99,17 @@ Partial Class frmUserEdit
         Me.GroupControl1.Size = New System.Drawing.Size(757, 296)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "บันทึกข้อมูลผู้ใช้งาน"
+        '
+        'lblCIDError
+        '
+        Me.lblCIDError.AutoSize = True
+        Me.lblCIDError.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.lblCIDError.ForeColor = System.Drawing.Color.Crimson
+        Me.lblCIDError.Location = New System.Drawing.Point(279, 79)
+        Me.lblCIDError.Name = "lblCIDError"
+        Me.lblCIDError.Size = New System.Drawing.Size(136, 17)
+        Me.lblCIDError.TabIndex = 1145
+        Me.lblCIDError.Text = "เลขประชาชนอาจไม่ถูกต้อง"
         '
         'chkPorvider0
         '
@@ -504,17 +515,6 @@ Partial Class frmUserEdit
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 890
         Me.PictureBox1.TabStop = False
-        '
-        'lblCIDError
-        '
-        Me.lblCIDError.AutoSize = True
-        Me.lblCIDError.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblCIDError.ForeColor = System.Drawing.Color.Crimson
-        Me.lblCIDError.Location = New System.Drawing.Point(279, 79)
-        Me.lblCIDError.Name = "lblCIDError"
-        Me.lblCIDError.Size = New System.Drawing.Size(136, 17)
-        Me.lblCIDError.TabIndex = 1145
-        Me.lblCIDError.Text = "เลขประชาชนอาจไม่ถูกต้อง"
         '
         'frmUserEdit
         '

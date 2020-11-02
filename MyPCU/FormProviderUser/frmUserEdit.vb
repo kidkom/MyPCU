@@ -187,7 +187,7 @@ Public Class frmUserEdit
                 .Properties.ValueMember = "PRENAME_CODE"
                 .Properties.ForceInitialize()
                 .Properties.PopulateColumns()
-                .Properties.Columns(0).Visible = False
+                .Properties.Columns(1).Visible = False
                 .Properties.ShowHeader = False
                 .Properties.NullText = ""
             End With

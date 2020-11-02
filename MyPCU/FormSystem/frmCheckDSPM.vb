@@ -20,7 +20,7 @@ Public Class frmCheckDSPM
             .Columns(1).Width = 100
             .Columns(1).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(2).Text = "HN"
-            .Columns(2).Width = 100
+            .Columns(2).Width = 0
             .Columns(2).AlignHorizontal = ComponentOwl.BetterListView.TextAlignmentHorizontal.Center
             .Columns.Add(3).Text = "CID"
             .Columns(3).Width = 120
@@ -208,6 +208,7 @@ Public Class frmCheckDSPM
                 dt.Rows.Add(drRpt)
             Next
             BetterListView1.EndUpdate()
+
             BetterListView1.AutoResizeColumn(4, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(6, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)
             BetterListView1.AutoResizeColumn(7, BetterListViewColumnHeaderAutoResizeStyle.ColumnContent)

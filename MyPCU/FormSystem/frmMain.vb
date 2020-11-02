@@ -1238,4 +1238,9 @@ Public Class frmMain
         Dim f As New frmConfigThaiRefer
         f.ShowDialog()
     End Sub
+
+    Private Sub BarButtonItem17_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem17.ItemClick
+        Dim f As New frmBank
+        f.ShowDialog()
+    End Sub
 End Class

@@ -78,7 +78,7 @@ Partial Class frmProviderData
         '
         Me.ChartControl1.Legend.Name = "Default Legend"
         Me.ChartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ChartControl1.Location = New System.Drawing.Point(436, 45)
+        Me.ChartControl1.Location = New System.Drawing.Point(436, 44)
         Me.ChartControl1.Name = "ChartControl1"
         PieSeriesLabel1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Series1.Label = PieSeriesLabel1

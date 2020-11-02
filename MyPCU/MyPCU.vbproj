@@ -208,6 +208,18 @@
     <Compile Include="FormAbout\XtraForm2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormAcc\frmAccConfig.Designer.vb">
+      <DependentUpon>frmAccConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAcc\frmAccConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAcc\frmBank.Designer.vb">
+      <DependentUpon>frmBank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAcc\frmBank.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormAppoint\frmAppointShow.Designer.vb">
       <DependentUpon>frmAppointShow.vb</DependentUpon>
     </Compile>
@@ -1006,6 +1018,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAbout\XtraForm2.resx">
       <DependentUpon>XtraForm2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAcc\frmBank.resx">
+      <DependentUpon>frmBank.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAssets\FormAssets\frmAssetDecline.resx">
       <DependentUpon>frmAssetDecline.vb</DependentUpon>

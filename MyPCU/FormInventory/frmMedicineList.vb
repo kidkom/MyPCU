@@ -174,4 +174,12 @@ Public Class frmMedicineList
         chkShow17.Checked = True
         Timer1.Enabled = True
     End Sub
+
+    Private Sub cmdSearch_Click(sender As Object, e As EventArgs) Handles cmdSearch.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
 End Class

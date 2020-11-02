@@ -135,7 +135,7 @@
         Me.txtDATE_DIAG.Properties.EditFormat.FormatString = "dd/MM/yyyy"
         Me.txtDATE_DIAG.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.txtDATE_DIAG.Properties.Mask.EditMask = "dd/MM/yyyy"
-        Me.txtDATE_DIAG.Size = New System.Drawing.Size(132, 24)
+        Me.txtDATE_DIAG.Size = New System.Drawing.Size(150, 24)
         Me.txtDATE_DIAG.TabIndex = 1259
         '
         'Label3
