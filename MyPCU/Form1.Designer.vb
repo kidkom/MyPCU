@@ -184,7 +184,7 @@
         Me.LabelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.LabelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
-        Me.LabelControl2.Location = New System.Drawing.Point(362, 281)
+        Me.LabelControl2.Location = New System.Drawing.Point(408, 274)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(68, 24)
         Me.LabelControl2.TabIndex = 1271
@@ -192,7 +192,7 @@
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(271, 288)
+        Me.Label5.Location = New System.Drawing.Point(317, 281)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(85, 17)
         Me.Label5.TabIndex = 1272
@@ -328,7 +328,7 @@
         Me.LabelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.LabelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat
-        Me.LabelControl3.Location = New System.Drawing.Point(436, 281)
+        Me.LabelControl3.Location = New System.Drawing.Point(482, 274)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(84, 24)
         Me.LabelControl3.TabIndex = 1286

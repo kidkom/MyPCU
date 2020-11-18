@@ -70,7 +70,7 @@ Partial Class frmBank
         Me.GroupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(787, 242)
+        Me.GroupControl1.Size = New System.Drawing.Size(787, 210)
         Me.GroupControl1.TabIndex = 472
         Me.GroupControl1.Text = "กำหนดรายละเอียดบัญชีธนาคาร"
         '
@@ -221,7 +221,7 @@ Partial Class frmBank
         Me.GroupControl2.Controls.Add(Me.txtCash)
         Me.GroupControl2.Controls.Add(Me.Label5)
         Me.GroupControl2.GroupStyle = DevExpress.Utils.GroupStyle.Card
-        Me.GroupControl2.Location = New System.Drawing.Point(12, 260)
+        Me.GroupControl2.Location = New System.Drawing.Point(12, 228)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(786, 79)
         Me.GroupControl2.TabIndex = 889
@@ -232,7 +232,7 @@ Partial Class frmBank
         Me.Label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label18.Location = New System.Drawing.Point(9, 604)
+        Me.Label18.Location = New System.Drawing.Point(12, 564)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(43, 17)
         Me.Label18.TabIndex = 895
@@ -242,7 +242,7 @@ Partial Class frmBank
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label15.Location = New System.Drawing.Point(9, 367)
+        Me.Label15.Location = New System.Drawing.Point(9, 321)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(112, 17)
         Me.Label15.TabIndex = 894
@@ -253,7 +253,7 @@ Partial Class frmBank
         Me.cmdDel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdDel.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdDel.Image = Global.MyPCU.My.Resources.Resources.a_minus
-        Me.cmdDel.Location = New System.Drawing.Point(755, 346)
+        Me.cmdDel.Location = New System.Drawing.Point(754, 313)
         Me.cmdDel.Name = "cmdDel"
         Me.cmdDel.Size = New System.Drawing.Size(44, 32)
         Me.cmdDel.TabIndex = 893
@@ -264,7 +264,7 @@ Partial Class frmBank
         Me.cmdAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdAdd.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdAdd.Image = Global.MyPCU.My.Resources.Resources.a_add
-        Me.cmdAdd.Location = New System.Drawing.Point(709, 346)
+        Me.cmdAdd.Location = New System.Drawing.Point(708, 313)
         Me.cmdAdd.Name = "cmdAdd"
         Me.cmdAdd.Size = New System.Drawing.Size(44, 32)
         Me.cmdAdd.TabIndex = 892
@@ -276,7 +276,7 @@ Partial Class frmBank
         Me.cmdSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdSave.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.cmdSave.Image = Global.MyPCU.My.Resources.Resources.a_save
-        Me.cmdSave.Location = New System.Drawing.Point(659, 346)
+        Me.cmdSave.Location = New System.Drawing.Point(658, 313)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(44, 32)
         Me.cmdSave.TabIndex = 891
@@ -290,9 +290,9 @@ Partial Class frmBank
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
-        Me.BetterListView1.Location = New System.Drawing.Point(12, 387)
+        Me.BetterListView1.Location = New System.Drawing.Point(15, 351)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(786, 214)
+        Me.BetterListView1.Size = New System.Drawing.Size(783, 210)
         Me.BetterListView1.TabIndex = 1303
         '
         'frmBank
@@ -301,7 +301,7 @@ Partial Class frmBank
         Me.Appearance.Options.UseBackColor = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(811, 630)
+        Me.ClientSize = New System.Drawing.Size(811, 599)
         Me.Controls.Add(Me.BetterListView1)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label15)
@@ -310,6 +310,7 @@ Partial Class frmBank
         Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmBank"
         Me.Text = "กำหนดบัญชีธนาคารและยอดเงินสดยกมา"

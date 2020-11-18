@@ -482,7 +482,7 @@ Partial Class frmPersonEpi
         Me.btnSave.Image = Global.MyPCU.My.Resources.Resources.a_save
         Me.btnSave.Location = New System.Drawing.Point(695, 325)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(108, 28)
+        Me.btnSave.Size = New System.Drawing.Size(108, 32)
         Me.btnSave.TabIndex = 1155
         Me.btnSave.Text = "บันทึก"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText

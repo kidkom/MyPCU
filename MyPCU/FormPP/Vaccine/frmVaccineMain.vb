@@ -375,4 +375,8 @@ Public Class frmVaccineMain
             vVaccineRowID = lvi.SubItems.Item(1).Text
         Next
     End Sub
+
+    Private Sub cmdEdit_Click(sender As Object, e As EventArgs) Handles cmdEdit.Click
+
+    End Sub
 End Class

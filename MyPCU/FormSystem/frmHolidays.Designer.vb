@@ -116,6 +116,7 @@ Partial Class frmHolidays
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmHolidays"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "กำหนดประเภทวันทำการ"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()

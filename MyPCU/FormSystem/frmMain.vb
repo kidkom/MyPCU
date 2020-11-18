@@ -528,7 +528,7 @@ Public Class frmMain
         End Try
     End Sub
     Private Sub CheckHoliday()
-        Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(0, 4) - 543 & clsdataBus.Lc_Business.MySQL_Sysdate().ToString.Substring(4, 4)
+        Dim tmpNow As String = clsdataBus.Lc_Business.MySQL_Sysdate_En
 
         Dim dsh As DataSet
         dsh = clsdataBus.Lc_Business.SELECT_TABLE("FLAG_HOLIDAY", " l_holidays ", " WHERE DATE_HOLIDAY = '" & tmpNow & "'")

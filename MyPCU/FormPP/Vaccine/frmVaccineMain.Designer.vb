@@ -115,7 +115,7 @@ Partial Class frmVaccineMain
         Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label8.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(748, 571)
+        Me.Label8.Location = New System.Drawing.Point(753, 571)
         Me.Label8.Name = "Label8"
         Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label8.Size = New System.Drawing.Size(68, 17)
@@ -126,7 +126,7 @@ Partial Class frmVaccineMain
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = Global.MyPCU.My.Resources.Resources.a_syring
-        Me.PictureBox1.Location = New System.Drawing.Point(720, 568)
+        Me.PictureBox1.Location = New System.Drawing.Point(725, 568)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 23)
         Me.PictureBox1.TabIndex = 1279
@@ -157,7 +157,7 @@ Partial Class frmVaccineMain
         'chkName
         '
         Me.chkName.AutoSize = True
-        Me.chkName.Location = New System.Drawing.Point(386, 14)
+        Me.chkName.Location = New System.Drawing.Point(366, 16)
         Me.chkName.Name = "chkName"
         Me.chkName.Size = New System.Drawing.Size(89, 21)
         Me.chkName.TabIndex = 1137
@@ -167,7 +167,7 @@ Partial Class frmVaccineMain
         'chkCID
         '
         Me.chkCID.AutoSize = True
-        Me.chkCID.Location = New System.Drawing.Point(333, 14)
+        Me.chkCID.Location = New System.Drawing.Point(313, 16)
         Me.chkCID.Name = "chkCID"
         Me.chkCID.Size = New System.Drawing.Size(47, 21)
         Me.chkCID.TabIndex = 1136
@@ -177,7 +177,7 @@ Partial Class frmVaccineMain
         'chkPID
         '
         Me.chkPID.AutoSize = True
-        Me.chkPID.Location = New System.Drawing.Point(281, 14)
+        Me.chkPID.Location = New System.Drawing.Point(261, 16)
         Me.chkPID.Name = "chkPID"
         Me.chkPID.Size = New System.Drawing.Size(46, 21)
         Me.chkPID.TabIndex = 1135
@@ -188,7 +188,7 @@ Partial Class frmVaccineMain
         '
         Me.Button2.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Button2.Image = Global.MyPCU.My.Resources.Resources.a_search
-        Me.Button2.Location = New System.Drawing.Point(680, 12)
+        Me.Button2.Location = New System.Drawing.Point(660, 14)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(38, 26)
         Me.Button2.TabIndex = 1134
@@ -198,7 +198,7 @@ Partial Class frmVaccineMain
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label4.Location = New System.Drawing.Point(238, 16)
+        Me.Label4.Location = New System.Drawing.Point(218, 18)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 17)
         Me.Label4.TabIndex = 1133
@@ -210,7 +210,7 @@ Partial Class frmVaccineMain
         Me.txtPID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtPID.BackColor = System.Drawing.Color.White
         Me.txtPID.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPID.Location = New System.Drawing.Point(481, 12)
+        Me.txtPID.Location = New System.Drawing.Point(461, 14)
         Me.txtPID.Name = "txtPID"
         Me.txtPID.Size = New System.Drawing.Size(193, 25)
         Me.txtPID.TabIndex = 1132
@@ -220,7 +220,7 @@ Partial Class frmVaccineMain
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(237, 571)
+        Me.Label2.Location = New System.Drawing.Point(210, 571)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 17)
         Me.Label2.TabIndex = 1114
@@ -230,7 +230,7 @@ Partial Class frmVaccineMain
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label16.Location = New System.Drawing.Point(237, 47)
+        Me.Label16.Location = New System.Drawing.Point(210, 47)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(108, 17)
         Me.Label16.TabIndex = 1113
@@ -243,9 +243,9 @@ Partial Class frmVaccineMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BetterListView1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.BetterListView1.HeaderStyle = ComponentOwl.BetterListView.BetterListViewHeaderStyle.Sortable
-        Me.BetterListView1.Location = New System.Drawing.Point(240, 67)
+        Me.BetterListView1.Location = New System.Drawing.Point(213, 67)
         Me.BetterListView1.Name = "BetterListView1"
-        Me.BetterListView1.Size = New System.Drawing.Size(581, 497)
+        Me.BetterListView1.Size = New System.Drawing.Size(608, 497)
         Me.BetterListView1.TabIndex = 1112
         '
         'Panel1
@@ -273,68 +273,69 @@ Partial Class frmVaccineMain
         Me.Panel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(228, 606)
+        Me.Panel1.Size = New System.Drawing.Size(204, 606)
         Me.Panel1.TabIndex = 1111
         '
         'lblAge
         '
-        Me.lblAge.Location = New System.Drawing.Point(80, 419)
+        Me.lblAge.Location = New System.Drawing.Point(32, 493)
         Me.lblAge.Name = "lblAge"
-        Me.lblAge.Size = New System.Drawing.Size(123, 24)
+        Me.lblAge.Size = New System.Drawing.Size(144, 24)
         Me.lblAge.TabIndex = 1150
         '
         'lblBirth
         '
-        Me.lblBirth.Location = New System.Drawing.Point(80, 386)
+        Me.lblBirth.Location = New System.Drawing.Point(32, 445)
         Me.lblBirth.Name = "lblBirth"
-        Me.lblBirth.Size = New System.Drawing.Size(123, 24)
+        Me.lblBirth.Size = New System.Drawing.Size(144, 24)
         Me.lblBirth.TabIndex = 1149
         '
         'lblSex
         '
-        Me.lblSex.Location = New System.Drawing.Point(80, 356)
+        Me.lblSex.Location = New System.Drawing.Point(32, 398)
         Me.lblSex.Name = "lblSex"
-        Me.lblSex.Size = New System.Drawing.Size(123, 24)
+        Me.lblSex.Size = New System.Drawing.Size(144, 24)
         Me.lblSex.TabIndex = 1148
         '
         'lblLNAME
         '
-        Me.lblLNAME.Location = New System.Drawing.Point(80, 326)
+        Me.lblLNAME.Location = New System.Drawing.Point(32, 351)
         Me.lblLNAME.Name = "lblLNAME"
-        Me.lblLNAME.Size = New System.Drawing.Size(123, 24)
+        Me.lblLNAME.Size = New System.Drawing.Size(144, 24)
         Me.lblLNAME.TabIndex = 1147
         '
         'lblName
         '
-        Me.lblName.Location = New System.Drawing.Point(80, 294)
+        Me.lblName.Location = New System.Drawing.Point(32, 304)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(123, 24)
+        Me.lblName.Size = New System.Drawing.Size(144, 24)
         Me.lblName.TabIndex = 1146
         '
         'lblHN
         '
-        Me.lblHN.Location = New System.Drawing.Point(80, 262)
+        Me.lblHN.Location = New System.Drawing.Point(36, 540)
         Me.lblHN.Name = "lblHN"
         Me.lblHN.Size = New System.Drawing.Size(123, 24)
         Me.lblHN.TabIndex = 1145
+        Me.lblHN.Visible = False
         '
         'lblCID
         '
-        Me.lblCID.Location = New System.Drawing.Point(80, 230)
+        Me.lblCID.Location = New System.Drawing.Point(32, 257)
         Me.lblCID.Name = "lblCID"
-        Me.lblCID.Size = New System.Drawing.Size(123, 24)
+        Me.lblCID.Size = New System.Drawing.Size(144, 24)
         Me.lblCID.TabIndex = 1144
         '
         'lblPID
         '
-        Me.lblPID.Location = New System.Drawing.Point(80, 198)
+        Me.lblPID.Location = New System.Drawing.Point(32, 208)
         Me.lblPID.Name = "lblPID"
-        Me.lblPID.Size = New System.Drawing.Size(123, 24)
+        Me.lblPID.Size = New System.Drawing.Size(144, 24)
         Me.lblPID.TabIndex = 1143
         '
         'PictureEdit1
         '
-        Me.PictureEdit1.Location = New System.Drawing.Point(59, 20)
+        Me.PictureEdit1.Location = New System.Drawing.Point(32, 16)
         Me.PictureEdit1.Name = "PictureEdit1"
         Me.PictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.PictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.[Auto]
@@ -347,7 +348,7 @@ Partial Class frmVaccineMain
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(49, 201)
+        Me.Label3.Location = New System.Drawing.Point(29, 188)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(27, 17)
         Me.Label3.TabIndex = 1122
@@ -358,7 +359,7 @@ Partial Class frmVaccineMain
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(49, 233)
+        Me.Label10.Location = New System.Drawing.Point(29, 237)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(28, 17)
         Me.Label10.TabIndex = 1123
@@ -369,18 +370,19 @@ Partial Class frmVaccineMain
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(51, 265)
+        Me.Label25.Location = New System.Drawing.Point(7, 543)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(27, 17)
         Me.Label25.TabIndex = 1125
         Me.Label25.Text = "HN"
+        Me.Label25.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(51, 422)
+        Me.Label1.Location = New System.Drawing.Point(32, 473)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(28, 17)
         Me.Label1.TabIndex = 667
@@ -391,7 +393,7 @@ Partial Class frmVaccineMain
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(29, 329)
+        Me.Label6.Location = New System.Drawing.Point(33, 331)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(50, 17)
         Me.Label6.TabIndex = 1133
@@ -402,7 +404,7 @@ Partial Class frmVaccineMain
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(8, 393)
+        Me.Label11.Location = New System.Drawing.Point(29, 425)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(71, 17)
         Me.Label11.TabIndex = 666
@@ -413,7 +415,7 @@ Partial Class frmVaccineMain
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(56, 297)
+        Me.Label5.Location = New System.Drawing.Point(33, 284)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(23, 17)
         Me.Label5.TabIndex = 1134
@@ -424,7 +426,7 @@ Partial Class frmVaccineMain
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Leelawadee UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(52, 361)
+        Me.Label12.Location = New System.Drawing.Point(33, 378)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(27, 17)
         Me.Label12.TabIndex = 665

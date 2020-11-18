@@ -220,6 +220,7 @@ Partial Class frmDrugMethod
         Me.Controls.Add(Me.lblTotalRow)
         Me.Controls.Add(Me.chkUseOnly)
         Me.Name = "frmDrugMethod"
+        Me.ShowInTaskbar = False
         Me.Text = "การให้วัคซีน"
         CType(Me.BetterListView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
